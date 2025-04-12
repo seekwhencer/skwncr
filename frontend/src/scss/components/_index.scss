@@ -1,10 +1,10 @@
-@import './header';
-@import './footer';
-@import './splash';
-@import './person';
-@import './vita';
-@import './skills';
-@import './services';
-@import './projects';
+@use 'header';
+@use 'footer';
+@use 'splash';
+@use 'person';
+@use 'vita';
+@use 'skills';
+@use 'services';
+@use 'projects';
 
 

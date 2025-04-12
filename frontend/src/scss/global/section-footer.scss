@@ -1,3 +1,5 @@
+@use "colors";
+
 .section-footer {
   position: absolute;
   bottom: 0;
@@ -13,27 +15,27 @@
   }
 
   :nth-child(1) {
-    background-color: $color-one;
+    background-color: colors.$color-one;
   }
 
   :nth-child(2) {
-    background-color: $color-two;
+    background-color: colors.$color-two;
   }
 
   :nth-child(3) {
-    background-color: $color-three;
+    background-color: colors.$color-three;
   }
 
   :nth-child(4) {
-    background-color: $color-four;
+    background-color: colors.$color-four;
   }
 
   :nth-child(5) {
-    background-color: $color-five;
+    background-color: colors.$color-five;
   }
 
   :nth-child(6) {
-    background-color: $color-six;
+    background-color: colors.$color-six;
   }
 }
 

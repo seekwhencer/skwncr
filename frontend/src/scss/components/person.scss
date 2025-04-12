@@ -1,5 +1,8 @@
+@use "../global/colors";
+@use "../global/typo";
+
 .section-person {
-  background-color: $color-two;
+  background-color: colors.$color-two;
 
   .container {
     width: 1400px;
@@ -7,41 +10,106 @@
   }
 
   .content {
-    display: flex;
-    flex-direction: row;
+    .image {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 150px;
 
-    > div:nth-child(1) {
-      width: 10%;
-      padding-top: 50px;
+      img {
+        height: 100%;
+        transform: translateX(-50px);
+      }
     }
 
-    > div:nth-child(2) {
-      width: 40%;
-      line-height: 1.5em;
-      padding-right: 50px;
-    }
+    .text {
+      line-height: 2em;
+      width: 700px;
+      margin: auto auto 150px auto;
 
-    > div:nth-child(3) {
-      width: 20%;
-      padding-top: 50px;
+      p {
+        margin-bottom: 20px;
+      }
     }
   }
 
-  .item {
-    flex-grow: 3;
-    width: 33.3333%;
+  .specs {
+    width: 100%;
 
-    .row {
-      display: block;
-      overflow: hidden;
-      margin-bottom: 20px;
-    }
+    .block {
+      height: 100%;
 
-    .label {
-      font-weight: 800;
-      width: 200px;
-      display: block;
-      font-size: $fs-xs;
+      &:nth-child(1) {
+        width: 25%;
+      }
+
+      &:nth-child(2) {
+        width: 30%;
+      }
+
+      &:nth-child(3) {
+        width: 20%;
+      }
+
+      &:nth-child(4) {
+
+      }
+
+      display: inline-block;
+      vertical-align: top;
+
+      hr {
+        margin: 30px 0;
+        color: colors.$color-matte-a;
+      }
+
+      .row {
+        display: block;
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+
+      .label {
+        width: 100%;
+        display: block;
+        font-size: typo.$fs-xs;
+        letter-spacing: 0.04em;
+      }
+
+      h4 {
+        font-weight: 200;
+        margin-bottom: 20px;
+      }
+
+      p {
+        margin: 0 0 20px 0;
+      }
+
+      .social-icons {
+        a {
+          display: inline-block;
+          background: black;
+          padding: 3px 4px 2px 5px;
+          color: colors.$color-two;
+          text-align: center;
+          border-radius: 10px;
+          overflow: hidden;
+          font-size: 0.5em;
+          opacity: 0.5;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            opacity: 1;
+            cursor: pointer;
+            transition: all 0.1s ease-in-out;
+          }
+
+          svg {
+            width: 70%;
+          }
+        }
+      }
     }
   }
 }

@@ -2,26 +2,59 @@
     <h2 class="">me, myself and i</h2>
     <div class="container">
         <div class="content">
-            <div class="item">
-                <div class="row">
-                    <span class="label">Berufsbezeichnung</span>${person.job}
-                </div>
-                <div class="row">
-                    <span class="label">Baujahr</span>${person.birthYear} (${age}) in ${person.birthCity}
-                </div>
-                <div class="row">
-                    <span class="label">Wohnsitz</span>${person.city}
-                </div>
+            <div class="image">
+                <img src="/public/me.jpg" alt="me">
             </div>
-            <div class="item">
-                ${person.text}
+            <div class="text">
+                ${_MD(person.text)}
             </div>
-            <div class="item">
-                ${person.education.map(ed => `
-                <div class="row">
-                    <span class="label">${ed.title}</span>${ed.location}<br>
+            <div class="specs">
+                <div class="block">
+                    <h4>Zur Person</h4>
+                    <div class="row">
+                        <span class="label">Berufsbezeichnung</span>${person.job}
+                    </div>
+                    <div class="row">
+                        <span class="label">Baujahr</span>${person.birthYear} (${age}) in ${person.birthCity}
+                    </div>
+                    <div class="row">
+                        <span class="label">Wohnsitz</span>${person.city}
+                    </div>
                 </div>
-                `).join('')}
+                <div class="block">
+                    <h4>Ausbildung</h4>
+                    ${person.education.map(ed => `
+                    <div class="row">
+                        <span class="label">${ed.dateFrom} - ${ed.dateTo}</span>
+                        ${ed.title}
+                        <span class="label">${ed.location}</span>
+                    </div>
+                    `).join('')}
+                </div>
+                <div class="block">
+                    <h4>Sprachen</h4>
+                    ${person.languages.map(l => `
+                    <div class="row">
+                        <span class="label">${l.title}</span>${l.level}
+                    </div>
+                    `).join('')}
+                </div>
+                <div class="block">
+                    <h4>Kontakt</h4>
+                    <div class="row">
+                        03334 - xx xx xx xx
+                    </div>
+                    <div class="row">
+                        matthias.kallenbach@skwncr.net
+                    </div>
+                    <h4>Social</h4>
+                    <div class="row social-icons">
+                        <a href="" target="_blank">${icons.linkedin}</a>
+                        <a href="" target="_blank">${icons.facebook}</a>
+                        <a href="" target="_blank">${icons.youtube}</a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

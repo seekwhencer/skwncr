@@ -1,5 +1,8 @@
+@use "../global/colors";
+@use "../global/typo";
+
 .section-vita {
-  background-color: $color-three;
+  background-color: colors.$color-three;
 
   .container {
     width: 600px;
@@ -29,11 +32,11 @@
     }
 
     &--company-industry {
-      font-size: $fs-xs;
+      font-size: typo.$fs-xs;
     }
 
     &--description {
-      line-height: $fs-l;
+      line-height: typo.$fs-l;
     }
 
     &--work {
@@ -46,14 +49,14 @@
       margin-top: 20px;
 
       &--skill {
-        color: $color-three;
+        color: colors.$color-three;
         background-color: black;
         padding: 2px 5px;
         margin: 0 5px 5px 0;
         display: inline-block;
         border-radius: 4px;
         font-weight: 800;
-        font-size: $fs-xs;
+        font-size: typo.$fs-xs;
         box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
         opacity: 0.3;
         transition: all 0.5s ease-in-out;

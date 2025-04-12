@@ -1,5 +1,7 @@
+@use "../global/colors";
+
 .section-projects {
-  background-color: $color-six;
+  background-color: colors.$color-six;
   color: white;
 
   .container {
@@ -26,13 +28,13 @@
 
       .name {
         padding: 10px;
-        color: $color-gray-a;
+        color: colors.$color-gray-a;
       }
 
       .text {
         padding: 10px;
         background-color: rgba(0, 0, 0, 0.4);
-        color: $color-gray-a;
+        color: colors.$color-gray-a;
         font-weight: 300;
         line-height: 1.6em;
       }

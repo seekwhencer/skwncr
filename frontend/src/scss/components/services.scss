@@ -1,5 +1,8 @@
+@use "../global/colors";
+@use "../global/typo";
+
 .section-services {
-  background-color: $color-five;
+  background-color: colors.$color-five;
   color: white;
 
   .container {
@@ -36,7 +39,7 @@
         transition: all 0.3s ease-in-out;
 
         * {
-          color: $color-one;
+          color: colors.$color-one;
         }
       }
 
@@ -44,14 +47,14 @@
         padding: 5px;
         display: inline-block;
         font-weight: 700;
-        font-size: $fs-l;
-        color: $color-one;
+        font-size: typo.$fs-l;
+        color: colors.$color-one;
       }
     }
 
     .text {
       padding: 20px;
-      color: $color-matte-e;
+      color: colors.$color-matte-e;
       position: absolute;
       top: 30px;
       font-weight: 300;
@@ -59,7 +62,7 @@
     }
 
     &:hover {
-      outline: 1px solid $color-gray-d;
+      outline: 1px solid colors.$color-gray-d;
       outline-offset: 10px;
       transition: all 0.2s ease-in-out;
       cursor: pointer;

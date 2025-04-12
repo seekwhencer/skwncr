@@ -9,7 +9,10 @@ import {
     Ambulance,
     Ship,
     ShipWheel,
-    HeartHandshake
+    HeartHandshake,
+    Linkedin,
+    Facebook,
+    Youtube
 } from 'lucide';
 
 import HeaderComponent from "./components/HeaderComponent.js";
@@ -43,6 +46,9 @@ export default class App {
             neighbourhood: createElement(HeartHandshake).outerHTML,
             workshops: createElement(BookOpenCheck).outerHTML,
             fun: createElement(TentTree).outerHTML,
+            linkedin: createElement(Linkedin).outerHTML,
+            facebook: createElement(Facebook).outerHTML,
+            youtube: createElement(Youtube).outerHTML
         }
 
         /**

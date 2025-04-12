@@ -1,5 +1,7 @@
+@use "typo";
+
 * {
-  font-family: $font-family-primary;
+  font-family: typo.$font-family-primary;
 }
 
 body {
