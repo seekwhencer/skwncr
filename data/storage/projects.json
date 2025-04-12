@@ -1,0 +1,233 @@
+[
+  {
+    "dateFrom": "2025",
+    "dateTo": "2025",
+    "title": "node.js, tesseract and imagemagick in one container",
+    "description": "Mini-Setup und node.js-App um Kontoauszüge per Texterkennung in Daten umzuwandeln ",
+    "work": [
+      "Dockerisierte Node.js-App orchestriert (exec, spawn) tesseract und imagemagick.",
+      "Mit Watch-Task: man kann neue Files (PDFs) in einen Ordner kopieren und die Umwandlung beginnt sofort",
+      "Wird gespeichert als CSV und als JSON"
+    ]
+  },
+  {
+    "dateFrom": "2024",
+    "dateTo": "2024",
+    "title": "Heizungs-Überwachung",
+    "description": "Custom IoT-Device zur Überwachung einer (alten) Öl-Heizung mit zwei Heizkreisen",
+    "work": [
+      "nodeMCU in Gehäuse-Box und Netzteil",
+      "Entwicklung Geräte-Software als MQTT-Client",
+      "Vier Auflage-Sensoren für die Temperaturen: 2 x Zulauf und 2 x Rücklauf",
+      "Wird von der MQTT-zu-Influx-Bridge weggespeichert (Smart Home Automation)"
+    ]
+  },
+  {
+    "dateFrom": "2024",
+    "dateTo": "2024",
+    "title": "Licht-Stärke",
+    "description": "Custom IoT-Device zur Messung von Lichtstärke",
+    "work": [
+      "nodeMCU in Gehäuse-Box und Netzteil",
+      "Entwicklung Geräte-Software als MQTT-Client",
+      "Licht-Sensor: eine Box pro Himmelsrichtung im 45°-Winkel hinter die Fensterscheibe",
+      "Wird von der MQTT zu Influx-Bridge weggespeichert (Smart Home Automation)"
+    ]
+  },
+  {
+    "dateFrom": "2023",
+    "dateTo": "heute",
+    "title": "Smart Home Automation",
+    "description": "Infrastruktur und Server-App zur Erfassung von Umweltdaten und Steuerung von Zigbee-Geräten. Ein privates und nicht veröffentlichtes Projekt.",
+    "work": [
+      "Dockerisierte Infrastruktur bestehend aus: Mosquitto, InfluxDB2, Grafana 11 und einer custom Backend-App",
+      "Zweit-Server: Raspberry Pi mit 433mhz-zu-MQTT (node-rtl433-ui) und Zigbee2MQTT (Bekannte Open Source Lösung)",
+      "Backend-Entwicklung mit node.js: Javascript ES6+, CRUD Rest API, MQTT-Client, HTTP2-Sockets (Statt Websockets)",
+      "MQTT zu InfluxDB 2 Bridge",
+      "Event basiertes (JS) Echtzeit-Messaging",
+      "Entwicklung umfangreiche \"Transponder-Sammlung\" als Umrechner auf virtuelle Topics. Bspw.: Average, Min, Max, Wet-Bulb, Taupunkt uvm.",
+      "Steuerung von Aktoren (Licht etc.)",
+      "Verwendung aller von Zigbee2MQTT unterstützten Geräte (Hersteller-übergreifend)",
+      "Web-Dashboard per HTTP2-Sockets zur (simplifizierten) Anzeige",
+      "Verschiedene Web-Scraper zu MQTT als dockerisierter Microservice für bspw. Ozon, Waldbrandstufe, Weather Forecast, Sprit-Preise in der Umgebung",
+      "Per CRUD Rest API können virtuelle Topics zur Runtime erstellt, geändert und gelöscht werden (ohne Neustart)",
+      "Export zu OpenSensMap.com"
+    ],
+    "links": [
+      "[Auf Karte von OpenSenseMap.org]https://www.opensensemap.org/explore/62f3be8ea6e889001bf6b775"
+    ]
+  },
+  {
+    "dateFrom": "2023",
+    "dateTo": "2023",
+    "title": "node-rtl433-ui",
+    "description": "Web-UI und Server-App zum Mappen von 433-Mhz-Devices auf MQTT-Topics",
+    "work": [
+      "Frontend-Entwicklung mit Webpack, SCSS, Javascript in ES6 mit Custom Templating für SSR & CSR.",
+      "Backend-Entwicklung mit node.js: Javascript ES6+, CRUD Rest API, MQTT-Client",
+      "Dockerisiert mit multi-arch Docker Image Publishing",
+      "Betrieb auf Raspberry Pi",
+      "Github Workflow Actions für Frontend Deployment auf Github-Pages"
+    ],
+    "github": [
+      "https://github.com/seekwhencer/node-rtl433-ui"
+    ]
+  },
+  {
+    "dateFrom": "2023",
+    "dateTo": "2023",
+    "title": "Spotify Kids Player",
+    "description": "Simplifizierte (Web-) UI für Kinder mit Parental Control",
+    "work": [
+      "Frontend-Entwicklung mit Webpack, SCSS, Javascript in ES6 mit Custom Templating für SSR & CSR.",
+      "Backend-Enwtwicklung mit node.js: CRUD Rest API, Thumbnail-Erzeugung",
+      "Dockerisiert",
+      "Benutzt Spotify Rest API",
+      "Benutzt Google Text to Speech",
+      "Speichert Künstler und Alben-Daten in mySQL-Datenbank",
+      "Editieren der Daten zu Künstler und Alben inkl. Bildupload",
+      "Eltern-Modus zum Importieren, Bearbeiten und Ausblenden",
+      "Betrieb auf Raspberry Pi 5"
+    ],
+    "github": [
+      "https://github.com/seekwhencer/spotify-kidsplayer"
+    ]
+  },
+  {
+    "dateFrom": "2022",
+    "dateTo": "2022",
+    "title": "Image Gallery Server mit node.js",
+    "description": "Image-Browser mit on demand Thumbnail-Erzeugung",
+    "work": [
+      "Entwicklung skalierbarer Backend-Service für Rest API, Thumbnail-Erzeugung und Webserver",
+      "Backend orchestriert imagemagick",
+      "Dockerisiert und skalierbar per Docker Replicas",
+      "Frontend-Entwicklung mit Webpack, SCSS, Javascript in ES6 mit Custom Templating für SSR & CSR."
+    ],
+    "github": [
+      "https://github.com/seekwhencer/node-image-server-gallery"
+    ]
+  },
+  {
+    "dateFrom": "2021",
+    "dateTo": "2021",
+    "title": "DSLR Streaming / Recording",
+    "description": "Rucksack mit Technik und Strom für lange Video-Aufnahmen mit DSLR in 4k",
+    "work": [
+      "DSLR Kamera im Video-Mode und 4K-USB-Stick (Elgato)",
+      "nVidia Jetson Nano für 4k Echtzeit-Encoding (gstreamer)",
+      "ffmpeg zum segmentierten Schreiben des Videos",
+      "node.js zum Orchestrieren von gstreamer und ffmpeg",
+      "lokaler streaming server"
+    ]
+  },
+  {
+    "dateFrom": "2019",
+    "dateTo": "2019",
+    "title": "Tech-Radar",
+    "description": "Refactoring Amazon's Techradar with three.js",
+    "work": [
+      "Frontend-Entwicklung mit Webpack, SCSS, Javascript in ES6 mit Custom Templating für SSR & CSR.",
+      "Three.js für mathematische Verteilung"
+    ],
+    "github": [
+      "https://github.com/seekwhencer/tech-radar"
+    ]
+  },
+  {
+    "dateFrom": "2019",
+    "dateTo": "2019",
+    "title": "Quizzner",
+    "description": "Quiz-Spiel als Frontend-App",
+    "work": [
+      "Google-Sheets als Datenquelle",
+      "Serverless Frontend-App mit Animation und Sound"
+    ],
+    "github": [
+      "https://github.com/seekwhencer/quizzner"
+    ]
+  },
+  {
+    "dateFrom": "2018",
+    "dateTo": "2018",
+    "title": "Frontend Developer's Survival Suite Case",
+    "description": "Überlebenskoffer für Frontend-Entwickler - um Off-Grid bei Bastelaktionen (Hackaton) im Team an Projekten arbeiten zu können.",
+    "work": [
+      "Koffer mit Technik drin",
+      "Raspberry Pi auf dem verschiedene Services installiert sind, die sonst nur mit Internetverbindung genutzt werden. Bspw:",
+      "Für Git: Gitea",
+      "Für npm.org: Verdaccio.js als NPM-Registry und npm relay cache",
+      "Mattermost als Chat",
+      "MySQL-Datenbank und Verwaltungstools wie phpmyadmin",
+      "Dazu noch ein Solar-Panel, Laderegler und Autobatterie"
+    ]
+  },
+  {
+    "dateFrom": "2016",
+    "dateTo": "2016",
+    "title": "Playlist-Automation",
+    "description": "Automatische Radio-Stream-Erzeugung per Sendung und Wochenplan",
+    "work": [
+      "Entwicklung Backend (PHP)",
+      "Entwicklung Frontend (jQuery, CSS, HTML)",
+      "Erstellung von Sendungen mit Opener, Jingles und Spots",
+      "Erstellung eines Wochenplanes pro Kalenderwoche",
+      "Automatisches Starten der Sendung entsprechend Scheduling",
+      "Intelligenter und zufälliger Shuffle-Modus",
+      "Icecast als Server",
+      "Music Player Daemon (MPD) als Player",
+      "Linux / Raspberry Pi"
+    ]
+  },
+  {
+    "dateFrom": "2015",
+    "dateTo": "2015",
+    "title": "Open Research Buoy",
+    "description": "Echtzeit-Steuerung via Mobilfunk und Websockets einer Citizen-Science-Boje",
+    "work": [
+      "Multi-User Frontend / Web-App mit Multi-Touch-Usability",
+      "Websockets-Server / Backend-App mit Java (ja, tatsächlich)",
+      "Websockets-Connectivity via Mobilfunk"
+    ]
+  },
+  {
+    "dateFrom": "2010",
+    "dateTo": "2010",
+    "title": "Webbasierter Buch-Scanner per Webcam / DSLR",
+    "description": "Backoffice-Tool um Foto von Buch in Vorrichtung zu machen und in Online-Datenbanken zu suchen.",
+    "work": [
+      "Entwicklung Backoffice-Tool / Admin für die Verwaltung der Bücher.",
+      "Entwicklung Frontend Realtime-Vorschau der Webcam mit Snapshot- und Cropping-Funktion im Browser",
+      "Entwicklung Zuordnung von Metadaten mittels Rest API der Google-Books-Suche",
+      "Entwicklung Preisvorschlag per Scraping versch. Quellen",
+      "Bau einer Vorrichtung für eine DSLR-Kamera / Webcam mit Beleuchtung um Buch-Fronten zu fotografieren."
+    ]
+  },
+  {
+    "dateFrom": "2010",
+    "dateTo": "2016",
+    "title": "Kurzsuechtig Kurzfilmfestival Leipzig",
+    "description": "Website und Backoffice-Tool für Kurzfilmfestival in Leipzig.",
+    "work": [
+      "Entwicklung jedes Jahr ein neues Theme für Wordpress-Website.",
+      "Entwicklung Backoffice-Tool / Admin für die Verwaltung der Einreichungen. (Listing, Filter, Einreichung freischalten, Ranking nachtragen)",
+      "Login-Bereich für Teilnehmer um Filme einzureichen. (Bildupload, Drag'n Drop für Bild-Reihenfolge.)",
+      "Entwicklung Plugin für Wordpress als Schnittstelle zum Backoffice-Tool via Rest API.",
+      "Darstellung auf Website der Einreichungen pro Jahr via Plugin und Rest API",
+      "Darstellung Ranking Einreichungen pro Jahr via Plugin und Rest API"
+    ]
+  },
+  {
+    "dateFrom": "2009",
+    "dateTo": "2011",
+    "title": "Stadtgiraffe - Veranstaltungskalender",
+    "description": "Online Veranstaltungskalender für Leipzig",
+    "work": [
+      "Entwicklung Website Frontend und Backend (PHP, mysql)",
+      "Entwicklung Backoffice-Tool / Admin für die Verwaltung von Events, Locations usw.",
+      "Hosting, Server-Administration",
+      "Website mit Login-Bereich für Veranstalter",
+      "Design und Artwork"
+    ]
+  }
+]

@@ -1,0 +1,43 @@
+.section-projects {
+  background-color: $color-six;
+  color: white;
+
+  .container {
+    width: 80vw;
+    margin: auto;
+    column-count: 4;
+    gap: 20px;
+  }
+
+  .project {
+    height: 300px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: 0 0 20px 0;
+    border-radius: 10px;
+
+    &--head {
+      position: absolute;
+      bottom: 0;
+      display: block;
+      width: 100%;
+
+      .name {
+        padding: 10px;
+        color: $color-gray-a;
+      }
+
+      .text {
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.4);
+        color: $color-gray-a;
+        font-weight: 300;
+        line-height: 1.6em;
+      }
+    }
+  }
+}
+
+

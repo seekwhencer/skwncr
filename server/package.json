@@ -1,0 +1,21 @@
+{
+  "name": "apply-o-mat-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "fastify": "^5.2.2"
+  },
+  "devDependencies": {
+    "@fastify/vite": "^8.0.1",
+    "vite": "^6.2.5"
+  }
+}

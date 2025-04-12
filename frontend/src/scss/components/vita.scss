@@ -1,0 +1,70 @@
+.section-vita {
+  background-color: $color-three;
+
+  .container {
+    width: 600px;
+    margin: auto;
+
+    .vita:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  .vita {
+    display: block;
+    position: relative;
+    padding-bottom: 50px;
+
+    &--time {
+      position: absolute;
+      left: -220px;
+      width: 200px;
+      text-align: right;
+      overflow: hidden;
+      top: 0;
+    }
+
+    &--company {
+      margin: 20px 0 20px 0;
+    }
+
+    &--company-industry {
+      font-size: $fs-xs;
+    }
+
+    &--description {
+      line-height: $fs-l;
+    }
+
+    &--work {
+      &--item {
+        margin-bottom: 5px;
+      }
+    }
+
+    &--stack {
+      margin-top: 20px;
+
+      &--skill {
+        color: $color-three;
+        background-color: black;
+        padding: 2px 5px;
+        margin: 0 5px 5px 0;
+        display: inline-block;
+        border-radius: 4px;
+        font-weight: 800;
+        font-size: $fs-xs;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+        opacity: 0.3;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+
+    &:hover {
+      .vita--stack--skill {
+        opacity: 1;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+}

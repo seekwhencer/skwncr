@@ -1,0 +1,7 @@
+{
+  "packages": {
+    "data": "${../package.json}",
+    "frontend": "${../../frontend/package.json}",
+    "server": "${../../server/package.json}"
+  }
+}

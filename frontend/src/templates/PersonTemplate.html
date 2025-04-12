@@ -1,0 +1,29 @@
+<section class="section-person">
+    <h2 class="">me, myself and i</h2>
+    <div class="container">
+        <div class="content">
+            <div class="item">
+                <div class="row">
+                    <span class="label">Berufsbezeichnung</span>${person.job}
+                </div>
+                <div class="row">
+                    <span class="label">Baujahr</span>${person.birthYear} (${age}) in ${person.birthCity}
+                </div>
+                <div class="row">
+                    <span class="label">Wohnsitz</span>${person.city}
+                </div>
+            </div>
+            <div class="item">
+                ${person.text}
+            </div>
+            <div class="item">
+                ${person.education.map(ed => `
+                <div class="row">
+                    <span class="label">${ed.title}</span>${ed.location}<br>
+                </div>
+                `).join('')}
+            </div>
+        </div>
+    </div>
+    <div data-element="section-footer"></div>
+</section>

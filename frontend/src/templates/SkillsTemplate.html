@@ -1,0 +1,13 @@
+<section class="section-skills">
+    <div class="">${slashImage}</div>
+    <h2 class="">Skills & Tools</h2>
+    <div class="container">
+        ${Object.keys(skills).map(level => `
+        <div class="skill-level ${level}">
+            <h3 class="level">${level}</h3>
+            ${skills[level].map(s => `<span class="skill" data-text="${s}">${s}</span>`).join('')}
+        </div>
+        `).join('')}
+    </div>
+    <div data-element="section-footer"></div>
+</section>

@@ -1,0 +1,223 @@
+[
+  {
+    "dateFrom": "01/2023",
+    "dateTo": "heute",
+    "title": "Kleinunternehmer (Freelancer) / Erziehungszeit",
+    "type": "Festanstellung",
+    "company": "Home-Office",
+    "companyIndustry": "me, myself and i",
+    "description": "Zeit für meine erstgeborene Tochter. Angedachte und bereits angefangene Nebenprojekte werden / wurden vollendet. Ein bisschen was am Haus gemacht. Ansonsten befasse ich mich mit neuen, interessanten und notwendigen Technologien und Arbeitsabläufen. Insbesondere vertiefe ich meine Fähigkeiten in Typescript, React und Next.js.",
+    "stack": [
+      "ES6+",
+      "Typescript",
+      "Scss",
+      "Vite",
+      "Prettier",
+      "Strapi",
+      "Astro.js",
+      "Docker",
+      "ReactJS",
+      "Next.js",
+      "Grafana",
+      "Github Actions",
+      "influxDB 2",
+      "MQTT",
+      "webpack 6",
+      "MING-Stack",
+      "Wordpress",
+      "ESP32"
+    ],
+    "work": [
+      "Plugin-Entwicklung (React) für Grafana 10",
+      "Multi Arch Docker Image Publishing",
+      "Deployment Workflows",
+      "Micro Services und Web-Apps mit node.js",
+      "Frontend-Bundling für ESP32-Geräte",
+      "Meine eigene Website und Infrastruktur"
+    ]
+  },
+  {
+    "dateFrom": "10/2020",
+    "dateTo": "12/2022",
+    "title": "Frontend-Entwickler",
+    "type": "Festanstellung",
+    "company": "SYNERGY-NETWORKS GmbH",
+    "companyIndustry": "IT-Dienstleister",
+    "companyCity": "Halle (Saale)",
+    "description": "Unternehmensweit einige technische Arbeitsabläufe neu organisiert, Nutzung von git etabliert, div. Kundenprojekte (Shops) mit Docker aufgesetzt für die lokale Entwicklung - sodass mehrere Entwickler an einem Projekt arbeiten können, Frontend-Entwicklung (Themes) für Shopware-Shops, Erweiterung der Frontend-Build-Pipelines (um bspw. Hot-Reloading), Deployment-Entwicklung, Wartung und Support für Kunden-Projekte, nahezu komplett allein realisierter Shop-Relaunch: https://seiffen.com",
+    "stack": [
+      "Shopware 5",
+      "ES6+",
+      "Less",
+      "Smarty",
+      "Docker",
+      "Grunt",
+      "node.js",
+      "PHP",
+      "Webpack",
+      "ESLint",
+      "StyleLint",
+      "Github",
+      "Reverse Proxy (jwilders)",
+      "Mailhog",
+      "SSH Tunneling"
+    ],
+    "work": [
+      "Redesign Shopware 5 Shop",
+      "Docker Setup für lokale Dev-Umgebung mit mailhog, redis, elasticsearch, mysql, phpmyadmin",
+      "Dockerisierte Frontend-Build-Pipeline",
+      "Etablierung Arbeitsorganisation mit git",
+      "Versions- und Datenbank-Migration",
+      "Kundenkommunikation",
+      "Bash Scripting"
+    ]
+  },
+  {
+    "dateFrom": "03/2017",
+    "dateTo": "09/2020",
+    "title": "Frontend-Entwickler",
+    "type": "Festanstellung",
+    "company": "Neofonie GmbH",
+    "companyIndustry": "IT-Dienstleister",
+    "companyCity": "Berlin",
+    "description": "Ein halbes Jahr Neofonie-Projekte wie eurapon.de (von Doc Morris aufgekauft) oder apothekenumschau.de.",
+    "stack": [
+      "Grunt",
+      "Gulp",
+      "Webpack",
+      "node.js",
+      "ES6+",
+      "HTML",
+      "Shopware",
+      "Vue",
+      "Docker",
+      "PHP",
+      "Scss",
+      "Less",
+      "Github"
+    ],
+    "work": [
+      "Shopware Theme Plugin"
+    ]
+  },
+  {
+    "dateFrom": "03/2017",
+    "dateTo": "04/2020",
+    "title": "Frontend-Entwickler",
+    "type": "Festanstellung",
+    "company": "mobile.de / ebay via Neofonie GmbH",
+    "companyIndustry": "Online Verkaufsplattform für gebrauchte Fahrzeuge.",
+    "companyCity": "Berlin",
+    "description": "Davon über zwei Jahre für mobile.de (ehemals eBay) in internationalen Projekt-Teams, Team übergreifend und in großen Teams mit über 15 Kollegen. Ein halbes Jahr Neofonie-Projekte wie eurapon.de (von Doc Morris aufgekauft) oder apothekenumschau.de.",
+    "stack": [
+      "Grunt",
+      "Gulp",
+      "Webpack",
+      "node.js",
+      "ES6+",
+      "HTML",
+      "React",
+      "Vue",
+      "Google Closure Templates",
+      "Google Tag Manager (Tracking)",
+      "Docker",
+      "PHP",
+      "Scss",
+      "Less",
+      "Github",
+      "Selenium",
+      "Nightwatch.js",
+      "Java"
+    ],
+    "work": [
+      "Cloud-Migration von (Micro-) Services",
+      "Frontend-Module für Hauptplattform https://mobile.de (bspw. 3D Innen- und Außenansicht)",
+      "Versions- und Datenbank-Migration",
+      "Wartung und Erweiterung von Backoffice-Tools und B2B-Kunden-Tools",
+      "Bash Scripting"
+    ]
+  },
+  {
+    "dateFrom": "2015",
+    "dateTo": "2016",
+    "title": "Frontend-Entwickler",
+    "company": "Valid Digitalagentur GmbH",
+    "companyCity": "Berlin",
+    "companyIndustry": "Werbeagentur",
+    "description": "Corporate Websites in kleinen Teams",
+    "stack": [
+      "Grunt",
+      "node.js",
+      "ES6+",
+      "PHP",
+      "HTML",
+      "Scss",
+      "Less",
+      "Github"
+    ],
+    "work": [
+      "Frontend-Build-Pipelines",
+      "Micro-Sites / One-Pager für bspw. Schindler Aufzüge",
+      "Typo3 Frontend für eine Werbe-Agentur"
+    ]
+  },
+  {
+    "dateFrom": "2015",
+    "dateTo": "2016",
+    "title": "Frontend-Entwickler",
+    "company": "familie redlich Systeme GmbH",
+    "companyCity": "Berlin",
+    "companyIndustry": "Werbeagentur",
+    "description": "Verschiedene Projekte",
+    "stack": [
+      "ES5",
+      "HTML",
+      "Css",
+      "Github"
+    ],
+    "work": [
+      "Frontend für Corporate Websites"
+    ]
+  },
+  {
+    "dateFrom": "2008",
+    "dateTo": "2016",
+    "title": "Frontend-Entwickler Full-Stack",
+    "company": "Freelancer Und Festangestellt",
+    "companyCity": "Berlin, Leipzig, Bremen",
+    "companyIndustry": "Werbeagentur, Startup, IT-Dienstleister, Eigene Kunden",
+    "description": "Verschiedene Projekte",
+    "stack": [
+      "ES5",
+      "PHP",
+      "HTML",
+      "Css",
+      "Github"
+    ],
+    "work": [
+      "Festanstellung bei Construktiv GmbH, Bremen",
+      "Festanstellung bei Unternehmenswelt.de, Leipzig",
+      "Festanstellung bei Interactive Tools GmbH, Berlin",
+      "Freelancer mit Kundenprojekten"
+    ]
+  },
+  {
+    "dateFrom": "1999",
+    "dateTo": "2002",
+    "title": "Mitgründer, Gesellschafter, Mediendesigner, Web-Entwickler",
+    "company": "XEBEC Mediafactory GmbH",
+    "companyCity": "Regensburg",
+    "companyIndustry": "IT-Dienstleister",
+    "description": "Verschiedene Projekte",
+    "stack": [
+      "ES5",
+      "HTML",
+      "Css"
+    ],
+    "work": [
+      "Online Verkaufsplattform einer Pressebild-Agentur",
+      "Corporate Website für DSL-Anbieter in München",
+      "Virtuelle Fertigungsstrecke in VRML für bekannten Chip-Hersteller"
+    ]
+  }
+]

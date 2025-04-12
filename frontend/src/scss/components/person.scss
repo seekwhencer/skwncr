@@ -1,0 +1,47 @@
+.section-person {
+  background-color: $color-two;
+
+  .container {
+    width: 1400px;
+    margin: auto;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row;
+
+    > div:nth-child(1) {
+      width: 10%;
+      padding-top: 50px;
+    }
+
+    > div:nth-child(2) {
+      width: 40%;
+      line-height: 1.5em;
+      padding-right: 50px;
+    }
+
+    > div:nth-child(3) {
+      width: 20%;
+      padding-top: 50px;
+    }
+  }
+
+  .item {
+    flex-grow: 3;
+    width: 33.3333%;
+
+    .row {
+      display: block;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .label {
+      font-weight: 800;
+      width: 200px;
+      display: block;
+      font-size: $fs-xs;
+    }
+  }
+}

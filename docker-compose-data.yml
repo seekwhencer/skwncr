@@ -1,0 +1,19 @@
+services:
+  apply-o-mat_data:
+    image: node:23-alpine
+    working_dir: /app/data
+    container_name: ${PROJECT_NAME}_data
+
+    # the app is not starting !
+    # just enter:
+    #
+    #   docker exec -it apply-o-mat_data /bin/sh -c "npm start"
+    #
+    # to run the server
+
+    command: 'npm start'
+    user: root
+    volumes:
+      - .:/app
+    environment:
+      - DEBUG=true

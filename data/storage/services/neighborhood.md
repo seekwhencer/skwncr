@@ -1,0 +1,1 @@
+Da ich auf dem Dorf ansässig bin, helfe ich gerne den Locals bei den alltäglichen IT-Problemchen wie dem Internet-Zugang, der Smart-Home-Konfiguration, dem kaputten Laptop, der digitaler Bürokratie oder bei digitalen Behörden-Angelegenheiten.

@@ -1,0 +1,22 @@
+{
+  "name": "apply-o-mat-frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "sass-embedded": "^1.86.3",
+    "vite": "^6.2.5"
+  },
+  "dependencies": {
+    "highlight.js": "^11.11.1",
+    "lucide": "^0.487.0",
+    "markdown-it": "^14.1.0"
+  }
+}

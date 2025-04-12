@@ -1,0 +1,45 @@
+{
+  "birthYear": 1977,
+  "birthDay": "30.08.1977",
+  "birthCity": "Halle (Saale)",
+  "city": "Britz, 16230",
+  "job": "Frontend-Entwickler",
+  "text": "${pages/person.md}",
+  "education": [
+    {
+      "title": "Studium Digitale Medien",
+      "dateFrom": "09/2003",
+      "dateTo": "07/2008",
+      "location": "Hochschule für Künste Bremen"
+    },
+    {
+      "title": "Auslandssemester Neue Medien",
+      "dateFrom": "01/2006",
+      "dateTo": "07/2006",
+      "location": "Ehemals Hochschule für Gestaltung und Kunst Zürich"
+    },
+    {
+      "title": "Fachoberschule für Gestaltung, FOS 12. Klasse",
+      "dateFrom": "08/2002",
+      "dateTo": "07/2003",
+      "location": "Adolph-Kolping-Berufskolleg Münster"
+    }
+  ],
+  "languages": [
+    {
+      "title": "Deutsch",
+      "level": "Muttersprache"
+    },
+    {
+      "title": "Englisch",
+      "level": "Fortgeschritten"
+    }
+  ],
+  "social": [
+    {
+      "name" : "Linkedin",
+      "icon" : "",
+      "url" : ""
+    }
+  ]
+}

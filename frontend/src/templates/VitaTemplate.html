@@ -1,0 +1,37 @@
+<section class="section-vita">
+    <h2 class="">Vita</h2>
+    <div class="container">
+        ${vita.map(v => `
+        <div class="vita">
+            <h3>${v.title}</h3>
+            <div class="vita--time">
+                <span>${v.dateFrom}</span> bis
+                <span>${v.dateTo}</span>
+            </div>
+            <div class="vita--company">
+                ${v.company}
+                <span class="vita--company--city">
+                    ${v.companyCity !== undefined ? `in ${v.companyCity}` : ''}
+                </span>
+                <div class="vita--company-industry">
+                    ${v.companyIndustry !== undefined ? `${v.companyIndustry}` : ''}
+                </div>
+            </div>
+            <div class="vita--description">
+                ${v.description}
+            </div>
+            <ul class="vita--work">
+                ${v.work.map(w => `
+                <li class="vita--work--item">${w}</li>
+                `).join('')}
+            </ul>
+            <div class="vita--stack">
+                ${v.stack.map(s => `
+                <div class="vita--stack--skill">${s}</div>
+                `).join('')}
+            </div>
+        </div>
+        `).join('')}
+    </div>
+    <div data-element="section-footer"></div>
+</section>

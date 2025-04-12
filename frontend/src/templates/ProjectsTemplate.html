@@ -1,0 +1,14 @@
+<section class="section-projects">
+    <h2 class="">Projekte</h2>
+    <div class="container">
+        ${projects.map(p => `
+        <div class="project">
+            <div class="project--head">
+                <h3 class="name">${p.title}</h3>
+                <div class="text">${p.description}</div>
+            </div>
+        </div>
+        `).join('')}
+    </div>
+    <div data-element="section-footer"></div>
+</section>

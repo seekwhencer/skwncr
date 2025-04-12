@@ -1,0 +1,16 @@
+{
+  "up": [
+    "node.js",
+    "Astro.js",
+    "Vite",
+    "HTTP2",
+    "InfluxDB 2"
+  ],
+  "side": [
+    "mysql",
+    "php"
+  ],
+  "down": {
+
+  }
+}
