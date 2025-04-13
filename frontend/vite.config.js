@@ -1,4 +1,5 @@
 import {defineConfig} from 'vite';
+import { patchCssModules } from 'vite-css-modules'
 
 // https://vitejs.dev/config/
 
@@ -9,6 +10,9 @@ export default defineConfig({
     security: {
         checkOrigin: false
     },
+    plugins: [
+        patchCssModules()
+    ],
     server: {
         host: true,
         port: 8080,
@@ -21,5 +25,9 @@ export default defineConfig({
     },
     devToolbar: {
         enabled: true
+    },
+    build: {
+        // Recommended minimum target (See FAQ for more details)
+        target: 'es2022'
     }
 });

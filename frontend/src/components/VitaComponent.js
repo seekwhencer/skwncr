@@ -8,7 +8,7 @@ export default class VitaComponent extends Component {
 
         this.target = this.options.target ? this.options.target : this.parent;
 
-        this.element = _TD(VitaTemplate, {
+        this.element = VitaTemplate.dom({
             vita: _DATA.vita,
             icons: this.app.icons
         });
@@ -17,7 +17,7 @@ export default class VitaComponent extends Component {
 
         // footer element
         this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
-        this.sectionFooterElement = _TD(SectionFooterElement, {});
+        this.sectionFooterElement = SectionFooterElement.dom({});
         this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
     }
 }

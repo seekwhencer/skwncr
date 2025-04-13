@@ -48,7 +48,7 @@
     "icon": "neighbourhood"
   },
   {
-    "name": "Spass",
+    "name": "Off Topic",
     "text": "${services/fun.md}",
     "text_short": "Streng dem definierten Wesen des Blindtextes folgend, fungiere ich als solcher. Dennoch habe ich eine Bitte: Lesen Sie mich.",
     "icon": "fun"

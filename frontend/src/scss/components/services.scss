@@ -15,63 +15,77 @@
   .service {
     height: 200px;
     padding: 70px 0 0 0;
-    display: block;
     margin: 0 0 50px 0;
     position: relative;
-    background: rgba(255, 255, 255, 0.9);
+    background-color:black;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    outline: 10px solid rgba(255,255,255,0);
-    outline-offset: 0;
-    transition: all 1s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 0.7;
 
-    &--head {
+    .icon {
       position: absolute;
-      bottom: 30px;
+      bottom: -10px;
+      left: calc(50% - 30px);
+      display: inline-block;
+      transform: scale(2);
+      transition: all 0.3s ease-in-out;
+      background-color: colors.$color-gray-a;
+      border-radius: 50px;
+      height: 36px;
+      width: 36px;
+      border: 2px solid black;
+
+
+      svg {
+        margin: 6px;
+
+        * {
+          color: black;
+        }
+      }
+    }
+
+    .name {
+      position: absolute;
+      bottom: 60px;
       display: block;
       width: 100%;
       text-align: center;
-
-      svg {
-        display: inline-block;
-        transform: scale(2);
-        margin-right: 10px;
-        transition: all 0.3s ease-in-out;
-
-        * {
-          color: colors.$color-one;
-        }
-      }
-
-      .name {
-        padding: 5px;
-        display: inline-block;
-        font-weight: 700;
-        font-size: typo.$fs-l;
-        color: colors.$color-one;
-      }
+      padding: 10px 0;
+      font-weight: 700;
+      font-size: typo.$fs-l;
+      background-color: colors.$color-gray-f;
+      color: white;
     }
 
     .text {
       padding: 20px;
-      color: colors.$color-matte-e;
+      color: white;
       position: absolute;
-      top: 30px;
+      top: 20px;
       font-weight: 300;
       line-height: 1.6em;
     }
 
     &:hover {
-      outline: 1px solid colors.$color-gray-d;
-      outline-offset: 10px;
-      transition: all 0.2s ease-in-out;
+      transition: opacity 0.2s ease-in-out;
       cursor: pointer;
+      opacity: 1;
 
-      svg {
-        transform: scale(2.3);
-        transition: all 0.3s ease-in-out;
+      .icon {
+        background-color: colors.$color-three;
       }
 
+      svg {
+        * {
+          color: black;
+        }
+      }
+
+      .name {
+        background-color: colors.$color-three;
+        color: colors.$color-matte-d;
+      }
     }
   }
 }

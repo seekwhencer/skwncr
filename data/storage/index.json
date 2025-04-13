@@ -6,5 +6,6 @@
   "skills": "${skills.json}",
   "services": "${services.json}",
   "projects": "${projects.json}",
-  "impress": "${pages/impress.json}"
+  "impress": "${pages/impress.json}",
+  "footer": "${footer.json}"
 }

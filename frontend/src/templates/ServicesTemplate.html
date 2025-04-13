@@ -3,11 +3,9 @@
     <div class="container">
         ${services.map(s => `
         <div class="service">
-            <div class="service--head">
-                ${icons[s.icon]}
-                <h3 class="name">${s.name}</h3>
-            </div>
-            <div class="text">${_MD(s.text_short)}</div>
+            <div class="icon">${icons[s.icon]}</div>
+            <h3 class="name">${s.name}</h3>
+            <div class="text">${s.text_short.md()}</div>
         </div>
         `).join('')}
     </div>

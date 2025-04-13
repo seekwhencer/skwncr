@@ -8,7 +8,7 @@ export default class LayoutComponent extends Component {
 
         this.target = this.options.target ? this.options.target : this.parent;
 
-        this.element = _TD(ProjectsTemplate, {
+        this.element = ProjectsTemplate.dom({
             projects: _DATA.projects,
             icons: this.app.icons
         });
@@ -17,7 +17,7 @@ export default class LayoutComponent extends Component {
 
         // footer element
         this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
-        this.sectionFooterElement = _TD(SectionFooterElement, {});
+        this.sectionFooterElement = SectionFooterElement.dom({});
         this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
     }
 

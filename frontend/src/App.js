@@ -12,7 +12,8 @@ import {
     HeartHandshake,
     Linkedin,
     Facebook,
-    Youtube
+    Youtube,
+    Github
 } from 'lucide';
 
 import HeaderComponent from "./components/HeaderComponent.js";
@@ -48,7 +49,8 @@ export default class App {
             fun: createElement(TentTree).outerHTML,
             linkedin: createElement(Linkedin).outerHTML,
             facebook: createElement(Facebook).outerHTML,
-            youtube: createElement(Youtube).outerHTML
+            youtube: createElement(Youtube).outerHTML,
+            github: createElement(Github).outerHTML
         }
 
         /**

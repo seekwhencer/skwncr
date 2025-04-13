@@ -8,8 +8,8 @@ export default class FooterComponent extends Component {
 
         this.target = this.options.target ? this.options.target : this.parent;
 
-        this.element = _TD(FooterTemplate, {
-            data: _DATA,
+        this.element = FooterTemplate.dom({
+            text: _DATA.footer.text,
             icons: this.app.icons
         });
 
@@ -17,7 +17,7 @@ export default class FooterComponent extends Component {
 
         // footer element
         this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
-        this.sectionFooterElement = _TD(SectionFooterElement, {});
+        this.sectionFooterElement = SectionFooterElement.dom({});
         this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
     }
 }

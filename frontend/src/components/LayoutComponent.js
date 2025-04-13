@@ -7,7 +7,7 @@ export default class LayoutComponent extends Component {
 
         this.target = this.options.target ? this.options.target : this.parent;
 
-        this.element = _TD(LayoutTemplate, {
+        this.element = LayoutTemplate.dom({
             data: _DATA,
             icons: this.app.icons
         });

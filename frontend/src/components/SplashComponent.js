@@ -8,7 +8,7 @@ export default class LayoutComponent extends Component {
 
         this.target = this.options.target ? this.options.target : this.parent;
 
-        this.element = _TD(SplashTemplate, {
+        this.element = SplashTemplate.dom({
             splash: _DATA.intro,
             icons: this.app.icons
         });
@@ -17,7 +17,9 @@ export default class LayoutComponent extends Component {
 
         // footer element
         this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
-        this.sectionFooterElement = _TD(SectionFooterElement, {});
+        this.sectionFooterElement = SectionFooterElement.dom({});
         this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
+
+        // console.log('>>>', this.element.css().background() );
     }
 }

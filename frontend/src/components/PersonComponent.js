@@ -7,7 +7,7 @@ export default class PersonComponent extends Component {
         super(parent, options);
 
         this.target = this.options.target ? this.options.target : this.parent;
-        this.element = _TD(PersonTemplate, {
+        this.element = PersonTemplate.dom({
             person: _DATA.person,
             age: this.calcAge(),
             icons: this.app.icons
@@ -16,7 +16,7 @@ export default class PersonComponent extends Component {
 
         // footer element
         this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
-        this.sectionFooterElement = _TD(SectionFooterElement, {});
+        this.sectionFooterElement = SectionFooterElement.dom({});
         this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
     }
 

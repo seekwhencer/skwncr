@@ -7,7 +7,7 @@ export default class HeaderComponent extends Component {
 
         this.target = this.options.target ? this.options.target : this.parent;
 
-        this.element = _TD(HeaderTemplate, {
+        this.element = HeaderTemplate.dom({
             data: _DATA,
             icons: this.app.icons
         });

@@ -3,10 +3,10 @@
     <div class="container">
         <div class="content">
             <div class="image">
-                <img src="/public/me.jpg" alt="me">
+                <img src="/images/me.jpg" alt="me">
             </div>
             <div class="text">
-                ${_MD(person.text)}
+                ${(person.text.md())}
             </div>
             <div class="specs">
                 <div class="block">
@@ -49,6 +49,7 @@
                     </div>
                     <h4>Social</h4>
                     <div class="row social-icons">
+                        <a href="" target="_blank">${icons.github}</a>
                         <a href="" target="_blank">${icons.linkedin}</a>
                         <a href="" target="_blank">${icons.facebook}</a>
                         <a href="" target="_blank">${icons.youtube}</a>
