@@ -7,11 +7,11 @@ in Münster mein Fachabitur (12. Klasse) in Gestaltung nachholte.
 Denn bevor meine akademische Laufbahn begann, unternahm ich einige interessante Experimente in Sachen
 Selbstständigkeit und GmbH-Gründung, die ich zu meiner Zufriedenheit hinter mir ließ - und wieder ins Bildungssystem eintauchte. 
 
-Ich freue mich riesig, dass die Browser heute all das können, wovon man vor einiger Zeit noch geträumt hat.
+Ich freue mich heute riesig, dass die Browser all das können, wovon man vor einiger Zeit noch geträumt hat.
 Um so mehr ist es mir eine Freunde, im Spannungsfeld zwischen Infrastruktur, Backend und **Nutzererwartung**
 ansprechende und vor allem funktionale, technisch ausgereifte, wartbare und zukunftsfähige Web-UIs zu realisieren.
 
-Seit sich Javascript mit node.js auch serverseitig einsätzen lässt, entwickle ich auch **Microservices**
+Seit sich Javascript mit node.js auch serverseitig einsätzen lässt, entwickle ich auch **Microservices**, 
 monolithische Server-Apps oder System-Orchestratoren.
 
 Zu allem Überfluss widme ich mich schon seit über zehn Jahren dem **Internet der Dinge** mit

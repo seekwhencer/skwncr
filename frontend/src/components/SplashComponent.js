@@ -12,14 +12,40 @@ export default class LayoutComponent extends Component {
             splash: _DATA.intro,
             icons: this.app.icons
         });
-
         this.target.element.append(this.element);
+
+        // typo
+        this.title = this.element.querySelector('h1');
+        this.subTitle = this.element.querySelector('.subtitle');
+        this.scrollMax = this.element.getBoundingClientRect().height;
 
         // footer element
         this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
         this.sectionFooterElement = SectionFooterElement.dom({});
         this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
 
-        // console.log('>>>', this.element.css().background() );
+        window.addEventListener("scroll", (event) => this.onScroll(event));
+
+    }
+
+    onScroll(e) {
+        this.scroll = window.scrollY;
+        this.scale = 1 / this.scrollMax * this.scroll;
+
+        this.title.css()
+            .filter(`blur(${this.scale * 20}px)`)
+            .letterSpacing(`${this.scale}em`)
+            .transform(`translateY(${this.scale * (this.scrollMax / 2)}px)`);
+
+        this.subTitle.css()
+            .filter(`blur(${this.scale * 20}px)`)
+            .letterSpacing(`${this.scale}em`)
+            .transform(`translateY(${this.scale * (this.scrollMax / 2)}px)`);
+
+        if (this.scale >= 0 && this.scale <= 1) {
+            this.element.classList.add('splash');
+        } else {
+            this.element.classList.remove('splash');
+        }
     }
 }

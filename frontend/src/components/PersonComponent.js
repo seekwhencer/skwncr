@@ -1,4 +1,5 @@
 import Component from "./Component.js";
+import FaceImageElement from "./person/FaceImage.js";
 import PersonTemplate from "../templates/PersonTemplate.html?raw";
 import SectionFooterElement from "../templates/Elements/SectionFooterElement.html?raw";
 
@@ -13,6 +14,9 @@ export default class PersonComponent extends Component {
             icons: this.app.icons
         });
         this.target.element.append(this.element);
+
+        // the face image
+        this.faceImage = new FaceImageElement(this);
 
         // footer element
         this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');

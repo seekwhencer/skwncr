@@ -4,6 +4,18 @@
 .section-person {
   background-color: colors.$color-two;
 
+  h2 {
+    strong {
+      &.one {
+        font-weight: 600;
+      }
+
+      &.two {
+        font-weight: 900;
+      }
+    }
+  }
+
   .container {
     width: 1400px;
     margin: auto;
@@ -16,6 +28,8 @@
       height: 300px;
       overflow: hidden;
       border-radius: 150px;
+      top: 150px;
+      transform-origin: center center;
 
       img {
         height: 100%;
@@ -30,6 +44,7 @@
 
       p {
         margin-bottom: 20px;
+        font-size: typo.$fs-m;
       }
     }
   }

@@ -1,3 +1,7 @@
+/**
+ *
+ * @returns {"expanded" | "compressed" | 1 | "long" | "short" | "narrow" | "long" | "short" | "narrow" | string | CSSStyleDeclaration}
+ */
 export default function () {
     const target = this;
     const style = getComputedStyle(this);
