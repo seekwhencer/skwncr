@@ -25,7 +25,8 @@
       "webpack 6",
       "MING-Stack",
       "Wordpress",
-      "ESP32"
+      "ESP32",
+      "Linux"
     ],
     "work": [
       "Plugin-Entwicklung (React) für Grafana 10",
@@ -60,7 +61,8 @@
       "Github",
       "Reverse Proxy (jwilders)",
       "Mailhog",
-      "SSH Tunneling"
+      "SSH Tunneling",
+      "Linux"
     ],
     "work": [
       "Redesign Shopware 5 Shop",
@@ -94,7 +96,8 @@
       "PHP",
       "Scss",
       "Less",
-      "Github"
+      "Github",
+      "Linux"
     ],
     "work": [
       "Shopware Theme Plugin"
@@ -127,7 +130,8 @@
       "Github",
       "Selenium",
       "Nightwatch.js",
-      "Java"
+      "Java",
+      "Linux"
     ],
     "work": [
       "Cloud-Migration von (Micro-) Services",
@@ -153,7 +157,8 @@
       "HTML",
       "Scss",
       "Less",
-      "Github"
+      "Github",
+      "Linux"
     ],
     "work": [
       "Frontend-Build-Pipelines",
@@ -173,7 +178,8 @@
       "ES5",
       "HTML",
       "Css",
-      "Github"
+      "Github",
+      "Linux"
     ],
     "work": [
       "Frontend für Corporate Websites"
@@ -192,7 +198,8 @@
       "PHP",
       "HTML",
       "Css",
-      "Github"
+      "Github",
+      "Linux"
     ],
     "work": [
       "Festanstellung bei Construktiv GmbH, Bremen",
@@ -212,12 +219,82 @@
     "stack": [
       "ES5",
       "HTML",
-      "Css"
+      "Css",
+      "Dreamweaver",
+      "mootools"
     ],
     "work": [
       "Online Verkaufsplattform einer Pressebild-Agentur",
       "Corporate Website für DSL-Anbieter in München",
       "Virtuelle Fertigungsstrecke in VRML für bekannten Chip-Hersteller"
+    ]
+  },
+  {
+    "dateFrom": "1997",
+    "dateTo": "1999",
+    "title": "me, myself and i",
+    "company": "Selbstständig",
+    "companyCity": "Halle (Saale)",
+    "companyIndustry": "Fernseh- und Videoproduktion",
+    "description": "Eine Mischung aus 3D-Design und brachialer Fernseh-Technik. Ich war relativ oft und lange mit Ü-Wagen und Mannschaft in ganz Deutschland unterwegs und habe verschiedenste Städte gesehen - und auch die unterschiedlichsten Sendungsformate von hinter der Kamera. Klingt merkwürdig: aber ich habe wirklich von Gorbatschow den Ton gemischt oder bei Helmut Kohl hinter der Kamera gestanden.",
+    "stack": [
+      "Lightwave 3D",
+      "Photoshop",
+      "Flash",
+      "Dreamweaver",
+      "mootools",
+      "Amiga Computer"
+    ],
+    "work": [
+      "3D-Animation (Immobilien, Prozesse und Anlagen, Flying Logos) ",
+      "Ü-Wagen-Techniker",
+      "Tontechniker",
+      "Kameramann Live Sportübertragung"
+    ]
+  },
+  {
+    "dateFrom": "1996",
+    "dateTo": "1997",
+    "title": "Mediendesigner",
+    "company": "AV-Studio",
+    "companyCity": "Halle (Saale)",
+    "companyIndustry": "Medienhaus",
+    "description": "Ein Jahr CD-Produktion \"Halle der Wirtschaftsstandort\". Meine erste richtige Produktion in einer Drei-Mann-Firma mit vielen Überstunden. Aber war geil.",
+    "stack": [
+      "Lightwave 3D",
+      "Photoshop",
+      "Flash",
+      "Dreamweaver",
+      "mootools"
+    ],
+    "work": [
+      "3D-Animation und Visualisierung",
+      "Macromedia Flash ;)"
+    ]
+  },
+  {
+    "dateFrom": "1991",
+    "dateTo": "1996",
+    "title": "Irgendwas mit Medien",
+    "company": "",
+    "companyCity": "Halle (Saale)",
+    "companyIndustry": "",
+    "description": "Rumgebastelt und experimentiert als fließender Übergang zwischen Schul- und Arbeitswelt. Ich wollte eigentlich eine Ausbildung anfangen - allerdings gab es die erst ein Jahr später: den \"Mediengestalter Bild und Ton\". Also bin ich gleich rein und habe für ein Taschengeld \"Medien-Jobs\" gemacht. Direkt nach der Schule bin ich für ein Azubi-Gehalt in eine Fernseh-Produktionsfirma und habe dort im Studio Grafik für lokale Berichterstattung gemacht.",
+    "stack": [
+      "Lightwave 3D",
+      "Photoshop",
+      "Dreamweaver",
+      "Deluxe Paint",
+      "Soundtracker / Pro-Tracker",
+      "Demo Maker",
+      "Scala"
+    ],
+    "work": [
+      "3D-Animation und Visualisierung für \"RTL-Boxmanager\"",
+      "DFÜ-Mailbox in der Nacht",
+      "Vierspur-Musik gemacht",
+      "EB-Assistent",
+      "On-Air-Grafik"
     ]
   }
 ]
