@@ -23,7 +23,7 @@ header {
       margin: 0;
       list-style-type: none;
       width: calc(100% / 6);
-      font-size: typo.$fs-xl;
+      font-size: typo.$fs-l;
       font-weight: 200;
       line-height: 100px;
       padding: 0 10px;
@@ -33,7 +33,7 @@ header {
       }
 
       &.active {
-
+        font-weight: 800;
       }
 
       &.home {

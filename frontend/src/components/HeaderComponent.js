@@ -55,15 +55,18 @@ export default class HeaderComponent extends Component {
     active() {
         const sections = document.querySelectorAll('section');
         sections.forEach(section => {
+            const gap = 200;
             const rect = section.getBoundingClientRect();
-            const offset = parseInt(section.css().scrollMarginTop().replace('px',''));
-            const height = rect.height;
-            const rTop = rect.top;
-            const top = section.offsetTop;
-            const end = (top + height - offset);
+            const offset = parseInt(section.css().scrollMarginTop().replace('px', ''));
+            const height = parseInt(rect.height);
+            const rTop = parseInt(rect.top);
+            const top = parseInt(section.offsetTop);
+            const end = top + height - offset - gap;
             const button = this.element.querySelector(`[data-scroll-target=${section.dataset.section}]`);
 
-            if (rTop < offset && this.scroll < end) {
+            //console.log('>>>', parseInt(this.scroll), section.dataset.section.padEnd(10, '.'), rTop, offset, end, (rTop < offset), this.scroll < end);
+
+            if (rTop <= offset && this.scroll < end) {
                 section.classList.add('active');
                 button.classList.add('active');
             } else {
