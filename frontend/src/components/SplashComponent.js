@@ -34,7 +34,7 @@ export default class LayoutComponent extends Component {
 
         this.title.css()
             .filter(`blur(${this.scale * 20}px)`)
-            .letterSpacing(`${this.scale}em`)
+            .letterSpacing(`${this.scale*0.5}em`)
             .transform(`translateY(${this.scale * (this.scrollMax / 2)}px)`);
 
         this.subTitle.css()

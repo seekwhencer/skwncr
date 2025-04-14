@@ -6,6 +6,8 @@
   height: 100vh;
   padding-bottom: 0;
   position: relative;
+  overflow: hidden;
+  scroll-margin-top: 0;
 
   .background {
     position: absolute;
@@ -27,14 +29,20 @@
     position: absolute;
 
     h1 {
+      position: absolute;
       color: white;
       font-weight: 100;
       font-size: typo.$fs-omg;
-      margin-top: 40vh;
+      bottom: calc(50vh);
+      width: 100vw;
       text-align: center;
+      text-wrap: nowrap;
     }
 
     .subtitle {
+      position: absolute;
+      bottom: calc(50vh - 30px);
+      width: 100vw;
       display: block;
       color: white;
       font-weight: 100;
