@@ -1,13 +1,19 @@
-<section class="section-services"  data-section="services">
+<section class="section-services" data-section="services">
     <h2 class="">Services</h2>
     <div class="container">
-        ${services.map(s => `
-        <div class="service">
-            <div class="icon">${icons[s.icon]}</div>
-            <h3 class="name">${s.name}</h3>
-            <div class="text">${s.text_short.md()}</div>
+        <div class="services">
+            ${services.map(s => `
+            <div class="service" data-name="${s.icon}">
+                <div class="icon">${icons[s.icon]}</div>
+                <h3 class="name">${s.name}</h3>
+                <div class="text">${s.text_short.md()}</div>
+            </div>
+            `).join('')}
+            <div class="service empty" data-name="empty-first">empty</div>
+            <div class="service empty" data-name="empty-second">empty</div>
+            <div class="service empty" data-name="empty-third">empty</div>
+            <div class="service empty" data-name="empty-4th">empty</div>
         </div>
-        `).join('')}
     </div>
     <div data-element="section-footer"></div>
 </section>

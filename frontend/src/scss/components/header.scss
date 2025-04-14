@@ -23,17 +23,37 @@ header {
       margin: 0;
       list-style-type: none;
       width: calc(100% / 6);
-      font-size: typo.$fs-l;
+      font-size: typo.$fs-m;
       font-weight: 200;
       line-height: 100px;
       padding: 0 10px;
+      position: relative;
+      overflow: hidden;
 
       &:hover {
         cursor: pointer;
       }
 
-      &.active {
+      &:before {
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
         font-weight: 800;
+        line-height: 100px;
+        padding: 0 10px;
+        transform: translateX(100%);
+        transition: all 0.2s ease-in-out;
+      }
+
+      &.active {
+        &:before {
+          opacity: 1;
+          transition: all 0.2s ease-in-out;
+          transform: translateX(0);
+        }
       }
 
       &.home {
@@ -43,31 +63,61 @@ header {
 
       &.person {
         background-color: colors.$color-two;
+
+        &:before {
+          content: 'Person';
+          background-color: colors.$color-two;
+        }
       }
 
       &.vita {
         background-color: colors.$color-three;
+
+        &:before {
+          content: 'Vita';
+          background-color: colors.$color-three;
+        }
       }
 
       &.skills {
         background-color: colors.$color-four;
         color: white;
+
+        &:before {
+          content: 'Skills';
+          background-color: colors.$color-four;
+        }
       }
 
       &.services {
         background-color: colors.$color-five;
         color: white;
+
+        &:before {
+          content: 'Services';
+          background-color: colors.$color-five;
+        }
       }
 
       &.projects {
         background-color: colors.$color-six;
         color: white;
+
+        &:before {
+          content: 'Projekte';
+          background-color: colors.$color-six;
+        }
       }
 
       &.impress {
         background-color: colors.$color-ocean;
         color: white;
         font-size: typo.$fs-m;
+
+        &:before {
+          content: 'Impressum';
+          background-color: colors.$color-ocean;
+        }
       }
     }
   }
