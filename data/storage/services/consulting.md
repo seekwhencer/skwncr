@@ -1,32 +1,8 @@
-Streng dem definierten Wesen des Blindtextes folgend, fungiere ich als solcher und gebe mich unverbindlich inhaltsleer. Dennoch habe ich eine Bitte: lesen Sie mich.
+Wobei kann ich helfen?
 
-```javascript
-const anbd = 'hossa';
-```
+Brauchen Sie eine Zweitmeinung zu einem Angebot, was erhalten haben?
+Steht ein neues Online-Projekt bei Ihnen an, und sie suchen jemanden, der für Sie die Wissensarbeit übernimmt?
+Wollen Sie Ihr Unternehmen umbauen und digitale Helfer einsetzen? 
 
-#### JSON-Data-Generator
 
-- Dieser Job erzeugt ein finales JSON-File aus vielen verschachtelten JSON-Files.
-- Auch Markdown-Files können als Wert importiert werden.
-
-##### Anwendung
-- einfach `npm start` ausführen, was einen Build erzeugt und den Watch-Task startet.
-- läuft der Watch-Task, wird bei jeder Änderung an den Files der Build ausgeführt
-
-##### Konfiguration
-- relativ vom `pwd` wird der Pfad in der `index.js` definiert:
-```javascript
-const sourceRootPath = './storage';
-const sourceRootFile = 'index.json';
-const targetFile = 'data.json';
-```
-
-##### Anwendung
-- JSON verschachteln
-    ```json
-    "services": "${services.json}"  
-    ```
-- Markdown einfügen
-    ```json
-    "text": "${services/development.md}"
-    ```
+Ich kann Sie dabei unterstützen. Sehr gern teile ich mein Wissen oder eigne mir neues Wissen für Sie an.

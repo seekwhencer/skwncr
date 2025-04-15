@@ -1,1 +1,11 @@
-Streng dem definierten Wesen des Blindtextes folgend, fungiere ich als solcher und gebe mich unverbindlich inhaltsleer. Dennoch habe ich eine Bitte: lesen Sie mich.
+Klassische Lösungen sind für mich existierende Open Source Lösungen für die gängigsten Aufgabenstellungen.
+Ich setze auf:
+
+- Wordpress
+- Strapi.js (self hosted)
+- Frameworks und Bibliotheken
+- zigbee2mqtt
+- influxDB
+- mysql
+
+
