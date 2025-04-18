@@ -19,6 +19,11 @@ export default class LayoutComponent extends Component {
         this.subTitle = this.element.querySelector('.subtitle');
         this.scrollMax = this.element.getBoundingClientRect().height;
 
+        // video @TODO from data json
+        this.videoSources = _DATA.intro.videos;
+        this.video = this.element.querySelector('video');
+        this.randomVideo();
+
         // footer element
         this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
         this.sectionFooterElement = SectionFooterElement.dom({});
@@ -34,7 +39,7 @@ export default class LayoutComponent extends Component {
 
         this.title.css()
             .filter(`blur(${this.scale * 20}px)`)
-            .letterSpacing(`${this.scale*0.5}em`)
+            .letterSpacing(`${this.scale * 0.5}em`)
             .transform(`translateY(${this.scale * (this.scrollMax / 2)}px)`);
 
         this.subTitle.css()
@@ -47,5 +52,19 @@ export default class LayoutComponent extends Component {
         } else {
             this.element.classList.remove('splash');
         }
+    }
+
+    /**
+     * little recursion to suppress doubles
+     */
+    randomVideo() {
+        const r = () => {
+            const rand = Math.floor(Math.random() * this.videoSources.length);
+            if (this.video.src.includes(this.videoSources[rand]))
+                return r();
+
+            return rand;
+        }
+        this.video.src = this.videoSources[r()];
     }
 }
