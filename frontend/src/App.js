@@ -13,7 +13,9 @@ import {
     Linkedin,
     Facebook,
     Youtube,
-    Github
+    Github,
+    Bot,
+    Heart
 } from 'lucide';
 
 import HeaderComponent from "./components/HeaderComponent.js";
@@ -50,7 +52,9 @@ export default class App {
             linkedin: createElement(Linkedin).outerHTML,
             facebook: createElement(Facebook).outerHTML,
             youtube: createElement(Youtube).outerHTML,
-            github: createElement(Github).outerHTML
+            github: createElement(Github).outerHTML,
+            bot: createElement(Bot).outerHTML,
+            heart: createElement(Heart).outerHTML,
         }
 
         /**
