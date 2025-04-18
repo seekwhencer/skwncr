@@ -1,23 +1,54 @@
+/**
+ * Simple on / emit "events" ;)
+ *
+ * Register an event
+ *
+ * this.on('peng', (a,b,c) => {
+ *   console.log('PENG', a,b,c);
+ * });
+ *
+ * this.on('hossa', func => func());
+ *
+ *
+ * Emit an event
+ *
+ * this.emit('peng', 'A', 'B', 'C');
+ * this.emit('hossa', () => console.log('HOSSA?'));
+ *
+  */
+
 export default class Events {
-    constructor(parent, options) {
-        this.event = {};
+    constructor() {
+        this.events = {};
     }
 
-    on() {
-        this.event.on.apply(this.event, Array.from(arguments));
+    on(name, func) {
+        if (!name || !func)
+            return;
+
+        this.events[name] === undefined ? this.events[name] = [] : null;
+        this.events[name].push(func);
     }
 
     emit() {
-        this.event.emit.apply(this.event, Array.from(arguments));
+        const args = Array.from(arguments);
+        const name = args[0];
+        const data = args.slice(1);
+
+        if (!this.events[name])
+            return;
+
+        this.events[name].forEach(func => func(...data));
     }
 
     removeListener() {
-        this.event.removeListener.apply(this.event, Array.from(arguments));
+
     }
 
-    removeAllListeners() {
-        this.event.removeAllListeners.apply(this.event, Array.from(arguments));
+    removeAllListeners(name) {
+        if (this.events[name] === undefined)
+            return;
+
+        delete this.events[name];
     }
 }
-
-
