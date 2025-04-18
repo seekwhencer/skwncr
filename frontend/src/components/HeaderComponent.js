@@ -50,6 +50,9 @@ export default class HeaderComponent extends Component {
         target.scrollIntoView({
             behavior: "smooth"
         });
+
+        if (target.dataset.section === 'splash')
+            this.app.splash.randomVideo();
     }
 
     active() {
@@ -74,5 +77,7 @@ export default class HeaderComponent extends Component {
                 button.classList.remove('active');
             }
         });
+
+
     }
 }
