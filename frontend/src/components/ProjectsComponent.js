@@ -1,24 +1,37 @@
 import Component from "./Component.js";
+import Project from "./projects/ProjectComponent.js"
 import ProjectsTemplate from "../templates/ProjectsTemplate.html?raw";
 import SectionFooterElement from "../templates/Elements/SectionFooterElement.html?raw";
 
-export default class LayoutComponent extends Component {
+export default class ProjectsComponent extends Component {
     constructor(parent, options) {
         super(parent, options);
 
         this.target = this.options.target ? this.options.target : this.parent;
-
         this.element = ProjectsTemplate.dom({
-            projects: _DATA.projects,
+            text: _DATA.projects.text,
             icons: this.app.icons
         });
-
         this.target.element.append(this.element);
+
+        // projects
+        this.createProjects();
+        this.drawProjects();
 
         // footer element
         this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
         this.sectionFooterElement = SectionFooterElement.dom({});
         this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
+    }
+
+    createProjects() {
+        this.projects = [];
+        _DATA.projects.listing.forEach(p => this.projects.push(new Project(this, p)));
+    }
+
+    drawProjects() {
+        this.projectsElement = this.element.querySelector('[data-projects]');
+        this.projects.forEach(project => project.draw());
     }
 
 }
