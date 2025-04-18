@@ -1,7 +1,10 @@
-Custom Internet of Things Devices sind meine Passion. Ich entwickle individuelle Mess- und Überwachungs-Geräte mit
+Custom Devices im Kontext vom **Internet of Things** sind meine Passion.
+Ich entwickle individuelle Mess- und Überwachungs-Geräte und binde sie in ein Monitoring-Netzwerk ein.
 
-- verschiedenen Arten von Sensoren
-- adäquater Infrastruktur
+#### Mein Spektrum reicht über:
+
+- verschiedenen Arten von Sensoren und Aktoren
+- adäquater Infrastruktur (self hosting, Web-Hosting)
 - moderne Web-Anbindung
 - basierend auf SoCs wie ESP32-Geräten oder Raspberry Pi
 - Netzwerkfähigkeit per Ethernet oder Wifi
@@ -14,3 +17,5 @@ Custom Internet of Things Devices sind meine Passion. Ich entwickle individuelle
 - SMS-Benachrichtigung
 - Push-Nachrichten
 - Chat-Bot (Mattermost, Slack, Telegram usw)
+- Web-Frontend für ESP-Geräte
+- Daten-Visualisierung

@@ -2,7 +2,7 @@
   {
     "name": "Entwicklung",
     "text": "${services/development.md}",
-    "text_short": "Streng dem definierten Wesen des Blindtextes folgend, fungiere ich als solcher. Dennoch habe ich eine Bitte: Lesen Sie mich.",
+    "text_short": "Software-Entwicklung mit Javascript für Frontend und Backend.",
     "icon": "development"
   },
   {

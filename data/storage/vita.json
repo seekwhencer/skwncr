@@ -147,7 +147,7 @@
     "title": "Frontend-Entwickler",
     "company": "Valid Digitalagentur GmbH",
     "companyCity": "Berlin",
-    "companyIndustry": "Werbeagentur",
+    "companyIndustry": "Online-Agentur",
     "description": "Corporate Websites in kleinen Teams",
     "stack": [
       "Grunt",
@@ -172,13 +172,13 @@
     "title": "Frontend-Entwickler",
     "company": "familie redlich Systeme GmbH",
     "companyCity": "Berlin",
-    "companyIndustry": "Werbeagentur",
+    "companyIndustry": "Online-Agentur",
     "description": "Verschiedene Projekte",
     "stack": [
       "ES5",
       "HTML",
       "Css",
-      "Github",
+      "git",
       "Linux"
     ],
     "work": [
@@ -186,11 +186,30 @@
     ]
   },
   {
+    "dateFrom": "2015",
+    "dateTo": "2015",
+    "title": "Frontend-Entwickler",
+    "company": "Interactive Tools GmbH",
+    "companyCity": "Berlin",
+    "companyIndustry": "Online-Agentur",
+    "description": "Verschiedene Projekte",
+    "stack": [
+      "ES5",
+      "HTML",
+      "Css",
+      "git",
+      "Linux"
+    ],
+    "work": [
+      "Frontend für Corporate Websites wie liebherr.de"
+    ]
+  },
+  {
     "dateFrom": "2008",
-    "dateTo": "2016",
+    "dateTo": "2015",
     "title": "Frontend-Entwickler Full-Stack",
-    "company": "Freelancer Und Festangestellt",
-    "companyCity": "Berlin, Leipzig, Bremen",
+    "company": "Freelancer und festangestellt",
+    "companyCity": "Leipzig",
     "companyIndustry": "Werbeagentur, Startup, IT-Dienstleister, Eigene Kunden",
     "description": "Verschiedene Projekte",
     "stack": [
@@ -202,10 +221,29 @@
       "Linux"
     ],
     "work": [
-      "Festanstellung bei Construktiv GmbH, Bremen",
-      "Festanstellung bei Unternehmenswelt.de, Leipzig",
-      "Festanstellung bei Interactive Tools GmbH, Berlin",
+      "Festanstellung bei Unternehmenswelt.de",
       "Freelancer mit Kundenprojekten"
+    ]
+  },
+  {
+    "dateFrom": "2015",
+    "dateTo": "2015",
+    "title": "Frontend-Entwickler",
+    "company": "Construktiv GmbH",
+    "companyCity": "Bremen",
+    "companyIndustry": "Online-Agentur",
+    "description": "Verschiedene Projekte",
+    "stack": [
+      "ES5",
+      "HTML",
+      "Css",
+      "git",
+      "Linux"
+    ],
+    "work": [
+      "Frontend für Corporate Websites",
+      "Mister Wong (Social Bookmarking, bevor es verkauft wurde)",
+      "Firefox-Plugin (Mister Wong)"
     ]
   },
   {

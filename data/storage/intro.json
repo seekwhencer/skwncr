@@ -4,5 +4,10 @@
   "jobSubtitle": "replace me",
   "name": "Matthias Kallenbach",
   "subtitle": "github.com/seekwhencer",
-  "summary": ""
+  "summary": "",
+  "videos": [
+    "/video/splash_video_01.mp4",
+    "/video/splash_video_02.mp4",
+    "/video/splash_video_03.mp4"
+  ]
 }
