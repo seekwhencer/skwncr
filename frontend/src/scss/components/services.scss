@@ -53,6 +53,7 @@
 
         * {
           color: black;
+          stroke-width: 1px;
         }
       }
     }
@@ -163,6 +164,7 @@
       font-weight: 700;
       font-size: typo.$fs-l;
       background-color: colors.$color-gray-f;
+      transition: all 0.3s ease-in-out;
       color: white;
     }
 
@@ -195,6 +197,7 @@
       svg {
         * {
           color: black;
+          stroke-width: 2px;
         }
       }
 
@@ -373,6 +376,8 @@
       }
 
       ul {
+        margin-bottom: 10px;
+
         li {
           margin-bottom: 5px;
         }
