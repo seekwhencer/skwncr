@@ -10,6 +10,7 @@ export default class ProjectComponent extends Component {
     draw() {
         this.element = ProjectTemplate.dom({
            ...this.options,
+            images: this.options?.images || [],
             highlight: this.options.highlight || false,
             icons: this.app.icons
         });

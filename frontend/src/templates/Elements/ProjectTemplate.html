@@ -1,6 +1,15 @@
-<div class="project${highlight ? ` highlight` : ''}"data-project>
+<div class="project${highlight ? ` highlight` : ''}" data-project>
     <div class="project--head">
-        <h3 class="name">${title}${highlight}</h3>
+        <h3 class="name">${title}</h3>
         <div class="text">${description}</div>
+    </div>
+    <div class="project--images">
+        ${images.map(i => `
+        <picture>
+            <source media="(max-width: 799px)" srcset="${i.file}?s=m"/>
+            <source media="(min-width: 800px)" srcset="${i.file}?s=l"/>
+            <img src="${i.file}?s=xl" alt=""/>
+        </picture>
+        `).join('')}
     </div>
 </div>

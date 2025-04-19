@@ -2,6 +2,7 @@ import Component from "./Component.js";
 import Project from "./projects/ProjectComponent.js"
 import ProjectsTemplate from "../templates/ProjectsTemplate.html?raw";
 import SectionFooterElement from "../templates/Elements/SectionFooterElement.html?raw";
+import ProjectStopper from "../templates/Elements/ProjectStopper.html?raw";
 
 export default class ProjectsComponent extends Component {
     constructor(parent, options) {
@@ -17,6 +18,13 @@ export default class ProjectsComponent extends Component {
         // projects
         this.createProjects();
         this.drawProjects();
+
+        // project stopper
+        this.projectStopperElement = this.element.querySelector('[data-stopper]');
+        this.projectStopper = ProjectStopper.dom({
+            icons: this.app.icons
+        });
+        this.projectStopperElement.replaceWith(this.projectStopper);
 
         // footer element
         this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');

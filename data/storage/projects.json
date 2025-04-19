@@ -10,6 +10,12 @@
         "Dockerisierte Node.js-App orchestriert (exec, spawn) tesseract und imagemagick.",
         "Mit Watch-Task: man kann neue Files (PDFs) in einen Ordner kopieren und die Umwandlung beginnt sofort",
         "Wird gespeichert als CSV und als JSON"
+      ],
+      "images": [
+        {
+          "name": "1",
+          "file": "images/projects/ocr_01.jpg"
+        }
       ]
     },
     {
@@ -23,6 +29,28 @@
         "Entwicklung Geräte-Software als MQTT-Client",
         "Vier Auflage-Sensoren für die Temperaturen: 2 x Zulauf und 2 x Rücklauf",
         "Wird von der MQTT-zu-Influx-Bridge weggespeichert (Smart Home Automation)"
+      ],
+      "images": [
+        {
+          "name": "1",
+          "file": "images/projects/heizung_01.jpg"
+        },
+        {
+          "name": "2",
+          "file": "images/projects/heizung_02.jpg"
+        },
+        {
+          "name": "3",
+          "file": "images/projects/heizung_03.jpg"
+        },
+        {
+          "name": "4",
+          "file": "images/projects/heizung_04.jpg"
+        },
+        {
+          "name": "5",
+          "file": "images/projects/heizung_05.jpg"
+        }
       ]
     },
     {
@@ -35,6 +63,18 @@
         "Entwicklung Geräte-Software als MQTT-Client",
         "Licht-Sensor: eine Box pro Himmelsrichtung im 45°-Winkel hinter die Fensterscheibe",
         "Wird von der MQTT zu Influx-Bridge weggespeichert (Smart Home Automation)"
+      ],
+      "images": [
+        {
+          "name": "1",
+          "file": "images/projects/lux_01.jpg"
+        },{
+          "name": "2",
+          "file": "images/projects/lux_02.jpg"
+        },{
+          "name": "3",
+          "file": "images/projects/lux_03.jpg"
+        }
       ]
     },
     {
@@ -56,6 +96,12 @@
         "Per CRUD Rest API können virtuelle Topics zur Runtime erstellt, geändert und gelöscht werden (ohne Neustart)",
         "Export zu OpenSensMap.com"
       ],
+      "images": [
+        {
+          "name": "1",
+          "file": "images/projects/smarthome_01.png"
+        }
+      ],
       "links": [
         "[Auf Karte von OpenSenseMap.org]https://www.opensensemap.org/explore/62f3be8ea6e889001bf6b775"
       ]
@@ -71,6 +117,12 @@
         "Dockerisiert mit multi-arch Docker Image Publishing",
         "Betrieb auf Raspberry Pi",
         "Github Workflow Actions für Frontend Deployment auf Github-Pages"
+      ],
+      "images": [
+        {
+          "name": "1",
+          "file": "images/projects/433_01.png"
+        }
       ],
       "github": [
         "https://github.com/seekwhencer/node-rtl433-ui"
@@ -91,6 +143,27 @@
         "Editieren der Daten zu Künstler und Alben inkl. Bildupload",
         "Eltern-Modus zum Importieren, Bearbeiten und Ausblenden",
         "Betrieb auf Raspberry Pi 5"
+      ],
+      "images": [
+        {
+          "name": "1",
+          "file": "images/projects/kidsplayer_01.png"
+        },{
+          "name": "2",
+          "file": "images/projects/kidsplayer_02.png"
+        },{
+          "name": "3",
+          "file": "images/projects/kidsplayer_03.png"
+        },{
+          "name": "4",
+          "file": "images/projects/kidsplayer_04.png"
+        },{
+          "name": "5",
+          "file": "images/projects/kidsplayer_05.png"
+        },{
+          "name": "6",
+          "file": "images/projects/kidsplayer_06.png"
+        }
       ],
       "github": [
         "https://github.com/seekwhencer/spotify-kidsplayer"
@@ -180,6 +253,12 @@
         "Icecast als Server",
         "Music Player Daemon (MPD) als Player",
         "Linux / Raspberry Pi"
+      ],
+      "images": [
+        {
+          "name": "1",
+          "file": "images/projects/radio_01.jpg"
+        }
       ]
     },
     {
