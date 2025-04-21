@@ -23,7 +23,13 @@ export default defineConfig({
         enabled: true
     },
     build: {
-        // Recommended minimum target (See FAQ for more details)
-        target: 'es2022'
+        target: 'es2022',
+        assetsDir: '',
+        rollupOptions: {
+            output: {
+                assetFileNames: "css/[name]-[hash][extname]",
+                entryFileNames: "js/[name]-[hash].js"
+            }
+        }
     }
 });
