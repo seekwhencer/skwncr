@@ -7,16 +7,18 @@ const targetFile = 'data.json';
 let data = {};
 let debounceTimer = false;
 
-const watchTask = watch(sourceRootPath, {
-    encoding: 'buffer',
-    recursive: true,
-    persistent: true
-});
+if (!process.env?.ONLY_BUILD) {
+    const watchTask = watch(sourceRootPath, {
+        encoding: 'buffer',
+        recursive: true,
+        persistent: true
+    });
 
-watchTask.on('change', (e, f) => {
-    debounceTimer ? clearTimeout(debounceTimer) : null;
-    debounceTimer = setTimeout(() => build(e, f), 500);
-});
+    watchTask.on('change', (e, f) => {
+        debounceTimer ? clearTimeout(debounceTimer) : null;
+        debounceTimer = setTimeout(() => build(e, f), 500);
+    });
+}
 
 const build = (e, f) => {
     data = fromFile(`${sourceRootPath}/${sourceRootFile}`);
