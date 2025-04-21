@@ -20,6 +20,12 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Run data build
+        working-directory: data
+        run: |
+          npm install --legacy-peer-deps
+          npm run build
+
       - name: Run frontend build
         run: |
           npm install --legacy-peer-deps
