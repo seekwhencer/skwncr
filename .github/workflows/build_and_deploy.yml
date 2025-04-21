@@ -23,7 +23,7 @@ jobs:
       - name: Run frontend build
         run: |
           npm install --legacy-peer-deps
-          export VITE_BASE_URL=https://seekwhencer.github.io/skwncr
+          export VITE_BASE=/skwncr/
           npm run build
 
       - name: Deploy

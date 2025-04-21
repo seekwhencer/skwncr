@@ -4,8 +4,8 @@ import {defineConfig} from 'vite';
 
 export default defineConfig({
     //root: '/app/frontend',
-    base: '/skwncr/',
-    site: 'http://frontend.apply-o-mat.servant',
+    base: `${process.env.VITE_BASE || '/'}`,
+    //site: 'http://frontend.apply-o-mat.servant',
     output: "browser",
     security: {
         checkOrigin: false
