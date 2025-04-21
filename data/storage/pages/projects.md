@@ -1,5 +1,5 @@
 ## side projects
 
-Alle o.g. Projekte sind in meiner Freizeit entstanden oder stammen aus freiberuflicher Tätigkeit.
-Also Sachen, die ich aus Spass an der Freude gemacht habe. Es sind eigentlich noch viel mehr, was aber
-in die Belanglosigkeit übergehen würden.
+Alle o.g. Projekte sind in meiner Freizeit entstanden. Also Sachen, die ich aus Spass an der Freude gemacht habe. Kommerzielle Projekte sind hier (noch) nicht zu finden.
+Arbeiten aus Festanstellung wird man hier nicht finden. Auch gehe ich nicht näher auf Freelancer-Projekte ein - bzw. werde ich hier keine Screenshots veröffentlichen,
+solange ich nicht die ausdrückliche Erlaubnis des Auftraggebers habe.

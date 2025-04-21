@@ -82,6 +82,7 @@
       "dateTo": "heute",
       "title": "Smart Home Automation",
       "description": "Infrastruktur und Server-App zur Erfassung von Umweltdaten und Steuerung von Zigbee-Geräten. Ein privates und nicht veröffentlichtes Projekt.",
+      "description_long": "${projects/smarthome.md}",
       "work": [
         "Dockerisierte Infrastruktur bestehend aus: Mosquitto, InfluxDB2, Grafana 11 und einer custom Backend-App",
         "Zweit-Server: Raspberry Pi mit 433mhz-zu-MQTT (node-rtl433-ui) und Zigbee2MQTT (Bekannte Open Source Lösung)",
@@ -95,6 +96,23 @@
         "Verschiedene Web-Scraper zu MQTT als dockerisierter Microservice für bspw. Ozon, Waldbrandstufe, Weather Forecast, Sprit-Preise in der Umgebung",
         "Per CRUD Rest API können virtuelle Topics zur Runtime erstellt, geändert und gelöscht werden (ohne Neustart)",
         "Export zu OpenSensMap.com"
+      ],
+      "skills": [
+        "node.js",
+        "docker",
+        "Frontend",
+        "Backend",
+        "Infrastruktur",
+        "ES6+",
+        "webpack",
+        "scss",
+        "express",
+        "Mosquitto",
+        "Zigbee2Mqtt",
+        "InfluxDB 2",
+        "nginx",
+        "reverse proxy",
+        "ssh reverse tunnel"
       ],
       "images": [
         {
