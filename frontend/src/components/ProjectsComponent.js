@@ -16,6 +16,9 @@ export default class ProjectsComponent extends Component {
         });
         this.target.element.append(this.element);
 
+        // details element
+        this.detailsElement = this.element.querySelector('[data-details]');
+
         // projects
         this.createProjects();
         this.drawProjects();
@@ -37,7 +40,6 @@ export default class ProjectsComponent extends Component {
         //@ TODO as Proxy()
         this.projects = [];
         _DATA.projects.listing.forEach(p => this.projects.push(new Project(this, p)));
-
         this.element.onclick = (e) => this.click(e);
     }
 
@@ -107,8 +109,7 @@ export default class ProjectsComponent extends Component {
     }
 
     open(project) {
-
-        setTimeout(() => this.parent.header.scrollTo(this.element.dataset.section),0);
+        this.parent.header.scrollTo(this.element.dataset.section);
         project.open();
         this.element.classList.add('open');
 
@@ -135,5 +136,6 @@ export default class ProjectsComponent extends Component {
         this.element.classList.remove('open');
         this.slider.destroy();
         delete this.slider;
+        this.parent.header.scrollTo(this.element.dataset.section);
     }
 }

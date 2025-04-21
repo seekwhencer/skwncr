@@ -1,0 +1,33 @@
+<div class="details hidden">
+    ${images.length > 0 ? `<div class="details--image">
+       <picture>
+            <source media="(max-width: 799px)" srcset="${images[0].file}?s=m"/>
+            <source media="(min-width: 800px)" srcset="${images[0].file}?s=l"/>
+            <img src="${images[0].file}?s=xl" alt=""/>
+        </picture>
+    </div>` : ''}
+    <div class="details--head">
+        <h3 class="name">${title}</h3>
+        <div class="text">${description}</div>
+    </div>
+    <div class="details--description">
+        <ul>
+            ${work.map(w => `
+            <li>${w}</li>
+            `).join('')}
+        </ul>
+    </div>
+    ${images.length > 1 ? `<div class="details--images" data-detail-images>
+        ${images.map(i => `
+        <picture>
+            <source media="(max-width: 799px)" srcset="${i.file}?s=m"/>
+            <source media="(min-width: 800px)" srcset="${i.file}?s=l"/>
+            <img src="${i.file}?s=xl" alt="" data-image/>
+        </picture>
+        `).join('')}
+    </div>` : ''}
+    <div class="details--skills">
+        ${skills.map(s => `<span class="skill">${s}</span> `).join('')}
+    </div>
+    <div class="details--description-long">${description_long.md()}</div>
+</div>
