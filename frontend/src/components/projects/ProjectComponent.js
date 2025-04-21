@@ -16,4 +16,22 @@ export default class ProjectComponent extends Component {
         });
         this.target.projectsElement.append(this.element);
     }
+
+    open(){
+        console.log(this.element);
+        this.parent.flush();
+        this.element.classList.add('active');
+    }
+
+    close(){
+        this.element.classList.remove('active');
+    }
+
+    get index() {
+        return this.parent.projects.indexOf(this);
+    }
+
+    set index(val) {
+        this._index = val;
+    }
 }
