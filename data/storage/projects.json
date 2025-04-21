@@ -195,6 +195,18 @@
         "ffmpeg zum segmentierten Schreiben des Videos",
         "node.js zum Orchestrieren von gstreamer und ffmpeg",
         "lokaler streaming server"
+      ],
+      "images": [
+        {
+          "name": "1",
+          "file": "images/projects/streaming-kamera_01.jpg"
+        },{
+          "name": "2",
+          "file": "images/projects/streaming-kamera_02.png"
+        },{
+          "name": "3",
+          "file": "images/projects/streaming-kamera_03.png"
+        }
       ]
     },
     {
@@ -205,6 +217,15 @@
       "work": [
         "Frontend-Entwicklung mit Webpack, SCSS, Javascript in ES6 mit Custom Templating für SSR & CSR.",
         "Three.js für mathematische Verteilung"
+      ],
+      "images": [
+        {
+          "name": "1",
+          "file": "images/projects/tech-radar_01.jpg"
+        },{
+          "name": "2",
+          "file": "images/projects/tech-radar_02.jpg"
+        }
       ],
       "github": [
         "https://github.com/seekwhencer/tech-radar"
@@ -218,6 +239,15 @@
       "work": [
         "Google-Sheets als Datenquelle",
         "Serverless Frontend-App mit Animation und Sound"
+      ],
+      "images": [
+        {
+          "name": "1",
+          "file": "images/projects/quizzner_01.jpg"
+        },{
+          "name": "2",
+          "file": "images/projects/quizzner_02.jpg"
+        }
       ],
       "github": [
         "https://github.com/seekwhencer/quizzner"
@@ -283,6 +313,12 @@
         "Entwicklung Zuordnung von Metadaten mittels Rest API der Google-Books-Suche",
         "Entwicklung Preisvorschlag per Scraping versch. Quellen",
         "Bau einer Vorrichtung für eine DSLR-Kamera / Webcam mit Beleuchtung um Buch-Fronten zu fotografieren."
+      ],
+      "images": [
+        {
+          "name": "1",
+          "file": "images/projects/bookscanner_01.jpg"
+        }
       ]
     },
     {
