@@ -23,7 +23,7 @@ jobs:
       - name: Run frontend build
         run: |
           npm install --legacy-peer-deps
-          npm build
+          npm run build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v4
