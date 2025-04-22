@@ -4,12 +4,12 @@
         <div class="text">${description}</div>
     </div>
     <div class="project--images">
-        ${images.map(i => `
+        ${images.length > 0 ? `<div class="project--images">
         <picture>
-            <source media="(max-width: 799px)" srcset="${i.file}?s=m"/>
-            <source media="(min-width: 800px)" srcset="${i.file}?s=l"/>
-            <img src="${i.file}?s=xl" alt=""/>
+            <source media="(max-width: 799px)" srcset="${images[0].file}?s=m"/>
+            <source media="(min-width: 800px)" srcset="${images[0].file}?s=l"/>
+            <img src="${images[0].file}?s=xl" alt=""/>
         </picture>
-        `).join('')}
+    </div>` : ''}
     </div>
 </div>
