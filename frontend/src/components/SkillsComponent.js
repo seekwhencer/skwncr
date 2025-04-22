@@ -7,14 +7,15 @@ export default class LayoutComponent extends Component {
         super(parent, options);
 
         this.target = this.options.target ? this.options.target : this.parent;
-
         this.element = SkillsTemplate.dom({
             skills: _DATA.skills,
             slashImage: 'IMAGE',
             icons: this.app.icons
         });
-
         this.target.element.append(this.element);
+
+        //
+        this.element.querySelectorAll('.skill').forEach(s => s.onclick = () => s.classList.toggle('like'));
 
         // footer element
         this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');

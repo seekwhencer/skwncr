@@ -79,6 +79,48 @@
           z-index: 1000;
         }
       }
+
+      &.like {
+        border: 3px solid colors.$color-six;
+        background-color: colors.$color-six;
+        color: white;
+
+        &:before {
+          background-color: colors.$color-six;
+          border: 3px solid colors.$color-six;
+          color: white;
+
+        }
+
+
+        &:after {
+          position: absolute;
+          top: -10px;
+          right: -10px;
+          height: 20px;
+          width: 20px;
+          content: '❤';
+          color: colors.$color-six;
+          background-color: white;
+          border-radius: 20px;
+          font-size: 14px;
+          text-align: center;
+          line-height: 20px;
+          border: 3px solid colors.$color-six;
+          transition: all 0.1s ease-in-out;
+        }
+
+        &:hover {
+          &:after {
+            top: -22px;
+            right: -18px;
+            z-index: 1000;
+
+          }
+        }
+      }
+
+
     }
 
     &.expert {
