@@ -142,13 +142,16 @@
         {
           "name": "1",
           "file": "images/projects/433_01.png"
-        },{
+        },
+        {
           "name": "2",
           "file": "images/projects/433_02.jpg"
-        },{
+        },
+        {
           "name": "3",
           "file": "images/projects/433_03.jpg"
-        },{
+        },
+        {
           "name": "4",
           "file": "images/projects/433_04.jpg"
         }
@@ -177,10 +180,6 @@
         {
           "name": "1",
           "file": "images/projects/kidsplayer_01.png"
-        },
-        {
-          "name": "2",
-          "file": "images/projects/kidsplayer_02.png"
         },
         {
           "name": "3",
@@ -285,6 +284,10 @@
         {
           "name": "2",
           "file": "images/projects/quizzner_02.jpg"
+        },
+        {
+          "name": "3",
+          "file": "images/projects/quizzner_03.png"
         }
       ],
       "github": [
@@ -309,6 +312,14 @@
         {
           "name": "1",
           "file": "images/projects/suitcase_01.jpg"
+        },
+        {
+          "name": "2",
+          "file": "images/projects/suitcase_02.png"
+        },
+        {
+          "name": "3",
+          "file": "images/projects/suitcase_03.jpg"
         }
       ]
     },
@@ -361,6 +372,14 @@
         {
           "name": "8",
           "file": "images/projects/radio_08.png"
+        },
+        {
+          "name": "9",
+          "file": "images/projects/radio_09.jpg"
+        },
+        {
+          "name": "10",
+          "file": "images/projects/radio_10.png"
         }
       ]
     },
@@ -454,6 +473,50 @@
         {
           "name": "6",
           "file": "images/projects/stadtgiraffe_06.jpg"
+        }
+      ]
+    },
+    {
+      "dateFrom": "1995",
+      "dateTo": "2000",
+      "title": "3D-Kram aus früheren Zeiten",
+      "description": "Noch vor dem Jahr 2000",
+      "description_long": "${projects/3d.md}",
+      "work": [
+        "3D-Animation für Computerspiel, Fernseh- und Videoproduktionen",
+        "Immobilien-Visualisierung",
+        "Flying-Logos",
+        "Prozess-Visualisierung",
+        "On-Air-Grafik"
+      ],
+      "images": [
+        {
+          "name": "1",
+          "file": "images/projects/3d_01.jpg"
+        },
+        {
+          "name": "2",
+          "file": "images/projects/3d_02.jpg"
+        },
+        {
+          "name": "3",
+          "file": "images/projects/3d_03.jpg"
+        },
+        {
+          "name": "4",
+          "file": "images/projects/3d_04.jpg"
+        },
+        {
+          "name": "5",
+          "file": "images/projects/3d_05.jpg"
+        },
+        {
+          "name": "6",
+          "file": "images/projects/3d_06.jpg"
+        },
+        {
+          "name": "7",
+          "file": "images/projects/3d_07.jpg"
         }
       ]
     }
