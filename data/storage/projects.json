@@ -215,6 +215,35 @@
       ],
       "github": [
         "https://github.com/seekwhencer/node-image-server-gallery"
+      ],
+      "images": [
+        {
+          "name": "1",
+          "file": "images/projects/gallery_01.jpg"
+        },
+        {
+          "name": "2",
+          "file": "images/projects/gallery_02.jpg"
+        },
+        {
+          "name": "3",
+          "file": "images/projects/gallery_03.jpg"
+        },
+        {
+          "name": "4",
+          "file": "images/projects/gallery_04.jpg"
+        }
+      ],
+      "skills": [
+        "Frontend",
+        "Backend",
+        "node.js",
+        "webpack",
+        "ES6+",
+        "scss",
+        "Docker",
+        "Docker Replicas",
+        "Thumbnail-Erzeugung"
       ]
     },
     {
@@ -311,16 +340,29 @@
       "images": [
         {
           "name": "1",
-          "file": "images/projects/suitcase_01.jpg"
+          "file": "images/projects/suitcase_02.jpg"
         },
         {
           "name": "2",
-          "file": "images/projects/suitcase_02.png"
+          "file": "images/projects/suitcase_01.jpg"
         },
         {
           "name": "3",
+          "file": "images/projects/suitcase_02.png"
+        },
+        {
+          "name": "4",
           "file": "images/projects/suitcase_03.jpg"
         }
+      ],
+      "skills": [
+        "Gitea",
+        "Verdaccio.js",
+        "Mattermost",
+        "mySql",
+        "phpmyAdmin",
+        "Apache",
+        "Pi-hole"
       ]
     },
     {
@@ -347,40 +389,55 @@
         },
         {
           "name": "2",
-          "file": "images/projects/radio_02.png"
+          "file": "images/projects/radio_02.jpg"
         },
         {
           "name": "3",
-          "file": "images/projects/radio_03.png"
+          "file": "images/projects/radio_02.png"
         },
         {
           "name": "4",
-          "file": "images/projects/radio_04.png"
+          "file": "images/projects/radio_03.png"
         },
         {
           "name": "5",
-          "file": "images/projects/radio_05.png"
+          "file": "images/projects/radio_04.png"
         },
         {
           "name": "6",
-          "file": "images/projects/radio_06.png"
+          "file": "images/projects/radio_05.png"
         },
         {
           "name": "7",
-          "file": "images/projects/radio_07.png"
+          "file": "images/projects/radio_06.png"
         },
         {
           "name": "8",
-          "file": "images/projects/radio_08.png"
+          "file": "images/projects/radio_07.png"
         },
         {
           "name": "9",
-          "file": "images/projects/radio_09.jpg"
+          "file": "images/projects/radio_08.png"
         },
         {
           "name": "10",
+          "file": "images/projects/radio_09.jpg"
+        },
+        {
+          "name": "11",
           "file": "images/projects/radio_10.png"
         }
+      ],
+      "skills": [
+        "Frontend",
+        "Backend",
+        "JS",
+        "HTML",
+        "CSS",
+        "icecast",
+        "Music Player Deamon (MPD)",
+        "Linux",
+        "Icecast"
       ]
     },
     {
