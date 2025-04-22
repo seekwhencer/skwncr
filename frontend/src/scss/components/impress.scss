@@ -1,0 +1,37 @@
+@use "../global/colors";
+@use "../global/typo";
+
+.section-disclaimer {
+  position: fixed;
+  z-index: 10000;
+  width: 100vw;
+  background-color: colors.$color-matte-e;
+  padding: 0;
+
+  &.open {
+    .disclaimer {
+      height: 100vh;
+    }
+  }
+
+  h2 {
+    color: white;
+  }
+
+  .disclaimer {
+    color: colors.$color-gray-a;
+    height: 0;
+    overflow: hidden;
+
+    &--text {
+      width: 800px;
+      margin: auto;
+      line-height: typo.$fs-l;
+      font-weight: 300;
+
+      p {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

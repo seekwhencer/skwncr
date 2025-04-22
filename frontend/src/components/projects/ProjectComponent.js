@@ -26,7 +26,6 @@ export default class ProjectComponent extends Component {
     }
 
     flushDetails() {
-        console.log('>>> FLUSH DETAILS', this.details);
         this.details ? this.details.destroy() : null;
         this.detailsElement.innerHTML = '';
     }

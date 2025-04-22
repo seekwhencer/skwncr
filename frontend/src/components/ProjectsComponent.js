@@ -136,7 +136,6 @@ export default class ProjectsComponent extends Component {
     }
 
     close() {
-        console.log('>>> CLOSE MODAL');
         this.flush();
         this.element.classList.remove('open');
 

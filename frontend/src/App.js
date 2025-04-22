@@ -28,6 +28,7 @@ import VitaComponent from "./components/VitaComponent.js";
 import ServicesComponent from "./components/ServicesComponent.js";
 import SkillsComponent from "./components/SkillsComponent.js";
 import ProjectsComponent from "./components/ProjectsComponent.js";
+import DisclaimerComponent from "./components/DisclaimerComponent.js";
 
 import './scss/index.scss';
 
@@ -68,6 +69,10 @@ export default class App {
         /**
          * the sections
          */
+
+        this.disclaimer = new DisclaimerComponent(this, {
+            target: this.layout
+        });
 
         this.splash = new SplashComponent(this, {
             target: this.layout

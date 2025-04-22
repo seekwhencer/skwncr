@@ -19,6 +19,9 @@ export default class HeaderComponent extends Component {
         this.buttons = this.element.querySelectorAll('[data-scroll-target]');
         this.buttons.forEach(button => button.onclick = () => this.scrollTo(button.dataset.scrollTarget));
 
+        // impress button
+        this.element.querySelector('[data-fixed-target=impress]').onclick = () => this.app.disclaimer.toggle();
+
         // debouncing
         this.debounceScroll = false;
 
@@ -56,7 +59,7 @@ export default class HeaderComponent extends Component {
     }
 
     active() {
-        const sections = document.querySelectorAll('section');
+        const sections = document.querySelectorAll('section[data-scroll]');
         sections.forEach(section => {
             const gap = 200;
             const rect = section.getBoundingClientRect();
@@ -77,7 +80,5 @@ export default class HeaderComponent extends Component {
                 button.classList.remove('active');
             }
         });
-
-
     }
 }
