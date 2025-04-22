@@ -19,6 +19,21 @@ export default class ProjectDetailsComponent extends Component {
         });
         this.detailsElement.append(this.element);
         setTimeout(() => this.element.classList.remove('hidden'), 10);
+
+        //
+        this.imageView = this.element.querySelector('[data-image-large]');
+
+        // thumbnails
+        this.images = this.element.querySelectorAll('[data-detail-images] picture');
+        this.images.forEach(i => i.onclick = (e) => this.swapImage(e));
+    }
+
+    swapImage(e) {
+        const target = e.target;
+        const picture = target.closest('picture');
+        const clone = picture.cloneNode(true);
+        this.imageView.querySelector('picture').remove();
+        this.imageView.append(clone);
     }
 
     destroy() {

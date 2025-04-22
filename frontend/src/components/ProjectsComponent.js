@@ -69,11 +69,15 @@ export default class ProjectsComponent extends Component {
         if (projectName)
             project = this.one(projectName, 'title');
 
+        // when clicked on a slider or listing item
         if (project)
             this.open(project);
 
-        if (!project)
+        // when not the listing or slider item, and not the details was clicked
+        const detailsElement = target.closest('.details');
+        if (!project && !detailsElement)
             this.close();
+
     }
 
     one() {
@@ -127,15 +131,19 @@ export default class ProjectsComponent extends Component {
                 },
             });
         }
-        this.slider.slideTo(project.index, 600, () => {});
+        this.slider.slideTo(project.index, 600, () => {
+        });
     }
 
     close() {
         console.log('>>> CLOSE MODAL');
         this.flush();
         this.element.classList.remove('open');
-        this.slider.destroy();
-        delete this.slider;
+
+        if (this.slider) {
+            this.slider.destroy();
+            delete this.slider;
+        }
         this.parent.header.scrollTo(this.element.dataset.section);
     }
 }

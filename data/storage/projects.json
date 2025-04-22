@@ -284,6 +284,12 @@
         "Mattermost als Chat",
         "MySQL-Datenbank und Verwaltungstools wie phpmyadmin",
         "Dazu noch ein Solar-Panel, Laderegler und Autobatterie"
+      ],
+      "images": [
+        {
+          "name": "1",
+          "file": "images/projects/suitcase_01.jpg"
+        }
       ]
     },
     {
