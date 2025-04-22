@@ -68,10 +68,12 @@
         {
           "name": "1",
           "file": "images/projects/lux_01.jpg"
-        },{
+        },
+        {
           "name": "2",
           "file": "images/projects/lux_02.jpg"
-        },{
+        },
+        {
           "name": "3",
           "file": "images/projects/lux_03.jpg"
         }
@@ -140,6 +142,15 @@
         {
           "name": "1",
           "file": "images/projects/433_01.png"
+        },{
+          "name": "2",
+          "file": "images/projects/433_02.jpg"
+        },{
+          "name": "3",
+          "file": "images/projects/433_03.jpg"
+        },{
+          "name": "4",
+          "file": "images/projects/433_04.jpg"
         }
       ],
       "github": [
@@ -166,19 +177,24 @@
         {
           "name": "1",
           "file": "images/projects/kidsplayer_01.png"
-        },{
+        },
+        {
           "name": "2",
           "file": "images/projects/kidsplayer_02.png"
-        },{
+        },
+        {
           "name": "3",
           "file": "images/projects/kidsplayer_03.png"
-        },{
+        },
+        {
           "name": "4",
           "file": "images/projects/kidsplayer_04.png"
-        },{
+        },
+        {
           "name": "5",
           "file": "images/projects/kidsplayer_05.png"
-        },{
+        },
+        {
           "name": "6",
           "file": "images/projects/kidsplayer_06.png"
         }
@@ -218,12 +234,14 @@
         {
           "name": "1",
           "file": "images/projects/streaming-kamera_01.jpg"
-        },{
+        },
+        {
           "name": "2",
-          "file": "images/projects/streaming-kamera_02.png"
-        },{
+          "file": "images/projects/streaming-kamera_02.jpg"
+        },
+        {
           "name": "3",
-          "file": "images/projects/streaming-kamera_03.png"
+          "file": "images/projects/streaming-kamera_03.jpg"
         }
       ]
     },
@@ -240,7 +258,8 @@
         {
           "name": "1",
           "file": "images/projects/tech-radar_01.jpg"
-        },{
+        },
+        {
           "name": "2",
           "file": "images/projects/tech-radar_02.jpg"
         }
@@ -262,7 +281,8 @@
         {
           "name": "1",
           "file": "images/projects/quizzner_01.jpg"
-        },{
+        },
+        {
           "name": "2",
           "file": "images/projects/quizzner_02.jpg"
         }
@@ -297,6 +317,7 @@
       "dateTo": "2016",
       "title": "Playlist-Automation",
       "description": "Automatische Radio-Stream-Erzeugung per Sendung und Wochenplan",
+      "description_long": "${projects/radio.md}",
       "work": [
         "Entwicklung Backend (PHP)",
         "Entwicklung Frontend (jQuery, CSS, HTML)",
@@ -312,6 +333,34 @@
         {
           "name": "1",
           "file": "images/projects/radio_01.jpg"
+        },
+        {
+          "name": "2",
+          "file": "images/projects/radio_02.png"
+        },
+        {
+          "name": "3",
+          "file": "images/projects/radio_03.png"
+        },
+        {
+          "name": "4",
+          "file": "images/projects/radio_04.png"
+        },
+        {
+          "name": "5",
+          "file": "images/projects/radio_05.png"
+        },
+        {
+          "name": "6",
+          "file": "images/projects/radio_06.png"
+        },
+        {
+          "name": "7",
+          "file": "images/projects/radio_07.png"
+        },
+        {
+          "name": "8",
+          "file": "images/projects/radio_08.png"
         }
       ]
     },
@@ -320,10 +369,17 @@
       "dateTo": "2015",
       "title": "Open Research Buoy",
       "description": "Echtzeit-Steuerung via Mobilfunk und Websockets einer Citizen-Science-Boje",
+      "description_long": "${projects/orb.md}",
       "work": [
         "Multi-User Frontend / Web-App mit Multi-Touch-Usability",
         "Websockets-Server / Backend-App mit Java (ja, tatsächlich)",
         "Websockets-Connectivity via Mobilfunk"
+      ],
+      "images": [
+        {
+          "name": "1",
+          "file": "images/projects/orb_01.jpg"
+        }
       ]
     },
     {
@@ -331,6 +387,7 @@
       "dateTo": "2010",
       "title": "Webbasierter Buch-Scanner per Webcam / DSLR",
       "description": "Backoffice-Tool um Foto von Buch in Vorrichtung zu machen und in Online-Datenbanken zu suchen.",
+      "description_long": "${projects/bookscanner.md}",
       "work": [
         "Entwicklung Backoffice-Tool / Admin für die Verwaltung der Bücher.",
         "Entwicklung Frontend Realtime-Vorschau der Webcam mit Snapshot- und Cropping-Funktion im Browser",
@@ -350,6 +407,7 @@
       "dateTo": "2016",
       "title": "Kurzsuechtig Kurzfilmfestival Leipzig",
       "description": "Website und Backoffice-Tool für Kurzfilmfestival in Leipzig.",
+      "description_long": "${projects/kurzsuechtig.md}",
       "work": [
         "Entwicklung jedes Jahr ein neues Theme für Wordpress-Website.",
         "Entwicklung Backoffice-Tool / Admin für die Verwaltung der Einreichungen. (Listing, Filter, Einreichung freischalten, Ranking nachtragen)",
@@ -364,12 +422,39 @@
       "dateTo": "2011",
       "title": "Stadtgiraffe - Veranstaltungskalender",
       "description": "Online Veranstaltungskalender für Leipzig",
+      "description_long": "${projects/stadtgiraffe.md}",
       "work": [
         "Entwicklung Website Frontend und Backend (PHP, mysql)",
         "Entwicklung Backoffice-Tool / Admin für die Verwaltung von Events, Locations usw.",
         "Hosting, Server-Administration",
         "Website mit Login-Bereich für Veranstalter",
         "Design und Artwork"
+      ],
+      "images": [
+        {
+          "name": "1",
+          "file": "images/projects/stadtgiraffe_01.jpg"
+        },
+        {
+          "name": "2",
+          "file": "images/projects/stadtgiraffe_02.jpg"
+        },
+        {
+          "name": "3",
+          "file": "images/projects/stadtgiraffe_03.jpg"
+        },
+        {
+          "name": "4",
+          "file": "images/projects/stadtgiraffe_04.jpg"
+        },
+        {
+          "name": "5",
+          "file": "images/projects/stadtgiraffe_05.jpg"
+        },
+        {
+          "name": "6",
+          "file": "images/projects/stadtgiraffe_06.jpg"
+        }
       ]
     }
   ]
