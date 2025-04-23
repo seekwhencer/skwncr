@@ -1,0 +1,17 @@
+{
+  "dateFrom": "2025",
+  "dateTo": "2025",
+  "title": "node.js, tesseract and imagemagick in one container",
+  "description": "Mini-Setup und node.js-App um Kontoauszüge per Texterkennung in Daten umzuwandeln ",
+  "work": [
+    "Dockerisierte Node.js-App orchestriert (exec, spawn) tesseract und imagemagick.",
+    "Mit Watch-Task: man kann neue Files (PDFs) in einen Ordner kopieren und die Umwandlung beginnt sofort",
+    "Wird gespeichert als CSV und als JSON"
+  ],
+  "images": [
+    {
+      "name": "1",
+      "file": "images/projects/ocr_01.jpg"
+    }
+  ]
+}

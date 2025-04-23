@@ -1,0 +1,26 @@
+{
+  "dateFrom": "2024",
+  "dateTo": "2024",
+  "title": "Lux-Messung",
+  "description": "Custom IoT-Device zur Messung von Lichtstärke",
+  "work": [
+    "nodeMCU in Gehäuse-Box und Netzteil",
+    "Entwicklung Geräte-Software als MQTT-Client",
+    "Licht-Sensor: eine Box pro Himmelsrichtung im 45°-Winkel hinter die Fensterscheibe",
+    "Wird von der MQTT zu Influx-Bridge weggespeichert (Smart Home Automation)"
+  ],
+  "images": [
+    {
+      "name": "1",
+      "file": "images/projects/lux_01.jpg"
+    },
+    {
+      "name": "2",
+      "file": "images/projects/lux_02.jpg"
+    },
+    {
+      "name": "4",
+      "file": "images/projects/lux_04.jpg"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "dateFrom": "2015",
+  "dateTo": "2015",
+  "title": "Open Research Buoy",
+  "description": "Echtzeit-Steuerung via Mobilfunk und Websockets einer Citizen-Science-Boje",
+  "description_long": "${projects/orb.md}",
+  "work": [
+    "Multi-User Frontend / Web-App mit Multi-Touch-Usability",
+    "Websockets-Server / Backend-App mit Java (ja, tatsächlich)",
+    "Websockets-Connectivity via Mobilfunk"
+  ],
+  "images": [
+    {
+      "name": "1",
+      "file": "images/projects/orb_01.jpg"
+    }
+  ]
+}

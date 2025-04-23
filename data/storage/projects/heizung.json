@@ -1,0 +1,35 @@
+{
+  "dateFrom": "2024",
+  "dateTo": "2024",
+  "highlight": true,
+  "title": "Heizungs-Überwachung",
+  "description": "Custom IoT-Device zur Überwachung einer (alten) Öl-Heizung mit zwei Heizkreisen",
+  "work": [
+    "nodeMCU in Gehäuse-Box und Netzteil",
+    "Entwicklung Geräte-Software als MQTT-Client",
+    "Vier Auflage-Sensoren für die Temperaturen: 2 x Zulauf und 2 x Rücklauf",
+    "Wird von der MQTT-zu-Influx-Bridge weggespeichert (Smart Home Automation)"
+  ],
+  "images": [
+    {
+      "name": "1",
+      "file": "images/projects/heizung_01.jpg"
+    },
+    {
+      "name": "2",
+      "file": "images/projects/heizung_02.jpg"
+    },
+    {
+      "name": "3",
+      "file": "images/projects/heizung_03.jpg"
+    },
+    {
+      "name": "4",
+      "file": "images/projects/heizung_04.jpg"
+    },
+    {
+      "name": "5",
+      "file": "images/projects/heizung_05.jpg"
+    }
+  ]
+}

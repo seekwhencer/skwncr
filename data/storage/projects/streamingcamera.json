@@ -1,0 +1,27 @@
+{
+  "dateFrom": "2021",
+  "dateTo": "2021",
+  "title": "DSLR Streaming / Recording",
+  "description": "Rucksack mit Technik und Strom für lange Video-Aufnahmen mit DSLR in 4k",
+  "work": [
+    "DSLR Kamera im Video-Mode und 4K-USB-Stick (Elgato)",
+    "nVidia Jetson Nano für 4k Echtzeit-Encoding (gstreamer)",
+    "ffmpeg zum segmentierten Schreiben des Videos",
+    "node.js zum Orchestrieren von gstreamer und ffmpeg",
+    "lokaler streaming server"
+  ],
+  "images": [
+    {
+      "name": "1",
+      "file": "images/projects/streaming-kamera_01.jpg"
+    },
+    {
+      "name": "2",
+      "file": "images/projects/streaming-kamera_02.jpg"
+    },
+    {
+      "name": "3",
+      "file": "images/projects/streaming-kamera_03.jpg"
+    }
+  ]
+}

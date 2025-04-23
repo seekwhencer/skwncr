@@ -1,0 +1,75 @@
+{
+  "dateFrom": "2016",
+  "dateTo": "2016",
+  "title": "Playlist-Automation",
+  "description": "Automatische Radio-Stream-Erzeugung per Sendung und Wochenplan",
+  "description_long": "${projects/radio.md}",
+  "work": [
+    "Entwicklung Backend (PHP)",
+    "Entwicklung Frontend (jQuery, CSS, HTML)",
+    "Erstellung von Sendungen mit Opener, Jingles und Spots",
+    "Erstellung eines Wochenplanes pro Kalenderwoche",
+    "Automatisches Starten der Sendung entsprechend Scheduling",
+    "Intelligenter und zufälliger Shuffle-Modus",
+    "Icecast als Server",
+    "Music Player Daemon (MPD) als Player",
+    "Linux / Raspberry Pi"
+  ],
+  "images": [
+    {
+      "name": "1",
+      "file": "images/projects/radio_01.jpg"
+    },
+    {
+      "name": "2",
+      "file": "images/projects/radio_02.jpg"
+    },
+    {
+      "name": "3",
+      "file": "images/projects/radio_02.png"
+    },
+    {
+      "name": "4",
+      "file": "images/projects/radio_03.png"
+    },
+    {
+      "name": "5",
+      "file": "images/projects/radio_04.png"
+    },
+    {
+      "name": "6",
+      "file": "images/projects/radio_05.png"
+    },
+    {
+      "name": "7",
+      "file": "images/projects/radio_06.png"
+    },
+    {
+      "name": "8",
+      "file": "images/projects/radio_07.png"
+    },
+    {
+      "name": "9",
+      "file": "images/projects/radio_08.png"
+    },
+    {
+      "name": "10",
+      "file": "images/projects/radio_09.jpg"
+    },
+    {
+      "name": "11",
+      "file": "images/projects/radio_10.png"
+    }
+  ],
+  "skills": [
+    "Frontend",
+    "Backend",
+    "JS",
+    "HTML",
+    "CSS",
+    "icecast",
+    "Music Player Deamon (MPD)",
+    "Linux",
+    "Icecast"
+  ]
+}

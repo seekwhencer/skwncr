@@ -1,0 +1,42 @@
+{
+  "dateFrom": "2023",
+  "dateTo": "2023",
+  "title": "Spotify Kids Player",
+  "description": "Simplifizierte (Web-) UI für Kinder mit Parental Control",
+  "work": [
+    "Frontend-Entwicklung mit Webpack, SCSS, Javascript in ES6 mit Custom Templating für SSR & CSR.",
+    "Backend-Enwtwicklung mit node.js: CRUD Rest API, Thumbnail-Erzeugung",
+    "Dockerisiert",
+    "Benutzt Spotify Rest API",
+    "Benutzt Google Text to Speech",
+    "Speichert Künstler und Alben-Daten in mySQL-Datenbank",
+    "Editieren der Daten zu Künstler und Alben inkl. Bildupload",
+    "Eltern-Modus zum Importieren, Bearbeiten und Ausblenden",
+    "Betrieb auf Raspberry Pi 5"
+  ],
+  "images": [
+    {
+      "name": "1",
+      "file": "images/projects/kidsplayer_01.png"
+    },
+    {
+      "name": "3",
+      "file": "images/projects/kidsplayer_03.png"
+    },
+    {
+      "name": "4",
+      "file": "images/projects/kidsplayer_04.png"
+    },
+    {
+      "name": "5",
+      "file": "images/projects/kidsplayer_05.png"
+    },
+    {
+      "name": "6",
+      "file": "images/projects/kidsplayer_06.png"
+    }
+  ],
+  "github": [
+    "https://github.com/seekwhencer/spotify-kidsplayer"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "dateFrom": "2023",
+  "dateTo": "2023",
+  "title": "node-rtl433-ui",
+  "description": "Web-UI und Server-App zum Mappen von 433-Mhz-Devices auf MQTT-Topics",
+  "work": [
+    "Frontend-Entwicklung mit Webpack, SCSS, Javascript in ES6 mit Custom Templating für SSR & CSR.",
+    "Backend-Entwicklung mit node.js: Javascript ES6+, CRUD Rest API, MQTT-Client",
+    "Dockerisiert mit multi-arch Docker Image Publishing",
+    "Betrieb auf Raspberry Pi",
+    "Github Workflow Actions für Frontend Deployment auf Github-Pages"
+  ],
+  "images": [
+    {
+      "name": "1",
+      "file": "images/projects/433_01.png"
+    },
+    {
+      "name": "2",
+      "file": "images/projects/433_02.jpg"
+    },
+    {
+      "name": "3",
+      "file": "images/projects/433_03.jpg"
+    },
+    {
+      "name": "4",
+      "file": "images/projects/433_04.jpg"
+    }
+  ],
+  "github": [
+    "https://github.com/seekwhencer/node-rtl433-ui"
+  ]
+}

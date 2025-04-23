@@ -1,0 +1,40 @@
+{
+  "dateFrom": "2009",
+  "dateTo": "2011",
+  "title": "Stadtgiraffe - Veranstaltungskalender",
+  "description": "Online Veranstaltungskalender für Leipzig",
+  "description_long": "${projects/stadtgiraffe.md}",
+  "work": [
+    "Entwicklung Website Frontend und Backend (PHP, mysql)",
+    "Entwicklung Backoffice-Tool / Admin für die Verwaltung von Events, Locations usw.",
+    "Hosting, Server-Administration",
+    "Website mit Login-Bereich für Veranstalter",
+    "Design und Artwork"
+  ],
+  "images": [
+    {
+      "name": "1",
+      "file": "images/projects/stadtgiraffe_01.jpg"
+    },
+    {
+      "name": "2",
+      "file": "images/projects/stadtgiraffe_02.jpg"
+    },
+    {
+      "name": "3",
+      "file": "images/projects/stadtgiraffe_03.jpg"
+    },
+    {
+      "name": "4",
+      "file": "images/projects/stadtgiraffe_04.jpg"
+    },
+    {
+      "name": "5",
+      "file": "images/projects/stadtgiraffe_05.jpg"
+    },
+    {
+      "name": "6",
+      "file": "images/projects/stadtgiraffe_06.jpg"
+    }
+  ]
+}

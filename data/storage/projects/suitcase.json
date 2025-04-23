@@ -1,0 +1,42 @@
+{
+  "dateFrom": "2018",
+  "dateTo": "2018",
+  "title": "Frontend Developer's Survival Suit Case",
+  "description": "Überlebenskoffer für Frontend-Entwickler - um Off-Grid bei Bastelaktionen (Hackaton) im Team an Projekten arbeiten zu können.",
+  "work": [
+    "Koffer mit Technik drin",
+    "Raspberry Pi auf dem verschiedene Services installiert sind, die sonst nur mit Internetverbindung genutzt werden. Bspw:",
+    "Für Git: Gitea",
+    "Für npm.org: Verdaccio.js als NPM-Registry und npm relay cache",
+    "Mattermost als Chat",
+    "MySQL-Datenbank und Verwaltungstools wie phpmyadmin",
+    "Dazu noch ein Solar-Panel, Laderegler und Autobatterie"
+  ],
+  "images": [
+    {
+      "name": "1",
+      "file": "images/projects/suitcase_02.jpg"
+    },
+    {
+      "name": "2",
+      "file": "images/projects/suitcase_01.jpg"
+    },
+    {
+      "name": "3",
+      "file": "images/projects/suitcase_02.png"
+    },
+    {
+      "name": "4",
+      "file": "images/projects/suitcase_03.jpg"
+    }
+  ],
+  "skills": [
+    "Gitea",
+    "Verdaccio.js",
+    "Mattermost",
+    "mySql",
+    "phpmyAdmin",
+    "Apache",
+    "Pi-hole"
+  ]
+}

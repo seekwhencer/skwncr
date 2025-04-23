@@ -1,0 +1,23 @@
+{
+  "dateFrom": "2019",
+  "dateTo": "2019",
+  "title": "Tech-Radar",
+  "description": "Refactoring Amazon's Techradar with three.js",
+  "work": [
+    "Frontend-Entwicklung mit Webpack, SCSS, Javascript in ES6 mit Custom Templating für SSR & CSR.",
+    "Three.js für mathematische Verteilung"
+  ],
+  "images": [
+    {
+      "name": "1",
+      "file": "images/projects/tech-radar_01.jpg"
+    },
+    {
+      "name": "2",
+      "file": "images/projects/tech-radar_02.jpg"
+    }
+  ],
+  "github": [
+    "https://github.com/seekwhencer/tech-radar"
+  ]
+}

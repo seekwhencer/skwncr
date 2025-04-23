@@ -1,0 +1,27 @@
+{
+  "dateFrom": "2019",
+  "dateTo": "2019",
+  "title": "Quizzner",
+  "description": "Quiz-Spiel als Frontend-App",
+  "work": [
+    "Google-Sheets als Datenquelle",
+    "Serverless Frontend-App mit Animation und Sound"
+  ],
+  "images": [
+    {
+      "name": "1",
+      "file": "images/projects/quizzner_01.jpg"
+    },
+    {
+      "name": "2",
+      "file": "images/projects/quizzner_02.jpg"
+    },
+    {
+      "name": "3",
+      "file": "images/projects/quizzner_03.png"
+    }
+  ],
+  "github": [
+    "https://github.com/seekwhencer/quizzner"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "dateFrom": "2010",
+  "dateTo": "2016",
+  "title": "Kurzsuechtig Kurzfilmfestival Leipzig",
+  "description": "Website und Backoffice-Tool für Kurzfilmfestival in Leipzig.",
+  "description_long": "${projects/kurzsuechtig.md}",
+  "work": [
+    "Entwicklung jedes Jahr ein neues Theme für Wordpress-Website.",
+    "Entwicklung Backoffice-Tool / Admin für die Verwaltung der Einreichungen. (Listing, Filter, Einreichung freischalten, Ranking nachtragen)",
+    "Login-Bereich für Teilnehmer um Filme einzureichen. (Bildupload, Drag'n Drop für Bild-Reihenfolge.)",
+    "Entwicklung Plugin für Wordpress als Schnittstelle zum Backoffice-Tool via Rest API.",
+    "Darstellung auf Website der Einreichungen pro Jahr via Plugin und Rest API",
+    "Darstellung Ranking Einreichungen pro Jahr via Plugin und Rest API"
+  ]
+}

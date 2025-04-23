@@ -1,0 +1,47 @@
+{
+  "dateFrom": "2023",
+  "dateTo": "heute",
+  "title": "Smart Home Automation",
+  "description": "Infrastruktur und Server-App zur Erfassung von Umweltdaten und Steuerung von Zigbee-Geräten. Ein privates und nicht veröffentlichtes Projekt.",
+  "description_long": "${projects/smarthome.md}",
+  "work": [
+    "Dockerisierte Infrastruktur bestehend aus: Mosquitto, InfluxDB2, Grafana 11 und einer custom Backend-App",
+    "Zweit-Server: Raspberry Pi mit 433mhz-zu-MQTT (node-rtl433-ui) und Zigbee2MQTT (Bekannte Open Source Lösung)",
+    "Backend-Entwicklung mit node.js: Javascript ES6+, CRUD Rest API, MQTT-Client, HTTP2-Sockets (Statt Websockets)",
+    "MQTT zu InfluxDB 2 Bridge",
+    "Event basiertes (JS) Echtzeit-Messaging",
+    "Entwicklung umfangreiche \"Transponder-Sammlung\" als Umrechner auf virtuelle Topics. Bspw.: Average, Min, Max, Wet-Bulb, Taupunkt uvm.",
+    "Steuerung von Aktoren (Licht etc.)",
+    "Verwendung aller von Zigbee2MQTT unterstützten Geräte (Hersteller-übergreifend)",
+    "Web-Dashboard per HTTP2-Sockets zur (simplifizierten) Anzeige",
+    "Verschiedene Web-Scraper zu MQTT als dockerisierter Microservice für bspw. Ozon, Waldbrandstufe, Weather Forecast, Sprit-Preise in der Umgebung",
+    "Per CRUD Rest API können virtuelle Topics zur Runtime erstellt, geändert und gelöscht werden (ohne Neustart)",
+    "Export zu OpenSensMap.com"
+  ],
+  "skills": [
+    "node.js",
+    "docker",
+    "Frontend",
+    "Backend",
+    "Infrastruktur",
+    "ES6+",
+    "webpack",
+    "scss",
+    "express",
+    "Mosquitto",
+    "Zigbee2Mqtt",
+    "InfluxDB 2",
+    "nginx",
+    "reverse proxy",
+    "ssh reverse tunnel"
+  ],
+  "images": [
+    {
+      "name": "1",
+      "file": "images/projects/smarthome_01.png"
+    }
+  ],
+  "links": [
+    "[Auf Karte von OpenSenseMap.org]https://www.opensensemap.org/explore/62f3be8ea6e889001bf6b775"
+  ]
+}

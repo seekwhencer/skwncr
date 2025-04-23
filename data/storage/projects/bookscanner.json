@@ -1,0 +1,20 @@
+{
+  "dateFrom": "2010",
+  "dateTo": "2010",
+  "title": "Webbasierter Buch-Scanner per Webcam / DSLR",
+  "description": "Backoffice-Tool um Foto von Buch in Vorrichtung zu machen und in Online-Datenbanken zu suchen.",
+  "description_long": "${projects/bookscanner.md}",
+  "work": [
+    "Entwicklung Backoffice-Tool / Admin für die Verwaltung der Bücher.",
+    "Entwicklung Frontend Realtime-Vorschau der Webcam mit Snapshot- und Cropping-Funktion im Browser",
+    "Entwicklung Zuordnung von Metadaten mittels Rest API der Google-Books-Suche",
+    "Entwicklung Preisvorschlag per Scraping versch. Quellen",
+    "Bau einer Vorrichtung für eine DSLR-Kamera / Webcam mit Beleuchtung um Buch-Fronten zu fotografieren."
+  ],
+  "images": [
+    {
+      "name": "1",
+      "file": "images/projects/bookscanner_01.jpg"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "dateFrom": "2022",
+  "dateTo": "2022",
+  "title": "Image Gallery Server mit node.js",
+  "description": "Image-Browser mit on demand Thumbnail-Erzeugung",
+  "work": [
+    "Entwicklung skalierbarer Backend-Service für Rest API, Thumbnail-Erzeugung und Webserver",
+    "Backend orchestriert imagemagick",
+    "Dockerisiert und skalierbar per Docker Replicas",
+    "Frontend-Entwicklung mit Webpack, SCSS, Javascript in ES6 mit Custom Templating für SSR & CSR."
+  ],
+  "github": [
+    "https://github.com/seekwhencer/node-image-server-gallery"
+  ],
+  "images": [
+    {
+      "name": "1",
+      "file": "images/projects/gallery_01.jpg"
+    },
+    {
+      "name": "2",
+      "file": "images/projects/gallery_02.jpg"
+    },
+    {
+      "name": "3",
+      "file": "images/projects/gallery_03.jpg"
+    },
+    {
+      "name": "4",
+      "file": "images/projects/gallery_04.jpg"
+    }
+  ],
+  "skills": [
+    "Frontend",
+    "Backend",
+    "node.js",
+    "webpack",
+    "ES6+",
+    "scss",
+    "Docker",
+    "Docker Replicas",
+    "Thumbnail-Erzeugung"
+  ]
+}
