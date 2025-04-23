@@ -15,7 +15,9 @@ import {
     Youtube,
     Github,
     Bot,
-    Heart
+    Heart,
+    ArrowDownFromLine,
+    ArrowUpFromLine,
 } from 'lucide';
 
 import HeaderComponent from "./components/HeaderComponent.js";
@@ -56,6 +58,8 @@ export default class App {
             github: createElement(Github).outerHTML,
             bot: createElement(Bot).outerHTML,
             heart: createElement(Heart).outerHTML,
+            arrowUpLine: createElement(ArrowUpFromLine).outerHTML,
+            arrowDownLine: createElement(ArrowDownFromLine).outerHTML,
         }
 
         /**

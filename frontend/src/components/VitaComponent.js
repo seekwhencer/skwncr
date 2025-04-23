@@ -7,13 +7,27 @@ export default class VitaComponent extends Component {
         super(parent, options);
 
         this.target = this.options.target ? this.options.target : this.parent;
-
         this.element = VitaTemplate.dom({
             vita: _DATA.vita,
             icons: this.app.icons
         });
-
         this.target.element.append(this.element);
+
+        this.moreElement = this.element.querySelector('[data-more]');
+        this.element.querySelector('[data-button-more]').onclick = (e) => {
+            this.moreElement.classList.toggle('hidden');
+            const span = e.target.closest('button').querySelector('span');
+            const icon = e.target.closest('button').querySelector('i');
+            console.log(e.target, span);
+
+            if (this.moreElement.classList.contains('hidden')) {
+                span.innerHTML = 'mehr';
+                icon.innerHTML = this.app.icons.arrowDownLine;
+            } else {
+                span.innerHTML = 'weniger';
+                icon.innerHTML = this.app.icons.arrowUpLine;
+            }
+        }
 
         // footer element
         this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
