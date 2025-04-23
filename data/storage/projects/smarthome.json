@@ -39,6 +39,18 @@
     {
       "name": "1",
       "file": "images/projects/smarthome_01.png"
+    },
+    {
+      "name": "2",
+      "file": "images/projects/smarthome_02.jpg"
+    },
+    {
+      "name": "3",
+      "file": "images/projects/smarthome_03.jpg"
+    },
+    {
+      "name": "4",
+      "file": "images/projects/smarthome_04.png"
     }
   ],
   "links": [
