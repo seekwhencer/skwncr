@@ -7,6 +7,13 @@
   width: 100vw;
   background-color: colors.$color-matte-e;
   padding: 0;
+  font-size: typo.$fs-m;
+
+  hr {
+    width: 800px;
+    margin: 50px auto 50px auto;
+    color: colors.$color-gray-d;
+  }
 
   &.open {
     .disclaimer {
@@ -22,16 +29,109 @@
     color: colors.$color-gray-a;
     height: 0;
     overflow: hidden;
+    font-weight: 300;
+    line-height: typo.$fs-l;
+
+    h3 {
+      margin: 0 0 10px 0;
+    }
+
+    .block {
+      display: inline-block;
+      width: 100%;
+      position: relative;
+    }
 
     &--text {
       width: 800px;
       margin: auto;
-      line-height: typo.$fs-l;
       font-weight: 300;
+      columns: 2;
 
       p {
         margin-bottom: 10px;
       }
+
+      .bot {
+        text-align: center;
+        position: absolute;
+        top: -50px;
+        left: calc(50% - 100px);
+      }
+      svg {
+        width: 200px;
+        height: 200px;
+        stroke-width: 1px;
+        opacity: 1;
+        color: white;
+      }
+    }
+
+    &--package {
+      width: 800px;
+      margin: auto;
+
+      ul {
+        li {
+
+          line-height: typo.$fs-l;
+
+        }
+      }
+    }
+
+    &--contact {
+      width: 800px;
+      margin: auto;
+      columns: 2;
+
+      .social-icons {
+        a {
+          display: inline-block;
+          background: black;
+          padding: 3px 4px 2px 5px;
+          color: colors.$color-two;
+          text-align: center;
+          border-radius: 10px;
+          overflow: hidden;
+          font-size: 0.5em;
+          opacity: 0.5;
+          transition: all 0.2s ease-in-out;
+          border: 2px solid white;
+          line-height: 1em;
+
+          &:hover {
+            opacity: 1;
+            cursor: pointer;
+            transition: all 0.1s ease-in-out;
+          }
+
+          svg {
+            width: 70%;
+
+            * {
+              fill: white;
+              stroke-width: 0;
+            }
+
+            .arrow {
+              fill: black;
+            }
+          }
+
+          &.youtube {
+            svg {
+              path {
+                &:nth-child(2) {
+                  fill: black;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
+
+
 }

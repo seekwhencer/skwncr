@@ -12,10 +12,10 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "sass-embedded": "^1.86.3",
-    "vite": "^6.2.5"
   },
   "dependencies": {
+    "sass-embedded": "^1.86.3",
+    "vite": "^6.2.5",
     "highlight.js": "^11.11.1",
     "lucide": "^0.487.0",
     "markdown-it": "^14.1.0",

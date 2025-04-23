@@ -10,11 +10,12 @@ export default class DisclaimerComponent extends Component {
 
         this.element = DisclaimerTemplate.dom({
             ..._DATA.impress,
+            dependencies: _DATA.config.packages.frontend.dependencies,
             icons: this.app.icons
         });
         this.target.element.append(this.element);
 
-        //
+        // any click
         this.element.onclick = (e) => this.click(e);
 
         // footer element
