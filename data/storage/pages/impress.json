@@ -1,4 +1,14 @@
 {
   "title": "Impressum",
-  "text": "${pages/impress.md}"
+  "text": "${pages/impress.md}",
+  "tech": [
+    "node.js",
+    "Docker und Docker Compose",
+    "nginx Webserver",
+    "nginx Reverse Proxy (jwilder)",
+    "Portainer",
+    "Jetbrains IDE",
+    "Linux (Ubuntu Server)",
+    "Windows WSL 2"
+  ]
 }

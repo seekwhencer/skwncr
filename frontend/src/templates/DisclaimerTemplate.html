@@ -34,12 +34,22 @@
         </div>
         <hr>
         <div class="disclaimer--package">
-            <h3>Verwendete Pakete</h3>
-            <ul>
-                ${Object.keys(dependencies).map(d => `
-                <li>${d}</li>
-                `).join('')}
-            </ul>
+            <div class="block">
+                <h3>Verwendete Pakete</h3>
+                <ul>
+                    ${Object.keys(dependencies).map(d => `
+                    <li>${d}</li>
+                    `).join('')}
+                </ul>
+            </div><div class="block">
+                <h3>Verwendete Technologie</h3>
+                <ul>
+                    ${Object.keys(tech).map(d => `
+                    <li>${tech[d]}</li>
+                    `).join('')}
+                </ul>
+            </div>
+
         </div>
         <hr>
     </div>
