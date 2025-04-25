@@ -1,4 +1,4 @@
 @use "global/index";
-@use "components/_index.scss" as index2;
+@use "components/_index" as components;
 @use "../../node_modules/highlight.js/scss/agate.scss";
 @use "../../node_modules/swiper/swiper.scss";

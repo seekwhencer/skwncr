@@ -1,5 +1,6 @@
 @use "../global/colors";
 @use "../global/typo";
+@use "../global/responsive";
 
 .section-splash {
   background: linear-gradient(0deg, colors.$color-one 0%, black 100%);
@@ -33,21 +34,29 @@
       color: white;
       font-weight: 100;
       font-size: typo.$fs-omg;
-      bottom: calc(50vh);
+      bottom: calc(70vh);
       width: 100vw;
       text-align: center;
       text-wrap: nowrap;
+
+      @include responsive.media-phone {
+        font-size: typo.$fs-xl;
+      }
     }
 
     .subtitle {
       position: absolute;
-      bottom: calc(50vh - 30px);
+      bottom: calc(70vh - 30px);
       width: 100vw;
       display: block;
       color: white;
       font-weight: 100;
       font-size: typo.$fs-l;
       text-align: center;
+
+      @include responsive.media-phone {
+        font-size: typo.$fs-l;
+      }
     }
   }
 

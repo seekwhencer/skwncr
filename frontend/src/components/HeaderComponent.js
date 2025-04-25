@@ -13,11 +13,11 @@ export default class HeaderComponent extends Component {
         this.target.element.append(this.element);
 
         // add scroll event for text effect
-        window.addEventListener("scroll", (event) => this.onScroll(event));
+        window.addEventListener("scroll", (event) => this.onScroll(event))
 
         // the buttons
         this.buttons = this.element.querySelectorAll('[data-scroll-target]');
-        this.buttons.forEach(button => button.onclick = () => this.scrollTo(button.dataset.scrollTarget));
+        this.buttons.forEach(button => button.onclick = (e) => this.scrollTo(button.dataset.scrollTarget));
 
         // impress button
         this.element.querySelector('[data-fixed-target=impress]').onclick = () => this.app.disclaimer.toggle();
@@ -28,8 +28,11 @@ export default class HeaderComponent extends Component {
     }
 
     onScroll(e) {
+        //if (!this.app.isDesktop)
+        //    return;
+
         this.debounceScroll ? clearTimeout(this.debounceScroll) : null;
-        this.debounceScroll = setTimeout(() => this.active(), 10);
+        this.debounceScroll = setTimeout(() => this.setActiveButton(), 10);
 
         this.scrollMax = this.parent.splash.element.getBoundingClientRect().height;
         this.scroll = window.scrollY;
@@ -39,7 +42,7 @@ export default class HeaderComponent extends Component {
             this.element.classList.add('splash');
             this.element.css()
                 .filter(`blur(${this.scale * 20}px)`)
-                .transform(`translateY(-${this.scale * (200)}px)`)
+                .transform(`translateY(-${this.scale * (1500)}px)`)
                 .transition(`none`)
                 .opacity(1 - this.scale);
         } else {
@@ -50,15 +53,24 @@ export default class HeaderComponent extends Component {
 
     scrollTo(targetName) {
         const target = document.querySelector(`[data-section=${targetName}]`);
-        target.scrollIntoView({
+        const height = parseInt(this.element.css().height().replace('px',''));
+
+        window.scrollTo({
+            top: target.offsetTop - height,
             behavior: "smooth"
         });
+
+        /*target.scrollIntoView({
+            behavior: "smooth",
+            inline: "nearest",
+            block: "start"
+        });*/
 
         if (target.dataset.section === 'splash')
             this.app.splash.randomVideo();
     }
 
-    active() {
+    setActiveButton() {
         const sections = document.querySelectorAll('section[data-scroll]');
         sections.forEach(section => {
             const gap = 200;

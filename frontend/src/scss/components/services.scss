@@ -1,5 +1,19 @@
 @use "../global/colors";
 @use "../global/typo";
+@use "../global/responsive";
+
+
+$gridX: 120px;
+$gridY: 155px;
+
+$gridXX: 134px;
+$gridYY: 78px;
+
+
+@mixin grid($gridX, $gridY, $cellX, $cellY) {
+  left: calc($gridX * $cellX);
+  top: calc($gridY * $cellY);
+}
 
 .section-services {
   background-color: colors.$color-five;
@@ -11,11 +25,20 @@
     .services {
       position: relative;
       display: block;
-      width: 1080px;
+      width: 0;
       min-height: 1400px;
       margin: auto;
       margin-top: -10px;
       transition: all 0.8s ease-in-out;
+      transform: translate(-$gridXX*4, 0);
+
+      @include responsive.media-smartphone {
+        width: 0;
+        transform: scale(0.5) translate(calc(300px * 0.89 * -1 * 2), 0);
+        transform-origin: top center;
+        min-height: 800px;
+        margin-top: 50px;
+      }
     }
   }
 
@@ -220,11 +243,15 @@
   .services.open {
     padding-top: 0;
     min-height: inherit;
-    width: 1080px;
+    width: 0;
     transition: all 0.6s ease-in-out 0.6s;
 
     .service {
       height: 100px;
+
+      @include responsive.media-smartphone {
+        height: 150px;
+      }
 
       .name {
         bottom: 35px;
@@ -234,6 +261,11 @@
         font-size: typo.$fs-xxs;
         background-color: colors.$color-gray-f;
         color: white;
+
+        @include responsive.media-smartphone {
+          font-size: typo.$fs-s;
+          bottom: 55px;
+        }
       }
 
       .icon {
@@ -247,11 +279,18 @@
         background-color: rgba(0, 0, 0, 0);
 
         svg {
-          left: 5px;
-          top: 6px;
-          width: 20px;
-          height: 20px;
+          left: 0;
+          top: -5px;
+          width: 30px;
+          height: 30px;
           transition: all 0.2s ease-in-out;
+
+          @include responsive.media-smartphone {
+            width: 40px;
+            height: 40px;
+            top: -20px;
+          }
+
         }
       }
 
@@ -262,48 +301,76 @@
         transition: all 0.3s ease-in-out;
       }
 
-      @mixin grid($gridX, $gridY, $cellX, $cellY) {
-        left: calc($gridX * $cellX);
-        top: calc($gridY * $cellY);
-      }
-
-      $gridX: 120px;
-      $gridY: 155px;
-
       &[data-name="development"] {
         @include grid($gridX, $gridY, 0, 0);
-      }
 
-      &[data-name="support"] {
-        @include grid($gridX, $gridY, 3, 0);
+        @include responsive.media-smartphone {
+          @include grid($gridXX, $gridYY, 1, 0);
+        }
       }
 
       &[data-name="consulting"] {
         @include grid($gridX, $gridY, 2, 0);
+
+        @include responsive.media-smartphone {
+          @include grid($gridXX, $gridYY, 2, 1);
+        }
       }
 
       &[data-name="solutions"] {
         @include grid($gridX, $gridY, 1, 0);
+
+        @include responsive.media-smartphone {
+          @include grid($gridXX, $gridYY, 2, -1);
+        }
+      }
+
+      &[data-name="support"] {
+        @include grid($gridX, $gridY, 3, 0);
+
+        @include responsive.media-smartphone {
+          @include grid($gridXX, $gridYY, 3, 0);
+        }
       }
 
       &[data-name="edgecomputing"] {
         @include grid($gridX, $gridY, 4, 0);
+
+        @include responsive.media-smartphone {
+          @include grid($gridXX, $gridYY, 3, 2);
+        }
       }
 
       &[data-name="smarthome"] {
         @include grid($gridX, $gridY, 5, 0);
+
+        @include responsive.media-smartphone {
+          @include grid($gridXX, $gridYY, 4, -1);
+        }
       }
 
       &[data-name="workshops"] {
         @include grid($gridX, $gridY, 6, 0);
+
+        @include responsive.media-smartphone {
+          @include grid($gridXX, $gridYY, 4, 1);
+        }
       }
 
       &[data-name="neighbourhood"] {
         @include grid($gridX, $gridY, 7, 0);
+
+        @include responsive.media-smartphone {
+          @include grid($gridXX, $gridYY, 5, 0);
+        }
       }
 
       &[data-name="fun"] {
         @include grid($gridX, $gridY, 8, 0);
+
+        @include responsive.media-smartphone {
+          @include grid($gridXX, $gridYY, 5, 2);
+        }
       }
 
       &.empty {
@@ -316,9 +383,20 @@
         .name {
           color: black;
           font-weight: 800;
+
+          @include responsive.media-smartphone {
+            font-size: typo.$fs-m;
+          }
+
+
         }
       }
     }
+
+    @include responsive.media-smartphone {
+      width: 0;
+    }
+
   }
 
   .details {
@@ -326,7 +404,7 @@
     display: block;
     opacity: 1;
     font-weight: 300;
-    transition: all 0.3s ease-in-out 0.2;
+    transition: all 0.3s ease-in-out 0.2s;
 
     &.hidden {
       opacity: 0;
@@ -346,6 +424,11 @@
       width: 1400px;
       margin: 0 auto 0 auto;
       padding: 150px 0 200px 0;
+
+      @include responsive.media-smartphone {
+        width: 90vw;
+        margin: auto;
+      }
     }
 
     h3 {
@@ -354,6 +437,11 @@
       margin: 0 0 50px 0;
       color: colors.$color-three;
       transition: all 0.3s ease-in-out 0.2s;
+
+      @include responsive.media-smartphone {
+        font-size: typo.$fs-xl;
+        margin: 30px 0 20px 0;
+      }
     }
 
     .text {
@@ -361,6 +449,11 @@
       margin: auto;
       font-size: typo.$fs-m;
       transition: all 0.6s ease-in-out 0.6s;
+
+      @include responsive.media-smartphone {
+        width: 100%;
+        font-size: typo.$fs-s;
+      }
 
       p {
         line-height: typo.$fs-l;

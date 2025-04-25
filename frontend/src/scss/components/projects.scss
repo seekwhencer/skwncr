@@ -1,5 +1,6 @@
 @use "../global/colors";
 @use "../global/typo";
+@use "../global/responsive";
 
 .section-projects {
   background-color: colors.$color-six;
@@ -10,6 +11,11 @@
     width: 1600px;
     margin: auto;
     position: relative;
+
+    @include responsive.media-smartphone {
+      width: 100vw;
+      padding-top: 20px;
+    }
   }
 
   .bot {
@@ -30,6 +36,10 @@
     width: 900px;
     margin: auto;
     font-weight: 300;
+
+    @include responsive.media-smartphone {
+      width: 90vw;
+    }
 
     p {
       line-height: typo.$fs-xl;
@@ -55,6 +65,12 @@
       z-index: 1;
       transition: all 0.7s ease-in-out;
 
+      @include responsive.media-smartphone {
+        height: 270px;
+        width: 90vw;
+        margin: auto;
+      }
+
       &--head {
         position: absolute;
         bottom: 0;
@@ -66,6 +82,11 @@
           padding: 10px;
           color: colors.$color-gray-a;
           background-color: rgba(0, 0, 0, 0.8);
+
+          @include responsive.media-smartphone {
+            font-size: typo.$fs-s;
+          }
+
         }
 
         .text {
@@ -75,6 +96,12 @@
           font-weight: 300;
           line-height: 1.6em;
           text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.6);
+
+          @include responsive.media-smartphone {
+            font-size: typo.$fs-xs;
+            line-height: 1.1em;
+            font-weight: 400;
+          }
         }
       }
 
@@ -141,10 +168,22 @@
         height: 600px;
         display: inline-block;
 
+        @include responsive.media-smartphone {
+          height: 300px;
+          width: 90vw;
+          margin: auto;
+        }
+
         .name {
           font-size: typo.$fs-xxl;
           text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+
+          @include responsive.media-smartphone {
+            font-size: typo.$fs-s;
+          }
         }
+
+
       }
 
       &:not(.highlight) {
@@ -193,6 +232,10 @@
     text-align: center;
     transition: all 0.3s ease-in-out 0.6s;
     opacity: 1;
+
+    @include responsive.media-smartphone {
+      display: none;
+    }
 
     svg {
       transform: translateY(40px);
@@ -243,6 +286,10 @@
 
       &.highlight {
         height: 300px;
+
+        @include responsive.media-smartphone {
+          height: 180px;
+        }
       }
 
       &.active {
@@ -268,6 +315,13 @@
     background-color: colors.$color-matte-b;
     overflow: hidden;
 
+    @include responsive.media-smartphone {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 20px 20px;
+    }
+
     &.hidden {
       opacity: 0;
       transition: all 0.3s ease-in-out;
@@ -290,12 +344,22 @@
       padding-top: 10px;
       overflow: hidden;
 
+      @include responsive.media-smartphone {
+        order: 1;
+      }
+
       .name {
         padding: 10px 0 0 50px;
         font-size: typo.$fs-xxl;
         transform: translateY(0);
         transition: all 0.3s ease-in-out 0.3s;
         opacity: 1;
+
+
+        @include responsive.media-smartphone {
+          font-size: typo.$fs-m;
+          padding: 10px 20px 0 20px;
+        }
       }
 
       .text {
@@ -304,12 +368,24 @@
         transform: translateY(0);
         opacity: 1;
         transition: all 0.3s ease-in-out 0.5s;
+
+        @include responsive.media-smartphone {
+          font-size: typo.$fs-xs;
+          padding: 10px 20px 20px 20px;
+        }
       }
     }
 
     &--image {
       float: left;
       overflow: hidden;
+
+      @include responsive.media-smartphone {
+        width: 100vw;
+        float: none;
+        order: 2;
+        margin-top: -20px;
+      }
 
       picture {
         img {
@@ -319,6 +395,11 @@
           background-color: black;
           margin: 1px 0;
           display: block;
+
+          @include responsive.media-smartphone {
+            width: 100vw;
+            padding: 0;
+          }
         }
       }
     }
@@ -327,10 +408,22 @@
       overflow: hidden;
       padding: 10px 0 10px 50px;
 
+      @include responsive.media-smartphone {
+        order: 3;
+        padding: 0 0 10px 10px;
+      }
+
       picture {
         display: inline-block;
         margin: 0 10px 10px 0;
         padding: 2px;
+
+        @include responsive.media-smartphone {
+          width: calc(25% - 10px);
+          height: 100px;
+          padding: 0;
+          margin: 0 5px 5px 0;
+        }
 
         img {
           width: 150px;
@@ -341,6 +434,11 @@
           display: block;
           border-radius: 10px;
           opacity: 0.8;
+
+          @include responsive.media-smartphone {
+            width: 100%;
+            height: 100%;
+          }
 
           &:hover {
             cursor: pointer;
@@ -355,12 +453,25 @@
       padding: 10px 50px 10px 50px;
       max-width: calc(50vw - 140px);
 
+      @include responsive.media-smartphone {
+        order: 4;
+        max-width: initial;
+        width: 90vw;
+        margin: auto;
+        padding: 0;
+      }
+
       ul {
         li {
           padding: 10px 0;
           font-size: typo.$fs-m;
           list-style-type: square;
           font-weight: 300;
+
+          @include responsive.media-smartphone {
+            font-size: typo.$fs-s;
+          }
+
         }
       }
 
@@ -376,6 +487,10 @@
       display: block;
       overflow: hidden;
       background-color: colors.$color-matte-b;
+
+      @include responsive.media-smartphone {
+        order: 5;
+      }
 
       .skill {
         background-color: colors.$color-gray-b;
@@ -404,6 +519,12 @@
       overflow: hidden;
       columns: 2;
       column-gap: 50px;
+
+      @include responsive.media-smartphone {
+        order: 6;
+        columns: 1;
+        padding: 20px;
+      }
 
       h4 {
         margin: 30px 0 10px 0;

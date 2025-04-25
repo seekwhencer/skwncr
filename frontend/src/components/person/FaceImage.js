@@ -7,12 +7,16 @@ export default class FaceImageElement extends Component {
         this.text = this.parent.element.querySelector('.text');
         this.element = this.parent.element.querySelector('.image');
         this.image = this.element.querySelector('img');
+
         window.window.addEventListener("scroll", (e) => this.onScroll(e));
 
         this.textHeight = this.text.getBoundingClientRect().height;
     }
 
     onScroll(e) {
+        if (!this.app.isDesktop)
+            return;
+
         this.scroll = window.scrollY;
         this.offsetTop = this.scroll - this.parent.element.offsetTop;
         this.top = this.parent.element.clientTop;

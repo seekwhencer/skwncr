@@ -1,14 +1,20 @@
 @use "../global/colors";
 @use "../global/typo";
+@use "../global/responsive";
 
 .section-skills {
   background-color: colors.$color-four;
-  background-image: url('/images/splash.svg');
+  background-image: url('images/splash.svg');
   background-position: center top;
   background-repeat: no-repeat;
   background-size: 100%;
   background-blend-mode: multiply;
   scroll-margin-top: 100px;
+
+  @include responsive.media-smartphone {
+    background-size: 400%;
+  }
+
 
   h2 {
     color: white;
@@ -17,6 +23,11 @@
   .container {
     width: 1200px;
     margin: auto;
+
+    @include responsive.media-smartphone {
+      width: 90vw;
+      margin: auto;
+    }
   }
 
   .skill-level {
@@ -77,6 +88,11 @@
           border: 3px solid colors.$color-four;
           cursor: pointer;
           z-index: 1000;
+
+          @include responsive.media-smartphone {
+            transform: scale(1.1) rotate(1deg);
+          }
+
         }
       }
 
@@ -120,6 +136,9 @@
         }
       }
 
+      @include responsive.media-smartphone {
+        margin: 0 5px 5px 0;
+      }
 
     }
 

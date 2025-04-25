@@ -1,5 +1,6 @@
 @use "../global/colors";
 @use "../global/typo";
+@use "../global/responsive";
 
 .section-vita {
   background-color: colors.$color-three;
@@ -11,6 +12,11 @@
 
     .vita:last-child {
       padding-bottom: 0;
+    }
+
+    @include responsive.media-smartphone {
+      width: 90vw;
+      margin: auto;
     }
   }
 

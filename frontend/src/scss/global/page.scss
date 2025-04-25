@@ -1,4 +1,5 @@
 @use "typo";
+@use "responsive";
 
 * {
   font-family: typo.$font-family-primary;
@@ -53,7 +54,7 @@ p {
 
 section {
   position: relative;
-  display:block;
+  display: block;
   overflow: hidden;
 }
 
@@ -64,4 +65,14 @@ ul {
 
 section {
   padding: 0 0 100px 0;
+  scroll-padding-top: -200px;
+
+  h2 {
+    @include responsive.media-smartphone {
+      font-size: typo.$fs-l;
+      margin: 20px 0 20px 0
+    }
+  }
 }
+
+

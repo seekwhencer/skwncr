@@ -29,11 +29,13 @@ export default class LayoutComponent extends Component {
         this.sectionFooterElement = SectionFooterElement.dom({});
         this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
 
-        window.addEventListener("scroll", (event) => this.onScroll(event));
-
+        window.addEventListener("scroll", (event) => this.onScroll(event))
     }
 
     onScroll(e) {
+        //if (!this.app.isDesktop)
+        //    return;
+
         this.scroll = window.scrollY;
         this.scale = 1 / this.scrollMax * this.scroll;
 
@@ -58,6 +60,9 @@ export default class LayoutComponent extends Component {
      * little recursion to suppress doubles
      */
     randomVideo() {
+        if (!this.app.isDesktop)
+            return;
+
         const r = () => {
             const rand = Math.floor(Math.random() * this.videoSources.length);
             if (this.video.src.includes(this.videoSources[rand]))

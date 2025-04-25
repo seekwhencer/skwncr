@@ -113,38 +113,49 @@ export default class ProjectsComponent extends Component {
     }
 
     open(project) {
-        this.parent.header.scrollTo(this.element.dataset.section);
-        this.element.classList.add('open');
-        project.open();
-
         if (!this.slider) {
-            const projects = project.element.closest('.container');
-            const transition = projects.css().transition();
-
-            projects.css().opacity('0');
-
-            this.slider = new Swiper('[data-section=projects] .container', {
-                slidesPerView: 6,
-                wrapperClass: 'projects',
-                slideClass: 'project',
-                createElements: true,
-                //centeredSlidesBounds: true,
-                centeredSlides: true,
-                spaceBetween: '20px',
-                mousewheel: {
-                    forceToAxis: true,
-                },
-            });
-
-            setTimeout(() => projects.css().opacity('1'), 600);
-
+            setTimeout(() => this.parent.header.scrollTo(this.element.dataset.section), 10);
         }
 
-        if (this.slider) {
+        setTimeout(() => {
+            this.element.classList.add('open');
+            project.open();
 
-            this.slider.slideTo(project.index, 600, () => {
-            });
-        }
+            if (!this.slider) {
+                const projects = project.element.closest('.container');
+                const transition = projects.css().transition();
+
+                this.slider = new Swiper('[data-section=projects] .container', {
+                    slidesPerView: 2,
+                    wrapperClass: 'projects',
+                    slideClass: 'project',
+                    createElements: true,
+                    centeredSlides: true,
+                    spaceBetween: '20px',
+                    mousewheel: {
+                        forceToAxis: true,
+                    },
+                    breakpoints: {
+                        640: {
+                            slidesPerView: 3,
+                            spaceBetween: "20px"
+                        },
+                        1024: {
+                            slidesPerView: 6,
+                            spaceBetween: "20px"
+                        }
+                    }
+                });
+            }
+
+            if (this.slider) {
+                this.slider.slideTo(project.index, 600, () => {
+                    console.log('>> SCROLL TO SLIDER ELEMENT', project.index);
+                });
+            }
+        }, 0);
+
+
     }
 
     close() {

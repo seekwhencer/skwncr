@@ -1,9 +1,10 @@
 @use "../global/colors";
 @use "../global/typo";
+@use "../global/responsive";
 
 header {
   position: fixed;
-  background-color: colors.$color-matte-b;
+  background-color: colors.$color-matte-d;
   width: 100%;
   height: 100px;
   z-index: 10000;
@@ -46,6 +47,10 @@ header {
         padding: 0 10px;
         transform: translateX(100%);
         transition: all 0.2s ease-in-out;
+
+        @include responsive.media-smartphone {
+          line-height: 48px;
+        }
       }
 
       &.active {
@@ -119,6 +124,17 @@ header {
           background-color: colors.$color-ocean;
         }
       }
+
+      @include responsive.media-smartphone {
+        width: initial;
+        line-height: 48px;
+        opacity: 1;
+        font-size: typo.$fs-s;
+      }
+    }
+
+    @include responsive.media-smartphone {
+      display: block;
     }
   }
 
@@ -168,8 +184,45 @@ header {
           }
 
         }
+
+        @include responsive.media-smartphone {
+          opacity: 1;
+        }
+
+        &.impress {
+          position: absolute;
+          bottom: -200px;
+          left: 10vw;
+          font-size: typo.$fs-xs;
+          letter-spacing: 0.05em;
+          line-height: typo.$fs-xxl;
+        }
+      }
+
+      @include responsive.media-smartphone {
+        width: 80vw;
+        margin: auto;
+        display: block;
       }
     }
   }
+
+  @include responsive.media-smartphone {
+    width: 100vw;
+    position: fixed;
+    bottom: inherit;
+  }
+
+
+  &.splash {
+    @include responsive.media-smartphone {
+      width: 100vw;
+      top: 50vh;
+      bottom: inherit;
+      position: fixed;
+      z-index: 10000;
+    }
+  }
+
 }
 

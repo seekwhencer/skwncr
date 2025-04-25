@@ -1,3 +1,4 @@
+import BrowserDetector from 'browser-dtector';
 import {
     createElement,
     Menu,
@@ -36,6 +37,9 @@ import './scss/index.scss';
 
 export default class App {
     constructor() {
+        this.browser = new BrowserDetector(window.navigator.userAgent).parseUserAgent();
+
+        //
         this.element = document.querySelector('#root');
         this.draw();
     }
@@ -107,6 +111,21 @@ export default class App {
          */
 
 
+    }
+
+    get isMobile() {
+        return this.browser.isMobile;
+    }
+
+    set isMobile(val) {
+        //
+    }
+    get isDesktop() {
+        return this.browser.isDesktop;
+    }
+
+    set isDesktop(val) {
+        //
     }
 }
 

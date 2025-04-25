@@ -1,5 +1,6 @@
 @use "../global/colors";
 @use "../global/typo";
+@use "../global/responsive";
 
 .section-person {
   background-color: colors.$color-two;
@@ -20,6 +21,10 @@
   .container {
     width: 1400px;
     margin: auto;
+
+    @include responsive.media-smartphone {
+      width: 100vw;
+    }
   }
 
   .content {
@@ -32,9 +37,22 @@
       top: 150px;
       transform-origin: center center;
 
+      @include responsive.media-smartphone {
+        position: relative;
+        float: left;
+        top: initial;
+        width: 150px;
+        height: 150px;
+        margin: 0 20px 20px 20px;
+      }
+
       img {
         height: 100%;
         transform: translateX(-50px);
+
+        @include responsive.media-smartphone {
+          transform: translateX(-33px);
+        }
       }
     }
 
@@ -42,6 +60,12 @@
       line-height: 2em;
       width: 700px;
       margin: auto auto 150px auto;
+
+      @include responsive.media-smartphone {
+        width: 90vw;
+        font-size: typo.$fs-xs;
+        margin: auto auto 50px auto;
+      }
 
       p {
         margin-bottom: 20px;
@@ -127,5 +151,34 @@
         }
       }
     }
+
+    @include responsive.media-smartphone {
+      width: 90vw;
+      margin: auto;
+
+      .block {
+        display: inline-block;
+        float: left;
+        margin-bottom: 20px;
+
+        &:nth-child(1) {
+          width: 100%;
+        }
+
+        &:nth-child(2) {
+          width: 100%;
+        }
+
+        &:nth-child(3) {
+          width: 100%;
+        }
+
+        &:nth-child(4) {
+          width: 100%;
+        }
+      }
+
+    }
+
   }
 }

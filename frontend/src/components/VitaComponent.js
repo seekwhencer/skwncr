@@ -13,12 +13,12 @@ export default class VitaComponent extends Component {
         });
         this.target.element.append(this.element);
 
+        // more button
         this.moreElement = this.element.querySelector('[data-more]');
         this.element.querySelector('[data-button-more]').onclick = (e) => {
             this.moreElement.classList.toggle('hidden');
             const span = e.target.closest('button').querySelector('span');
             const icon = e.target.closest('button').querySelector('i');
-            console.log(e.target, span);
 
             if (this.moreElement.classList.contains('hidden')) {
                 span.innerHTML = 'mehr';
