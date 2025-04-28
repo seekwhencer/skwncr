@@ -1,7 +1,4 @@
 networks:
-  apply-o-mat:
-    external: false
-    name: ${PROJECT_NAME}
   proxy_default:
     external: true
 
@@ -11,9 +8,13 @@ services:
       file: docker-compose-server.yml
       service: apply-o-mat_server
 
+    networks:
+      - proxy_default
+
     command: 'npm start'
     environment:
       - SERVER_PORT=${SERVER_PORT}
       - VIRTUAL_HOST=skwncr.net
+      - VIRTUAL_PORT=${SERVER_PORT}
       - LETSENCRYPT_HOST=skwncr.net
       - LETSENCRYPT_EMAIL=matthias.kallenbach@skwncr.com
