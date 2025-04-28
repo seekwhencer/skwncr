@@ -1,6 +1,6 @@
 services:
   apply-o-mat_data:
-    image: node:23-alpine
+    image: ${PROJECT_NAME}
     working_dir: /app/data
     container_name: ${PROJECT_NAME}_data
 
@@ -12,6 +12,7 @@ services:
     # to run the server
 
     command: 'npm start'
+
     user: root
     volumes:
       - .:/app

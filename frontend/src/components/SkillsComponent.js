@@ -9,7 +9,7 @@ export default class LayoutComponent extends Component {
         this.target = this.options.target ? this.options.target : this.parent;
         this.element = SkillsTemplate.dom({
             skills: _DATA.skills,
-            slashImage: 'IMAGE',
+            slashImage: '',
             icons: this.app.icons
         });
         this.target.element.append(this.element);

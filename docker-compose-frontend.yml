@@ -6,27 +6,28 @@ networks:
     external: true
 
 services:
-
   apply-o-mat_frontend:
-    build:
-      context: .
-      dockerfile: frontend/Dockerfile
-    image: ${PROJECT_NAME}_frontend
+    image: ${PROJECT_NAME}
+    container_name: ${PROJECT_NAME}_frontend
     working_dir: /app/frontend
 
     # replace it
-    command: 'tail -f /dev/null'
+    # command: 'tail -f /dev/null'
 
-    container_name: ${PROJECT_NAME}_frontend
+    command: 'npm start'
     volumes:
       - .:/app
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+
     networks:
       - apply-o-mat
       - proxy_default
     environment:
       - DEBUG=true
       - ENVIRONMENT=default
+      - FRONTEND_PORT=${FRONTEND_PORT}
 
       - VIRTUAL_HOST=frontend.${PROJECT_NAME}.servant
-      - VIRTUAL_PORT=${FRONTEND_SERVER_PORT}
+      - VIRTUAL_PORT=${FRONTEND_PORT}
       - HOST_IP=${HOST_IP}

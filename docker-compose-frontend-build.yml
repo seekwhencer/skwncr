@@ -1,0 +1,14 @@
+networks:
+  apply-o-mat:
+    external: false
+    name: ${PROJECT_NAME}
+  proxy_default:
+    external: true
+
+services:
+  apply-o-mat_frontend:
+    extends:
+      file: docker-compose-frontend.yml
+      service: apply-o-mat_frontend
+
+    command: 'npm run build'

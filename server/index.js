@@ -1,9 +1,17 @@
 import express from "express";
+
 const server = express();
-const port = 8080;
+const port = parseInt(process.env?.SERVER_PORT || 9090);
+
+server.use((req, res, next) => {
+    next();
+});
 
 server.use(express.static('../frontend/dist'));
 
-server.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+server.listen({
+    port: port,
+    host: '0.0.0.0'
+}, () => {
+    console.log(`WTF ${port}`);
 });

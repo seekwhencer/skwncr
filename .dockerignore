@@ -1,0 +1,4 @@
+.dockerignore
+data/data.json
+frontend/dist
+node_modules

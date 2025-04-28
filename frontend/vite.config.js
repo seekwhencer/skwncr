@@ -10,7 +10,7 @@ export default defineConfig({
     },
     server: {
         host: true,
-        port: 8080,
+        port: process.env?.FRONTEND_PORT || 8080,
         strictPort: true,
         origin: 'http://frontend.apply-o-mat.servant',
         allowedHosts: true,
