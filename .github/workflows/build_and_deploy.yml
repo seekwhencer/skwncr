@@ -26,16 +26,16 @@ jobs:
           npm install --legacy-peer-deps
           npm run build
 
-      - name: Run frontend build
+      - name: Run frontend build with VITE_BASE=/skwncr/ as url prefix
         run: |
           npm install --legacy-peer-deps
           export VITE_BASE=/skwncr/
           npm run build
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v4
-        with:
-          branch: frontend-production
-          folder: frontend/dist
-          clean: true
-          single-commit: true
+#      - name: Deploy
+#        uses: JamesIves/github-pages-deploy-action@releases/v4
+#        with:
+#          branch: frontend-production
+#          folder: frontend/dist
+#          clean: true
+#          single-commit: true

@@ -11,6 +11,9 @@ services:
     networks:
       - proxy_default
 
+    volumes:
+      - /root/projects/skwncr.net_storage/video:/app/frontend/dist/video
+
     command: 'npm start'
     environment:
       - SERVER_PORT=${SERVER_PORT}
