@@ -190,12 +190,14 @@ header {
         }
 
         &.impress {
-          position: absolute;
-          bottom: -200px;
-          left: 10vw;
-          font-size: typo.$fs-xs;
-          letter-spacing: 0.05em;
-          line-height: typo.$fs-xxl;
+          @include responsive.media-smartphone {
+            position: absolute;
+            bottom: -200px;
+            left: 10vw;
+            font-size: typo.$fs-xs;
+            letter-spacing: 0.05em;
+            line-height: typo.$fs-xxl;
+          }
         }
       }
 

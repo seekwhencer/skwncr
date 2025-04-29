@@ -12,8 +12,8 @@ services:
       - proxy_default
 
     volumes:
-      - /root/projects/skwncr.net_storage/video:/app/frontend/dist/video
-      - /root/projects/skwncr.net_storage/images/projects:/app/frontend/dist/images/projects
+      - /root/projects/skwncr.net_storage/video:/app/server/static/video
+      - /root/projects/skwncr.net_storage/images/projects:/app/server/static/images/projects
 
     command: 'npm start'
     environment:
