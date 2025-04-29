@@ -38,6 +38,7 @@ import './scss/index.scss';
 export default class App {
     constructor() {
         this.browser = new BrowserDetector(window.navigator.userAgent).parseUserAgent();
+        this.app = this;
 
         //
         this.element = document.querySelector('#root');
@@ -116,6 +117,7 @@ export default class App {
     }
 
     get isMobile() {
+        this.browser = new BrowserDetector(window.navigator.userAgent).parseUserAgent();
         return this.browser.isMobile;
     }
 
@@ -123,6 +125,7 @@ export default class App {
         //
     }
     get isDesktop() {
+        this.browser = new BrowserDetector(window.navigator.userAgent).parseUserAgent();
         return this.browser.isDesktop;
     }
 
