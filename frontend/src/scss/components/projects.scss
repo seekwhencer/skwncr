@@ -53,6 +53,7 @@
     flex-wrap: wrap;
     gap: 20px 20px;
     margin-bottom: 100px;
+    transition: transform 0.3s ease-in-out;
 
     .project {
       position: relative;
@@ -63,10 +64,10 @@
       overflow: hidden;
       order: 2;
       z-index: 1;
-      transition: all 0.7s ease-in-out;
+      transition: transform 0.3s ease-in-out;
 
       @include responsive.media-smartphone {
-        height: 270px;
+        height: 250px;
         width: 90vw;
         margin: auto;
       }
@@ -263,10 +264,10 @@
       display: inline-block;
 
       &.swiper-slide-active {
-        width: 600px;
         transform: scale(1.3);
         z-index: 1000;
         transform-origin: center 50px;
+        transition: transform 0.3s ease-in-out;
       }
 
       &--head {
@@ -307,7 +308,7 @@
   }
 
   .details-block {
-    min-height: 500px;
+    margin-bottom: 100px;
   }
 
   .details {
@@ -549,6 +550,40 @@
         margin-bottom: 10px;
         font-weight: 300;
         line-height: 1.5em;
+      }
+    }
+  }
+
+  &.open {
+    .projects {
+      transition: all 0.3s ease-in-out;
+
+      @include responsive.media-smartphone {
+        margin-bottom: 50px;
+      }
+
+      .project {
+        transition: transform 0.3s ease-in-out;
+
+        @include responsive.media-smartphone {
+          height: 150px;
+        }
+
+        &--head {
+          .name {
+            @include responsive.media-smartphone {
+              font-size: typo.$fs-xs;
+              line-height: 1.3em;
+            }
+          }
+
+          .text {
+            @include responsive.media-smartphone {
+              font-size: typo.$fs-xxs;
+              line-height: 1.3em;
+            }
+          }
+        }
       }
     }
   }

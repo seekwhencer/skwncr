@@ -10,6 +10,7 @@ export default class FooterComponent extends Component {
 
         this.element = FooterTemplate.dom({
             text: _DATA.footer.text,
+            readme: _DATA.footer.readme,
             icons: this.app.icons
         });
 

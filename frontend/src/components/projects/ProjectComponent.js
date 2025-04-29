@@ -32,13 +32,21 @@ export default class ProjectComponent extends Component {
 
     open() {
         this.parent.flush();
-        this.element.classList.add('active');
+        this.activate();
         this.drawDetails();
     }
 
     close() {
-        this.element.classList.remove('active');
+        this.deactivate();
         this.flushDetails();
+    }
+
+    activate() {
+        this.element.classList.add('active');
+    }
+
+    deactivate() {
+        this.element.classList.remove('active');
     }
 
     get index() {

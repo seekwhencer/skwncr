@@ -7,12 +7,13 @@ $gridX: 120px;
 $gridY: 155px;
 
 $gridXX: 134px;
+$gridXXOffset: 45px;
 $gridYY: 78px;
 
 
-@mixin grid($gridX, $gridY, $cellX, $cellY) {
-  left: calc($gridX * $cellX);
-  top: calc($gridY * $cellY);
+@mixin grid($x, $y, $cellX, $cellY, $offsetX:0, $offsetY:0) {
+  left: calc($x * $cellX) + $offsetX ;
+  top: calc($y * $cellY) + $offsetY;
 }
 
 .section-services {
@@ -305,7 +306,7 @@ $gridYY: 78px;
         @include grid($gridX, $gridY, 0, 0);
 
         @include responsive.media-smartphone {
-          @include grid($gridXX, $gridYY, 1, 0);
+          @include grid($gridXX, $gridYY, 1, 0, $gridXXOffset);
         }
       }
 
@@ -313,7 +314,7 @@ $gridYY: 78px;
         @include grid($gridX, $gridY, 2, 0);
 
         @include responsive.media-smartphone {
-          @include grid($gridXX, $gridYY, 2, 1);
+          @include grid($gridXX, $gridYY, 2, 1, $gridXXOffset);
         }
       }
 
@@ -321,7 +322,7 @@ $gridYY: 78px;
         @include grid($gridX, $gridY, 1, 0);
 
         @include responsive.media-smartphone {
-          @include grid($gridXX, $gridYY, 2, -1);
+          @include grid($gridXX, $gridYY, 2, -1, $gridXXOffset);
         }
       }
 
@@ -329,7 +330,7 @@ $gridYY: 78px;
         @include grid($gridX, $gridY, 3, 0);
 
         @include responsive.media-smartphone {
-          @include grid($gridXX, $gridYY, 3, 0);
+          @include grid($gridXX, $gridYY, 3, 0, $gridXXOffset);
         }
       }
 
@@ -337,7 +338,7 @@ $gridYY: 78px;
         @include grid($gridX, $gridY, 4, 0);
 
         @include responsive.media-smartphone {
-          @include grid($gridXX, $gridYY, 3, 2);
+          @include grid($gridXX, $gridYY, 3, 2, $gridXXOffset);
         }
       }
 
@@ -345,7 +346,7 @@ $gridYY: 78px;
         @include grid($gridX, $gridY, 5, 0);
 
         @include responsive.media-smartphone {
-          @include grid($gridXX, $gridYY, 4, -1);
+          @include grid($gridXX, $gridYY, 4, -1, $gridXXOffset);
         }
       }
 
@@ -353,7 +354,7 @@ $gridYY: 78px;
         @include grid($gridX, $gridY, 6, 0);
 
         @include responsive.media-smartphone {
-          @include grid($gridXX, $gridYY, 4, 1);
+          @include grid($gridXX, $gridYY, 4, 1, $gridXXOffset);
         }
       }
 
@@ -361,7 +362,7 @@ $gridYY: 78px;
         @include grid($gridX, $gridY, 7, 0);
 
         @include responsive.media-smartphone {
-          @include grid($gridXX, $gridYY, 5, 0);
+          @include grid($gridXX, $gridYY, 5, 0, $gridXXOffset);
         }
       }
 
@@ -369,7 +370,7 @@ $gridYY: 78px;
         @include grid($gridX, $gridY, 8, 0);
 
         @include responsive.media-smartphone {
-          @include grid($gridXX, $gridYY, 5, 2);
+          @include grid($gridXX, $gridYY, 5, 2, $gridXXOffset);
         }
       }
 

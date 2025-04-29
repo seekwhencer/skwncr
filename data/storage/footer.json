@@ -1,3 +1,4 @@
 {
-  "text": "${./pages/footer.md}"
+  "text": "${./pages/footer.md}",
+  "readme": "${../../README.md}"
 }

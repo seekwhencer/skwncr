@@ -1,1 +1,0 @@
-Crafted with pure power of VanillaJS

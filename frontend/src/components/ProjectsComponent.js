@@ -56,26 +56,28 @@ export default class ProjectsComponent extends Component {
             return;
 
         const target = e.target;
-        let projectElement, projectName, project;
+        let projectsElement, projectElement, projectName, project;
 
-        this.projectsElement = target.closest('.projects') || target.querySelector('.projects');
+        projectsElement = target.closest('.projects') || target.querySelector('.projects');
 
-        if (this.projectsElement)
+        if (projectsElement)
             projectElement = target.closest('.project');
 
         if (projectElement)
             projectName = projectElement.querySelector('.name').innerText.trim(); //@TODO it's dirty
 
+        console.log('>>>', projectName);
+
         if (projectName)
-            project = this.one(projectName, 'title');
+            this.project = this.one(projectName, 'title');
 
         // when clicked on a slider or listing item
-        if (project)
-            this.open(project);
+        if (this.project)
+            this.open(this.project);
 
         // when not the listing or slider item, and not the details was clicked
         const detailsElement = target.closest('.details');
-        if (!project && !detailsElement)
+        if (!this.project && !detailsElement)
             this.close();
 
     }
@@ -109,22 +111,30 @@ export default class ProjectsComponent extends Component {
     }
 
     flush() {
-        this.projects.forEach(p => p.element.classList.remove('active'));
+        this.projects.forEach(p => p.deactivate());
+        this.flushDetails();
+        this.project = false;
+    }
+
+    flushDetails() {
+        if (this.project) {
+            this.project.flushDetails();
+        } else {
+            this.detailsElement.innerHTML = '';
+        }
+
     }
 
     open(project) {
-        if (!this.slider) {
-            setTimeout(() => this.parent.header.scrollTo(this.element.dataset.section), 10);
-        }
+        //if (!this.slider) {
+        setTimeout(() => this.parent.header.scrollTo(this.element.dataset.section), 10);
+        //}
 
         setTimeout(() => {
             this.element.classList.add('open');
             project.open();
 
             if (!this.slider) {
-                const projects = project.element.closest('.container');
-                const transition = projects.css().transition();
-
                 this.slider = new Swiper('[data-section=projects] .container', {
                     slidesPerView: 2,
                     wrapperClass: 'projects',
@@ -153,6 +163,7 @@ export default class ProjectsComponent extends Component {
                     console.log('>> SCROLL TO SLIDER ELEMENT', project.index);
                 });
             }
+
         }, 0);
 
 

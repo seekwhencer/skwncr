@@ -20,7 +20,7 @@ export default class HeaderComponent extends Component {
         this.buttons.forEach(button => button.onclick = (e) => this.scrollTo(button.dataset.scrollTarget));
 
         // impress button
-        this.element.querySelector('[data-fixed-target=impress]').onclick = () => this.app.disclaimer.toggle();
+        //this.element.querySelector('[data-fixed-target=impress]').onclick = () => this.app.disclaimer.toggle();
 
         // debouncing
         this.debounceScroll = false;

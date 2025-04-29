@@ -78,9 +78,7 @@ export default class App {
          * the sections
          */
 
-        this.disclaimer = new DisclaimerComponent(this, {
-            target: this.layout
-        });
+
 
         this.splash = new SplashComponent(this, {
             target: this.layout
@@ -103,6 +101,10 @@ export default class App {
         });
 
         this.projects = new ProjectsComponent(this, {
+            target: this.layout
+        });
+
+        this.disclaimer = new DisclaimerComponent(this, {
             target: this.layout
         });
 

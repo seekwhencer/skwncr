@@ -16,7 +16,7 @@ export default class DisclaimerComponent extends Component {
         this.target.element.append(this.element);
 
         // any click
-        this.element.onclick = (e) => this.click(e);
+        // this.element.onclick = (e) => this.click(e);
 
         // footer element
         this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');

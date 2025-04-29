@@ -1,4 +1,4 @@
-# skwncr.net
+## skwncr.net
 
 ... das ist (wird) meine Website auf: https://skwncr.net
 
@@ -6,7 +6,7 @@
 
 ---
 
-## Parts
+### Parts
 
 1. Data
 2. Frontend
@@ -29,6 +29,8 @@
 - Im Dev-Mode auf eigener Subdomain im LAN (jwilder nginx reverse proxy)
 
 ### Production
+- Ohne Share (die großen Assets vielleicht)
+- Data und Frontend wird mit Docker-Image gebaut
 - Im Prod-Mode auf entsprechender Domain im Web (jwilder nginx reverse proxy)
 - SSL Let's encrypt Zertifikat wird automatisch erzeugt
 - Deploy-Script `./build.sh` wird auf dem Production Docker-Host ausgeführt
