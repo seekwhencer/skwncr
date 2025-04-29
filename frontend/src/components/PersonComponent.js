@@ -7,9 +7,11 @@ export default class PersonComponent extends Component {
     constructor(parent, options) {
         super(parent, options);
 
+        this.debug = false;
+
         this.target = this.options.target ? this.options.target : this.parent;
         this.element = PersonTemplate.dom({
-            person: _DATA.person,
+            ..._DATA.person,
             age: this.calcAge(),
             icons: this.app.icons
         });
@@ -22,6 +24,11 @@ export default class PersonComponent extends Component {
         this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
         this.sectionFooterElement = SectionFooterElement.dom({});
         this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
+
+
+        this.on('enter', () => this.enterView());
+        this.on('leave', () => this.leaveView());
+
     }
 
    calcAge() {

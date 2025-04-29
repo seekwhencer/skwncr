@@ -1,25 +1,7 @@
+import './scss/index.scss';
+
 import BrowserDetector from 'browser-dtector';
-import {
-    createElement,
-    Menu,
-    Lightbulb,
-    TentTree,
-    BookOpenCheck,
-    Microchip,
-    DraftingCompass,
-    Ambulance,
-    Ship,
-    ShipWheel,
-    HeartHandshake,
-    Linkedin,
-    Facebook,
-    Youtube,
-    Github,
-    Bot,
-    Heart,
-    ArrowDownFromLine,
-    ArrowUpFromLine,
-} from 'lucide';
+import Icons from "./components/Icons.js";
 
 import HeaderComponent from "./components/HeaderComponent.js";
 import LayoutComponent from "./components/LayoutComponent.js";
@@ -33,8 +15,6 @@ import SkillsComponent from "./components/SkillsComponent.js";
 import ProjectsComponent from "./components/ProjectsComponent.js";
 import DisclaimerComponent from "./components/DisclaimerComponent.js";
 
-import './scss/index.scss';
-
 export default class App {
     constructor() {
         this.browser = new BrowserDetector(window.navigator.userAgent).parseUserAgent();
@@ -46,26 +26,7 @@ export default class App {
     }
 
     draw() {
-        this.icons = {
-            menu: createElement(Menu).outerHTML,
-            consulting: createElement(ShipWheel).outerHTML,
-            development: createElement(DraftingCompass).outerHTML,
-            support: createElement(Ambulance).outerHTML,
-            solutions: createElement(Ship).outerHTML,
-            edgecomputing: createElement(Microchip).outerHTML,
-            smarthome: createElement(Lightbulb).outerHTML,
-            neighbourhood: createElement(HeartHandshake).outerHTML,
-            workshops: createElement(BookOpenCheck).outerHTML,
-            fun: createElement(TentTree).outerHTML,
-            linkedin: createElement(Linkedin).outerHTML,
-            facebook: createElement(Facebook).outerHTML,
-            youtube: createElement(Youtube).outerHTML,
-            github: createElement(Github).outerHTML,
-            bot: createElement(Bot).outerHTML,
-            heart: createElement(Heart).outerHTML,
-            arrowUpLine: createElement(ArrowUpFromLine).outerHTML,
-            arrowDownLine: createElement(ArrowDownFromLine).outerHTML,
-        }
+        this.icons = Icons;
 
         /**
          * page elements: header, main, footer
@@ -78,8 +39,6 @@ export default class App {
         /**
          * the sections
          */
-
-
 
         this.splash = new SplashComponent(this, {
             target: this.layout

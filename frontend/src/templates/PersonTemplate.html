@@ -6,24 +6,24 @@
                 <img src="images/me.jpg" alt="me">
             </div>
             <div class="text">
-                ${(person.text.md())}
+                ${(text.md())}
             </div>
             <div class="specs">
                 <div class="block">
                     <h4>Zur Person</h4>
                     <div class="row">
-                        <span class="label">Berufsbezeichnung</span>${person.job}
+                        <span class="label">Berufsbezeichnung</span>${job}
                     </div>
                     <div class="row">
-                        <span class="label">Baujahr</span>${person.birthYear} (${age}) in ${person.birthCity}
+                        <span class="label">Baujahr</span>${birthYear} (${age}) in ${birthCity}
                     </div>
                     <div class="row">
-                        <span class="label">Wohnsitz</span>${person.city}
+                        <span class="label">Wohnsitz</span>${city}
                     </div>
                 </div>
                 <div class="block">
                     <h4>Ausbildung</h4>
-                    ${person.education.map(ed => `
+                    ${education.map(ed => `
                     <div class="row">
                         <span class="label">${ed.dateFrom} - ${ed.dateTo}</span>
                         ${ed.title}
@@ -33,7 +33,7 @@
                 </div>
                 <div class="block">
                     <h4>Sprachen</h4>
-                    ${person.languages.map(l => `
+                    ${languages.map(l => `
                     <div class="row">
                         <span class="label">${l.title}</span>${l.level}
                     </div>
@@ -42,17 +42,16 @@
                 <div class="block">
                     <h4>Kontakt</h4>
                     <div class="row">
-                        03334 - xx xx xx xx
+                        ${contact.phone}
                     </div>
                     <div class="row">
-                        matthias.kallenbach@skwncr.net
+                        ${contact.email}
                     </div>
                     <h4>Social</h4>
                     <div class="row social-icons">
-                        <a href="" target="_blank">${icons.github}</a>
-                        <a href="" target="_blank">${icons.linkedin}</a>
-                        <a href="" target="_blank">${icons.facebook}</a>
-                        <a href="" target="_blank">${icons.youtube}</a>
+                        ${social.map(s => `
+                            <a href="${s.url}" target="_blank" class="icon icon--${s.icon}" alt="${s.name}">${icons[s.icon]}</a>
+                        `).join('')}
                     </div>
                 </div>
 

@@ -66,8 +66,6 @@ export default class ProjectsComponent extends Component {
         if (projectElement)
             projectName = projectElement.querySelector('.name').innerText.trim(); //@TODO it's dirty
 
-        console.log('>>>', projectName);
-
         if (projectName)
             this.project = this.one(projectName, 'title');
 
@@ -160,7 +158,6 @@ export default class ProjectsComponent extends Component {
 
             if (this.slider) {
                 this.slider.slideTo(project.index, 600, () => {
-                    console.log('>> SCROLL TO SLIDER ELEMENT', project.index);
                 });
             }
 

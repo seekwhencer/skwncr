@@ -10,6 +10,8 @@ export default class DisclaimerComponent extends Component {
 
         this.element = DisclaimerTemplate.dom({
             ..._DATA.impress,
+            social: _DATA.person.social,
+            contact: _DATA.person.contact,
             dependencies: _DATA.config.packages.frontend.dependencies,
             icons: this.app.icons
         });

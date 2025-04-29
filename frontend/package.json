@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "vite",
-    "build": "vite build",
+    "build": "vite build && mkdir -p ../server/static && rsync -avI --progress --exclude=video --exclude=images/projects /app/frontend/dist/ /app/server/static/",
     "build:watch": "vite build --watch"
   },
   "author": "",

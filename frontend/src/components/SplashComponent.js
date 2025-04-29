@@ -6,6 +6,8 @@ export default class LayoutComponent extends Component {
     constructor(parent, options) {
         super(parent, options);
 
+        this.debug = false;
+
         this.target = this.options.target ? this.options.target : this.parent;
 
         this.element = SplashTemplate.dom({
@@ -29,7 +31,11 @@ export default class LayoutComponent extends Component {
         this.sectionFooterElement = SectionFooterElement.dom({});
         this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
 
-        window.addEventListener("scroll", (event) => this.onScroll(event))
+        window.addEventListener("scroll", (event) => this.onScroll(event));
+
+        this.on('enter', () => this.enterView());
+        this.on('leave', () => this.leaveView());
+
     }
 
     onScroll(e) {

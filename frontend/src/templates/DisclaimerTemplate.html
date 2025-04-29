@@ -15,19 +15,18 @@
             <div class="block">
                 <h3>Kontakt</h3>
                 <div class="row">
-                    03334 - xx xx xx xx
+                    ${contact.phone}
                 </div>
                 <div class="row">
-                    matthias.kallenbach@skwncr.net
+                    ${contact.email}
                 </div>
             </div>
             <div class="block">
                 <h3>Social</h3>
                 <div class="row social-icons">
-                    <a href="" target="_blank">${icons.github}</a>
-                    <a href="" target="_blank">${icons.linkedin}</a>
-                    <a href="" target="_blank">${icons.facebook}</a>
-                    <a href="" target="_blank" class="youtube">${icons.youtube}</a>
+                    ${social.map(s => `
+                    <a href="${s.url}" target="_blank" class="icon ${s.icon}" alt="${s.name}">${icons[s.icon]}</a>
+                    `).join('')}
                 </div>
             </div>
 

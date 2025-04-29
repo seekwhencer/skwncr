@@ -17,6 +17,26 @@ export default class ProjectComponent extends Component {
             icons: this.app.icons
         });
         this.target.projectsElement.append(this.element);
+
+        // lazy loading
+        this.image = this.element.querySelector('img');
+        this.imageInViewOffsetY = 200;
+
+        this.on('imageEnter', () => this.imageEnterView());
+        this.on('imageLeave', () => this.imageLeaveView());
+
+        window.addEventListener('scroll', () => {
+            if (!this.image)
+                return;
+
+            if (this.isImageInView && this.isImageInView !== this.wasImageInView)
+                this.emit('imageEnter');
+
+            if (!this.isImageInView && this.isImageInView !== this.wasImageInView)
+                this.emit('imageLeave');
+
+            this.wasImageInView = this.isImageInView;
+        });
     }
 
     drawDetails() {
@@ -49,11 +69,38 @@ export default class ProjectComponent extends Component {
         this.element.classList.remove('active');
     }
 
+    imageEnterView() {
+        const src = this.image.dataset.source
+        console.log('>> IMAGE ENTER:', this.image.src)
+    }
+
+    imageLeaveView() {
+        console.log('>> IMAGE LEAVE:', this.image.src)
+    }
+
     get index() {
         return this.parent.projects.indexOf(this);
     }
 
     set index(val) {
         this._index = val;
+    }
+
+    get isImageInView() {
+        if (!this.image)
+            return;
+
+        let {top, left, bottom, right} = this.image.getBoundingClientRect();
+        let {innerHeight, innerWidth} = window;
+
+        top = top - this.imageInViewOffsetY;
+        bottom = bottom + this.imageInViewOffsetY;
+
+        return (((top > 0 && top < innerHeight) || (bottom > 0 && bottom < innerHeight)) &&
+            ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth)));
+    }
+
+    set isImageInView(val) {
+        //
     }
 }

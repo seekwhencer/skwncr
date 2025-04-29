@@ -6,6 +6,8 @@ export default class VitaComponent extends Component {
     constructor(parent, options) {
         super(parent, options);
 
+        this.debug = true;
+
         this.target = this.options.target ? this.options.target : this.parent;
         this.element = VitaTemplate.dom({
             vita: _DATA.vita,
@@ -33,5 +35,8 @@ export default class VitaComponent extends Component {
         this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
         this.sectionFooterElement = SectionFooterElement.dom({});
         this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
+
+        this.on('enter', () => this.enterView());
+        this.on('leave', () => this.leaveView());
     }
 }
