@@ -13,6 +13,7 @@ services:
 
     volumes:
       - /root/projects/skwncr.net_storage/video:/app/frontend/dist/video
+      - /root/projects/skwncr.net_storage/images/projects:/app/frontend/dist/images/projects
 
     command: 'npm start'
     environment:

@@ -1,4 +1,6 @@
 .dockerignore
+node_modules
 data/data.json
 frontend/dist
-node_modules
+frontend/public/images/projects
+frontend/public/video

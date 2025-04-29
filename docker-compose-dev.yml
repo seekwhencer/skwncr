@@ -12,8 +12,8 @@ services:
       service: apply-o-mat_server
 
     # replace this
-    #command: 'tail -f /dev/null'
-    command: 'npm start'
+    command: 'tail -f /dev/null'
+    #command: 'npm start'
 
     networks:
       - apply-o-mat
@@ -21,6 +21,8 @@ services:
 
     volumes:
       - .:/app
+      - /home/mk/projects/skwncr.net_storage/video:/app/server/static/video:ro
+      - /home/mk/projects/skwncr.net_storage/images/projects:/app/server/static/images/projects:ro
 
     environment:
       - DEBUG=true
