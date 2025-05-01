@@ -4,18 +4,23 @@ export default class ImagesRoutes extends Route {
     constructor(parent, options) {
         super(parent, options);
 
-        // any/path/to/images/projects
-        // the /images/projects/ is the key
-        this.router.get(/(.+\/)?images\/projects}\/(.+)/g, (req, res, next) => {
+        this.storage = this.parent.storage;
+        this.generator = this.parent.thumbnailGenerator;
 
-            console.log('>>', req.query, this.nicePath(req.path));
+        this.router.get(/(.+\/)?images\/projects\/(.+)/g, (req, res, next) => {
 
-            // @TODO - next() or response...
-            next();
+            const path = this.nicePath(req.path).split('/');
+            const folderName = 'projects';
+            const fileName = path[path.length - 1];
+
+            this.storage
+                .imageExists(fileName, folderName, req.query)
+                .then(image => {
+                    res.sendFile(image.thumbnailRealPath);
+                })
+                .catch(e => res.status(404).send(e)); // @TODO place here the dummy image
         });
 
         return this.router;
     }
 }
-
-

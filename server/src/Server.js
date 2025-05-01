@@ -3,6 +3,7 @@ import path from "node:path";
 import express from "express";
 import * as Routes from "./Routes/index.js";
 import Storage from "./Storage.js";
+import ThumbnailGenerator from "./ThumbnailGenerator/index.js";
 
 export default class WebServer {
     constructor() {
@@ -14,6 +15,9 @@ export default class WebServer {
 
         //
         this.storage = new Storage(this);
+
+        //
+        this.thumbnailGenerator = new ThumbnailGenerator(this);
 
         this.registerRoutes();
         this.registerStatics();
