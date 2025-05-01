@@ -4,6 +4,7 @@ import Image from './ThumbnailGenerator/Image.js';
 export default class Storage {
     constructor(parent) {
         this.parent = parent;
+        this.server = this.parent;
         this.label = 'STORAGE';
 
         this.imagesRootPath = "/app/server/static/images";
@@ -55,7 +56,6 @@ export default class Storage {
      */
     imageExists(fileName, folderName, query) {
 
-
         return new Promise((resolve, reject) => {
             if (!this.availableImageFolders.includes(folderName))
                 reject('FOLDER NOT ALLOWED');
@@ -70,10 +70,12 @@ export default class Storage {
                 imageSize: imageSize
             });
 
-            //console.log(this.label, 'IMAGE EXISTS', image.baseName, image.extension, image.size, image.hashSeed, image.hash);
+            image.on('thumbnail-finished', () => {
+                resolve(image);
+            });
 
             image.exists()
-                .then(() => resolve(image))
+                .then(exists => exists ? resolve(image) : setTimeout(() => resolve(image), 10000))
                 .catch(e => reject(e));
         });
     }

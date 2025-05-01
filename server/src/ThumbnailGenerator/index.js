@@ -8,7 +8,7 @@ export default class ThumbnailGenerator {
         this.queue = new ThumbnailGeneratorQueue(this);
     }
 
-    add(file) {
-        this.queue.add(file);
+    add(image) {
+        return this.queue.add(image);
     }
 }

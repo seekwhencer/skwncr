@@ -1,10 +1,14 @@
 import fs from 'fs-extra';
 import Crypto from 'crypto';
 import ImageMagick from './ImageMagick.js';
+import Events from "../Events.js";
 
-export default class Image {
+export default class Image extends Events {
     constructor(parent, options) {
+        super(parent, options);
+
         this.parent = parent;
+        this.server = this.parent.server;
         this.label = 'IMAGE';
 
         this.imagesRootPath = this.parent.imagesRootPath || "/app/server/static/images";
@@ -22,7 +26,7 @@ export default class Image {
         this.realPath = `${this.path}/${this.name}`;
 
         this.hashSeed = `${this.folder}/${this.baseName}_s_${this.size}`;
-        this.hash = Crypto.createHash('md5').update(this.hashSeed).digest("hex");
+        this.hash = `${Crypto.createHash('md5').update(this.hashSeed).digest("hex")}`;
         this.thumbnailPath = `${this.thumbnailsRootPath}/${this.folder}`;
         this.thumbnailRealPath = `${this.thumbnailPath}/${this.hash}.${this.extension}`;
 
@@ -48,17 +52,17 @@ export default class Image {
                     if (exists === true) {
                         return this.thumbnailExists();
                     } else {
-                        reject('ORIGINAL NOT EXISTS')
+                        reject('CHECK ORIGINAL NOT EXISTS')
                     }
                 })
                 .then(exists => {
                     if (exists === false) {
-                        return this.generateThumbnail();
+                        this.addToQueue();
+                        resolve(false);
                     } else {
                         resolve(true);
                     }
-                })
-                .then(ok => resolve(true));
+                });
         });
     }
 
@@ -99,13 +103,17 @@ export default class Image {
                 const read = fs.createReadStream(this.realPath);
                 const write = fs.createWriteStream(this.thumbnailRealPath);
 
-                write.on('finish', () => resolve(true));
+                write.on('finish', () => this.emit('thumbnail-finished'));
                 write.on('error', e => reject(e));
 
                 const resize = ImageMagick().resize(this.imagemagickSizeString).quality(this.quality);
                 read.pipe(resize).pipe(write);
             }
         });
+    }
+
+    addToQueue() {
+        this.server.thumbnailGenerator.add(this);
     }
 
 

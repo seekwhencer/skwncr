@@ -23,11 +23,13 @@ export default class ThumbnailGeneratorQueue {
         });
     }
 
-    add(file) {
-        this.data[file] = new ThumbnailGeneratorJob(this, file);
+    add(image) {
+        console.log(this.label, 'ADDING', image.hash);
+        this.data[image.hash] = new ThumbnailGeneratorJob(this, image);
+        this.data[image.hash].run();
     }
 
-    remove(file) {
-        delete this.data[file];
+    remove(image) {
+        delete this.data[image.hash];
     }
 }
