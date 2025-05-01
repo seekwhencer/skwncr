@@ -19,6 +19,14 @@ export default defineConfig({
         allowedHosts: true,
         cors: {
             origin: true,
+        },
+        proxy: {
+            '/(.+\/)?images\/projects\/(.+)/g': {
+                target: 'http://apply-o-map_server:8081/images',
+                changeOrigin: true,
+                secure: false,
+                rewrite: (path) => path.replace(/(.+\/)?images\/projects\/(.+)/g, ''),
+            }
         }
     },
     devToolbar: {

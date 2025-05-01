@@ -1,6 +1,7 @@
 {
   "text": "${pages/projects.md}",
   "listing": [
+    "${projects/skwncrnet.json}",
     "${projects/tesseract.json}",
     "${projects/heizung.json}",
     "${projects/lux.json}",

@@ -1,0 +1,55 @@
+{
+  "dateFrom": "2025",
+  "dateTo": "heute",
+  "title": "Meine Website",
+  "description": "Vanilla Javascript meets Web Components",
+  "work": [
+    "Frontend-Entwicklung mit Vite, Scss, Javascript in ES6+ mit Custom Templating für CSR.",
+    "Backend-Entwicklung mit node.js: Javascript ES6+, CRUD Rest API",
+    "Dockerisiert",
+    "Thumbnail-Generator on Demand mit Queue"
+  ],
+  "images": [
+    {
+      "name": "1",
+      "file": "images/projects/skwncrnet_01.png"
+    },
+    {
+      "name": "2",
+      "file": "images/projects/skwncrnet_02.png"
+    },
+    {
+      "name": "3",
+      "file": "images/projects/skwncrnet_03.png"
+    },
+    {
+      "name": "4",
+      "file": "images/projects/skwncrnet_04.png"
+    },
+    {
+      "name": "5",
+      "file": "images/projects/skwncrnet_05.png"
+    },
+    {
+      "name": "6",
+      "file": "images/projects/skwncrnet_06.png"
+    },
+    {
+      "name": "7",
+      "file": "images/projects/skwncrnet_07.png"
+    }
+  ],
+  "skills": [
+    "vite",
+    "Vanilla Javascript",
+    "Web Components",
+    "Scss",
+    "node.js",
+    "Thumbnail Generator",
+    "nginx reverse proxy",
+    "Let's encrypt TLS"
+  ],
+  "github": [
+    "https://github.com/seekwhencer/skwncr.net"
+  ]
+}

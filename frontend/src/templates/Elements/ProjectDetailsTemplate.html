@@ -1,8 +1,8 @@
 <div class="details hidden">
     ${images.length > 0 ? `<div class="details--image" data-image-large>
        <picture>
-            <source media="(max-width: 799px)" srcset="${images[0].file}?s=m"/>
-            <source media="(min-width: 800px)" srcset="${images[0].file}?s=l"/>
+            <source media="(max-width: 799px)" srcset="${images[0].file}?s=l"/>
+            <source media="(min-width: 800px)" srcset="${images[0].file}?s=xl"/>
             <img src="${images[0].file}?s=xl" alt=""/>
         </picture>
     </div>` : ''}
@@ -20,8 +20,8 @@
     ${images.length > 1 ? `<div class="details--images" data-detail-images>
         ${images.map(i => `
         <picture>
-            <source media="(max-width: 799px)" srcset="${i.file}?s=m"/>
-            <source media="(min-width: 800px)" srcset="${i.file}?s=l"/>
+            <source media="(max-width: 799px)" srcset="${i.file}?s=xs"/>
+            <source media="(min-width: 800px)" srcset="${i.file}?s=s"/>
             <img src="${i.file}?s=xl" alt="" data-image/>
         </picture>
         `).join('')}
