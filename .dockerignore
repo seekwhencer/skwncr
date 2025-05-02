@@ -4,3 +4,4 @@ data/data.json
 frontend/dist
 frontend/public/images/projects
 frontend/public/video
+server/static

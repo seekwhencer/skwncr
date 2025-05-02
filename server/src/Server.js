@@ -21,6 +21,7 @@ export default class WebServer {
 
         this.registerRoutes();
         this.registerStatics();
+
         this.start();
     }
 
@@ -36,6 +37,23 @@ export default class WebServer {
     }
 
     registerStatics() {
-        this.engine.use(express.static(this.staticsPath));
+        const options = {
+            dotfiles: 'ignore',
+            etag: false,
+            //extensions: ['html', 'css', 'js'],
+            //index: 'index.html',
+            maxAge: '1d',
+            redirect: true,
+            setHeaders: (res, path, stat) => {
+                res.set('Cache-Control', 'public, max-age=86400');
+            }
+        };
+
+        //this.engine.use(express.static(this.staticsPath, options));
+
+        this.engine.get('/', (req, res) => res.sendFile(`${this.staticsPath}/index.html`));
+        this.engine.use('/css', express.static(`${this.staticsPath}/css`, options));
+        this.engine.use('/js', express.static(`${this.staticsPath}/js`, options));
+        this.engine.use('/video', express.static(`${this.staticsPath}/video`, options));
     }
 }

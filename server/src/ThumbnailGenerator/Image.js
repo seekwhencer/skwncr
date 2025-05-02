@@ -14,20 +14,23 @@ export default class Image extends Events {
         this.imagesRootPath = this.parent.imagesRootPath || "/app/server/static/images";
         this.thumbnailsRootPath = this.parent.thumbnailsRootPath || '/app/server/static/images/thumbs';
         this.availableImageFolders = this.parent.availableImageFolders || ['projects'];
+        this.availableExtensions = this.parent.availableExtensions;
 
         this.sizes = this.parent.sizes;
+
         this.name = options.fileName;
-        this.folder = options.folderName;
+        this.folder = options.folderName === '' ? false : options.folderName;
         this.size = options.imageSize;
 
         this.baseName = this.name.split('.')[0];
-        this.extension = this.name.split('.')[1];
-        this.path = `${this.imagesRootPath}/${this.folder}`;
+        this.extension = this.name.split('.')[1].toLowerCase();
+
+        this.path = this.folder ? `${this.imagesRootPath}/${this.folder}` : `${this.imagesRootPath}`;
         this.realPath = `${this.path}/${this.name}`;
 
-        this.hashSeed = `${this.folder}/${this.baseName}_s_${this.size}`;
+        this.hashSeed = this.folder ? `${this.folder}/${this.baseName}_s_${this.size}` : `${this.baseName}_s_${this.size}`;
         this.hash = `${Crypto.createHash('md5').update(this.hashSeed).digest("hex")}`;
-        this.thumbnailPath = `${this.thumbnailsRootPath}/${this.folder}`;
+        this.thumbnailPath = this.folder ? `${this.thumbnailsRootPath}/${this.folder}` : `${this.thumbnailsRootPath}`;
         this.thumbnailRealPath = `${this.thumbnailPath}/${this.hash}.${this.extension}`;
 
         this.thumbnailX = this.sizes[this.size].w;

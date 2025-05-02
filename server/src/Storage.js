@@ -9,8 +9,8 @@ export default class Storage {
 
         this.imagesRootPath = "/app/server/static/images";
         this.thumbnailsRootPath = '/app/server/static/images/thumbs';
-        this.availableImageFolders = ['projects'];
-        this.availableExtensions = ['jpg','jpeg','png'];
+        this.availableImageFolders = ['', 'projects'];
+        this.availableExtensions = ['jpg', 'jpeg', 'png'];
         this.sizes = {
             bh: {
                 label: 'blur hash',
@@ -70,6 +70,9 @@ export default class Storage {
                 folderName: folderName,
                 imageSize: imageSize
             });
+
+            if (image === false)
+                resolve(false);
 
             image.on('thumbnail-finished', () => {
                 resolve(image);

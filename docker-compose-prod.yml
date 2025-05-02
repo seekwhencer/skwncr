@@ -14,7 +14,7 @@ services:
     volumes:
       - /root/projects/skwncr.net_storage/video:/app/server/static/video
       - /root/projects/skwncr.net_storage/images/projects:/app/server/static/images/projects
-      - /root/projects/skwncr.net_storage/images/images/thumbs:/app/server/static/images/thumbs
+      - /root/projects/skwncr.net_storage/images/thumbs:/app/server/static/images/thumbs
 
     command: 'npm start'
     environment:
