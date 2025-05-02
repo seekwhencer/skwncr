@@ -30,6 +30,8 @@ export default class ProjectDetailsComponent extends Component {
 
     swapImage(e) {
         const target = e.target;
+        const filePath = e.target.dataset.source;
+
         const picture = target.closest('picture');
         const clone = picture.cloneNode(true);
         this.imageView.querySelector('picture').remove();

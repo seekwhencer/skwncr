@@ -149,7 +149,7 @@ header {
       margin: auto;
       width: 0;
       position: relative;
-      left: 6%;
+      left: 55px;
 
       li {
         margin: 5px;
@@ -260,7 +260,7 @@ header {
       @include responsive.media-smartphone {
         display: block;
         transform: scale(0.6);
-        left: 4%;
+        left: 30px;
 
 
       }
