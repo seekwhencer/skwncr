@@ -41,7 +41,7 @@ export default class HomePage extends Page {
             og: {
                 type: 'website',
                 url: 'https://skwncr.net',
-                image: 'images/website.png?s=l',
+                image: 'https://skwncr.net/images/website.png?s=l',
                 imageAlt: 'Screenshot der Website'
             },
             x: {} // elon...

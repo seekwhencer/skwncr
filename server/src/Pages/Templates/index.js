@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 
-// 
+//
 const templates = {
     home: './something.html',
 };
