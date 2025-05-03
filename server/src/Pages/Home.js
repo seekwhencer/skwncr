@@ -33,6 +33,7 @@ export default class HomePage extends Page {
             icon: 'images/vite.svg',
             css: `css/${this.css}`,
             js: `js/${this.js}`,
+            google: `google-site-verification=YT7oD0nXVnJivNS6krbAz3l8tL6nEkbzPm09e00XtNQ`,
             viewPort: 'height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi',
             title: 'skwncr.net | Matthias Kallenbach | Web-Entwickler, Frontend-Entwickler, Web-Designer in Eberswalde',
             keywords: 'Frontend-Entwicklung, Web-Entwicklung, Web, Internet, Entwicklung, Web-Design, Javascript, node.js, docker, Smart Home, Eberswalde, 16230, Britz, Chorin, Barnim',
