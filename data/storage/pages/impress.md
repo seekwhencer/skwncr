@@ -1,4 +1,5 @@
 Diese Website verwendet **keine** cookies.
+Ich erhebe **keine** Daten.
 
 Das ist die private Website von:
 

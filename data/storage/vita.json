@@ -6,7 +6,7 @@
     "type": "Festanstellung",
     "company": "Home-Office",
     "companyIndustry": "me, myself and i",
-    "description": "Zeit für meine erstgeborene Tochter. Angedachte und bereits angefangene Nebenprojekte werden / wurden vollendet. Ein bisschen was am Haus gemacht. Ansonsten befasse ich mich mit neuen, interessanten und notwendigen Technologien und Arbeitsabläufen. Insbesondere vertiefe ich meine Fähigkeiten in Typescript, React und Next.js.",
+    "description": "Zeit für meine 2020 geborene Tochter. Angedachte und bereits angefangene Nebenprojekte werden / wurden vollendet. Ein bisschen was am Haus gemacht. Ansonsten befasse ich mich mit neuen, interessanten und notwendigen Technologien und Arbeitsabläufen. Insbesondere vertiefe ich meine Fähigkeiten in Web Components, Vanilla Javascript, Typescript, React und Next.js.",
     "stack": [
       "ES6+",
       "Typescript",
@@ -82,7 +82,7 @@
     "company": "Neofonie GmbH",
     "companyIndustry": "IT-Dienstleister",
     "companyCity": "Berlin",
-    "description": "Ein halbes Jahr Neofonie-Projekte wie eurapon.de (von Doc Morris aufgekauft) oder apothekenumschau.de.",
+    "description": "Fast komplett mobile.de. Rest interne Neofonie-Projekte und Frontend für eurapon.de (von Doc Morris aufgekauft) oder apothekenumschau.de.",
     "stack": [
       "Grunt",
       "Gulp",
@@ -100,6 +100,7 @@
       "Linux"
     ],
     "work": [
+      "Frontend-Work für interne Projekte",
       "Shopware Theme Plugin"
     ]
   },
@@ -111,7 +112,7 @@
     "company": "mobile.de / ebay via Neofonie GmbH",
     "companyIndustry": "Online Verkaufsplattform für gebrauchte Fahrzeuge.",
     "companyCity": "Berlin",
-    "description": "Davon über zwei Jahre für mobile.de (ehemals eBay) in internationalen Projekt-Teams, Team übergreifend und in großen Teams mit über 15 Kollegen. Ein halbes Jahr Neofonie-Projekte wie eurapon.de (von Doc Morris aufgekauft) oder apothekenumschau.de.",
+    "description": "In internationalen Projekt-Teams, Team übergreifend und in großen Teams mit über 15 Kollegen.",
     "stack": [
       "Grunt",
       "Gulp",

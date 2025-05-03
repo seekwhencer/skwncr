@@ -8,49 +8,49 @@
   {
     "name": "Wartung",
     "text": "${services/maintenance.md}",
-    "text_short": "Streng dem definierten Wesen des Blindtextes folgend, fungiere ich als solcher. Dennoch habe ich eine Bitte: Lesen Sie mich.",
+    "text_short": "Updates ausführen, Daten migrieren, Backup machen oder Features nachrüsten.",
     "icon": "support"
   },
   {
     "name": "Beratung",
     "text": "${services/consulting.md}",
-    "text_short": "Streng dem definierten Wesen des Blindtextes folgend, fungiere ich als solcher. Dennoch habe ich eine Bitte: Lesen Sie mich.",
+    "text_short": "Was? Wieso? Weshalb? Warum? Wie?",
     "icon": "consulting"
   },
   {
     "name": "Lösungen",
     "text": "${services/solutions.md}",
-    "text_short": "Streng dem definierten Wesen des Blindtextes folgend, fungiere ich als solcher. Dennoch habe ich eine Bitte: Lesen Sie mich.",
+    "text_short": "Von der Stange und auf Bewährtes zurückgreifen. Etablierte Open-Source-Lösungen nutzen.",
     "icon": "solutions"
   },
   {
     "name": "Edge Computing",
     "text": "${services/edge-computing.md}",
-    "text_short": "Streng dem definierten Wesen des Blindtextes folgend, fungiere ich als solcher. Dennoch habe ich eine Bitte: Lesen Sie mich.",
+    "text_short": "Auf kleinen Computern Großes tun. Internet der Dinge mit Raspberry Pi und ESP.",
     "icon": "edgecomputing"
   },
   {
     "name": "Smart Home",
     "text": "${services/smart-home.md}",
-    "text_short": "Streng dem definierten Wesen des Blindtextes folgend, fungiere ich als solcher. Dennoch habe ich eine Bitte: Lesen Sie mich.",
+    "text_short": "Die Welt der Sensoren und Aktoren für daheim und in der Industrie.",
     "icon": "smarthome"
   },
   {
     "name": "Workshops",
     "text": "${services/workshops.md}",
-    "text_short": "Streng dem definierten Wesen des Blindtextes folgend, fungiere ich als solcher. Dennoch habe ich eine Bitte: Lesen Sie mich.",
+    "text_short": "Know How Transfer, Lerninhalte ausarbeiten, pädagogische Konzepte für digitale Themen",
     "icon": "workshops"
   },
   {
     "name": "Nachbarschaftshilfe",
     "text": "${services/neighborhood.md}",
-    "text_short": "Streng dem definierten Wesen des Blindtextes folgend, fungiere ich als solcher. Dennoch habe ich eine Bitte: Lesen Sie mich.",
+    "text_short": "Lebenshilfe in digitalen Fragen und Computer-Schlampe für meine Hood.",
     "icon": "neighbourhood"
   },
   {
     "name": "Off Topic",
     "text": "${services/fun.md}",
-    "text_short": "Streng dem definierten Wesen des Blindtextes folgend, fungiere ich als solcher. Dennoch habe ich eine Bitte: Lesen Sie mich.",
+    "text_short": "Und der ganze Rest. Hacktons, LAN-Parties, Sit-Ins, Zocken",
     "icon": "fun"
   }
 ]

@@ -584,6 +584,17 @@
             }
           }
         }
+
+        &.highlight {
+          .name {
+            font-size: typo.$fs-s;
+
+            @include responsive.media-smartphone {
+              font-size: typo.$fs-xs;
+              line-height: 1.3em;
+            }
+          }
+        }
       }
     }
   }

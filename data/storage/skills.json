@@ -50,7 +50,7 @@
     "Mailhog",
     "SSH Tunneling",
     "Reverse Proxy (jwilder)",
-    "Schema.org",
+    "Schema.org Microdata",
     "ESP32",
     "nodeMCU",
     "arduino",
@@ -96,7 +96,7 @@
     "Bootstrap",
     "Smarty",
     "C Arduino",
-    "Thymeleaf Template (Java Spring Boot)"
+    "Thymeleaf (Java)"
   ],
   "noobish": [
     "Java",
