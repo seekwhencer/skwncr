@@ -4,6 +4,7 @@ import express from "express";
 import * as Routes from "./Routes/index.js";
 import Storage from "./Storage.js";
 import ThumbnailGenerator from "./ThumbnailGenerator/index.js";
+import HomePage from "./Pages/Home.js";
 
 export default class WebServer {
     constructor() {
@@ -13,10 +14,14 @@ export default class WebServer {
         this.staticsPath = path.resolve('./static');
         this.baseUrl = '';
 
+        // the html generator from string literal templates
+        this.homePage = new HomePage(this);
+
         //
         this.storage = new Storage(this);
 
-        //
+        // not in use at the moment.
+        // @TODO add queue
         this.thumbnailGenerator = new ThumbnailGenerator(this);
 
         this.registerRoutes();
@@ -37,11 +42,14 @@ export default class WebServer {
     }
 
     registerStatics() {
+        // home
+        this.engine.get('/', (req, res) => res.send(this.homePage.html()));
+
+        // assets
         const options = {
             dotfiles: 'ignore',
             etag: false,
             //extensions: ['html', 'css', 'js'],
-            //index: 'index.html',
             maxAge: '1d',
             redirect: true,
             setHeaders: (res, path, stat) => {
@@ -49,9 +57,6 @@ export default class WebServer {
             }
         };
 
-        //this.engine.use(express.static(this.staticsPath, options));
-
-        this.engine.get('/', (req, res) => res.sendFile(`${this.staticsPath}/index.html`));
         this.engine.use('/css', express.static(`${this.staticsPath}/css`, options));
         this.engine.use('/js', express.static(`${this.staticsPath}/js`, options));
         this.engine.use('/video', express.static(`${this.staticsPath}/video`, options));

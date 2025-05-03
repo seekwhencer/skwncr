@@ -38,9 +38,6 @@ export default class Image extends Events {
 
         this.imagemagickSizeString = `${this.thumbnailX}x${this.thumbnailY}`;
         this.quality = 90;
-
-        console.log('NEW IMAGE INSTANCE', this.name, this.folder, this.size);
-
     }
 
     /*
