@@ -70,18 +70,6 @@ export default class HomePage extends Page {
         return fs.readFileSync(`./static/js/${this.js}`).toString();
     }
 
-    getFontBase64() {
-        this.fontsBase64 = [];
-        this.fontNames.forEach(family => {
-            family.fonts.forEach(font => {
-                font.base64 = fs.readFileSync(`./static/fonts/${family.folder}/${font.f}`).toString('base64');
-                font.folder = family.folder;
-                font.family = family.family;
-            });
-            this.fontsBase64 = [...this.fontsBase64, ...family.fonts];
-        });
-    }
-
     // generate the markup from template literal
     html() {
         this.dom = this.markup(this.template, {
@@ -90,7 +78,6 @@ export default class HomePage extends Page {
             js: `js/${this.js}`,
             jsPlain: this.jsPlain,
             cssPlain: this.cssPlain,
-            fontsBase64: this.fontsBase64,
             google: `YT7oD0nXVnJivNS6krbAz3l8tL6nEkbzPm09e00XtNQ`,
             viewPort: 'height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi',
             title: 'skwncr.net | Matthias Kallenbach | Web-Entwickler, Frontend-Entwickler, Web-Designer in Eberswalde',
