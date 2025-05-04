@@ -22,7 +22,8 @@ $font-family: $font-family-primary;
 }
 
 // includes
-// @include font-face($font-family-primary, "barlow-v12-latin-100", $font-path-primary, 100);
+/*
+@include font-face($font-family-primary, "barlow-v12-latin-100", $font-path-primary, 100);
 @include font-face($font-family-primary, "barlow-v12-latin-200", $font-path-primary, 200);
 @include font-face($font-family-primary, "barlow-v12-latin-300", $font-path-primary, 300);
 @include font-face($font-family-primary, "barlow-v12-latin-500", $font-path-primary, 500);
@@ -33,11 +34,11 @@ $font-family: $font-family-primary;
 
 @include font-face($font-family-secondary, "CascadiaMono-ExtraLight", $font-path-secondary, 100);
 @include font-face($font-family-secondary, "CascadiaMono-Light", $font-path-secondary, 200);
-@include font-face($font-family-secondary, "CascadiaMono-SemiLight", $font-path-secondary, 200);
-@include font-face($font-family-secondary, "CascadiaMono-Regular", $font-path-secondary, 300);
+@include font-face($font-family-secondary, "CascadiaMono-SemiLight", $font-path-secondary, 300);
+@include font-face($font-family-secondary, "CascadiaMono-Regular", $font-path-secondary, 400);
 @include font-face($font-family-secondary, "CascadiaMono-SemiBold", $font-path-secondary, 500);
 @include font-face($font-family-secondary, "CascadiaMono-Bold", $font-path-secondary, 600);
-
+*/
 
 // sizes
 $fs-xxs: 0.6em;

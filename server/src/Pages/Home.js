@@ -12,8 +12,36 @@ export default class HomePage extends Page {
         this.cssPlain = this.getCSSPlain();
         this.jsPlain = this.getJSPlain();
 
-        this.fontName = 'Barlow/barlow-v12-latin-100.woff2';
-        this.fontBase64 = this.getFontBase64();
+        this.fontNames = [
+            {
+                family: 'Barlow',
+                folder: 'Barlow',
+                fonts: [
+                    {w: '100', f: 'barlow-v12-latin-100.woff2'},
+                    {w: '200', f: 'barlow-v12-latin-200.woff2'},
+                    {w: '300', f: 'barlow-v12-latin-300.woff2'},
+                    {w: '500', f: 'barlow-v12-latin-500.woff2'},
+                    {w: '600', f: 'barlow-v12-latin-600.woff2'},
+                    {w: '700', f: 'barlow-v12-latin-700.woff2'},
+                    {w: '800', f: 'barlow-v12-latin-800.woff2'},
+                    {w: '900', f: 'barlow-v12-latin-900.woff2'},
+                ]
+            },
+            {
+                family: 'Cascadia',
+                folder: 'Cascadia',
+                fonts: [
+                    {w: '100', f: 'CascadiaMono-ExtraLight.woff2'},
+                    {w: '200', f: 'CascadiaMono-Light.woff2'},
+                    {w: '300', f: 'CascadiaMono-SemiLight.woff2'},
+                    {w: '400', f: 'CascadiaMono-Regular.woff2'},
+                    {w: '500', f: 'CascadiaMono-SemiBold.woff2'},
+                    {w: '600', f: 'CascadiaMono-Bold.woff2'}
+                ]
+            }
+        ];
+
+        this.getFontBase64();
     }
 
     // can be sync on startup
@@ -43,7 +71,15 @@ export default class HomePage extends Page {
     }
 
     getFontBase64() {
-        return fs.readFileSync(`./static/fonts/${this.fontName}`).toString('base64');
+        this.fontsBase64 = [];
+        this.fontNames.forEach(family => {
+            family.fonts.forEach(font => {
+                font.base64 = fs.readFileSync(`./static/fonts/${family.folder}/${font.f}`).toString('base64');
+                font.folder = family.folder;
+                font.family = family.family;
+            });
+            this.fontsBase64 = [...this.fontsBase64, ...family.fonts];
+        });
     }
 
     // generate the markup from template literal
@@ -54,7 +90,7 @@ export default class HomePage extends Page {
             js: `js/${this.js}`,
             jsPlain: this.jsPlain,
             cssPlain: this.cssPlain,
-            fontBase64: this.fontBase64,
+            fontsBase64: this.fontsBase64,
             google: `YT7oD0nXVnJivNS6krbAz3l8tL6nEkbzPm09e00XtNQ`,
             viewPort: 'height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi',
             title: 'skwncr.net | Matthias Kallenbach | Web-Entwickler, Frontend-Entwickler, Web-Designer in Eberswalde',

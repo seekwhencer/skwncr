@@ -35,12 +35,13 @@
     <!--<link rel="stylesheet" crossorigin href="${css}">-->
 
     <style>
+        ${fontsBase64.map(f => `
         @font-face {
-            font-family: "Barlow";
-            font-weight: 100;
+            font-family: "${f.family}";
+            font-weight: ${f.w};
             font-display: swap;
-            src: url(data:application/x-font-woff;charset=utf-8;base64,${fontBase64}) format("woff2");
-        }
+            src: url(data:application/x-font-woff;charset=utf-8;base64,${f.base64}) format("woff2");
+        }`).join('\n')}
 
         ${cssPlain}
     </style>
