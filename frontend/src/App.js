@@ -19,6 +19,7 @@ export default class App {
     constructor() {
         this.browser = new BrowserDetector(window.navigator.userAgent).parseUserAgent();
         this.app = this;
+        this.icons = Icons;
 
         //
         this.element = document.querySelector('#root');
@@ -26,8 +27,6 @@ export default class App {
     }
 
     draw() {
-        this.icons = Icons;
-
         /**
          * page elements: header, main, footer
          */

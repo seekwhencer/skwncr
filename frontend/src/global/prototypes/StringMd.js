@@ -17,5 +17,5 @@ export default function () {
             return '';
         }
     });
-    return md.render(this);
+    return md.render(this.toString());
 }

@@ -57,6 +57,7 @@ export default class WebServer {
             }
         };
 
+        this.engine.use('/fonts', express.static(`${this.staticsPath}/css/fonts`, options));
         this.engine.use('/css', express.static(`${this.staticsPath}/css`, options));
         this.engine.use('/js', express.static(`${this.staticsPath}/js`, options));
         this.engine.use('/video', express.static(`${this.staticsPath}/video`, options));
