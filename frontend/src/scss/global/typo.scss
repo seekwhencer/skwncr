@@ -22,7 +22,7 @@ $font-family: $font-family-primary;
 }
 
 // includes
-@include font-face($font-family-primary, "barlow-v12-latin-100", $font-path-primary, 100);
+// @include font-face($font-family-primary, "barlow-v12-latin-100", $font-path-primary, 100);
 @include font-face($font-family-primary, "barlow-v12-latin-200", $font-path-primary, 200);
 @include font-face($font-family-primary, "barlow-v12-latin-300", $font-path-primary, 300);
 @include font-face($font-family-primary, "barlow-v12-latin-500", $font-path-primary, 500);

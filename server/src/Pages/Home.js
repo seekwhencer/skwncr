@@ -11,6 +11,9 @@ export default class HomePage extends Page {
 
         this.cssPlain = this.getCSSPlain();
         this.jsPlain = this.getJSPlain();
+
+        this.fontName = 'Barlow/barlow-v12-latin-100.woff2';
+        this.fontBase64 = this.getFontBase64();
     }
 
     // can be sync on startup
@@ -34,8 +37,13 @@ export default class HomePage extends Page {
     getCSSPlain() {
         return fs.readFileSync(`./static/css/${this.css}`).toString();
     }
+
     getJSPlain() {
         return fs.readFileSync(`./static/js/${this.js}`).toString();
+    }
+
+    getFontBase64() {
+        return fs.readFileSync(`./static/fonts/${this.fontName}`).toString('base64');
     }
 
     // generate the markup from template literal
@@ -46,6 +54,7 @@ export default class HomePage extends Page {
             js: `js/${this.js}`,
             jsPlain: this.jsPlain,
             cssPlain: this.cssPlain,
+            fontBase64: this.fontBase64,
             google: `YT7oD0nXVnJivNS6krbAz3l8tL6nEkbzPm09e00XtNQ`,
             viewPort: 'height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi',
             title: 'skwncr.net | Matthias Kallenbach | Web-Entwickler, Frontend-Entwickler, Web-Designer in Eberswalde',
