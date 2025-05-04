@@ -11,37 +11,6 @@ export default class HomePage extends Page {
 
         this.cssPlain = this.getCSSPlain();
         this.jsPlain = this.getJSPlain();
-
-        this.fontNames = [
-            {
-                family: 'Barlow',
-                folder: 'Barlow',
-                fonts: [
-                    {w: '100', f: 'barlow-v12-latin-100.woff2'},
-                    {w: '200', f: 'barlow-v12-latin-200.woff2'},
-                    {w: '300', f: 'barlow-v12-latin-300.woff2'},
-                    {w: '500', f: 'barlow-v12-latin-500.woff2'},
-                    {w: '600', f: 'barlow-v12-latin-600.woff2'},
-                    {w: '700', f: 'barlow-v12-latin-700.woff2'},
-                    {w: '800', f: 'barlow-v12-latin-800.woff2'},
-                    {w: '900', f: 'barlow-v12-latin-900.woff2'},
-                ]
-            },
-            {
-                family: 'Cascadia',
-                folder: 'Cascadia',
-                fonts: [
-                    {w: '100', f: 'CascadiaMono-ExtraLight.woff2'},
-                    {w: '200', f: 'CascadiaMono-Light.woff2'},
-                    {w: '300', f: 'CascadiaMono-SemiLight.woff2'},
-                    {w: '400', f: 'CascadiaMono-Regular.woff2'},
-                    {w: '500', f: 'CascadiaMono-SemiBold.woff2'},
-                    {w: '600', f: 'CascadiaMono-Bold.woff2'}
-                ]
-            }
-        ];
-
-        this.getFontBase64();
     }
 
     // can be sync on startup
