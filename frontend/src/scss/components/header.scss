@@ -13,11 +13,16 @@ header {
   opacity: 1;
   transition: all 0.5s ease-in-out;
 
-  ul {
+  @include responsive.media-smartphone {
+
+  }
+
+  .menu {
     margin: 0;
     padding: 0;
     height: 100%;
     display: flex;
+
 
     li {
       display: inline-block;
@@ -30,6 +35,14 @@ header {
       padding: 0 10px;
       position: relative;
       overflow: hidden;
+      transform-origin: center center;
+
+
+      @include responsive.media-smartphone {
+        display: block;
+        height: 0;
+        transition: all 0.2s ease-in-out;
+      }
 
       &:hover {
         cursor: pointer;
@@ -58,6 +71,10 @@ header {
           opacity: 1;
           transition: all 0.2s ease-in-out;
           transform: translateX(0);
+
+          @include responsive.media-smartphone {
+            line-height: 70px;
+          }
         }
       }
 
@@ -117,7 +134,6 @@ header {
       &.impress {
         background-color: colors.$color-ocean;
         color: white;
-        font-size: typo.$fs-m;
 
         &:before {
           content: 'Impressum';
@@ -127,14 +143,11 @@ header {
 
       @include responsive.media-smartphone {
         width: initial;
-        line-height: 48px;
+        line-height: typo.$fs-xxl;
         opacity: 1;
-        font-size: typo.$fs-s;
+        font-size: typo.$fs-l;
+        display: block;
       }
-    }
-
-    @include responsive.media-smartphone {
-      display: block;
     }
   }
 
@@ -261,8 +274,6 @@ header {
         display: block;
         transform: scale(0.6);
         left: 30px;
-
-
       }
     }
   }
@@ -270,9 +281,9 @@ header {
   @include responsive.media-smartphone {
     width: 100vw;
     position: fixed;
-    bottom: inherit;
+    bottom: 0;
+    height: initial;
   }
-
 
   &.splash {
     @include responsive.media-smartphone {
@@ -282,7 +293,94 @@ header {
       position: fixed;
       z-index: 10000;
     }
+
+    .burger {
+      @include responsive.media-smartphone {
+        display: none;
+      }
+    }
   }
 
+  &.open {
+    @include responsive.media-smartphone {
+      height: 100vh;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .menu {
+      @include responsive.media-smartphone {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        display: block;
+        height: initial;
+        opacity: 1;
+        transition: all 0.1s ease-in-out;
+      }
+
+      li {
+        @include responsive.media-smartphone {
+          height: 70px;
+          opacity: 1;
+          transition: all 0.1s ease-in-out;
+
+          &:nth-child(7) {
+            transition-delay: 0s;
+          }
+          &:nth-child(6) {
+            transition-delay: 0.1s;
+          }
+          &:nth-child(5) {
+            transition-delay: 0.2s;
+          }
+          &:nth-child(4) {
+            transition-delay: 0.3s;
+          }
+          &:nth-child(3) {
+            transition-delay: 0.4s;
+          }
+          &:nth-child(2) {
+            transition-delay: 0.5s;
+          }
+          &:nth-child(1) {
+            transition-delay: 0.6s;
+          }
+        }
+      }
+    }
+
+    .burger {
+      @include responsive.media-smartphone {
+        bottom: 80vh;
+        right: calc(50vw - 15px);
+        transform: scale(3);
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+
+  .burger {
+    clip-path: polygon(50% -50%, 100% 50%, 50% 150%, 0 50%);
+    height: 50px;
+    overflow: hidden;
+    display: none;
+    aspect-ratio: 1/cos(30deg);
+    background-color: colors.$color-gray-a;
+    position: fixed;
+    top: initial;
+    bottom: 30px;
+    right: 30px;
+    transition: all 0.3s ease-in-out;
+
+    @include responsive.media-smartphone {
+      display: block;
+    }
+
+    svg {
+      width: 30px;
+      height: 30px;
+      transform: translate(14px, 8px);
+    }
+  }
 }
 

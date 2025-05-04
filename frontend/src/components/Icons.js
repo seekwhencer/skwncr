@@ -17,7 +17,7 @@ import {
     Bot,
     Heart,
     ArrowDownFromLine,
-    ArrowUpFromLine,
+    ArrowUpFromLine
 } from 'lucide';
 
 export default {
@@ -38,5 +38,5 @@ export default {
     bot: createElement(Bot).outerHTML,
     heart: createElement(Heart).outerHTML,
     arrowUpLine: createElement(ArrowUpFromLine).outerHTML,
-    arrowDownLine: createElement(ArrowDownFromLine).outerHTML,
+    arrowDownLine: createElement(ArrowDownFromLine).outerHTML
 }
