@@ -3,13 +3,13 @@
         <h3 class="name">${title}</h3>
         <div class="text">${description}</div>
     </div>
-    <div class="project--images">
-        ${images.length > 0 ? `<div class="project--images">
+    <div class="project--image">
+        ${images.length > 0 ? `
         <picture>
             <source media="(max-width: 799px)" srcset="${images[0].file}?s=xs"/>
             <source media="(min-width: 800px)" srcset="${images[0].file}?s=s"/>
-            <img src="" alt="" data-source="${images[0].file}"/>
+            <img src="" loading="lazy"  alt="" data-source="${images[0].file}"/>
         </picture>
-    </div>` : ''}
+        ` : ''}
     </div>
 </div>
