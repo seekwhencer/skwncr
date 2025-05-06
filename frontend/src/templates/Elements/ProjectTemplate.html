@@ -6,9 +6,9 @@
     <div class="project--image">
         ${images.length > 0 ? `
         <picture>
-            <source media="(max-width: 799px)" srcset="${images[0].file}?s=xs"/>
-            <source media="(min-width: 800px)" srcset="${images[0].file}?s=s"/>
-            <img src="" loading="lazy"  alt="" data-source="${images[0].file}"/>
+            <source media="(max-width: 799px)" srcset="" data-src="${images[0].file}?s=xs"/>
+            <source media="(min-width: 800px)" srcset="" data-src="${images[0].file}?s=s"/>
+            <img src="" alt="" data-src="${images[0].file}"/>
         </picture>
         ` : ''}
     </div>

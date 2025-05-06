@@ -19,7 +19,11 @@ export default class ProjectComponent extends Component {
         this.target.projectsElement.append(this.element);
 
         // lazy loading
-        this.image = this.element.querySelector('img');
+        this.imageSet = this.element.querySelector('picture');
+        if (this.imageSet) {
+            this.image = this.imageSet.querySelector('img');
+            this.image.onload = () => console.log(this.image.dataset.src, 'LOADED');
+        }
         this.imageInViewOffsetY = 200;
 
         this.on('imageEnter', () => this.imageEnterView());
@@ -70,12 +74,15 @@ export default class ProjectComponent extends Component {
     }
 
     imageEnterView() {
-        const src = this.image.dataset.source
-        console.log('>> IMAGE ENTER:', this.image.src)
+        if (!this.imageSet)
+            return;
+
+        const sources = this.imageSet.querySelectorAll('source');
+        sources.forEach(s => s.srcset = s.dataset.src);
     }
 
     imageLeaveView() {
-        console.log('>> IMAGE LEAVE:', this.image.src)
+        //console.log('>> IMAGE LEAVE:', this.image.dataset.src)
     }
 
     get index() {

@@ -27,9 +27,9 @@ $font-family: $font-family-primary;
 @include font-face($font-family-primary, "barlow-v12-latin-300", $font-path-primary, 300);
 @include font-face($font-family-primary, "barlow-v12-latin-500", $font-path-primary, 500);
 @include font-face($font-family-primary, "barlow-v12-latin-600", $font-path-primary, 600);
-@include font-face($font-family-primary, "barlow-v12-latin-700", $font-path-primary, 700);
+//@include font-face($font-family-primary, "barlow-v12-latin-700", $font-path-primary, 700);
 @include font-face($font-family-primary, "barlow-v12-latin-800", $font-path-primary, 800);
-@include font-face($font-family-primary, "barlow-v12-latin-900", $font-path-primary, 900);
+//@include font-face($font-family-primary, "barlow-v12-latin-900", $font-path-primary, 900);
 
 @include font-face($font-family-secondary, "CascadiaMono-ExtraLight", $font-path-secondary, 100);
 @include font-face($font-family-secondary, "CascadiaMono-Light", $font-path-secondary, 200);
