@@ -1,10 +1,10 @@
-import Page from '../Page.js';
-import {HomeTemplate} from './Templates/index.js';
+import Page from '../../Page.js';
+import {PageHeaderTemplate} from '../Templates/index.js';
 
-export default class HomePage extends Page {
+export default class PageHeader extends Page {
     constructor(parent, options) {
         super(parent, options);
-        this.template = HomeTemplate;
+        this.template = PageHeaderTemplate;
     }
 
     html() {

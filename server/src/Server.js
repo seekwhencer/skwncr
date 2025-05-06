@@ -5,6 +5,7 @@ import * as Routes from "./Routes/index.js";
 import Storage from "./Storage.js";
 import ThumbnailGenerator from "./ThumbnailGenerator/index.js";
 import HomePage from "./Pages/Home.js";
+import TestPage from "./Pages/Test.js";
 
 export default class WebServer {
     constructor() {
@@ -16,6 +17,7 @@ export default class WebServer {
 
         // the html generator from string literal templates
         this.homePage = new HomePage(this);
+        this.testPage = new TestPage(this);
 
         //
         this.storage = new Storage(this);
@@ -42,9 +44,6 @@ export default class WebServer {
     }
 
     registerStatics() {
-        // home
-        this.engine.get('/', (req, res) => res.send(this.homePage.html()));
-
         // assets
         const options = {
             dotfiles: 'ignore',

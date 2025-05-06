@@ -1,13 +1,14 @@
 import Route from '../Route.js';
 
-export default class HomeRoutes extends Route {
+export default class TestRoutes extends Route {
     constructor(parent, options) {
         super(parent, options);
 
-        this.router.get('/', (req, res, next) => {
+        this.router.get('/test', (req, res, next) => {
             // do things on home page request
             // ...
-            res.send(this.parent.homePage.html());
+
+            res.send(this.parent.testPage.html());
         });
 
         return this.router;

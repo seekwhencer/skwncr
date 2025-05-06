@@ -1,13 +1,23 @@
 import fs from 'node:fs';
+const readTemplate = (file) => fs.readFileSync(file).toString();
 
-//
 const templates = {
-    home: './something.html',
+    header: './src/Pages/Templates/header.html',
+    footer: './src/Pages/Templates/footer.html',
+    home: './src/Pages/Templates/index.html',
+    test: './src/Pages/Templates/test.html',
 };
 
 //
-const data = {}
-Object.keys(templates).forEach(page => data[page] = fs.readFileSync(templates[page]) );
+const HomeTemplate = readTemplate(templates.home);
+const TestTemplate = readTemplate(templates.test);
+const PageHeaderTemplate = readTemplate(templates.header);
+const PageFooterTemplate = readTemplate(templates.footer);
 
 //
-export default data;
+export {
+    HomeTemplate,
+    TestTemplate,
+    PageHeaderTemplate,
+    PageFooterTemplate
+};
