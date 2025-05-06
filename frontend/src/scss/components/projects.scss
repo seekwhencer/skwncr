@@ -393,9 +393,8 @@
         img {
           width: 50vw;
           object-fit: cover;
-          padding: 10px;
           background-color: black;
-          margin: 1px 0;
+          margin: 0;
           display: block;
 
           @include responsive.media-smartphone {

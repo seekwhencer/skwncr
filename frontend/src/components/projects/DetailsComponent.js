@@ -37,9 +37,11 @@ export default class ProjectDetailsComponent extends Component {
         const button = e.target;
         const buttonPicture = button.closest('picture');
         const buttonSources = buttonPicture.querySelectorAll('source');
+        const buttonImage = buttonPicture.querySelector('img');
         this.imageElement.classList.add('loading');
 
-        buttonSources.forEach((s, i) => this.imageSources[i].srcset = s.srcset);
+        const srcset = ['m','l'];
+        buttonSources.forEach((s, i) => this.imageSources[i].srcset = `${buttonImage.dataset.source}?s=${srcset[i]}`);
     }
 
     onLoadImage() {
