@@ -20,8 +20,13 @@ export default class ProjectDetailsComponent extends Component {
         this.detailsElement.append(this.element);
         setTimeout(() => this.element.classList.remove('hidden'), 10);
 
-        //
-        this.imageView = this.element.querySelector('[data-image-large]');
+        // the image and the navigation
+        this.imageElement = this.element.querySelector('[data-image-large]');
+        this.imageSet = this.imageElement.querySelector('picture');
+        this.imageSources = this.imageSet.querySelectorAll('source');
+
+        this.imageLarge = this.imageSet.querySelector('img');
+        this.imageLarge.onload = () => this.onLoadImage();
 
         // thumbnails
         this.images = this.element.querySelectorAll('[data-detail-images] picture');
@@ -29,13 +34,18 @@ export default class ProjectDetailsComponent extends Component {
     }
 
     swapImage(e) {
-        const target = e.target;
-        const filePath = e.target.dataset.source;
+        const button = e.target;
+        const buttonPicture = button.closest('picture');
+        const buttonSources = buttonPicture.querySelectorAll('source');
+        this.imageElement.classList.add('loading');
 
-        const picture = target.closest('picture');
-        const clone = picture.cloneNode(true);
-        this.imageView.querySelector('picture').remove();
-        this.imageView.append(clone);
+        buttonSources.forEach((s, i) => this.imageSources[i].srcset = s.srcset);
+    }
+
+    onLoadImage() {
+        this.imageElement.classList.remove('loading');
+        const height = this.imageLarge.css().height();
+        this.imageElement.style.height = this.imageLarge.css().height();
     }
 
     destroy() {

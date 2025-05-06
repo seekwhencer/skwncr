@@ -380,6 +380,7 @@
     &--image {
       float: left;
       overflow: hidden;
+      transition: all 0.3s ease-in-out;
 
       @include responsive.media-smartphone {
         width: 100vw;
@@ -403,6 +404,28 @@
           }
         }
       }
+
+      &.loading {
+        animation: loadingPulse 1s infinite;
+        filter: saturate(0) blur(5px);
+
+        @keyframes loadingPulse {
+          0% {
+            opacity: 1;
+          }
+
+          70% {
+            opacity: 0.73;
+
+          }
+
+          100% {
+            opacity: 1;
+          }
+        }
+      }
+
+
     }
 
     &--images {
