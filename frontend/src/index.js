@@ -4,4 +4,3 @@ import App from './App.js';
 
 window._DATA = Data;
 window._APP = new App();
-

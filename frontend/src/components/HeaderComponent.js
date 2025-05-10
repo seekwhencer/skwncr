@@ -6,11 +6,15 @@ export default class HeaderComponent extends Component {
         super(parent, options);
 
         this.target = this.options.target ? this.options.target : this.parent;
+        this.element = document.querySelector('header');
+
+/*
         this.element = HeaderTemplate.dom({
             data: _DATA,
             icon: this.app.icons.bot
         });
         this.target.element.append(this.element);
+*/
 
         // add scroll event for text effect
         window.addEventListener("scroll", (event) => this.onScroll(event))
@@ -33,6 +37,10 @@ export default class HeaderComponent extends Component {
     }
 
     onScroll(e) {
+        // it is a nice hack: place the scroll offset as value in the css
+        document.body.style.setProperty('--scroll', this.scrollPercent);
+
+
         //if (!this.app.isDesktop)
         //    return;
 
@@ -40,7 +48,8 @@ export default class HeaderComponent extends Component {
         this.debounceScroll = setTimeout(() => this.setActiveButton(), 10);
 
         this.scrollMax = this.parent.splash.element.getBoundingClientRect().height;
-        this.scroll = window.scrollY;
+        this.scroll = this.app.scroll = window.scrollY;
+        this.scrollPercent = this.app.scrollPercent = this.scroll / (document.body.offsetHeight - window.innerHeight);
         this.scale = 1 / this.scrollMax * this.scroll;
 
         if (this.scale >= 0 && this.scale <= 0.8) {
@@ -55,16 +64,18 @@ export default class HeaderComponent extends Component {
             this.element.classList.remove('splash');
             this.element.style = '';
         }
+
+        //console.log(this.scrollPercent, this.scroll);
     }
 
     scrollTo(targetName) {
         const target = document.querySelector(`[data-section=${targetName}]`);
-        const height = parseInt(this.element.css().height().replace('px',''));
+        const height = parseInt(this.element.css().height().replace('px', ''));
         let offset = target.offsetTop - height;
 
         this.element.classList.remove('open');
 
-        if(this.app.isMobile){
+        if (this.app.isMobile) {
             offset = target.offsetTop;
         }
 
@@ -72,12 +83,6 @@ export default class HeaderComponent extends Component {
             top: offset,
             behavior: "smooth"
         });
-
-        /*target.scrollIntoView({
-            behavior: "smooth",
-            inline: "nearest",
-            block: "start"
-        });*/
 
         if (target.dataset.section === 'splash')
             this.app.splash.randomVideo();

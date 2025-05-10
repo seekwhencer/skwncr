@@ -19,7 +19,6 @@ export default class ImagesRoutes extends Route {
 
             if (!this.storage.availableExtensions.includes(extension)) {
                 res.sendFile(`${this.storage.imagesRootPath}/${path}/${fileName}`);
-                //res.status(404).send('wooop');
                 return;
             }
 

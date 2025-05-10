@@ -12,9 +12,9 @@ services:
     working_dir: /app/frontend
 
     # replace it
-    # command: 'tail -f /dev/null'
+    command: 'tail -f /dev/null'
 
-    command: 'npm start'
+    #command: 'npm start'
     volumes:
       - .:/app
       - /home/mk/projects/skwncr.net_storage/images/projects:/app/frontend/public/images/projects:ro

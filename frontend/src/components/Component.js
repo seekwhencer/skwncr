@@ -34,6 +34,20 @@ export default class Component extends Events {
         this.debug ? console.log('>> SECTION LEAVE:', this.element.dataset.section) : null;
     }
 
+    fetch(url, requestOptions) {
+        !requestOptions ? requestOptions = {
+            method: 'GET'
+        } : null;
+
+        return fetch(url, requestOptions)
+            .then(response => {
+                if (!response.ok)
+                    return Promise.reject(response.statusText);
+
+                return response.json();
+            });
+    }
+
     get isInView() {
         if (!this.element)
             return;

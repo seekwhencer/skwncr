@@ -1,0 +1,41 @@
+import {
+    Menu,
+    Lightbulb,
+    TentTree,
+    BookOpenCheck,
+    Microchip,
+    DraftingCompass,
+    Ambulance,
+    Ship,
+    ShipWheel,
+    HeartHandshake,
+    Linkedin,
+    Facebook,
+    Youtube,
+    Github,
+    Bot,
+    Heart,
+    ArrowDownFromLine,
+    ArrowUpFromLine
+} from 'lucide-static/dist/esm/lucide-static.js';
+
+export default {
+    menu: Menu,
+    consulting: ShipWheel,
+    development: DraftingCompass,
+    support: Ambulance,
+    solutions: Ship,
+    edgecomputing: Microchip,
+    smarthome: Lightbulb,
+    neighbourhood: HeartHandshake,
+    workshops: BookOpenCheck,
+    fun: TentTree,
+    linkedin: Linkedin,
+    facebook: Facebook,
+    youtube: Youtube,
+    github: Github,
+    bot: Bot,
+    heart: Heart,
+    arrowUpLine: ArrowUpFromLine,
+    arrowDownLine: ArrowDownFromLine
+}

@@ -15,7 +15,31 @@ export default defineConfig({
         origin: 'http://frontend.apply-o-mat.servant',
         allowedHosts: true,
         cors: {
-            origin: true,
+            origin: false,
+        },
+        proxy: {
+            '/': {
+                target: 'http://apply-o-mat_server:8081',
+                bypass: (req, res, proxyOptions) => {
+
+                    // skipping all needs for the HMR (like served node modules
+                    // or something that is in the bundle later
+
+                    if (req.url.match(/\/@vite\/(.+)/))
+                        return req.url;
+
+                    if (req.url.match(/\/src\/(.+)/))
+                        return req.url;
+
+                    if(req.url.match(/\/node_modules\/(.+)/))
+                        return req.url;
+
+                    if(req.url.match(/\/@fs\/(.+)/))
+                        return req.url;
+
+                },
+                changeOrigin: true
+            }
         }
     },
     devToolbar: {
@@ -30,5 +54,8 @@ export default defineConfig({
                 entryFileNames: "js/[name]-[hash].js"
             }
         }
+    },
+    esbuild: {
+        legalComments: 'none'
     }
 });

@@ -18,6 +18,7 @@ services:
 
     command: 'npm start'
     environment:
+      - ENV=production
       - SERVER_PORT=${SERVER_PORT}
       - VIRTUAL_HOST=skwncr.net
       - VIRTUAL_PORT=${SERVER_PORT}

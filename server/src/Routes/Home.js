@@ -5,9 +5,7 @@ export default class HomeRoutes extends Route {
         super(parent, options);
 
         this.router.get('/', (req, res, next) => {
-            // do things on home page request
-            // ...
-            res.send(this.parent.homePage.html());
+            res.send(this.webServer.homePage.html());
         });
 
         return this.router;

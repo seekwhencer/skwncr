@@ -10,11 +10,15 @@ export default class LayoutComponent extends Component {
 
         this.target = this.options.target ? this.options.target : this.parent;
 
+        this.element = document.querySelector('[data-section=splash]');
+
+        /*
         this.element = SplashTemplate.dom({
             splash: _DATA.intro,
             icons: this.app.icons
         });
         this.target.element.append(this.element);
+        */
 
         // typo
         this.title = this.element.querySelector('h1');
@@ -27,9 +31,9 @@ export default class LayoutComponent extends Component {
         this.randomVideo();
 
         // footer element
-        this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
-        this.sectionFooterElement = SectionFooterElement.dom({});
-        this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
+        //this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
+        //this.sectionFooterElement = SectionFooterElement.dom({});
+        //this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
 
         window.addEventListener("scroll", (event) => this.onScroll(event));
 

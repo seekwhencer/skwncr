@@ -7,9 +7,13 @@ export default class ProjectComponent extends Component {
         super(parent, options);
         this.target = this.parent;
         this.detailsElement = this.parent.detailsElement;
+        this.element = options;
+        this.options.title = this.element.querySelector('.name').innerText;
     }
 
     draw() {
+
+/*
         this.element = ProjectTemplate.dom({
             ...this.options,
             images: this.options?.images || [],
@@ -17,7 +21,7 @@ export default class ProjectComponent extends Component {
             icons: this.app.icons
         });
         this.target.projectsElement.append(this.element);
-
+*/
         // lazy loading
         this.imageSet = this.element.querySelector('picture');
         if (this.imageSet) {
@@ -45,8 +49,10 @@ export default class ProjectComponent extends Component {
 
     drawDetails() {
         this.flushDetails();
-        this.details = new ProjectDetailsComponent(this, this.options);
-        setTimeout(() => this.details.draw(), 300); // delaying the details
+        this.getData().then(() => {
+            this.details = new ProjectDetailsComponent(this);
+            setTimeout(() => this.details.draw(), 300); // delaying the details
+        });
     }
 
     flushDetails() {
@@ -83,6 +89,15 @@ export default class ProjectComponent extends Component {
 
     imageLeaveView() {
         //console.log('>> IMAGE LEAVE:', this.image.dataset.src)
+    }
+
+    getData() {
+        return new Promise((resolve, reject) => {
+            return this.fetch(`/data/projects/listing/${this.index}`).then(response => {
+                this.data = response;
+                resolve('yay');
+            });
+        });
     }
 
     get index() {

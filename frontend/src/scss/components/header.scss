@@ -13,10 +13,6 @@ header {
   opacity: 1;
   transition: all 0.5s ease-in-out;
 
-  @include responsive.media-smartphone {
-
-  }
-
   .menu {
     margin: 0;
     padding: 0;
@@ -67,6 +63,10 @@ header {
       }
 
       &.active {
+        transition: all 0.2s ease-in-out;
+        z-index: 1000;
+        box-shadow: 0 0 10px rgba(0,0,0,0.4);
+
         &:before {
           opacity: 1;
           transition: all 0.2s ease-in-out;

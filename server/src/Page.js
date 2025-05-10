@@ -3,14 +3,16 @@ import fs from 'node:fs';
 export default class Page {
     constructor(parent, options) {
         this.parent = parent;
+        this.storage = this.parent.storage;
 
-        this.css = this.getCSS();
-        this.js = this.getJS();
+        this.css = this.storage.css;
+        this.js = this.storage.js;
 
-        this.cssPlain = this.getCSSPlain();
-        this.jsPlain = this.getJSPlain();
+        this.cssPlain = this.storage.cssPlain;
+        this.jsPlain = this.storage.jsPlain;
 
         this.headerMeta = {
+            lang: 'de',
             icon: 'images/vite.svg',
             css: `css/${this.css}`,
             js: `js/${this.js}`,
@@ -30,13 +32,15 @@ export default class Page {
             },
             x: {} // elon...
         };
+
+        this.cacheTime = 60;
     }
 
-    markup(string, data, tag) {
-        return this.build(string)({scope: data, tag: tag});
+    render(template, data, tag) {
+        return this.markup(template)({scope: data, tag: tag});
     }
 
-    build(content) {
+    markup(content) {
         content = '`' + content + '`';
 
         return function (config) {
@@ -57,28 +61,19 @@ export default class Page {
         }
     }
 
-    // can be sync on startup
-    getCSS() {
-        const dir = fs.readdirSync('../frontend/dist/css');
-        return dir.filter(i => i.match(/(?<=index-).*?(?=\.css)/));
+    useCache(cacheTime) {
+        const now = Date.now();
+        const age = (now - this.cacheTimestamp) / 1000; // seconds
+        return age < (cacheTime || this.cacheTime);
     }
 
-    // can be sync on startup
-    getJS() {
-        const dir = fs.readdirSync('../frontend/dist/js');
-        return dir.filter(i => i.match(/(?<=index-).*?(?=\.js)/));
+    set dom(val) {
+        this._dom = val;
+        this.cache = this.dom;
+        this.cacheTimestamp = Date.now();
     }
 
-    //
-    getCSSPlain() {
-        return fs.readFileSync(`./static/css/${this.css}`).toString();
-    }
-
-    getJSPlain() {
-        return fs.readFileSync(`./static/js/${this.js}`).toString();
-    }
-
-    readTemplate(file) {
-        return fs.readFileSync(file).toString();
+    get dom() {
+        return this._dom;
     }
 }

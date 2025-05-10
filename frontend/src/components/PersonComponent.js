@@ -6,10 +6,11 @@ import SectionFooterElement from "../templates/Elements/SectionFooterElement.htm
 export default class PersonComponent extends Component {
     constructor(parent, options) {
         super(parent, options);
-
         this.debug = false;
 
         this.target = this.options.target ? this.options.target : this.parent;
+        this.element = document.querySelector('[data-section=person]');
+/*
         this.element = PersonTemplate.dom({
             ..._DATA.person,
             age: this.calcAge(),
@@ -17,18 +18,17 @@ export default class PersonComponent extends Component {
         });
         this.target.element.append(this.element);
 
+        // footer element
+        //this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
+        //this.sectionFooterElement = SectionFooterElement.dom({});
+        //this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
+*/
         // the face image
         this.faceImage = new FaceImageElement(this);
-
-        // footer element
-        this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
-        this.sectionFooterElement = SectionFooterElement.dom({});
-        this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
 
 
         this.on('enter', () => this.enterView());
         this.on('leave', () => this.leaveView());
-
     }
 
    calcAge() {

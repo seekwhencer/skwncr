@@ -1,23 +1,97 @@
 import fs from 'node:fs';
-const readTemplate = (file) => fs.readFileSync(file).toString();
 
-const templates = {
-    header: './src/Pages/Templates/header.html',
-    footer: './src/Pages/Templates/footer.html',
-    home: './src/Pages/Templates/index.html',
-    test: './src/Pages/Templates/test.html',
+/**
+ *
+ * @TODO autoloader
+ *
+ * this is the static stack of templates files
+ * loaded at once at start up at class creation
+ * loaded never again
+ * template file is an es6 template literal string
+ * a file with extension .html
+ * a string without ` at the beginning and at the end
+ *
+ */
+
+// to read the template file as string
+// sync because it happens at start up
+const fileBasePath = './src/Pages/Templates';
+const fileBasePathFrontend = '../frontend/src/templates';
+
+// read templates from server stack
+const readTemplate = (file) => fs.readFileSync(`${fileBasePath}/${file}`).toString();
+
+// read templates from frontend stack (because they are reusable)
+const readFrontendTemplate = (file) => fs.readFileSync(`${fileBasePathFrontend}/${file}`).toString();
+
+// the stack
+let templates = {
+
+    global: {
+        header: 'global/header.html',
+        footer: 'FooterTemplate.html',
+        navigation: 'HeaderTemplate.html',
+        sectionFooter: 'Elements/SectionFooterElement.html'
+    },
+
+    page: {
+        test: 'index/test.html',
+        home: 'index/home.html',
+        person: 'index/person.html',
+    },
+
+    section: {
+        splash: 'SplashTemplate.html',
+        person: 'PersonTemplate.html',
+        vita: 'VitaTemplate.html',
+        skills: 'SkillsTemplate.html',
+        services: 'ServicesTemplate.html',
+        projects: 'ProjectsTemplate.html',
+        disclaimer: 'DisclaimerTemplate.html'
+    },
+    partials: {
+        projectListingElement : 'Elements/ProjectTemplate.html'
+    }
 };
 
 //
-const HomeTemplate = readTemplate(templates.home);
-const TestTemplate = readTemplate(templates.test);
-const PageHeaderTemplate = readTemplate(templates.header);
-const PageFooterTemplate = readTemplate(templates.footer);
+const DocumentHeaderTemplate = readTemplate(templates.global.header);
+const DocumentFooterTemplate = readFrontendTemplate(templates.global.footer);
+const PageNavigationTemplate = readFrontendTemplate(templates.global.navigation);
+const SectionFooterTemplate = readFrontendTemplate(templates.global.sectionFooter);
+
+const TestPageTemplate = readTemplate(templates.page.test);
+const HomePageTemplate = readTemplate(templates.page.home);
+const PersonPageTemplate = readTemplate(templates.page.person);
+
+const SplashSectionTemplate = readFrontendTemplate(templates.section.splash);
+const PersonSectionTemplate = readFrontendTemplate(templates.section.person);
+const VitaSectionTemplate = readFrontendTemplate(templates.section.vita);
+const SkillsSectionTemplate = readFrontendTemplate(templates.section.skills);
+const ServicesSectionTemplate = readFrontendTemplate(templates.section.services);
+const ProjectsSectionTemplate = readFrontendTemplate(templates.section.projects);
+const DisclaimerSectionTemplate = readFrontendTemplate(templates.section.disclaimer);
+
+const ProjectListingElementTemplate = readFrontendTemplate(templates.partials.projectListingElement);
 
 //
 export {
-    HomeTemplate,
-    TestTemplate,
-    PageHeaderTemplate,
-    PageFooterTemplate
+    DocumentHeaderTemplate,
+    DocumentFooterTemplate,
+    PageNavigationTemplate,
+    SectionFooterTemplate,
+
+    TestPageTemplate,
+    HomePageTemplate,
+    PersonPageTemplate,
+
+    SplashSectionTemplate,
+    PersonSectionTemplate,
+    VitaSectionTemplate,
+    SkillsSectionTemplate,
+    ServicesSectionTemplate,
+    ProjectsSectionTemplate,
+    DisclaimerSectionTemplate,
+
+    ProjectListingElementTemplate
 };

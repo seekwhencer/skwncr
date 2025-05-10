@@ -1,13 +1,15 @@
 <section class="section-projects" data-section="projects" data-scroll>
     <h2 class="">Projekte</h2>
     <div class="container">
-        <div class="project-stopper" data-stopper></div>
-        <div class="projects" data-projects></div>
+        <div class="project-stopper" data-stopper>${icons.bot}</div>
+        <div class="projects" data-projects>
+            ${projects}
+        </div>
     </div>
     <div class="details-block" data-details></div>
     <div class="text-block">
         ${text.md()}
     </div>
     <div class="bot">${icons.bot}</div>
-    <div data-element="section-footer"></div>
+    ${sectionFooter}
 </section>

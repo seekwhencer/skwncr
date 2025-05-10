@@ -3,6 +3,8 @@ import express from "express";
 export default class Route {
     constructor(parent, options) {
         this.parent = parent;
+        this.webServer = this.parent?.webServer ? this.parent.webServer : false;
+
         this.router = express.Router();
     }
 

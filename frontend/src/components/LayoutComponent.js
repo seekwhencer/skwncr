@@ -6,12 +6,16 @@ export default class LayoutComponent extends Component {
         super(parent, options);
 
         this.target = this.options.target ? this.options.target : this.parent;
+        this.element = document.querySelector('main');
 
+/*
         this.element = LayoutTemplate.dom({
             data: _DATA,
             icons: this.app.icons
         });
 
         this.target.element.append(this.element);
+*/
+
     }
-}
+ }

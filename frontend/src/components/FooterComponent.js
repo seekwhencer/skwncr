@@ -7,7 +7,9 @@ export default class FooterComponent extends Component {
         super(parent, options);
 
         this.target = this.options.target ? this.options.target : this.parent;
+        this.element = document.querySelector('footer');
 
+/*
         this.element = FooterTemplate.dom({
             text: _DATA.footer.text,
             readme: _DATA.footer.readme,
@@ -20,5 +22,7 @@ export default class FooterComponent extends Component {
         this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
         this.sectionFooterElement = SectionFooterElement.dom({});
         this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
+*/
+
     }
 }

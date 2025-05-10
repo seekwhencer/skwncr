@@ -27,7 +27,7 @@ services:
 
     environment:
       - DEBUG=true
-      - ENVIRONMENT=default
+      - ENV=development
       - SERVER_PORT=${SERVER_PORT}
 
       - VIRTUAL_HOST=${PROJECT_NAME}.servant

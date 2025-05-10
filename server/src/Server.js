@@ -1,32 +1,37 @@
-import http from "node:http";
-import path from "node:path";
-import express from "express";
-import * as Routes from "./Routes/index.js";
-import Storage from "./Storage.js";
-import ThumbnailGenerator from "./ThumbnailGenerator/index.js";
-import HomePage from "./Pages/Home.js";
-import TestPage from "./Pages/Test.js";
+import http from 'node:http';
+import path from 'node:path';
+import express from 'express';
+import * as Routes from './Routes/index.js';
+import Storage from './Storage.js';
+import Icons from './Global/Icons.js';
+import ThumbnailGenerator from './ThumbnailGenerator/index.js';
+import {TestPage, HomePage, PersonPage} from './Pages/index.js';
 
 export default class WebServer {
     constructor() {
+        this.webServer = this;
         this.server = false;
         this.engine = express();
         this.port = parseInt(process.env?.SERVER_PORT || 9090);
         this.staticsPath = path.resolve('./static');
         this.baseUrl = '';
 
-        // the html generator from string literal templates
-        this.homePage = new HomePage(this);
-        this.testPage = new TestPage(this);
+        // icons
+        this.icons = Icons;
 
-        //
+        // the storage for all file activities
         this.storage = new Storage(this);
 
-        // not in use at the moment.
         // @TODO add queue
         this.thumbnailGenerator = new ThumbnailGenerator(this);
 
+        // create the page objects
+        this.registerPages();
+
+        // create all page routes
         this.registerRoutes();
+
+        // register static assets
         this.registerStatics();
 
         this.start();
@@ -56,9 +61,27 @@ export default class WebServer {
             }
         };
 
+        // because the embedded style file looks in this path
         this.engine.use('/fonts', express.static(`${this.staticsPath}/css/fonts`, options));
+
+        // not more used, but exists
         this.engine.use('/css', express.static(`${this.staticsPath}/css`, options));
+
+        // not more used, but exists
         this.engine.use('/js', express.static(`${this.staticsPath}/js`, options));
+
+        // the video files
         this.engine.use('/video', express.static(`${this.staticsPath}/video`, options));
+    }
+
+    registerPages() {
+        // testing development
+        this.testPage = new TestPage(this);
+
+        // landing page
+        this.homePage = new HomePage(this);
+
+        // others
+        this.personPage = new PersonPage(this);
     }
 }

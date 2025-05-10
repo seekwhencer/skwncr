@@ -7,7 +7,9 @@ export default class DisclaimerComponent extends Component {
         super(parent, options);
 
         this.target = this.options.target ? this.options.target : this.parent;
+        this.element = document.querySelector('[data-section=disclaimer]');
 
+/*
         this.element = DisclaimerTemplate.dom({
             ..._DATA.impress,
             social: _DATA.person.social,
@@ -17,13 +19,12 @@ export default class DisclaimerComponent extends Component {
         });
         this.target.element.append(this.element);
 
-        // any click
-        // this.element.onclick = (e) => this.click(e);
-
         // footer element
         this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
         this.sectionFooterElement = SectionFooterElement.dom({});
         this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
+*/
+
     }
 
     click(e) {

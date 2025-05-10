@@ -8,13 +8,18 @@ export default class VitaComponent extends Component {
 
         this.debug = true;
 
+
         this.target = this.options.target ? this.options.target : this.parent;
+
+        this.element = document.querySelector('[data-section=vita]');
+
+        /*
         this.element = VitaTemplate.dom({
             vita: _DATA.vita,
             icons: this.app.icons
         });
         this.target.element.append(this.element);
-
+        */
         // more button
         this.moreElement = this.element.querySelector('[data-more]');
         this.element.querySelector('[data-button-more]').onclick = (e) => {
@@ -32,9 +37,9 @@ export default class VitaComponent extends Component {
         }
 
         // footer element
-        this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
-        this.sectionFooterElement = SectionFooterElement.dom({});
-        this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
+        //this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
+        //this.sectionFooterElement = SectionFooterElement.dom({});
+        //this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
 
         this.on('enter', () => this.enterView());
         this.on('leave', () => this.leaveView());

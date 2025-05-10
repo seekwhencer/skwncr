@@ -20,6 +20,7 @@ export default class App {
         this.browser = new BrowserDetector(window.navigator.userAgent).parseUserAgent();
         this.app = this;
         this.icons = Icons;
+        this.urlBase = '';
 
         //
         this.element = document.querySelector('#root');
@@ -70,7 +71,6 @@ export default class App {
         /**
          * the pages
          */
-
 
     }
 

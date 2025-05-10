@@ -2,32 +2,39 @@ import Component from "./Component.js";
 import ServicesTemplate from "../templates/ServicesTemplate.html?raw";
 import SectionFooterElement from "../templates/Elements/SectionFooterElement.html?raw";
 import ServiceDetailComponent from "./service/ServiceDetailComponent.js";
+import ServiceComponent from "./service/ServiceComponent.js";
 
 export default class ServicesComponent extends Component {
     constructor(parent, options) {
         super(parent, options);
 
         this.target = this.options.target ? this.options.target : this.parent;
+
+        this.element = document.querySelector('[data-section=services]');
+
+        /*
         this.element = ServicesTemplate.dom({
             services: _DATA.services,
             icons: this.app.icons
         });
         this.target.element.append(this.element);
+        */
 
         // the only one click handler per section
         this.element.onclick = (e) => this.click(e);
 
-        // buttons
-        this.buttons = this.element.querySelectorAll('.service:not(.empty)');
-        this.buttons.forEach(button => button.onclick = () => this.click(button));
+        // services
+        this.services = [];
+        this.serviceElements = this.element.querySelectorAll('.service:not(.empty)');
+        this.serviceElements.forEach(s => this.services.push(new ServiceComponent(this, s)));
 
         // the detail element
         this.details = new ServiceDetailComponent(this, {});
 
         // footer element
-        this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
-        this.sectionFooterElement = SectionFooterElement.dom({});
-        this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
+        //this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
+        //this.sectionFooterElement = SectionFooterElement.dom({});
+        //this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
     }
 
     click(e) {
@@ -39,42 +46,18 @@ export default class ServicesComponent extends Component {
 
         // the target is any clicked element in this section
         const target = e.target;
-        const services = target.closest('.services') || target.querySelector('.services');
         const service = target.closest('.service:not(.empty)');
+        let index = false;
 
+        if (service)
+            index = [...this.element.querySelectorAll('.service:not(.empty)')].indexOf(service);
 
-        /**
-         * remove all active classes from services
-         */
-        const flushAll = () => {
-            if (services)
-                services.querySelectorAll('.service.active').forEach(el => el.classList.remove('active'));
-        }
-        /**
-         * select one service
-         */
-        const toggleActiveButton = () => {
-            if (service) {
-                service.classList.toggle('active');
-                this.active = service.dataset.name;
-            }
+        if (index === false) {
+            this.close();
+        } else {
+            this.services[index].select();
         }
 
-        /**
-         * toggle the detail view
-         */
-        const toggleOpen = () => {
-            if (services)
-                services.querySelectorAll('.service.active').length > 0 ? this.open() : this.close();
-
-            if (!service)
-                this.close();
-        }
-
-        // and action
-        flushAll(e);
-        toggleActiveButton(e);
-        toggleOpen(e);
     }
 
     open() {
@@ -97,7 +80,12 @@ export default class ServicesComponent extends Component {
     }
 
     drawDetails() {
-        this.details.draw();
+        if (this.details)
+            this.details.draw();
+    }
+
+    flushAll(index) {
+        this.services.forEach((service, i) => i !== index ? service.flush() : null);
     }
 
     get active() {

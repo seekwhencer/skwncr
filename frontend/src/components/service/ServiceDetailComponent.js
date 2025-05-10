@@ -7,7 +7,6 @@ export default class ServiceDetailComponent extends Component {
 
         this.target = this.options.target ? this.options.target : this.parent;
         this.element = this.target.element.querySelector('[data-name=details]');
-
     }
 
     open() {
@@ -20,10 +19,10 @@ export default class ServiceDetailComponent extends Component {
 
     draw() {
         if (this.parent.active) {
-            const service = _DATA.services.filter(s => s.icon === this.parent.active)[0];
+            const service = this.parent.services[`${this.parent.active}`];
 
             this.element = ServiceDetailTemplate.dom({
-                service: service,
+                service: service.data,
                 icons: this.app.icons
             });
 
@@ -31,7 +30,7 @@ export default class ServiceDetailComponent extends Component {
             this.text = this.element.querySelector('[data-text]');
 
             this.target.element.querySelector('[data-name=details]').replaceWith(this.element);
-            setTimeout(() => this.element.classList.remove('hidden'), 0); // next tick ;)
+            setTimeout(() => this.element.classList.remove('hidden'), 10); // next tick ;)
         }
     }
 }

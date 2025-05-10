@@ -6,6 +6,7 @@ export default class ProjectDetailsComponent extends Component {
         super(parent, options);
         this.target = this.parent;
         this.detailsElement = this.target.detailsElement;
+        this.options = this.parent.data;
     }
 
     draw() {
@@ -46,12 +47,10 @@ export default class ProjectDetailsComponent extends Component {
 
     onLoadImage() {
         this.imageElement.classList.remove('loading');
-        const height = this.imageLarge.css().height();
         this.imageElement.style.height = this.imageLarge.css().height();
     }
 
     destroy() {
         delete this.parent.details;
     }
-
 }

@@ -10,11 +10,16 @@ export default class ProjectsComponent extends Component {
         super(parent, options);
 
         this.target = this.options.target ? this.options.target : this.parent;
+        this.element = document.querySelector('[data-section=projects]');
+
+        /*
         this.element = ProjectsTemplate.dom({
             text: _DATA.projects.text,
+            projects: '',
             icons: this.app.icons
         });
         this.target.element.append(this.element);
+        */
 
         // details element
         this.detailsElement = this.element.querySelector('[data-details]');
@@ -31,15 +36,18 @@ export default class ProjectsComponent extends Component {
         this.projectStopperElement.replaceWith(this.projectStopper);
 
         // footer element
-        this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
-        this.sectionFooterElement = SectionFooterElement.dom({});
-        this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
+        //this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
+        //this.sectionFooterElement = SectionFooterElement.dom({});
+        //this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
     }
 
     createProjects() {
-        //@ TODO as Proxy()
         this.projects = [];
-        _DATA.projects.listing.forEach(p => this.projects.push(new Project(this, p)));
+        const projectElements = this.element.querySelectorAll('.project');
+        projectElements.forEach(p => this.projects.push(new Project(this, p)));
+
+
+        //_DATA.projects.listing.forEach(p => this.projects.push(new Project(this, p)));
         this.element.onclick = (e) => this.click(e);
     }
 
@@ -68,6 +76,8 @@ export default class ProjectsComponent extends Component {
 
         if (projectName)
             this.project = this.one(projectName, 'title');
+
+        //console.log(this.project, projectElement, projectName);
 
         // when clicked on a slider or listing item
         if (this.project)
@@ -162,8 +172,6 @@ export default class ProjectsComponent extends Component {
             }
 
         }, 0);
-
-
     }
 
     close() {

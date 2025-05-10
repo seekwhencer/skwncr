@@ -1,11 +1,15 @@
 import fs from 'fs-extra';
 import Image from './ThumbnailGenerator/Image.js';
+import Data from '../../data/data.json' with { type: 'json' };
 
 export default class Storage {
     constructor(parent) {
         this.parent = parent;
         this.server = this.parent;
         this.label = 'STORAGE';
+
+        // in memory
+        this.data = Data;
 
         this.imagesRootPath = "/app/server/static/images";
         this.thumbnailsRootPath = '/app/server/static/images/thumbs';
@@ -46,6 +50,15 @@ export default class Storage {
                 label: 'original'
             }
         }
+
+        // the bundle hash
+        this.css = this.getCSS();
+        this.js = this.getJS();
+
+        // the file content
+        this.cssPlain = this.getCSSPlain();
+        this.jsPlain = this.getJSPlain();
+
     }
 
     /**
@@ -82,5 +95,26 @@ export default class Storage {
                 .then(exists => exists ? resolve(image) : setTimeout(() => resolve(image), 10000))
                 .catch(e => reject(e));
         });
+    }
+
+    // can be sync on startup
+    getCSS() {
+        const dir = fs.readdirSync('../frontend/dist/css');
+        return dir.filter(i => i.match(/(?<=index-).*?(?=\.css)/));
+    }
+
+    // can be sync on startup
+    getJS() {
+        const dir = fs.readdirSync('../frontend/dist/js');
+        return dir.filter(i => i.match(/(?<=index-).*?(?=\.js)/));
+    }
+
+    //
+    getCSSPlain() {
+        return fs.readFileSync(`./static/css/${this.css}`).toString();
+    }
+
+    getJSPlain() {
+        return fs.readFileSync(`./static/js/${this.js}`).toString();
     }
 }
