@@ -49,7 +49,7 @@ export default class HomePage extends PageDocument {
                 disclaimer: this.disclaimerSection.html()
             },
             pageFooter: this.documentFooter.html(),
-            jsPlain: this.jsPlain,
+            jsPlain: '',
             ...options
         };
 
