@@ -1,8 +1,8 @@
 node_modules
 .idea
 
-video
 data/data.json
+video
 frontend/dist
 frontend/public/images/projects
 frontend/public/video
