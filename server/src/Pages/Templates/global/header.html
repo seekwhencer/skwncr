@@ -29,7 +29,7 @@
 
     <link rel="icon" type="image/svg+xml" href="${icon}"/>
 
-    ${process.env?.ENV === 'production' ? `
+    ${process.env?.ENV === 'test' ? `
     <script type="module" crossorigin src="${js}"></script>
     <link rel="stylesheet" crossorigin href="${css}">
     ` : ''}
