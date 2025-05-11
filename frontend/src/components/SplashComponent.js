@@ -1,24 +1,13 @@
 import Component from "./Component.js";
-import SplashTemplate from "../templates/SplashTemplate.html?raw";
-import SectionFooterElement from "../templates/Elements/SectionFooterElement.html?raw";
+import VideoSelectionComponent from "./Splash/VideoSelectionComponent.js";
 
 export default class LayoutComponent extends Component {
     constructor(parent, options) {
         super(parent, options);
-
         this.debug = false;
 
         this.target = this.options.target ? this.options.target : this.parent;
-
         this.element = document.querySelector('[data-section=splash]');
-
-        /*
-        this.element = SplashTemplate.dom({
-            splash: _DATA.intro,
-            icons: this.app.icons
-        });
-        this.target.element.append(this.element);
-        */
 
         // typo
         this.title = this.element.querySelector('h1');
@@ -26,20 +15,14 @@ export default class LayoutComponent extends Component {
         this.scrollMax = this.element.getBoundingClientRect().height;
 
         // video @TODO from data json
-        this.videoSources = _DATA.intro.videos;
-        this.video = this.element.querySelector('video');
-        this.randomVideo();
+        this.video = new VideoSelectionComponent(this);
 
-        // footer element
-        //this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
-        //this.sectionFooterElement = SectionFooterElement.dom({});
-        //this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
-
+        // scroll event
         window.addEventListener("scroll", (event) => this.onScroll(event));
 
+        // ... the section
         this.on('enter', () => this.enterView());
         this.on('leave', () => this.leaveView());
-
     }
 
     onScroll(e) {
@@ -70,16 +53,6 @@ export default class LayoutComponent extends Component {
      * little recursion to suppress doubles
      */
     randomVideo() {
-        if (!this.app.isDesktop)
-            return;
-
-        const r = () => {
-            const rand = Math.floor(Math.random() * this.videoSources.length);
-            if (this.video.src.includes(this.videoSources[rand]))
-                return r();
-
-            return rand;
-        }
-        this.video.src = this.videoSources[r()];
+        this.video.randomVideo();
     }
 }

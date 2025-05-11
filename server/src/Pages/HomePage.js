@@ -18,6 +18,7 @@ export default class HomePage extends PageDocument {
         super(parent, options);
         this.template = HomePageTemplate;
         this.pageNavigation = new PageNavigation(this);
+        this.disableCache = true;
 
         // sections
         this.splashSection = new SplashSection(this);
@@ -32,7 +33,7 @@ export default class HomePage extends PageDocument {
     }
 
     html(options = {}, req = false, res = false) {
-        if (this.useCache())
+        if (this.useCache() && !this.disableCache)
             return this.cache;
 
         let templateData = {

@@ -50,7 +50,8 @@ let templates = {
         disclaimer: 'DisclaimerTemplate.html'
     },
     partials: {
-        projectListingElement : 'Elements/ProjectTemplate.html'
+        projectListing : 'Elements/ProjectTemplate.html',
+        splashVideoSelection : 'Elements/SplashVideoSelectionTemplate.html',
     }
 };
 
@@ -72,7 +73,8 @@ const ServicesSectionTemplate = readFrontendTemplate(templates.section.services)
 const ProjectsSectionTemplate = readFrontendTemplate(templates.section.projects);
 const DisclaimerSectionTemplate = readFrontendTemplate(templates.section.disclaimer);
 
-const ProjectListingElementTemplate = readFrontendTemplate(templates.partials.projectListingElement);
+const ProjectListingElementTemplate = readFrontendTemplate(templates.partials.projectListing);
+const SplashVideoSelectionTemplate = readFrontendTemplate(templates.partials.splashVideoSelection);
 
 //
 export {
@@ -93,5 +95,6 @@ export {
     ProjectsSectionTemplate,
     DisclaimerSectionTemplate,
 
-    ProjectListingElementTemplate
+    ProjectListingElementTemplate,
+    SplashVideoSelectionTemplate
 };
