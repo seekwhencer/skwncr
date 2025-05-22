@@ -1,25 +1,14 @@
-import Component from "./Component.js";
-import Project from "./projects/ProjectComponent.js"
-import ProjectsTemplate from "../templates/ProjectsTemplate.html?raw";
-import SectionFooterElement from "../templates/Elements/SectionFooterElement.html?raw";
-import ProjectStopper from "../templates/Elements/ProjectStopper.html?raw";
+import SectionComponent from "./SectionComponent.js";
+import Project from "../projects/ProjectComponent.js"
+import ProjectStopper from "../../templates/Elements/ProjectStopper.html?raw";
 import Swiper from "swiper";
 
-export default class ProjectsComponent extends Component {
+export default class ProjectsSectionComponent extends SectionComponent {
     constructor(parent, options) {
         super(parent, options);
 
         this.target = this.options.target ? this.options.target : this.parent;
         this.element = document.querySelector('[data-section=projects]');
-
-        /*
-        this.element = ProjectsTemplate.dom({
-            text: _DATA.projects.text,
-            projects: '',
-            icons: this.app.icons
-        });
-        this.target.element.append(this.element);
-        */
 
         // details element
         this.detailsElement = this.element.querySelector('[data-details]');
@@ -34,20 +23,12 @@ export default class ProjectsComponent extends Component {
             icons: this.app.icons
         });
         this.projectStopperElement.replaceWith(this.projectStopper);
-
-        // footer element
-        //this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
-        //this.sectionFooterElement = SectionFooterElement.dom({});
-        //this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
     }
 
     createProjects() {
         this.projects = [];
         const projectElements = this.element.querySelectorAll('.project');
         projectElements.forEach(p => this.projects.push(new Project(this, p)));
-
-
-        //_DATA.projects.listing.forEach(p => this.projects.push(new Project(this, p)));
         this.element.onclick = (e) => this.click(e);
     }
 
@@ -159,7 +140,7 @@ export default class ProjectsComponent extends Component {
                             spaceBetween: "20px"
                         },
                         1024: {
-                            slidesPerView: 6,
+                            slidesPerView: 8,
                             spaceBetween: "20px"
                         }
                     }

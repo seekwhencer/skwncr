@@ -1,5 +1,4 @@
 import Component from "./Component.js";
-import LayoutTemplate from "../templates/LayoutTemplate.html?raw";
 
 export default class LayoutComponent extends Component {
     constructor(parent, options) {
@@ -7,15 +6,5 @@ export default class LayoutComponent extends Component {
 
         this.target = this.options.target ? this.options.target : this.parent;
         this.element = document.querySelector('main');
-
-/*
-        this.element = LayoutTemplate.dom({
-            data: _DATA,
-            icons: this.app.icons
-        });
-
-        this.target.element.append(this.element);
-*/
-
     }
  }

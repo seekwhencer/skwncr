@@ -1,19 +1,24 @@
-import './scss/index.scss';
+import './global/Globals.js';
+import Data from '../../data/data.json';
+window._DATA = Data;
+
+import './scss/home.scss';
 
 import BrowserDetector from 'browser-dtector';
 import Icons from "./components/Icons.js";
 
 import HeaderComponent from "./components/HeaderComponent.js";
 import LayoutComponent from "./components/LayoutComponent.js";
-import FooterComponent from "./components/FooterComponent.js";
-
-import SplashComponent from "./components/SplashComponent.js";
-import PersonComponent from "./components/PersonComponent.js";
-import VitaComponent from "./components/VitaComponent.js";
-import ServicesComponent from "./components/ServicesComponent.js";
-import SkillsComponent from "./components/SkillsComponent.js";
-import ProjectsComponent from "./components/ProjectsComponent.js";
-import DisclaimerComponent from "./components/DisclaimerComponent.js";
+import {
+    DisclaimerSectionComponent,
+    FooterSectionComponent,
+    PersonSectionComponent,
+    ProjectsSectionComponent,
+    ServicesSectionComponent,
+    SkillsSectionComponent,
+    SplashSectionComponent,
+    VitaSectionComponent
+} from "./components/sections/index.js";
 
 export default class App {
     constructor() {
@@ -34,44 +39,41 @@ export default class App {
 
         this.header = new HeaderComponent(this);
         this.layout = new LayoutComponent(this);
-        this.footer = new FooterComponent(this);
+
 
         /**
          * the sections
          */
+        this.footer = new FooterSectionComponent(this);
 
-        this.splash = new SplashComponent(this, {
+
+        this.splash = new SplashSectionComponent(this, {
             target: this.layout
         });
 
-        this.person = new PersonComponent(this, {
+        this.person = new PersonSectionComponent(this, {
             target: this.layout
         });
 
-        this.vita = new VitaComponent(this, {
+        this.vita = new VitaSectionComponent(this, {
             target: this.layout
         });
 
-        this.skills = new SkillsComponent(this, {
+        this.skills = new SkillsSectionComponent(this, {
             target: this.layout
         });
 
-        this.services = new ServicesComponent(this, {
+        this.services = new ServicesSectionComponent(this, {
             target: this.layout
         });
 
-        this.projects = new ProjectsComponent(this, {
+        this.projects = new ProjectsSectionComponent(this, {
             target: this.layout
         });
 
-        this.disclaimer = new DisclaimerComponent(this, {
+        this.disclaimer = new DisclaimerSectionComponent(this, {
             target: this.layout
         });
-
-        /**
-         * the pages
-         */
-
     }
 
     get isMobile() {
@@ -92,3 +94,4 @@ export default class App {
     }
 }
 
+window._APP = new App();

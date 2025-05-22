@@ -1,7 +1,7 @@
-import Component from "./Component.js";
-import VideoSelectionComponent from "./Splash/VideoSelectionComponent.js";
+import VideoSelectionComponent from "../splash/VideoSelectionComponent.js";
+import SectionComponent from "./SectionComponent.js";
 
-export default class LayoutComponent extends Component {
+export default class SplashSectionComponent extends SectionComponent {
     constructor(parent, options) {
         super(parent, options);
         this.debug = false;

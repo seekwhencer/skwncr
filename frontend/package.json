@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "vite",
-    "build": "vite build && npm run sync",
+    "build": "node ./build.js && npm run sync",
     "build:watch": "vite build --watch",
     "sync" : "mkdir -p ../server/static && rsync -avI --progress --exclude=video --exclude=images/projects /app/frontend/dist/ /app/server/static/"
   },

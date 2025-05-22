@@ -1,6 +1,5 @@
 import Component from "../Component.js";
-import ProjectTemplate from "../../templates/Elements/ProjectTemplate.html?raw";
-import ProjectDetailsComponent from "./DetailsComponent.js";
+import ProjectDetailsComponent from "./ProjectDetailsComponent.js";
 
 export default class ProjectComponent extends Component {
     constructor(parent, options) {
@@ -12,16 +11,6 @@ export default class ProjectComponent extends Component {
     }
 
     draw() {
-
-/*
-        this.element = ProjectTemplate.dom({
-            ...this.options,
-            images: this.options?.images || [],
-            highlight: this.options.highlight || false,
-            icons: this.app.icons
-        });
-        this.target.projectsElement.append(this.element);
-*/
         // lazy loading
         this.imageSet = this.element.querySelector('picture');
         if (this.imageSet) {

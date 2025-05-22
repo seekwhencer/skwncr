@@ -1,24 +1,14 @@
-import Component from "./Component.js";
-import ServicesTemplate from "../templates/ServicesTemplate.html?raw";
-import SectionFooterElement from "../templates/Elements/SectionFooterElement.html?raw";
-import ServiceDetailComponent from "./service/ServiceDetailComponent.js";
-import ServiceComponent from "./service/ServiceComponent.js";
+import SectionComponent from "./SectionComponent.js";
+import ServiceComponent from "../services/ServiceComponent.js";
+import ServiceDetailComponent from "../services/ServiceDetailComponent.js";
 
-export default class ServicesComponent extends Component {
+export default class ServicesSectionComponent extends SectionComponent {
     constructor(parent, options) {
         super(parent, options);
 
         this.target = this.options.target ? this.options.target : this.parent;
 
         this.element = document.querySelector('[data-section=services]');
-
-        /*
-        this.element = ServicesTemplate.dom({
-            services: _DATA.services,
-            icons: this.app.icons
-        });
-        this.target.element.append(this.element);
-        */
 
         // the only one click handler per section
         this.element.onclick = (e) => this.click(e);
@@ -30,11 +20,6 @@ export default class ServicesComponent extends Component {
 
         // the detail element
         this.details = new ServiceDetailComponent(this, {});
-
-        // footer element
-        //this.sectionFooterTarget = this.element.querySelector('[data-element=section-footer]');
-        //this.sectionFooterElement = SectionFooterElement.dom({});
-        //this.sectionFooterTarget.replaceWith(this.sectionFooterElement);
     }
 
     click(e) {

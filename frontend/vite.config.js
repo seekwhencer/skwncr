@@ -31,10 +31,10 @@ export default defineConfig({
                     if (req.url.match(/\/src\/(.+)/))
                         return req.url;
 
-                    if(req.url.match(/\/node_modules\/(.+)/))
+                    if (req.url.match(/\/node_modules\/(.+)/))
                         return req.url;
 
-                    if(req.url.match(/\/@fs\/(.+)/))
+                    if (req.url.match(/\/@fs\/(.+)/))
                         return req.url;
 
                 },
@@ -45,16 +45,23 @@ export default defineConfig({
     devToolbar: {
         enabled: true
     },
-    build: {
+    /*build: {
         target: 'es2022',
         assetsDir: '',
+
         rollupOptions: {
+            outDir: "./dist",
+            input: {
+                home: 'src/Home.js',
+                person: 'src/Person.js'
+            },
+
             output: {
-                assetFileNames: "css/[name]-[hash][extname]",
+                assetFileNames: "css/[name]-[hash].css",
                 entryFileNames: "js/[name]-[hash].js"
             }
         }
-    },
+    },*/
     esbuild: {
         legalComments: 'none'
     }
