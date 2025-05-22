@@ -227,8 +227,8 @@
     ]
   },
   {
-    "dateFrom": "2015",
-    "dateTo": "2015",
+    "dateFrom": "2008",
+    "dateTo": "2008",
     "title": "Frontend-Entwickler",
     "company": "Construktiv GmbH",
     "companyCity": "Bremen",
@@ -245,6 +245,41 @@
       "Frontend für Corporate Websites",
       "Mister Wong (Social Bookmarking, bevor es verkauft wurde)",
       "Firefox-Plugin (Mister Wong)"
+    ]
+  },
+  {
+    "dateFrom": "2003",
+    "dateTo": "2008",
+    "title": "Studium Digitale Medien",
+    "company": "Hochschule für Künste (HfK)",
+    "companyCity": "Bremen",
+    "companyIndustry": "Kunsthochschule / Fachhochschule",
+    "description": "Krasser Crossover aus Design und IT. Vormittags Java coden und nachmittags versaute Comics zeichnen. Ich war zwar an einer Kunsthochschule eingeschrieben, besuchte aber auch Kurse an der Uni Bremen bei den Informatikern und an der HfK Bremen bei den Designern. Schön in WGs gelebt, Party gehabt und meine jetzige Frau kennengelernt.",
+    "stack": [
+      "Konzept",
+      "Experimente",
+      "Installation",
+      "Neue Medien"
+    ],
+    "work": [
+      "Siehe Vorlesungsverzeichnis "
+    ]
+  },
+  {
+    "dateFrom": "2002",
+    "dateTo": "2003",
+    "title": "Fachabitur Gestaltung",
+    "company": "Adolph-Kolping Schule",
+    "companyCity": "Münster",
+    "companyIndustry": "Fachoberschule",
+    "description": "Fachabitur 12. Klasse. Durch eine Art Fügung: ich hatte nur 4,5 Jahre Berufstätigkeit nachzuweisen. Aufnahmebedingung an Fachoberschulen ohne Ausbildung waren in ganz Deutschland fünf Jahre Berufstätigkeit. Nur in Münster 4,5. Und weil meine damalige Lebensgefährtin dort Design studierte, bot sich das natürlich an.",
+    "stack": [
+      "Bleistift",
+      "Pinsel",
+      "Farben"
+    ],
+    "work": [
+      "12. Klasse im Schnelldurchgang"
     ]
   },
   {

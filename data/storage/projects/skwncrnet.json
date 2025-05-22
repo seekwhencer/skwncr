@@ -7,7 +7,14 @@
     "Frontend-Entwicklung mit Vite, Scss, Javascript in ES6+ mit Custom Templating für CSR.",
     "Backend-Entwicklung mit node.js: Javascript ES6+, CRUD Rest API",
     "Dockerisiert",
-    "Thumbnail-Generator on Demand mit Queue"
+    "Thumbnail-Generator on Demand mit Queue",
+    "Wiederverwendbare String Literals Templates",
+    "Cache, individuell pro Template-Output, mit Zeitangabe pro Template(-Render-Vorgang)",
+    "Backend macht bei Seitenaufruf keine I/Os - alles wird vorweg geladen",
+    "Backend-Integration von Frontend in Development via Dev-Proxy und HMR",
+    "Jede Page hat eigenes Bundle (auch im dev-mode mit HMR)",
+    "Nice Google-Bewertung bei wirklich langsamen Server",
+    "@TODO: barrierefrei, microdata, Content ausarbeiten"
   ],
   "images": [
     {
