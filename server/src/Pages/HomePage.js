@@ -18,7 +18,7 @@ export default class HomePage extends PageDocument {
         super(parent, options);
         this.template = HomePageTemplate;
         this.pageNavigation = new PageNavigation(this);
-        this.disableCache = true;
+        this.disableCache = process.env?.ENV !== 'production' ? true : false;
 
         // sections
         this.splashSection = new SplashSection(this);
@@ -28,8 +28,6 @@ export default class HomePage extends PageDocument {
         this.servicesSection = new ServicesSection(this);
         this.projectsSection = new ProjectsSection(this);
         this.disclaimerSection = new DisclaimerSection(this);
-
-        this.pageTitle = this.parent.storage.data;
     }
 
     html(options = {}, req = false, res = false) {
@@ -56,7 +54,10 @@ export default class HomePage extends PageDocument {
 
         if (process.env?.ENV !== 'production') {
             // dont embed the bundled css
-            templateData.documentHeader = this.documentHeader.html({title: ' +++ DEV MODE +++ ', cssPlain: ''});
+            templateData.documentHeader = this.documentHeader.html({
+                title: `+DEV+ | ${this.headerMeta.title}`,
+                cssPlain: ''
+            });
 
             // dont embed the bundles js
             templateData.jsPlain = '';

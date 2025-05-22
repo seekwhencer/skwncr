@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
 import Image from './ThumbnailGenerator/Image.js';
-import Data from '../../data/data.json' with { type: 'json' };
+import Data from '../../data/data.json' with {type: 'json'};
 
 export default class Storage {
     constructor(parent) {
@@ -100,21 +100,41 @@ export default class Storage {
     // can be sync on startup
     getCSS() {
         const dir = fs.readdirSync('../frontend/dist/css');
-        return dir.filter(i => i.match(/(?<=index-).*?(?=\.css)/));
+        const files = dir.filter(i => i.match(/^(.*?)(?=\.css)/));
+        const data = {};
+        files.forEach(f => {
+            const baseName = f.split('-')[0];
+            data[baseName] = f;
+        })
+        return data;
     }
 
     // can be sync on startup
     getJS() {
         const dir = fs.readdirSync('../frontend/dist/js');
-        return dir.filter(i => i.match(/(?<=index-).*?(?=\.js)/));
+        const files = dir.filter(i => i.match(/^(.*?)(?=\.js)/));
+        const data = {};
+        files.forEach(f => {
+            const baseName = f.split('-')[0].toLowerCase();
+            data[baseName] = f;
+        })
+        return data;
     }
 
     //
     getCSSPlain() {
-        return fs.readFileSync(`./static/css/${this.css}`).toString();
+        const data = {};
+        Object.keys(this.css).forEach((baseName) =>{
+            data[baseName] = fs.readFileSync(`./static/css/${this.css[baseName]}`).toString();
+        });
+        return data;
     }
 
     getJSPlain() {
-        return fs.readFileSync(`./static/js/${this.js}`).toString();
+        const data = {};
+        Object.keys(this.js).forEach((baseName) =>{
+            data[baseName] = fs.readFileSync(`./static/js/${this.js[baseName]}`).toString();
+        });
+        return data;
     }
 }

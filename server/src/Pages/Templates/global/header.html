@@ -29,9 +29,6 @@
 
     <link rel="icon" type="image/svg+xml" href="${icon}"/>
 
-    ${process.env?.ENV === 'production' ? `
-    <script type="module" crossorigin src="${js}"></script>
-    ` : ''}
     ${process.env?.ENV === 'test' ? `
     <link rel="stylesheet" crossorigin href="${css}">
     ` : ''}
@@ -39,6 +36,10 @@
     ${cssPlain !== '' ? `<style>
         ${cssPlain}
     </style>` : ''}
+
+    ${process.env?.ENV === 'production' ? `
+    <script type="module" crossorigin src="${js}"></script>
+    ` : ''}
 
     <meta name="google-site-verification" content="${google}"/>
 

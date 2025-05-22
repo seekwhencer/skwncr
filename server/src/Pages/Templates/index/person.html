@@ -3,10 +3,25 @@
 ${documentHeader}
 <body style="background-color: black">
 <div id="root">
-    ${pageContent}
+    ${pageNavigation}
+    <main>
+        ${section.splash}
+        ${section.person}
+        ${section.footer}
+    </main>
+    <footer>
+        ${pageFooter}
+    </footer>
 </div>
+${jsPlain !== '' ? `
 <script>
     ${jsPlain}
 </script>
+` : ''}
+
+${process.env?.ENV !== 'production' ? `
+<script type="module" src="/@vite/client"></script>
+<script type="module" src="/src/Person.js" crossorigin="anonymous"></script>
+` : ''}
 </body>
 </html>

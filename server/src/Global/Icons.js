@@ -17,7 +17,8 @@ import {
     Heart,
     ArrowDownFromLine,
     ArrowUpFromLine,
-    Cctv
+    Cctv,
+    Link
 } from 'lucide-static/dist/esm/lucide-static.js';
 
 export default {
@@ -39,5 +40,6 @@ export default {
     heart: Heart,
     arrowUpLine: ArrowUpFromLine,
     arrowDownLine: ArrowDownFromLine,
-    cctv: Cctv
+    cctv: Cctv,
+    link: Link
 }
