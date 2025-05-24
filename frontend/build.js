@@ -8,10 +8,9 @@ const buildOptions = {
     target: 'es2022',
     assetsDir: '',
     outDir: "./dist",
+    emptyOutDir: true,
 
     rollupOptions: {
-        outDir: "./dist",
-        emptyOutDir: true,
         output: {
             assetFileNames: "css/[name]-[hash].css",
             entryFileNames: "js/[name]-[hash].js"
