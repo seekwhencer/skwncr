@@ -8,11 +8,14 @@ export default class PageNavigation extends Page {
     }
 
     html(options = {}) {
-        this.dom = this.render(this.template, {
+
+        const htmlOptions = {
             ...this.headerMeta,
             ...options,
             icon: this.parent.icons.bot
-        });
+        };
+
+        this.dom = this.render(this.template, htmlOptions);
         return this.dom;
     }
 }

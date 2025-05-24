@@ -8,7 +8,7 @@ export default class HeaderComponent extends Component {
         this.element = document.querySelector('header');
 
         // add scroll event for text effect
-        window.addEventListener("scroll", (event) => this.onScroll(event))
+        window.addEventListener("scroll", (event) => this.onScroll(event));
 
         // the buttons
         this.buttons = this.element.querySelectorAll('[data-scroll-target]');
@@ -134,7 +134,7 @@ export default class HeaderComponent extends Component {
         if (window.location.href === urlPath)
             return;
 
-        window.history.pushState({}, '', urlPath);
+        //window.history.pushState({}, '', urlPath);
     }
 
     get activeSection() {

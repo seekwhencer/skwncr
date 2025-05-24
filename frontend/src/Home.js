@@ -34,7 +34,7 @@ export default class App {
 
     draw() {
         /**
-         * page elements: header, main, footer
+         * page elements: header, main
          */
 
         this.header = new HeaderComponent(this);
@@ -44,36 +44,19 @@ export default class App {
         /**
          * the sections
          */
+
+        const sectionOptions = {
+            target: this.layout
+        };
+
+        this.splash = new SplashSectionComponent(this, sectionOptions);
+        this.person = new PersonSectionComponent(this, sectionOptions);
+        this.vita = new VitaSectionComponent(this, sectionOptions);
+        this.skills = new SkillsSectionComponent(this, sectionOptions);
+        this.services = new ServicesSectionComponent(this, sectionOptions);
+        this.projects = new ProjectsSectionComponent(this, sectionOptions);
+        this.disclaimer = new DisclaimerSectionComponent(this, sectionOptions);
         this.footer = new FooterSectionComponent(this);
-
-
-        this.splash = new SplashSectionComponent(this, {
-            target: this.layout
-        });
-
-        this.person = new PersonSectionComponent(this, {
-            target: this.layout
-        });
-
-        this.vita = new VitaSectionComponent(this, {
-            target: this.layout
-        });
-
-        this.skills = new SkillsSectionComponent(this, {
-            target: this.layout
-        });
-
-        this.services = new ServicesSectionComponent(this, {
-            target: this.layout
-        });
-
-        this.projects = new ProjectsSectionComponent(this, {
-            target: this.layout
-        });
-
-        this.disclaimer = new DisclaimerSectionComponent(this, {
-            target: this.layout
-        });
     }
 
     get isMobile() {

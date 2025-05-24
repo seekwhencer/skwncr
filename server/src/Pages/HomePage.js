@@ -37,7 +37,10 @@ export default class HomePage extends PageDocument {
         let templateData = {
             documentLanguage: this.headerMeta.lang,
             documentHeader: this.documentHeader.html(),
-            pageNavigation: this.pageNavigation.html(),
+            pageNavigation: this.pageNavigation.html({
+                className: 'splash',
+                active: false
+            }),
             section: {
                 splash: this.splashSection.html(),
                 person: this.personSection.html(),

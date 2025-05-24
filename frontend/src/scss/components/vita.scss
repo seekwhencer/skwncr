@@ -9,6 +9,7 @@
   .container {
     width: 600px;
     margin: auto;
+    position: relative;
 
     .vita:last-child {
       padding-bottom: 0;
@@ -29,9 +30,11 @@
   }
 
   .button-block {
-    width: 100%;
     text-align: center;
     margin: 0 0 50px 0;
+    position: absolute;
+    z-index: 1000;
+    left: -300px;
 
     .button-more {
       background-color: colors.$color-gray-d;
@@ -136,8 +139,49 @@
 
     &:hover {
       .vita--stack--skill {
-        opacity: 1;
         transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+
+  .bee-swarm {
+    .bee {
+      position: absolute;
+      transform: scale(calc(var(--bee-rand-scale)));
+      left: calc(var(--bee-rand-horizontal) * 1vw);
+      top: calc(var(--scroll-vita) * 100% * (var(--bee-rand-scale) / 20));
+      opacity: calc(1 / var(--bee-rand-scale));
+    }
+  }
+
+  &.scroll {
+    &:before {
+      position: absolute;
+      height: 100px;
+      width: 100px;
+      background-color: black;
+      border-radius: 20px;
+      content: '';
+      overflow: hidden;
+      z-index: 10;
+      top: calc(var(--scroll-vita) * 100%);
+      left: calc(50vw - 600px);
+      opacity: 1;
+      color: white;
+      display: none;
+    }
+
+    .vita {
+      filter: blur(calc(var(--scroll-shift) * 20px));
+      transform: scale(1);
+      transform-origin: center center;
+
+      &:nth-child(odd) {
+        transform: translateX(calc(var(--scroll-shift) * 200px)) scale(calc((var(--scroll-shift) / 2) + 1));
+      }
+
+      &:nth-child(even) {
+        transform: translateX(calc(var(--scroll-shift) * -200px)) scale(calc((var(--scroll-shift) / 2) + 1));
       }
     }
   }

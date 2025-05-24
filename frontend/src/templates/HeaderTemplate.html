@@ -1,12 +1,12 @@
-<header class="splash">
+<header class="${className}">
     <ul class="menu">
-        <li class="home"><a href="/" data-scroll-target="splash">Home</a></li>
-        <li class="person"><a href="/person" data-scroll-target="person">Person</a></li>
-        <li class="vita"><a href="/vita" data-scroll-target="vita">Vita</a></li>
-        <li class="skills"><a href="/skills" data-scroll-target="skills">Skills</a></li>
-        <li class="services"><a href="/services" data-scroll-target="services">Services</a></li>
-        <li class="projects"><a href="/projekte" data-scroll-target="projects">Projekte</a></li>
-        <li class="impress"><a href="/impressum" data-scroll-target="disclaimer">Impressum</a></li>
+        <li class="home"><a href="/" data-scroll-target="splash" ${active === 'home' ? 'class="active"' : ''}>Home</a></li>
+        <li class="person"><a href="/person" data-scroll-target="person" ${active === 'person' ? 'class="active"' : ''}>Person</a></li>
+        <li class="vita"><a href="/vita" data-scroll-target="vita" ${active === 'vita' ? 'class="active"' : ''}>Vita</a></li>
+        <li class="skills"><a href="/skills" data-scroll-target="skills" ${active === 'skills' ? 'class="active"' : ''}>Skills</a></li>
+        <li class="services"><a href="/services" data-scroll-target="services" ${active === 'services' ? 'class="active"' : ''}>Services</a></li>
+        <li class="projects"><a href="/projekte" data-scroll-target="projects"  ${active === 'projects' ? 'class="active"' : ''}>Projekte</a></li>
+        <li class="impress"><a href="/impressum" data-scroll-target="disclaimer"  ${active === 'disclaimer' ? 'class="active"' : ''}>Impressum</a></li>
     </ul>
     <div class="burger" data-burger>${icon}</div>
 </header>

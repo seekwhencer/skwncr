@@ -1,17 +1,17 @@
 import PageDocument from '../PageDocument.js';
 import PageNavigation from './Global/PageNavigation.js';
-import {
-    PersonSection,
-} from './Sections/index.js';
+import {PersonSection} from './Sections/index.js';
 import {PersonPageTemplate} from './Templates/index.js';
+import SplashPersonSection from "./Sections/Person/SplashPersonSection.js";
 
 export default class PersonPage extends PageDocument {
     constructor(parent, options) {
         super(parent, options);
         this.template = PersonPageTemplate;
+
         this.pageNavigation = new PageNavigation(this);
         this.person = new PersonSection(this);
-        this.splash = {};
+        this.splash = new SplashPersonSection(this);
 
         this.headerMeta = {
             css: `css/${this.css.person}`,
@@ -29,10 +29,13 @@ export default class PersonPage extends PageDocument {
         const templateData = {
             documentLanguage: this.headerMeta.lang,
             documentHeader: this.documentHeader.html(),
-            pageNavigation: this.pageNavigation.html(),
+            pageNavigation: this.pageNavigation.html({
+                className: '',
+                active: 'person'
+            }),
             pageFooter: this.documentFooter.html(),
             section: {
-                splash: 'SPLASH SECTION',
+                splash: this.splash.html(),
                 person: this.person.html(),
                 footer: 'FOOTER SECTIOn'
             },

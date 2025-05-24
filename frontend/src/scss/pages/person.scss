@@ -1,0 +1,14 @@
+@use "../components/header";
+@use "../components/footer";
+@use "../components/splash";
+@use "../components/person";
+@use "../global/colors";
+
+main {
+  padding-top: 100px;
+}
+
+.section-splash {
+  height: 50vh;
+
+}

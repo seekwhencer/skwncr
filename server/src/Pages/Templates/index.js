@@ -40,6 +40,12 @@ let templates = {
         person: 'index/person.html',
     },
 
+    pages: {
+        person: {
+            splash: 'pages/person/SplashPersonSectionTemplate.html'
+        }
+    },
+
     section: {
         splash: 'SplashTemplate.html',
         person: 'PersonTemplate.html',
@@ -76,6 +82,8 @@ const DisclaimerSectionTemplate = readFrontendTemplate(templates.section.disclai
 const ProjectListingElementTemplate = readFrontendTemplate(templates.partials.projectListing);
 const SplashVideoSelectionTemplate = readFrontendTemplate(templates.partials.splashVideoSelection);
 
+const SplashPersonSectionTemplate = readTemplate(templates.pages.person.splash);
+
 //
 export {
     DocumentHeaderTemplate,
@@ -96,5 +104,7 @@ export {
     DisclaimerSectionTemplate,
 
     ProjectListingElementTemplate,
-    SplashVideoSelectionTemplate
+    SplashVideoSelectionTemplate,
+
+    SplashPersonSectionTemplate
 };

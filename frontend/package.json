@@ -7,12 +7,13 @@
     "start": "vite",
     "build": "node ./build.js && npm run sync",
     "build:watch": "vite build --watch",
-    "sync" : "mkdir -p ../server/static && rsync -avI --progress --exclude=video --exclude=images/projects /app/frontend/dist/ /app/server/static/"
+    "sync": "mkdir -p ../server/static && rsync -avI --progress --exclude=video --exclude=images/projects /app/frontend/dist/ /app/server/static/"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@lucide/lab": "^0.1.2",
     "browser-dtector": "^4.1.0",
     "highlight.js": "^11.11.1",
     "lucide": "^0.487.0",

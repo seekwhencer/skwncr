@@ -20,6 +20,8 @@ import {
     ArrowUpFromLine
 } from 'lucide';
 
+import { bee } from '@lucide/lab';
+
 export default {
     menu: createElement(Menu).outerHTML,
     consulting: createElement(ShipWheel).outerHTML,
@@ -38,5 +40,6 @@ export default {
     bot: createElement(Bot).outerHTML,
     heart: createElement(Heart).outerHTML,
     arrowUpLine: createElement(ArrowUpFromLine).outerHTML,
-    arrowDownLine: createElement(ArrowDownFromLine).outerHTML
+    arrowDownLine: createElement(ArrowDownFromLine).outerHTML,
+    bee: createElement(bee).outerHTML
 }
