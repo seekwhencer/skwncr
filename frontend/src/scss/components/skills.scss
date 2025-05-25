@@ -10,6 +10,7 @@
   background-size: 100%;
   background-blend-mode: multiply;
   scroll-margin-top: 100px;
+  position: relative;
 
   @include responsive.media-smartphone {
     background-size: 400%;
@@ -20,15 +21,41 @@
     color: white;
   }
 
+  .search {
+    position: absolute;
+    top: 120px;
+    right: calc(50vw - 120px);
+    width: 200px;
+    background-color: colors.$color-gray-c;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    font-size: typo.$fs-l;
+    border-radius: 5px;
+    font-weight: 100;
+    text-align: center;
+
+    &:active, &:focus, &:focus-visible {
+      border: none;
+      outline: 0;
+    }
+
+    @include responsive.media-smartphone {
+      top: 70px;
+      font-size: typo.$fs-m;
+    }
+
+  }
+
   .container {
     width: 1200px;
     margin: auto;
 
     @include responsive.media-smartphone {
       width: 90vw;
-      margin: auto;
+      margin: 80px auto 0 auto;
     }
-  } 
+  }
 
   .skill-level {
     margin-bottom: 50px;
@@ -54,6 +81,7 @@
       box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
       z-index: 1;
       border: 3px solid colors.$color-four;
+      transition: all 0.5s ease-in-out;
 
       &:before {
         display: inline-block;
@@ -132,6 +160,28 @@
             right: -18px;
             z-index: 1000;
 
+          }
+        }
+      }
+
+      &.hidden {
+        opacity: 0.2;
+        transition: all 0.2s ease-in-out;
+      }
+
+      &.match {
+        background-color: colors.$color-three;
+        border-color: colors.$color-three;
+
+        &.like {
+          color: white;
+          background: colors.$color-six;
+          border-color: colors.$color-six;
+
+          &:after {
+            color: colors.$color-six;
+            background: colors.$color-three;
+            border-color: colors.$color-six;
           }
         }
       }
