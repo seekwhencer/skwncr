@@ -19,18 +19,19 @@
 - Wird vom Frontend importiert
 
 ### Frontend
-- CSR Frontend
+- SSR / CSR Frontend
 - Build braucht gebautes `data/data.json`
 - Im Dev-Mode mit Watch-Task
-- Im Dev-Mode auf eigener Subdomain im LAN (jwilder nginx reverse proxy)
+- Im HMR Dev-Mode auf eigener Subdomain im LAN (jwilder nginx reverse proxy)
 
 ### Server (Dev / Prod)
-- liefert statische Assets vom Frontend-Build aus: `frontend/dist`
+- macht SSR
+- generiert Thumbnails
+- generiert PDF
 - Im Dev-Mode auf eigener Subdomain im LAN (jwilder nginx reverse proxy)
 
 ### Production
-- Ohne Share (die großen Assets vielleicht)
-- Data und Frontend wird mit Docker-Image gebaut
+- Alles in einem Image
 - Im Prod-Mode auf entsprechender Domain im Web (jwilder nginx reverse proxy)
 - SSL Let's encrypt Zertifikat wird automatisch erzeugt
 - Deploy-Script `./build.sh` wird auf dem Production Docker-Host ausgeführt

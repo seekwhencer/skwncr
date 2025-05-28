@@ -18,7 +18,8 @@ import {
     ArrowDownFromLine,
     ArrowUpFromLine,
     Cctv,
-    Link
+    Link,
+    Download
 } from 'lucide-static/dist/esm/lucide-static.js';
 
 export default {
@@ -41,5 +42,6 @@ export default {
     arrowUpLine: ArrowUpFromLine,
     arrowDownLine: ArrowDownFromLine,
     cctv: Cctv,
-    link: Link
+    link: Link,
+    download: Download
 }
