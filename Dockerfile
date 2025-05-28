@@ -8,6 +8,7 @@ RUN echo @edge http://dl-cdn.alpinelinux.org/alpine/edge/community >> /etc/apk/r
     && apk upgrade --update-cache --available \
     && apk update \
     && apk add --no-cache \
+        chromium \
         python3 \
         py3-pip \
         libjpeg-turbo-dev \
@@ -15,6 +16,7 @@ RUN echo @edge http://dl-cdn.alpinelinux.org/alpine/edge/community >> /etc/apk/r
         imagemagick@edge
 
 RUN npm config set legacy-peer-deps true
+RUN npm i -g npm-check-updates
 
 WORKDIR /app
 COPY . .

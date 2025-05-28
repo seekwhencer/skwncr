@@ -1,0 +1,202 @@
+@use "../global/colors";
+@use "../global/typo";
+
+html {
+  width: 21cm;
+  margin: auto;
+  print-color-adjust: exact;
+
+  @media print {
+    width: 100%;
+  }
+}
+
+body {
+  margin: 0 0 0 2cm;
+}
+
+* {
+  line-height: 1.4em;
+  font-size: 12pt;
+}
+
+h1 {
+
+}
+
+h2 {
+  font-size: 30pt;
+
+  strong {
+    font-size: 30pt;
+  }
+}
+
+h4 {
+  margin-bottom: 5mm;
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 5mm;
+}
+
+
+section {
+
+}
+
+footer, .footer-space {
+  height: 100px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  width: 100%;
+  height: 100px;
+
+  &:after {
+    bottom: 10px;
+    counter-increment: page;
+    content: counter(page);
+  }
+}
+
+
+.section-footer {
+  right: calc(50% - 50px);
+  display: none;
+}
+
+section {
+  page-break-before: always;
+}
+
+.button-block {
+  display: none;
+}
+
+.section-person {
+  .container {
+  }
+
+  .content {
+    .text {
+
+    }
+
+    .image {
+      display: none;
+    }
+  }
+
+  .specs {
+    margin: 2cm auto 0 2cm;
+    display: block;
+    overflow: hidden;
+    page-break-before: always;
+
+    .block {
+      display: block;
+      margin-bottom: 1cm;
+
+      &:nth-child(odd) {
+      }
+
+      &:nth-child(even) {
+        transform: translateX(4cm);
+      }
+
+      .row {
+        margin-bottom: 5mm;
+      }
+
+      .label {
+        display: block;
+        font-size: typo.$fs-xs;
+      }
+    }
+  }
+}
+
+.section-vita {
+  .vita {
+    page-break-before: auto;
+    page-break-after: auto;
+    page-break-inside: avoid;
+    margin-bottom: 1cm;
+
+    &--company {
+      font-size: 10pt;
+      margin-top: 5mm;
+
+      &--city {
+        font-size: 10pt;
+      }
+    }
+
+    &--company-industry {
+      font-size: 10pt;
+    }
+
+    &--description {
+      margin-top: 5mm;
+      font-size: 10pt;
+    }
+
+    &--work {
+      margin-bottom: 5mm;
+      font-size: 10pt;
+
+      &--item {
+        font-size: 10pt;
+      }
+    }
+
+    &--stack {
+      margin-bottom: 5mm;
+      font-size: 11pt;
+
+      &--skill {
+        padding: 2pt 6pt;
+        background-color: #eeeeee;
+        margin: 0 0 1mm 0;
+        display: inline-block;
+        border-radius: 5mm;
+        color: black;
+        line-height: 12pt;
+        font-size: 10pt;
+      }
+    }
+
+  }
+}
+
+.section-skills {
+  .search {
+    display: none;
+  }
+
+  h3 {
+    font-size: typo.$fs-s;
+    margin-bottom: 5mm;
+  }
+
+  .skill-level {
+    margin-bottom: 5mm;
+  }
+
+  .skill {
+    padding: 2pt 6pt;
+    background-color: #eeeeee;
+    margin: 0 2mm 2mm 0;
+    display: inline-block;
+    border-radius: 5mm;
+    color: black;
+    line-height: 12pt;
+    font-size: 10pt;
+  }
+
+}

@@ -37,6 +37,7 @@ let templates = {
     page: {
         test: 'index/test.html',
         home: 'index/home.html',
+        homePrint: 'index/print.html',
         person: 'index/person.html',
     },
 
@@ -53,6 +54,7 @@ let templates = {
         skills: 'SkillsTemplate.html',
         services: 'ServicesTemplate.html',
         projects: 'ProjectsTemplate.html',
+        projectsPrint: 'ProjectsPrintTemplate.html',
         disclaimer: 'DisclaimerTemplate.html'
     },
     partials: {
@@ -71,6 +73,8 @@ const TestPageTemplate = readTemplate(templates.page.test);
 const HomePageTemplate = readTemplate(templates.page.home);
 const PersonPageTemplate = readTemplate(templates.page.person);
 
+const HomePrintPageTemplate = readTemplate(templates.page.homePrint);
+
 const SplashSectionTemplate = readFrontendTemplate(templates.section.splash);
 const PersonSectionTemplate = readFrontendTemplate(templates.section.person);
 const VitaSectionTemplate = readFrontendTemplate(templates.section.vita);
@@ -78,6 +82,8 @@ const SkillsSectionTemplate = readFrontendTemplate(templates.section.skills);
 const ServicesSectionTemplate = readFrontendTemplate(templates.section.services);
 const ProjectsSectionTemplate = readFrontendTemplate(templates.section.projects);
 const DisclaimerSectionTemplate = readFrontendTemplate(templates.section.disclaimer);
+
+const ProjectsPrintSectionTemplate = readFrontendTemplate(templates.section.projectsPrint);
 
 const ProjectListingElementTemplate = readFrontendTemplate(templates.partials.projectListing);
 const SplashVideoSelectionTemplate = readFrontendTemplate(templates.partials.splashVideoSelection);
@@ -95,12 +101,15 @@ export {
     HomePageTemplate,
     PersonPageTemplate,
 
+    HomePrintPageTemplate,
+
     SplashSectionTemplate,
     PersonSectionTemplate,
     VitaSectionTemplate,
     SkillsSectionTemplate,
     ServicesSectionTemplate,
     ProjectsSectionTemplate,
+    ProjectsPrintSectionTemplate,
     DisclaimerSectionTemplate,
 
     ProjectListingElementTemplate,

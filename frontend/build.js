@@ -1,14 +1,17 @@
 import { build } from "vite";
 import path from "path";
+import fs from "fs-extra";
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+fs.removeSync('/app/frontend/dist');
 
 const buildOptions = {
     target: 'es2022',
     assetsDir: '',
     outDir: "./dist",
-    emptyOutDir: true,
+    emptyOutDir: false,
 
     rollupOptions: {
         output: {
@@ -26,6 +29,10 @@ const libraries = [
     {
         entry: path.resolve(__dirname, "./src/Person.js"),
         fileName: "person",
+    },
+    {
+        entry: path.resolve(__dirname, "./src/Print.js"),
+        fileName: "print",
     },
 ];
 

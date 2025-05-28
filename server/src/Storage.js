@@ -1,4 +1,5 @@
 import fs from 'fs-extra';
+import {spawn} from 'child_process';
 import Image from './ThumbnailGenerator/Image.js';
 import Data from '../../data/data.json' with {type: 'json'};
 
@@ -50,6 +51,10 @@ export default class Storage {
                 label: 'original'
             }
         }
+
+        //
+        this.pdfSourceUrl = `http://localhost:${this.server.port}/print`;
+        this.pdfFilePath = '/app/server/static/download.pdf';
 
         // the bundle hash
         this.css = this.getCSS();
@@ -124,7 +129,7 @@ export default class Storage {
     //
     getCSSPlain() {
         const data = {};
-        Object.keys(this.css).forEach((baseName) =>{
+        Object.keys(this.css).forEach((baseName) => {
             data[baseName] = fs.readFileSync(`./static/css/${this.css[baseName]}`).toString();
         });
         return data;
@@ -132,9 +137,27 @@ export default class Storage {
 
     getJSPlain() {
         const data = {};
-        Object.keys(this.js).forEach((baseName) =>{
+        Object.keys(this.js).forEach((baseName) => {
             data[baseName] = fs.readFileSync(`./static/js/${this.js[baseName]}`).toString();
         });
         return data;
+    }
+
+    // @TODO failsafe
+    generatePDF() {
+        return new Promise((resolve, reject) => {
+            const processOptions = ['--headless', '--no-pdf-header-footer', '--no-sandbox', '--disable-gpu', `--print-to-pdf=${this.pdfFilePath}`, `${this.pdfSourceUrl}`];
+            console.log(processOptions.join(' '));
+            this.pdfProcess = spawn('chromium', processOptions);
+            this.pdfProcess.on('exit', () => resolve(this.pdfFile));
+        });
+    }
+
+    get pdfFile() {
+        return fs.readFileSync(`${this.pdfFilePath}`);
+    }
+
+    set pdfFile(val) {
+        // do nothing
     }
 }

@@ -21,8 +21,8 @@ services:
 
     volumes:
       - .:/app
-      - /home/mk/projects/skwncr.net_storage/video:/app/server/static/video:ro
-      - /home/mk/projects/skwncr.net_storage/images/projects:/app/server/static/images/projects:ro
+      - /home/mk/projects/skwncr.net_storage/video:/app/server/static/video
+      - /home/mk/projects/skwncr.net_storage/images/projects:/app/server/static/images/projects
       - /home/mk/projects/skwncr.net_storage/images/thumbs:/app/server/static/images/thumbs
 
     environment:

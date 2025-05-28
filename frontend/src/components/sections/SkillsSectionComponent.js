@@ -9,6 +9,7 @@ export default class SkillsSectionComponent extends SectionComponent {
 
         // behavior
         this.element.onclick = (e) => this.select(e);
+
         //
         this.searchInput = this.element.querySelector('[data-skills-search]');
         this.searchInput.onkeyup = this.searchInput.onblur = () => this.search();
@@ -25,7 +26,6 @@ export default class SkillsSectionComponent extends SectionComponent {
         if (e.target.classList.contains('skill')) {
             e.target.classList.toggle('like');
         }
-
     }
 
     unselectAll() {

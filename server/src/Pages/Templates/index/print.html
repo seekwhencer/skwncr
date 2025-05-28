@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="${documentLanguage}">
+${documentHeader}
+<body>
+<table>
+    <tbody>
+    <tr>
+        <td>
+            <div class="content">
+                ${section.intro}
+                ${section.person}
+                ${section.skills}
+                ${section.vita}
+                ${section.projects}
+            </div>
+        </td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td>
+            <div class="footer-space">&nbsp;</div>
+        </td>
+    </tr>
+    </tfoot>
+</table>
+<footer>
+    Matthias Kallenbach
+</footer>
+${jsPlain !== '' ? `
+<script>
+    ${jsPlain}
+</script>
+` : ''}
+${process.env?.ENV !== 'production' ? `
+<script type="module" src="/@vite/client"></script>
+<script type="module" src="/src/Print.js" crossorigin="anonymous"></script>
+` : ''}
+</body>
+</html>

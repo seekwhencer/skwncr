@@ -5,7 +5,7 @@ import * as Routes from './Routes/index.js';
 import Storage from './Storage.js';
 import Icons from './Global/Icons.js';
 import ThumbnailGenerator from './ThumbnailGenerator/index.js';
-import {TestPage, HomePage, PersonPage} from './Pages/index.js';
+import {TestPage, HomePage, HomePrintPage,PersonPage} from './Pages/index.js';
 
 export default class WebServer {
     constructor() {
@@ -80,6 +80,9 @@ export default class WebServer {
 
         // landing page
         this.homePage = new HomePage(this);
+
+        // print page
+        this.homePrintPage = new HomePrintPage(this);
 
         // others
         this.personPage = new PersonPage(this);
