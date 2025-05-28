@@ -1,6 +1,45 @@
 @use "../global/colors";
 @use "../global/typo";
 
+@media print {
+  @page {
+    margin: 2cm 3cm 2cm 4cm;
+
+    @bottom-center {
+      content: "Matthias Kallenbach | Frontend-Entwickler | Web-Entwickler";
+      color: black;
+      text-align: center;
+      width: 100%;
+      font-size: typo.$fs-xs;
+    }
+
+    @bottom-right-corner {
+      content: counter(page) " / " counter(pages) ;
+      color: black;
+      text-align: center;
+      width: 100%;
+      font-size: typo.$fs-xs;
+    }
+
+    // content comes directly from the html markup
+    @bottom-left-corner {
+      color: black;
+      text-align: center;
+      width: 100%;
+      font-size: typo.$fs-xs;
+    }
+  }
+
+  /*@page :first {
+    @bottom-center {
+      content: "";
+    }
+    @bottom-right-corner {
+      content: "";
+    }
+  }*/
+}
+
 html {
   width: 21cm;
   margin: auto;
@@ -8,11 +47,20 @@ html {
 
   @media print {
     width: 100%;
+    border: none;
+    margin: initial;
   }
+
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
 }
 
 body {
-  margin: 0 0 0 2cm;
+  margin: 0 2cm 0 4cm;
+
+  @media print {
+    margin: initial;
+  }
 }
 
 * {
@@ -26,6 +74,7 @@ h1 {
 
 h2 {
   font-size: 30pt;
+  margin-top: 0;
 
   strong {
     font-size: 30pt;
@@ -41,37 +90,21 @@ p {
   margin-bottom: 5mm;
 }
 
-
-section {
-
-}
-
-footer, .footer-space {
-  height: 100px;
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
-  background-color: white;
-  width: 100%;
-  height: 100px;
-
-  &:after {
-    bottom: 10px;
-    counter-increment: page;
-    content: counter(page);
-  }
-}
-
-
 .section-footer {
-  right: calc(50% - 50px);
   display: none;
 }
 
 section {
-  page-break-before: always;
+  break-before: page;
+
+  &:nth-child(1) {
+    break-before: initial;
+    break-after: page;
+  }
+
+  @media print {
+    padding: 0;
+  }
 }
 
 .button-block {
@@ -79,6 +112,8 @@ section {
 }
 
 .section-person {
+  break-after: avoid;
+
   .container {
   }
 
@@ -96,11 +131,12 @@ section {
     margin: 2cm auto 0 2cm;
     display: block;
     overflow: hidden;
-    page-break-before: always;
+    break-inside: avoid;
 
     .block {
       display: block;
-      margin-bottom: 1cm;
+      margin-bottom: 0;
+      overflow: hidden;
 
       &:nth-child(odd) {
       }
@@ -122,10 +158,11 @@ section {
 }
 
 .section-vita {
+
   .vita {
-    page-break-before: auto;
-    page-break-after: auto;
-    page-break-inside: avoid;
+    break-before: auto;
+    break-after: auto;
+    break-inside: avoid;
     margin-bottom: 1cm;
 
     &--company {
@@ -175,6 +212,8 @@ section {
 }
 
 .section-skills {
+  break-before: page;
+
   .search {
     display: none;
   }

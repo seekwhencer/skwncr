@@ -146,7 +146,7 @@ export default class Storage {
     // @TODO failsafe
     generatePDF() {
         return new Promise((resolve, reject) => {
-            const processOptions = ['--headless', '--no-pdf-header-footer', '--no-sandbox', '--disable-gpu', `--print-to-pdf=${this.pdfFilePath}`, `${this.pdfSourceUrl}`];
+            const processOptions = ['--headless', '--no-pdf-header-footer', '--no-sandbox', '--disable-gpu', '--disable-pdf-tagging', `--print-to-pdf=${this.pdfFilePath}`, `${this.pdfSourceUrl}`];
             console.log(processOptions.join(' '));
             this.pdfProcess = spawn('chromium', processOptions);
             this.pdfProcess.on('exit', () => resolve(this.pdfFile));

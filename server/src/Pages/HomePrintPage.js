@@ -21,6 +21,7 @@ export default class HomePrintPage extends PageDocument {
             jsPlain: `js/${this.jsPlain.print}`,
             css: `css/${this.css.print}`,
             cssPlain: this.cssPlain.print,
+            title: `${this.headerMeta.title}`,
         }
 
         // sections
@@ -29,6 +30,8 @@ export default class HomePrintPage extends PageDocument {
         this.skillsSection = new SkillsSection(this);
         this.servicesSection = new ServicesSection(this);
         this.projectsSection = new ProjectsSection(this);
+
+        this.date = new Date().toLocaleDateString('de-DE');
     }
 
     html(options = {}, req = false, res = false) {
@@ -46,25 +49,23 @@ export default class HomePrintPage extends PageDocument {
                 service: this.servicesSection.html(),
                 projects: this.projectsSection.html(),
             },
+            data: this.data,
             jsPlain: '', // don't embed it all the time
+            date: this.date,
             ...options
         };
 
         // development
         if (process.env?.ENV !== 'production') {
-            // dont embed the bundled css
             templateData.documentHeader = this.documentHeader.html({
                 title: `+DEV PRINT+ | ${this.headerMeta.title}`,
-                cssPlain: ''
+                cssPlain: '' // dont embed the bundled css
             });
-
-            // dont embed the bundles js
-            templateData.jsPlain = '';
-
+            templateData.jsPlain = ''; // dont embed the bundles js
         } else {  // production
             templateData.documentHeader = this.documentHeader.html({
-                cssPlain: this.cssPlain.print,
-                js: this.headerMeta.js
+                cssPlain: this.cssPlain.print, // embed css on production
+                js: this.headerMeta.js // use this javascript file
             });
         }
 
