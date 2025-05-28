@@ -5,8 +5,12 @@ ${documentHeader}
 <style>
     @media print {
         @page {
+            @bottom-center {
+                content: "${footer.text}";
+            }
+
             @bottom-left-corner {
-                content: "${date}"
+                content: "${footer.date}";
             }
         }
     }

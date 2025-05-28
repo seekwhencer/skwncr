@@ -51,7 +51,10 @@ export default class HomePrintPage extends PageDocument {
             },
             data: this.data,
             jsPlain: '', // don't embed it all the time
-            date: this.date,
+            footer: {
+                text: 'Matthias Kallenbach | Frontend-Entwickler | Web-Entwickler',
+                date: this.date
+            },
             ...options
         };
 
