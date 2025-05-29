@@ -30,13 +30,13 @@ export default class HomePrintPage extends PageDocument {
         this.skillsSection = new SkillsSection(this);
         this.servicesSection = new ServicesSection(this);
         this.projectsSection = new ProjectsSection(this);
-
-        this.date = new Date().toLocaleDateString('de-DE');
     }
 
     html(options = {}, req = false, res = false) {
         if (this.useCache() && !this.disableCache)
             return this.cache;
+
+        const date = new Date().toLocaleDateString('de-DE');
 
         let templateData = {
             documentLanguage: this.headerMeta.lang,
@@ -53,7 +53,7 @@ export default class HomePrintPage extends PageDocument {
             jsPlain: '', // don't embed it all the time
             footer: {
                 text: 'Matthias Kallenbach | Frontend-Entwickler | Web-Entwickler',
-                date: this.date
+                date: date
             },
             ...options
         };
