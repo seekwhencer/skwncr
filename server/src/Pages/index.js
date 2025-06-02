@@ -1,7 +1,7 @@
 import TestPage from "./TestPage.js";
 
 import HomePage from "./HomePage.js";
-import HomePrintPage from "./HomePrintPage.js";
+import PrintPage from "./PrintPage.js";
 
 import PersonPage from "./PersonPage.js";
 
@@ -9,7 +9,7 @@ export {
     TestPage,
 
     HomePage,
-    HomePrintPage,
+    PrintPage,
 
     PersonPage
 }

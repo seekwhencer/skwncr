@@ -10,7 +10,7 @@ import {
 
 import {HomePrintPageTemplate} from './Templates/index.js';
 
-export default class HomePrintPage extends PageDocument {
+export default class PrintPage extends PageDocument {
     constructor(parent, options) {
         super(parent, options);
         this.template = HomePrintPageTemplate;

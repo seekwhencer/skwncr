@@ -3,6 +3,7 @@ import ImagesRoutes from './Images.js';
 import TestRoutes from './Test.js';
 import HomeRoutes from './Home.js';
 import PersonRoutes from './Person.js';
+import PrintRoutes from './Print.js';
 import PdfRoutes from './Pdf.js';
 
 export {
@@ -11,5 +12,6 @@ export {
     TestRoutes,
     HomeRoutes,
     PersonRoutes,
+    PrintRoutes,
     PdfRoutes
 };

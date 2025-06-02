@@ -8,10 +8,6 @@ export default class HomeRoutes extends Route {
             res.send(this.webServer.homePage.html());
         });
 
-        this.router.get('/print', (req, res, next) => {
-            res.send(this.webServer.homePrintPage.html());
-        });
-
         return this.router;
     }
 }

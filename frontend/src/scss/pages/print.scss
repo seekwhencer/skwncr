@@ -28,6 +28,7 @@
       font-size: typo.$fs-xs;
     }
   }
+  
 
   /*@page :first {
     @bottom-center {
@@ -56,6 +57,7 @@ html {
 
 body {
   margin: 0 2cm 0 4cm;
+  page: main;
 
   @media print {
     margin: initial;
@@ -112,6 +114,7 @@ section {
 
 .section-person {
   break-after: avoid;
+  page: person;
 
   .container {
   }
