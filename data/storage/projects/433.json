@@ -3,6 +3,7 @@
   "dateTo": "2023",
   "title": "node-rtl433-ui",
   "description": "Web-UI und Server-App zum Mappen von 433-Mhz-Devices auf MQTT-Topics",
+  "print_short": true,
   "work": [
     "Frontend-Entwicklung mit Webpack, SCSS, Javascript in ES6 mit Custom Templating für SSR & CSR.",
     "Backend-Entwicklung mit node.js: Javascript ES6+, CRUD Rest API, MQTT-Client",

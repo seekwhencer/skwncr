@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="${documentLanguage}">
+${documentHeader}
+<body>
+<style>
+    @media print {
+        @page {
+            @bottom-center {
+                content: "${footer.text}";
+            }
+
+            @bottom-left-corner {
+                content: "${footer.date}";
+            }
+        }
+    }
+</style>
+
+<section class="section-first-page">
+    <h1 class="">
+        Matthias Kallenbach
+    </h1>
+    <h2>${data.person.job}</h2>
+    <div class="info-box">
+        <div class="row">
+            ${data.person.contact.phone}
+        </div>
+        <div class="row">
+            ${data.person.contact.email}
+        </div>
+        <div class="row">
+            <strong>${data.person.contact.website}</strong>
+        </div>
+        <i class="bot">${icons.bot}</i>
+    </div>
+</section>
+
+<section class="section-person">
+    <h2 class="">Person</h2>
+    <div class="container">
+        <div class="content">
+            <div class="image">
+                <img src="/images/me.jpg?s=s" alt="me">
+            </div>
+            <div class="text">
+                ${(data.person.text.md())}
+            </div>
+            <div class="specs">
+                <div class="block">
+                    <h4>Zur Person</h4>
+                    <div class="row">
+                        <span class="label">Berufsbezeichnung</span>${data.person.job}
+                    </div>
+                    <div class="row">
+                        <span class="label">Wohnsitz</span>${data.person.city}
+                    </div>
+                </div>
+                <div class="block">
+                    <h4>Ausbildung</h4>
+                    ${data.person.education.map(ed => `
+                    <div class="row">
+                        <span class="label">${ed.dateFrom} - ${ed.dateTo}</span>
+                        ${ed.title}
+                        <span class="label">${ed.location}</span>
+                    </div>
+                    `).join('')}
+                </div>
+                <div class="block">
+                    <h4>Sprachen</h4>
+                    ${data.person.languages.map(l => `
+                    <div class="row">
+                        <span class="label">${l.title}</span>${l.level}
+                    </div>
+                    `).join('')}
+                </div>
+                <div class="block">
+                    <h4>Kontakt</h4>
+                    <div class="row">
+                        ${data.person.contact.phone}
+                    </div>
+                    <div class="row">
+                        ${data.person.contact.email}
+                    </div>
+                </div>
+                <div class="block">
+                    <h4>Social</h4>
+                    <div class="social-icons">
+                        ${data.person.social.map(s => `
+                        <div class="row">
+                            <i>${icons[s.icon].trim()}</i> ${s.url}
+                        </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+${section.skills}
+
+<section class="section-vita">
+    <h2 class="">Vita</h2>
+    <div class="container">
+        ${data.vita.map((v,i) => v.print_short === true ? `
+        <div class="vita">
+            <h3>${v.title}</h3>
+            <div class="vita--time">
+                <span>${v.dateFrom}</span> bis
+                <span>${v.dateTo}</span>
+            </div>
+            <div class="vita--company">
+                ${v.company}
+                <span class="vita--company--city">
+                    ${v.companyCity !== undefined ? `in ${v.companyCity}` : ''}
+                </span>
+                <div class="vita--company-industry">
+                    ${v.companyIndustry !== undefined ? `${v.companyIndustry}` : ''}
+                </div>
+            </div>
+            <div class="vita--description">
+                ${v.description}
+            </div>
+            <ul class="vita--work">
+                ${v.work.map(w => `
+                <li class="vita--work--item">${w}</li>
+                `).join('')}
+            </ul>
+            <div class="vita--stack">
+                ${v.stack.map(s => `
+                <div class="vita--stack--skill">${s}</div>
+                `).join('')}
+            </div>
+        </div>
+        ` : '').join('')}
+        <div class="info-box"><i class="bot">${icons.bot}</i> Ausführlichere Informationen gibt es auf meiner Website:
+            <strong>${data.person.contact.website}</strong></div>
+    </div>
+</section>
+<section class="section-projects" data-section="projects" data-url-path="projekte" data-scroll>
+    <h2 class="">Projekte</h2>
+    <div class="container">
+        <div class="projects" data-projects>
+            ${data.projects.listing.map((p,i) => p.print_short === true ? `
+            <div class="project${p.highlight ? ` highlight` : ''}" data-project>
+                <div class="project--head">
+                    <h3 class="name">${p.title}</h3>
+                    <div class="project--image">
+                        ${p.images ? p.images.length > 0 ? `<img src="/${p.images[0].file}?s=m">` : '' : ''}
+                    </div>
+                    <div class="text">${p.description}</div>
+                </div>
+            </div>
+            ` : '').join('')}
+        </div>
+        <div class="info-box"><i class="bot">${icons.bot}</i>Mehr Projekte gibt es auf meiner Website:
+            <strong>${data.person.contact.website}</strong></div>
+
+    </div>
+</section>
+${jsPlain !== '' ? `
+<script>
+    ${jsPlain}
+</script>
+` : ''}
+${process.env?.ENV !== 'production' ? `
+<script type="module" src="/@vite/client"></script>
+<script type="module" src="/src/Print.js" crossorigin="anonymous"></script>
+` : ''}
+</body>
+</html>

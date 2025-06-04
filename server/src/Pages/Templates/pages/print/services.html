@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="${documentLanguage}">
+${documentHeader}
+<body>
+<style>
+    @media print {
+        @page {
+            @bottom-center {
+                content: "${footer.text}";
+            }
+
+            @bottom-left-corner {
+                content: "${footer.date}";
+            }
+        }
+    }
+</style>
+SERVICES
+${section.intro}
+${section.person}
+${section.skills}
+${section.vita}
+${section.projects}
+<pre>
+    ${JSON.stringify(data, false, 2)}
+</pre>
+${jsPlain !== '' ? `
+<script>
+    ${jsPlain}
+</script>
+` : ''}
+${process.env?.ENV !== 'production' ? `
+<script type="module" src="/@vite/client"></script>
+<script type="module" src="/src/Print.js" crossorigin="anonymous"></script>
+` : ''}
+</body>
+</html>

@@ -13,7 +13,7 @@ export default class Page {
 
         this.headerMeta = {
             lang: 'de',
-            icon: 'images/vite.svg',
+            icon: '/images/vite.svg',
             css: `css/${this.css.home}`,
             js: `js/${this.js.home}`,
             jsPlain: this.jsPlain.home,

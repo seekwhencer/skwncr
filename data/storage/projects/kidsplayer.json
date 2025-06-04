@@ -2,6 +2,7 @@
   "dateFrom": "2023",
   "dateTo": "2023",
   "title": "Spotify Kids Player",
+  "print_short": true,
   "description": "Simplifizierte (Web-) UI für Kinder mit Parental Control",
   "work": [
     "Frontend-Entwicklung mit Webpack, SCSS, Javascript in ES6 mit Custom Templating für SSR & CSR.",

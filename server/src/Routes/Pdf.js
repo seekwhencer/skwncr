@@ -4,10 +4,36 @@ export default class PdfRoutes extends Route {
     constructor(parent, options) {
         super(parent, options);
 
-        this.storage = this.parent.storage;
+        this.server = this.parent;
+        this.storage = this.server.storage;
 
         this.router.get('/pdf', async (req, res, next) => {
-            this.storage.generatePDF().then(pdfFile => {
+            const sourceUrl = `http://localhost:${this.server.port}/print/vita-kurz`;
+            this.storage.generatePDF(sourceUrl).then(pdfFile => {
+                res.contentType("application/pdf");
+                res.send(pdfFile);
+            });
+        });
+
+        this.router.get('/pdf/vita-kurz', async (req, res, next) => {
+            const sourceUrl = `http://localhost:${this.server.port}/print/vita-kurz`;
+            this.storage.generatePDF(sourceUrl).then(pdfFile => {
+                res.contentType("application/pdf");
+                res.send(pdfFile);
+            });
+        });
+
+        this.router.get('/pdf/vita-komplett', async (req, res, next) => {
+            const sourceUrl = `http://localhost:${this.server.port}/print/vita-komplett`;
+            this.storage.generatePDF(sourceUrl).then(pdfFile => {
+                res.contentType("application/pdf");
+                res.send(pdfFile);
+            });
+        });
+
+        this.router.get('/pdf/services', async (req, res, next) => {
+            const sourceUrl = `http://localhost:${this.server.port}/print/services`;
+            this.storage.generatePDF(sourceUrl).then(pdfFile => {
                 res.contentType("application/pdf");
                 res.send(pdfFile);
             });

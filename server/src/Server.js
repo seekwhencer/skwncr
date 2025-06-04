@@ -5,7 +5,12 @@ import * as Routes from './Routes/index.js';
 import Storage from './Storage.js';
 import Icons from './Global/Icons.js';
 import ThumbnailGenerator from './ThumbnailGenerator/index.js';
-import {TestPage, HomePage, PrintPage, PersonPage} from './Pages/index.js';
+import {
+    TestPage,
+    HomePage,
+    PrintPage,
+    PersonPage
+} from './Pages/index.js';
 
 export default class WebServer {
     constructor() {

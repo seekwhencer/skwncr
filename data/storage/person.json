@@ -39,27 +39,28 @@
     {
       "name": "Github",
       "icon": "github",
-      "url": "https://github.com/seekwhencer"
+      "url": "github.com/seekwhencer"
     },
     {
       "name": "Linkedin",
       "icon": "linkedin",
-      "url": "https://www.linkedin.com/in/matthias-kallenbach-165860158/"
+      "url": "linkedin.com/in/matthias-kallenbach-165860158/"
     },
     {
       "name": "Facebook",
       "icon": "facebook",
-      "url": "https://www.facebook.com/seekwhencer"
+      "url": "facebook.com/seekwhencer"
     },
     {
       "name": "Youtube",
       "icon": "youtube",
-      "url": "https://www.youtube.com/@matthiaskallenbach"
+      "url": "youtube.com/@matthiaskallenbach"
     }
   ],
   "contact": {
     "phone": "03334 - 42 97 029",
-    "email": "matthias.kallenbach@skwncr.net"
+    "email": "matthias.kallenbach@skwncr.net",
+    "website": "skwncr.net"
   },
   "address": "16230 Britz"
 }

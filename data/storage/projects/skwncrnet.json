@@ -3,6 +3,7 @@
   "dateTo": "heute",
   "title": "Meine Website",
   "description": "Vanilla Javascript meets Web Components",
+  "print_short": true,
   "work": [
     "Frontend-Entwicklung mit Vite, Scss, Javascript in ES6+ mit Custom Templating für CSR.",
     "Backend-Entwicklung mit node.js: Javascript ES6+, CRUD Rest API",

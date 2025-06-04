@@ -17,7 +17,4 @@ monolithische Server-Apps oder System-Orchestratoren.
 Zu allem Überfluss widme ich mich schon seit über zehn Jahren dem **Internet der Dinge** mit
 einem Cross-Over aus Front- und Backend mit node.js und SoCs wie dem Raspberry Pi und dem ESP32.
 Aus diesem Grunde bin ich mit dem Aufkommen der **Smart Home**-Thematik auch auf diesem
-Gebiet tätig.
-
-Dies hier ist meine private Website.
-
+Gebiet tätig. 

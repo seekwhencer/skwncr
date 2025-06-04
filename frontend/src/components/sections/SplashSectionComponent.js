@@ -17,6 +17,10 @@ export default class SplashSectionComponent extends SectionComponent {
         // video @TODO from data json
         this.video = new VideoSelectionComponent(this);
 
+        // download pdf
+        this.downloadButton = this.element.querySelector('[data-cta-download]');
+        this.downloadButton.onclick = (event) => this.clickDownload(event);
+
         // scroll event
         window.addEventListener("scroll", (event) => this.onScroll(event));
 
@@ -49,10 +53,18 @@ export default class SplashSectionComponent extends SectionComponent {
         }
     }
 
-    /**
-     * little recursion to suppress doubles
-     */
     randomVideo() {
         this.video.randomVideo();
     }
+
+    clickDownload(e) {
+        e.preventDefault();
+
+        const block = e.target.closest('.cta');
+        block.classList.toggle('open');
+
+        console.log(block);
+
+    }
+
 }

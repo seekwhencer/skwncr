@@ -100,34 +100,90 @@
 
   .cta {
     position: absolute;
-    bottom: 20px;
+    bottom: 100px;
     left: 20px;
-    clip-path: polygon(50% -50%, 100% 50%, 50% 150%, 0 50%);
-    width: initial;
-    aspect-ratio: 1/cos(30deg);
-
-    height: 75px;
-    display: block;
-    background: colors.$color-two;
-    transform: scale(0.8);
-    opacity: 0.6;
-    transition: all 0.4s ease-in-out;
-
-    &:hover {
-      opacity: 1;
-      cursor: pointer;
-      transform: scale(1);
-      transition: all 0.1s ease-in-out;
-    }
 
     a {
-      padding-top: 5px;
+      clip-path: polygon(50% -50%, 100% 50%, 50% 150%, 0 50%);
+      aspect-ratio: 1/cos(30deg);
+      width: 90px;
+
+      display: block;
+      background: colors.$color-two;
+      transform: scale(0.8);
+      opacity: 0.6;
+      transition: all 0.4s ease-in-out;
+
+      padding-top: 10px;
       color: black;
       text-decoration: none;
       text-align: center;
-      width: 100%;
-      display: block;
       font-size: typo.$fs-xs;
+
+      &:hover {
+        opacity: 1;
+        cursor: pointer;
+        transform: scale(1);
+        transition: all 0.2s ease-in-out;
+        z-index: 10;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        background-color: colors.$color-three;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+      }
+
+      &:nth-child(3) {
+        svg {
+          stroke-width: 4px;
+
+          rect {
+            fill: black;
+            z-index: 1;
+          }
+
+          path {
+            &:nth-child(5) {
+              stroke-width: 4px;
+              z-index: 100;
+              color: colors.$color-three;
+            }
+            &:nth-child(6) {
+              stroke-width: 4px;
+              z-index: 100;
+              color: colors.$color-three;
+              transform: scaleY(0.5) translateY(14px);
+            }
+          }
+        }
+      }
+
+    }
+
+    &.open {
+      a {
+        z-index: 1;
+        opacity: 1;
+        transition: all 0.1s ease-in-out;
+
+        &:nth-child(1) {
+          transform: scale(0.8);
+          opacity: 0.6;
+        }
+
+        &:nth-child(2) {
+          top: -72px;
+        }
+
+        &:nth-child(3) {
+          left: 56px;
+          top: -36px;
+        }
+      }
     }
   }
 
@@ -167,6 +223,7 @@
       }
     }
   }
+
 }
 
 

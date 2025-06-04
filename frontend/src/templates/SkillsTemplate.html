@@ -6,7 +6,7 @@
         ${Object.keys(skills).map(level => `
         <div class="skill-level ${level}">
             <h3 class="level">${level}</h3>
-            ${skills[level].map(s => `<span class="skill" data-text="${s}">${s}</span>`).join('')}
+            ${skills[level].map(s => `<span class="skill" data-text="${s.skill}" data-category="${s.category}">${s.skill}</span>`).join('')}
         </div>
         `).join('')}
     </div>

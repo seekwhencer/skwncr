@@ -4,6 +4,7 @@
   "title": "Smart Home Automation",
   "description": "Infrastruktur und Server-App zur Erfassung von Umweltdaten und Steuerung von Zigbee-Geräten. Ein privates und nicht veröffentlichtes Projekt.",
   "description_long": "${projects/smarthome.md}",
+  "print_short": true,
   "work": [
     "Dockerisierte Infrastruktur bestehend aus: Mosquitto, InfluxDB2, Grafana 11 und einer custom Backend-App",
     "Zweit-Server: Raspberry Pi mit 433mhz-zu-MQTT (node-rtl433-ui) und Zigbee2MQTT (Bekannte Open Source Lösung)",

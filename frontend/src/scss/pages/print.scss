@@ -9,7 +9,7 @@
       color: black;
       text-align: center;
       width: 100%;
-      font-size: typo.$fs-xs;
+      font-size: 8pt;
     }
 
     @bottom-right-corner {
@@ -17,7 +17,7 @@
       color: black;
       text-align: center;
       width: 100%;
-      font-size: typo.$fs-xs;
+      font-size: 8pt;
     }
 
     // content comes directly from the html markup
@@ -25,19 +25,22 @@
       color: black;
       text-align: center;
       width: 100%;
-      font-size: typo.$fs-xs;
+      font-size: 8pt;
     }
   }
-  
 
-  /*@page :first {
+  @page projects {
+    margin: 2cm 2cm 2cm 2cm;
+  }
+
+  @page :first {
     @bottom-center {
-      content: "";
+      content: "" !important;
     }
     @bottom-right-corner {
       content: "";
     }
-  }*/
+  }
 }
 
 html {
@@ -57,7 +60,6 @@ html {
 
 body {
   margin: 0 2cm 0 4cm;
-  page: main;
 
   @media print {
     margin: initial;
@@ -95,6 +97,7 @@ p {
   display: none;
 }
 
+
 section {
   break-before: page;
 
@@ -112,9 +115,41 @@ section {
   display: none;
 }
 
+
+.section-first-page {
+
+  height: 100%;
+
+  h1 {
+    margin-top: 5cm;
+    font-size: 30pt;
+    font-weight: 300;
+    text-align: right;
+  }
+
+  h2 {
+    font-size: 18pt;
+    font-weight: 300;
+    text-align: right;
+  }
+
+  .info-box {
+    margin-top: 10cm;
+    width: 10cm;
+    float: right;
+    text-align: right;
+    line-height: 40pt;
+
+    .bot {
+      margin-top: 1cm;
+      display: inline-block;
+    }
+  }
+}
+
+
 .section-person {
   break-after: avoid;
-  page: person;
 
   .container {
   }
@@ -153,7 +188,19 @@ section {
 
       .label {
         display: block;
-        font-size: typo.$fs-xs;
+        font-size: 8pt;
+      }
+
+      .social-icons {
+        .row {
+          width: 100%;
+          overflow: hidden;
+
+          i {
+            transform: translateY(2mm);
+            display: inline-block;
+          }
+        }
       }
     }
   }
@@ -209,7 +256,24 @@ section {
         font-size: 10pt;
       }
     }
+  }
 
+  .info-box {
+    margin-top: 2cm;
+    background-color: #eeeeee;
+    padding: 4mm 1cm 4mm 6mm;
+    display: block;
+    border-radius: 2mm;
+    font-size: 10pt;
+
+    strong {
+      font-size: 10pt;
+    }
+
+    .bot {
+      vertical-align: middle;
+      margin-right: 4mm;
+    }
   }
 }
 
@@ -237,7 +301,96 @@ section {
     border-radius: 5mm;
     color: black;
     line-height: 12pt;
-    font-size: 10pt;
+    font-size: 12pt;
   }
 
+}
+
+.section-projects {
+  page: projects;
+
+  .projects {
+    overflow: hidden;
+  }
+
+  .project {
+    display: inline-block;
+    break-inside: avoid;
+    overflow: hidden;
+    margin-bottom: 1cm;
+    width: calc(50% - 2mm);
+    float: left;
+
+    &:nth-child(odd) {
+      margin-right: 4mm;
+    }
+
+    &--head {
+      display: inline-block;
+
+      .text {
+        font-size: 10pt;
+        padding: 2mm 0;
+      }
+    }
+
+    &--image {
+      width: 100%;
+      max-height: 4cm;
+      display: block;
+      overflow: hidden;
+    }
+  }
+
+  h2 {
+    margin-top: 2cm;
+  }
+
+  h3 {
+    margin-bottom: 2mm;
+    font-size: 10pt;
+    font-weight: 800;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .text-block {
+    margin-top: 5mm;
+
+    h2 {
+      display: none;
+    }
+
+    p {
+      font-size: 10pt;
+      line-height: 20pt;
+      break-inside: avoid;
+      break-before: auto;
+    }
+  }
+
+  .info-box {
+    width: 100%;
+    margin-top: 2cm;
+    background-color: #eeeeee;
+    padding: 4mm 1cm 4mm 6mm;
+    display: block;
+    border-radius: 2mm;
+    font-size: 10pt;
+    overflow: hidden;
+    break-inside: avoid;
+
+    strong {
+      font-size: 10pt;
+    }
+
+    .bot {
+      vertical-align: middle;
+      margin-right: 4mm;
+    }
+  }
 }

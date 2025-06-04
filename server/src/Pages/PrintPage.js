@@ -8,12 +8,24 @@ import {
     ProjectsSection,
 } from './Sections/index.js';
 
-import {HomePrintPageTemplate} from './Templates/index.js';
+import {
+    VitaFullPrintPageTemplate,
+    VitaShortPrintPageTemplate,
+    ServicesPrintPageTemplate,
+    SectionFooterTemplate
+} from './Templates/index.js';
 
 export default class PrintPage extends PageDocument {
     constructor(parent, options) {
         super(parent, options);
-        this.template = HomePrintPageTemplate;
+
+        // toggle between the output sub pages like: vita full, vita short, services
+        this.templates = {
+            vitaShort: VitaShortPrintPageTemplate,
+            vitaFull: VitaFullPrintPageTemplate,
+            services: ServicesPrintPageTemplate
+        }
+
         this.disableCache = process.env?.ENV !== 'production' ? true : false;
 
         this.headerMeta = {
@@ -36,11 +48,15 @@ export default class PrintPage extends PageDocument {
         if (this.useCache() && !this.disableCache)
             return this.cache;
 
+        // set the sub page template here
+        const template = this.templates[options.template];
+
         const date = new Date().toLocaleDateString('de-DE');
 
         let templateData = {
             documentLanguage: this.headerMeta.lang,
             documentHeader: this.documentHeader.html(this.headerMeta),
+            icons: this.icons,
             section: {
                 intro: '',
                 person: this.personSection.html(),
@@ -49,6 +65,7 @@ export default class PrintPage extends PageDocument {
                 service: this.servicesSection.html(),
                 projects: this.projectsSection.html(),
             },
+            sectionFooter: '',
             data: this.data,
             jsPlain: '', // don't embed it all the time
             footer: {
@@ -72,7 +89,7 @@ export default class PrintPage extends PageDocument {
             });
         }
 
-        this.dom = this.render(this.template, templateData);
+        this.dom = this.render(template, templateData);
         return this.dom;
     }
 

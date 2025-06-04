@@ -57,10 +57,18 @@ let templates = {
         projectsPrint: 'ProjectsPrintTemplate.html',
         disclaimer: 'DisclaimerTemplate.html'
     },
+
     partials: {
-        projectListing : 'Elements/ProjectTemplate.html',
-        splashVideoSelection : 'Elements/SplashVideoSelectionTemplate.html',
+        projectListing: 'Elements/ProjectTemplate.html',
+        splashVideoSelection: 'Elements/SplashVideoSelectionTemplate.html',
+    },
+
+    print: {
+        vitaShort: 'pages/print/vitaShort.html',
+        vitaFull: 'pages/print/vitaFull.html',
+        services: 'pages/print/services.html',
     }
+
 };
 
 //
@@ -72,8 +80,6 @@ const SectionFooterTemplate = readFrontendTemplate(templates.global.sectionFoote
 const TestPageTemplate = readTemplate(templates.page.test);
 const HomePageTemplate = readTemplate(templates.page.home);
 const PersonPageTemplate = readTemplate(templates.page.person);
-
-const HomePrintPageTemplate = readTemplate(templates.page.homePrint);
 
 const SplashSectionTemplate = readFrontendTemplate(templates.section.splash);
 const PersonSectionTemplate = readFrontendTemplate(templates.section.person);
@@ -90,6 +96,14 @@ const SplashVideoSelectionTemplate = readFrontendTemplate(templates.partials.spl
 
 const SplashPersonSectionTemplate = readTemplate(templates.pages.person.splash);
 
+
+const HomePrintPageTemplate = readTemplate(templates.page.homePrint);
+
+const VitaShortPrintPageTemplate = readTemplate(templates.print.vitaShort);
+const VitaFullPrintPageTemplate = readTemplate(templates.print.vitaFull);
+const ServicesPrintPageTemplate = readTemplate(templates.print.services);
+
+
 //
 export {
     DocumentHeaderTemplate,
@@ -102,6 +116,10 @@ export {
     PersonPageTemplate,
 
     HomePrintPageTemplate,
+
+    VitaShortPrintPageTemplate,
+    VitaFullPrintPageTemplate,
+    ServicesPrintPageTemplate,
 
     SplashSectionTemplate,
     PersonSectionTemplate,
