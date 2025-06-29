@@ -1,0 +1,28 @@
+version: "3.6"
+
+networks:
+  apply-o-mat:
+    external: false
+    name: ${PROJECT_NAME}
+
+services:
+  tunnel:
+    restart: always
+    build: .
+    container_name: ${PROJECT_NAME}_tunnel
+    command: /tunnel/tunnel.sh
+    networks:
+      - apply-o-mat
+    volumes:
+      - ./tunnel.sh:/tunnel/tunnel.sh
+      - ${TUNNEL_SSH_KEY_FILE}:/root/.ssh/tunnel:ro
+    environment:
+      - SSH_KEY_FILE=${TUNNEL_SSH_KEY_FILE}
+      - SSH_KEY_USER=${TUNNEL_SSH_KEY_USER}
+      - SSH_HOST=${TUNNEL_SSH_HOST}
+
+      - LOCAL_HOST=${TUNNEL_LOCAL_HOST}
+      - LOCAL_PORT=${TUNNEL_LOCAL_PORT}
+
+      - REMOTE_HOST=${TUNNEL_REMOTE_HOST}
+      - REMOTE_PORT=${TUNNEL_REMOTE_PORT}

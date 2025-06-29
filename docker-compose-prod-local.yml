@@ -1,0 +1,18 @@
+networks:
+  apply-o-mat:
+    external: false
+    name: ${PROJECT_NAME}
+
+services:
+  apply-o-mat_server:
+    extends:
+      file: docker-compose-dev.yml
+      service: apply-o-mat_server
+
+    networks:
+      - apply-o-mat
+
+    command: 'npm start'
+    environment:
+      - ENV=production
+      - SERVER_PORT=${SERVER_PORT}
