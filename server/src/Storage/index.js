@@ -1,7 +1,8 @@
 import fs from 'fs-extra';
 import Image from '../ThumbnailGenerator/Image.js';
-import Data from '../../../data/data.json' with {type: 'json'};
+
 import StoragePDF from "./StoragePDF.js";
+import StorageData from "./StorageData.js";
 
 export default class Storage {
     constructor(parent) {
@@ -11,7 +12,11 @@ export default class Storage {
         this.debug = false;
 
         // in memory
-        this.data = Data;
+        this.data = new StorageData(this, {});
+
+        // data test
+        this.data.test();
+
 
         this.imagesRootPath = "/app/server/static/images";
         this.thumbnailsRootPath = '/app/server/static/images/thumbs';
@@ -53,14 +58,11 @@ export default class Storage {
             }
         }
 
-        // the bundle hash
-        this.css = this.getCSS();
-        this.js = this.getJS();
+        // get the bundles index and read the data
+        // of all available bundles into the memory
+        this.getBundles();
 
-        // the file content
-        this.cssPlain = this.getCSSPlain();
-        this.jsPlain = this.getJSPlain();
-
+        // the pdf generator
         this.pdf = new StoragePDF(this, {});
 
     }
@@ -101,27 +103,43 @@ export default class Storage {
         });
     }
 
+    // get all real paths of generated bundles
+    getBundles() {
+        this.css = this.getCSS();
+        this.js = this.getJS();
+
+        this.getPlain();
+    }
+
+    // read all the data of available bundles
+    getPlain() {
+        this.cssPlain = this.getCSSPlain();
+        this.jsPlain = this.getJSPlain();
+    }
+
     // can be sync on startup
     getCSS() {
-        const dir = fs.readdirSync('../frontend/dist/css');
+        //const dir = fs.readdirSync('../frontend/dist/css');
+        const dir = fs.readdirSync('./static/css');
         const files = dir.filter(i => i.match(/^(.*?)(?=\.css)/));
         const data = {};
         files.forEach(f => {
             const baseName = f.split('-')[0];
             data[baseName] = f;
-        })
+        });
         return data;
     }
 
     // can be sync on startup
     getJS() {
-        const dir = fs.readdirSync('../frontend/dist/js');
+        //const dir = fs.readdirSync('../frontend/dist/js');
+        const dir = fs.readdirSync('./static/js');
         const files = dir.filter(i => i.match(/^(.*?)(?=\.js)/));
         const data = {};
         files.forEach(f => {
             const baseName = f.split('-')[0].toLowerCase();
             data[baseName] = f;
-        })
+        });
         return data;
     }
 
@@ -142,7 +160,7 @@ export default class Storage {
         return data;
     }
 
-    // @TODO failsafe
+    // wrapper pdf generator
     generatePDF(sourceUrl) {
         return this.pdf.generate(sourceUrl);
     }

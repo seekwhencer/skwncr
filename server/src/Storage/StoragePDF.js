@@ -16,8 +16,6 @@ export default class StoragePDF {
         //
         this.sourceUrl = `http://localhost:${this.server.port}/print`;
         this.filePath = '/app/server/static';
-
-
     }
 
     // @TODO check if file exists

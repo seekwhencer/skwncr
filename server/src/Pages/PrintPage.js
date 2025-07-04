@@ -11,8 +11,7 @@ import {
 import {
     VitaFullPrintPageTemplate,
     VitaShortPrintPageTemplate,
-    ServicesPrintPageTemplate,
-    SectionFooterTemplate
+    ServicesPrintPageTemplate
 } from './Templates/index.js';
 
 export default class PrintPage extends PageDocument {
