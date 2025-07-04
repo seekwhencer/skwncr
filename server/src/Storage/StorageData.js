@@ -30,7 +30,7 @@ export default class StorageData {
 
         mapIt.forEach(k => {
             odp(this.data, k, {
-                value: () => this[k](),
+                value: typeof this[k] === 'function' ? () => this[k]() : this[k],
                 enumerable: false
             });
         });

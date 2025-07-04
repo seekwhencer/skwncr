@@ -3,6 +3,8 @@ import Image from '../ThumbnailGenerator/Image.js';
 
 import StoragePDF from "./StoragePDF.js";
 import StorageData from "./StorageData.js";
+import StorageCSS from "./StorageCSS.js";
+import StorageJS from "./StorageJS.js";
 
 export default class Storage {
     constructor(parent) {
@@ -56,7 +58,7 @@ export default class Storage {
 
         // get the bundles index and read the data
         // of all available bundles into the memory
-        this.getBundles();
+        this.getBundlesSync();
 
         // the pdf generator
         this.pdf = new StoragePDF(this, {});
@@ -99,62 +101,16 @@ export default class Storage {
         });
     }
 
-    // get all real paths of generated bundles
-    getBundles() {
-        this.css = this.getCSS();
-        this.js = this.getJS();
+    /**
+     * get the folder (css and js) lists and
+     * read all existing files into memory
+     */
+    getBundlesSync() {
+        this.css = new StorageCSS(this, {});
+        this.js = new StorageJS(this, {});
 
-        this.getPlain();
-    }
-
-    // read all the data of available bundles
-    getPlain() {
-        this.cssPlain = this.getCSSPlain();
-        this.jsPlain = this.getJSPlain();
-    }
-
-    // can be sync on startup
-    getCSS() {
-        //const dir = fs.readdirSync('../frontend/dist/css');
-        const dir = fs.readdirSync('./static/css');
-        const files = dir.filter(i => i.match(/^(.*?)(?=\.css)/));
-        const data = {};
-        files.forEach(f => {
-            const baseName = f.split('-')[0];
-            data[baseName] = f;
-        });
-        return data;
-    }
-
-    // can be sync on startup
-    getJS() {
-        //const dir = fs.readdirSync('../frontend/dist/js');
-        const dir = fs.readdirSync('./static/js');
-        const files = dir.filter(i => i.match(/^(.*?)(?=\.js)/));
-        const data = {};
-        files.forEach(f => {
-            const baseName = f.split('-')[0].toLowerCase();
-            data[baseName] = f;
-        });
-        return data;
-    }
-
-    //
-    getCSSPlain() {
-        const data = {};
-        Object.keys(this.css).forEach((baseName) => {
-            data[baseName] = fs.readFileSync(`./static/css/${this.css[baseName]}`).toString();
-        });
-        return data;
-    }
-
-    //
-    getJSPlain() {
-        const data = {};
-        Object.keys(this.js).forEach((baseName) => {
-            data[baseName] = fs.readFileSync(`./static/js/${this.js[baseName]}`).toString();
-        });
-        return data;
+        this.cssPlain = this.css.plain;
+        this.jsPlain = this.js.plain;
     }
 
     // wrapper pdf generator
