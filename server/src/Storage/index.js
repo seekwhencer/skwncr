@@ -1,5 +1,3 @@
-import Image from '../ThumbnailGenerator/Image.js';
-
 import StoragePDF from "./StoragePDF.js";
 import StorageData from "./StorageData.js";
 import StorageCSS from "./StorageCSS.js";
@@ -25,7 +23,6 @@ export default class Storage {
 
         // the pdf generator
         this.pdf = new StoragePDF(this, {});
-
     }
 
     /**

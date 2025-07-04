@@ -67,12 +67,21 @@
     width: 200px;
     transform: rotate(45deg);
     overflow: hidden;
-    padding: 5px;
+    padding: 5px 5px 2px 5px;
 
     &.github {
       top: 20px;
       right: -70px;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+    }
+
+    &.dev {
+      background-color: colors.$color-six;
+      svg {
+        * {
+          stroke: white;
+        }
+      }
     }
 
     &.vanilla {
