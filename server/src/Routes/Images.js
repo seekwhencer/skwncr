@@ -17,8 +17,8 @@ export default class ImagesRoutes extends Route {
             path.shift();
             path = path.join('/');
 
-            if (!this.storage.availableExtensions.includes(extension)) {
-                res.sendFile(`${this.storage.imagesRootPath}/${path}/${fileName}`);
+            if (!this.storage.image.availableExtensions.includes(extension)) {
+                res.sendFile(`${this.storage.image.imagesRootPath}/${path}/${fileName}`);
                 return;
             }
 

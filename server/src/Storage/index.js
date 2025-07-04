@@ -1,10 +1,10 @@
-import fs from 'fs-extra';
 import Image from '../ThumbnailGenerator/Image.js';
 
 import StoragePDF from "./StoragePDF.js";
 import StorageData from "./StorageData.js";
 import StorageCSS from "./StorageCSS.js";
 import StorageJS from "./StorageJS.js";
+import StorageImage from "./StorageImage.js";
 
 export default class Storage {
     constructor(parent) {
@@ -16,45 +16,8 @@ export default class Storage {
         // in memory
         this.data = new StorageData(this, {silent: false});
 
-        this.imagesRootPath = "/app/server/static/images";
-        this.thumbnailsRootPath = '/app/server/static/images/thumbs';
-        this.availableImageFolders = ['', 'projects'];
-        this.availableExtensions = ['jpg', 'jpeg', 'png'];
-        this.sizes = {
-            bh: {
-                label: 'blur hash',
-                w: 100,
-                h: 100
-            },
-            xs: {
-                label: 'x small',
-                w: 300,
-                h: 300
-            },
-            s: {
-                label: 'small',
-                w: 600,
-                h: 600
-            },
-            m: {
-                label: 'medium',
-                w: 1024,
-                h: 1024
-            },
-            l: {
-                label: 'large',
-                w: 1920,
-                h: 1920
-            },
-            xl: {
-                label: 'large',
-                w: 3840,
-                h: 3840
-            },
-            o: {
-                label: 'original'
-            }
-        }
+        // images
+        this.image = new StorageImage(this, {});
 
         // get the bundles index and read the data
         // of all available bundles into the memory
@@ -73,32 +36,7 @@ export default class Storage {
      * @returns {Promise}
      */
     imageExists(fileName, folderName, query) {
-
-        return new Promise((resolve, reject) => {
-            if (!this.availableImageFolders.includes(folderName))
-                reject('FOLDER NOT ALLOWED');
-
-            const imageSize = `${query ? query?.s ? query?.s : 'o' : ''}`.toLowerCase();
-            if (!Object.keys(this.sizes).includes(imageSize))
-                reject('SIZE NOT ALLOWED:', imageSize);
-
-            const image = new Image(this, {
-                fileName: fileName,
-                folderName: folderName,
-                imageSize: imageSize
-            });
-
-            if (image === false)
-                resolve(false);
-
-            image.on('thumbnail-finished', () => {
-                resolve(image);
-            });
-
-            image.exists()
-                .then(exists => exists ? resolve(image) : setTimeout(() => resolve(image), 10000))
-                .catch(e => reject(e));
-        });
+        return this.image.exists(fileName, folderName, query);
     }
 
     /**
