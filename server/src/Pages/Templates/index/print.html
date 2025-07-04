@@ -25,7 +25,7 @@ ${jsPlain !== '' ? `
     ${jsPlain}
 </script>
 ` : ''}
-${process.env?.ENV !== 'production' && embed !==true ? `
+${global.ENVIRONMENT !== 'production' && embed !==true ? `
 <script type="module" src="/@vite/client"></script>
 <script type="module" src="/src/Print.js" crossorigin="anonymous"></script>
 ` : ''}

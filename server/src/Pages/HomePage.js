@@ -18,7 +18,7 @@ export default class HomePage extends PageDocument {
         super(parent, options);
         this.template = HomePageTemplate;
         this.pageNavigation = new PageNavigation(this);
-        this.disableCache = process.env?.ENV !== 'production' ? true : false;
+        this.disableCache = global.ENVIRONMENT !== 'production' ? true : false;
 
         // sections
         this.splashSection = new SplashSection(this);
@@ -55,7 +55,7 @@ export default class HomePage extends PageDocument {
             ...options
         };
 
-        if (process.env?.ENV !== 'production') {
+        if (global.ENVIRONMENT !== 'production') {
             // dont embed the bundled css in development mode
             templateData.documentHeader = this.documentHeader.html({
                 title: `+DEV+ | ${this.headerMeta.title}`,

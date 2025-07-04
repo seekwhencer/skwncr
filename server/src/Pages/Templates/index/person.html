@@ -18,7 +18,7 @@ ${jsPlain !== '' ? `
     ${jsPlain}
 </script>
 ` : ''}
-${process.env?.ENV !== 'production' ? `
+${global.ENVIRONMENT !== 'production' ? `
 <script type="module" src="/@vite/client"></script>
 <script type="module" src="/src/Person.js" crossorigin="anonymous"></script>
 ` : ''}

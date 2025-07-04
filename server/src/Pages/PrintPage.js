@@ -25,7 +25,7 @@ export default class PrintPage extends PageDocument {
             services: ServicesPrintPageTemplate
         }
 
-        this.disableCache = process.env?.ENV !== 'production' ? true : false;
+        this.disableCache = global.ENVIRONMENT !== 'production' ? true : false;
 
         this.headerMeta = {
             js: `js/${this.js.print}`,
@@ -78,7 +78,7 @@ export default class PrintPage extends PageDocument {
         };
 
         // development
-        if (process.env?.ENV !== 'production' && embed !== true) {
+        if (global.ENVIRONMENT !== 'production' && embed !== true) {
             templateData.documentHeader = this.documentHeader.html({
                 title: `+DEV PRINT+ | ${this.headerMeta.title}`,
                 cssPlain: '' // dont embed the bundled css
@@ -87,7 +87,7 @@ export default class PrintPage extends PageDocument {
         }
 
         // production or embed
-        if (process.env?.ENV === 'production' || embed === true) {  // production
+        if (global.ENVIRONMENT === 'production' || embed === true) {  // production
             templateData.documentHeader = this.documentHeader.html({
                 cssPlain: this.cssPlain.print, // embed css on production
                 js: this.headerMeta.js // use this javascript file

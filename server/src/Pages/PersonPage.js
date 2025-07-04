@@ -43,7 +43,7 @@ export default class PersonPage extends PageDocument {
             ...options
         };
 
-        if (process.env?.ENV !== 'production') {
+        if (global.ENVIRONMENT !== 'production') {
             // dont embed the bundled css
             templateData.documentHeader = this.documentHeader.html({
                 title: `+DEV+ | ${this.headerMeta.title}`,
