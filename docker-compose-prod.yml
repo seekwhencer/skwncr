@@ -4,6 +4,7 @@ networks:
 
 services:
   apply-o-mat_server:
+    restart: always
     extends:
       file: docker-compose-server.yml
       service: apply-o-mat_server
