@@ -7,7 +7,12 @@ export default class DataRoutes extends Route {
         this.storage = this.parent.storage;
 
         this.router.get('/data', async (req, res, next) => {
-            res.json(this.storage.data);
+            // if a query parameter "reload" exists
+            if (reload(req) === true) {
+                this.storage.data.load().then(() => res.json(this.storage.data));
+            } else {
+                res.json(this.storage.data);
+            }
         });
 
         // the data browser... simple as hell
@@ -26,5 +31,7 @@ export default class DataRoutes extends Route {
         return this.router;
     }
 }
+
+const reload = req => Object.prototype.hasOwnProperty.call(req?.query, 'reload');
 
 

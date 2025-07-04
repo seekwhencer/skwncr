@@ -148,6 +148,7 @@ export default class Storage {
         return data;
     }
 
+    //
     getJSPlain() {
         const data = {};
         Object.keys(this.js).forEach((baseName) => {
