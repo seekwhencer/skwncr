@@ -1,14 +1,14 @@
 import fs from 'fs-extra';
-import {spawn} from 'child_process';
-import Crypto from 'crypto';
-import Image from './ThumbnailGenerator/Image.js';
-import Data from '../../data/data.json' with {type: 'json'};
+import Image from '../ThumbnailGenerator/Image.js';
+import Data from '../../../data/data.json' with {type: 'json'};
+import StoragePDF from "./StoragePDF.js";
 
 export default class Storage {
     constructor(parent) {
         this.parent = parent;
         this.server = this.parent;
         this.label = 'STORAGE';
+        this.debug = false;
 
         // in memory
         this.data = Data;
@@ -53,10 +53,6 @@ export default class Storage {
             }
         }
 
-        //
-        this.pdfSourceUrl = `http://localhost:${this.server.port}/print`;
-        this.pdfFilePath = '/app/server/static';
-
         // the bundle hash
         this.css = this.getCSS();
         this.js = this.getJS();
@@ -64,6 +60,8 @@ export default class Storage {
         // the file content
         this.cssPlain = this.getCSSPlain();
         this.jsPlain = this.getJSPlain();
+
+        this.pdf = new StoragePDF(this, {});
 
     }
 
@@ -146,22 +144,6 @@ export default class Storage {
 
     // @TODO failsafe
     generatePDF(sourceUrl) {
-        !sourceUrl ? sourceUrl = this.pdfSourceUrl : null;
-
-        return new Promise((resolve, reject) => {
-            const hash = `${Crypto.createHash('md5').update(sourceUrl).digest("hex")}`;
-            const pdfRealPath = `${this.pdfFilePath}/${hash}.pdf`;
-            const processOptions = ['--headless', '--no-pdf-header-footer', '--no-sandbox', '--disable-gpu', '--disable-pdf-tagging', `--print-to-pdf=${pdfRealPath}`, `${sourceUrl}`];
-            console.log(processOptions.join(' '));
-            this.pdfProcess = spawn('chromium', processOptions);
-            this.pdfProcess.on('exit', () => resolve(this.pdfFile(sourceUrl)));
-            this.pdfProcess.stderr.on('data', chunk => console.log('>>>', chunk.toString()));
-        });
-    }
-
-    pdfFile(sourceUrl) {
-        const hash = `${Crypto.createHash('md5').update(sourceUrl).digest("hex")}`;
-        const pdfRealPath = `${this.pdfFilePath}/${hash}.pdf`;
-        return fs.readFileSync(`${pdfRealPath}`);
+        return this.pdf.generate(sourceUrl);
     }
 }

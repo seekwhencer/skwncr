@@ -2,7 +2,7 @@ import http from 'node:http';
 import path from 'node:path';
 import express from 'express';
 import * as Routes from './Routes/index.js';
-import Storage from './Storage.js';
+import Storage from './Storage/index.js';
 import Icons from './Global/Icons.js';
 import ThumbnailGenerator from './ThumbnailGenerator/index.js';
 import {
