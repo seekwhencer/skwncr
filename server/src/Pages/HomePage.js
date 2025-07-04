@@ -56,7 +56,7 @@ export default class HomePage extends PageDocument {
         };
 
         if (process.env?.ENV !== 'production') {
-            // dont embed the bundled css
+            // dont embed the bundled css in development mode
             templateData.documentHeader = this.documentHeader.html({
                 title: `+DEV+ | ${this.headerMeta.title}`,
                 cssPlain: ''

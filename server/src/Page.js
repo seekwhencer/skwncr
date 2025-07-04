@@ -1,5 +1,3 @@
-import fs from 'node:fs';
-
 export default class Page {
     constructor(parent, options) {
         this.parent = parent;
@@ -33,7 +31,7 @@ export default class Page {
             x: {} // elon...
         };
 
-        this.cacheTime = 60;
+        this.cacheTime = process.env?.CACHE_TIME ? parseInt(process.env?.CACHE_TIME) : 60;
     }
 
     render(template, data, tag) {

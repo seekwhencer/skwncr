@@ -45,7 +45,10 @@ export default class WebServer {
     start() {
         this.server = http.Server(this.engine);
         this.server.listen(this.port, () => {
-            console.log('>> SERVER UP ON PORT:', this.port);
+            LOG(` SERVER:`.padStart(20,'·'), 'UP');
+            LOG(` PORT:`.padStart(20,'·'), this.port);
+            LOG(` ENVIRONMENT:`.padStart(20, '·'), global.ENVIRONMENT);
+            LOG(` DEBUG:`.padStart(20, '·'), global.DEBUG);
         });
     }
 
