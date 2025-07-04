@@ -51,6 +51,9 @@ export default class PrintPage extends PageDocument {
         // set the sub page template here
         const template = this.templates[options.template];
 
+        // embed force generated css
+        const embed = options.embed;
+
         const date = new Date().toLocaleDateString('de-DE');
 
         let templateData = {
@@ -76,13 +79,16 @@ export default class PrintPage extends PageDocument {
         };
 
         // development
-        if (process.env?.ENV !== 'production') {
+        if (process.env?.ENV !== 'production' && embed !== true) {
             templateData.documentHeader = this.documentHeader.html({
                 title: `+DEV PRINT+ | ${this.headerMeta.title}`,
                 cssPlain: '' // dont embed the bundled css
             });
             templateData.jsPlain = ''; // dont embed the bundles js
-        } else {  // production
+        }
+
+        // production or embed
+        if (process.env?.ENV === 'production' || embed === true) {  // production
             templateData.documentHeader = this.documentHeader.html({
                 cssPlain: this.cssPlain.print, // embed css on production
                 js: this.headerMeta.js // use this javascript file
