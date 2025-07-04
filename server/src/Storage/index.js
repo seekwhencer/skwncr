@@ -12,11 +12,7 @@ export default class Storage {
         this.debug = false;
 
         // in memory
-        this.data = new StorageData(this, {});
-
-        // data test
-        this.data.test();
-
+        this.data = new StorageData(this, {silent: false});
 
         this.imagesRootPath = "/app/server/static/images";
         this.thumbnailsRootPath = '/app/server/static/images/thumbs';
