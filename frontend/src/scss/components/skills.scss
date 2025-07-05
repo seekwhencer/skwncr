@@ -105,6 +105,8 @@
       }
 
       &:hover {
+        z-index: 1000;
+
         &:before {
           background-color: colors.$color-two;
           opacity: 1;
@@ -190,11 +192,50 @@
         margin: 0 5px 5px 0;
       }
 
+      .tooltip {
+        width: 200px;
+        position: absolute;
+        left: 50%;
+        top: 30px;
+        transform: translateX(-100px);
+        background-color: black;
+        color: white;
+        font-size: typo.$fs-xs;
+        z-index: 1000;
+        padding: 10px;
+        border-radius: 5px;
+        opacity: 1;
+        transition: all 0.2s ease-in-out;
+
+        &.hidden {
+          opacity: 0;
+          transition: all 1s ease-in-out;
+          transform: translateY(-10px) translateX(-100px);
+        }
+
+        &--text {
+          margin-top: 10px;
+          line-height: 1.4em;
+          font-size: typo.$fs-xs;
+        }
+      }
+
     }
 
     &.expert {
       .skill {
         font-size: typo.$fs-l;
+
+        .tooltip {
+          top: 40px;
+          width: 300px;
+          transform: translateX(-150px);
+
+
+          &--text {
+            font-size: typo.$fs-xs;
+          }
+        }
       }
     }
   }

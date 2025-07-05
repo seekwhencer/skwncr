@@ -1,0 +1,9 @@
+{
+  "categories":{
+    "devops" : "DevOps",
+    "frontend" : "Frontend",
+    "backend" : "Backend",
+    "iot": "IoT",
+    "media": "Media"
+  }
+}

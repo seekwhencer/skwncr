@@ -1,113 +1,544 @@
 {
   "expert": [
-    { "skill": "Javascript",     "category": "frontend", "trend": "up" },
-    { "skill": "WebComponents",  "category": "frontend", "trend": "up" },
-    { "skill": "Scss",           "category": "frontend", "trend": "down" },
-    { "skill": "HTML",           "category": "frontend", "trend": "up" },
-    { "skill": "Git",            "category": "devops",   "trend": "up" },
-    { "skill": "node.js",        "category": "backend",  "trend": "up" },
-    { "skill": "Jira",           "category": "devops",   "trend": "down" },
-    { "skill": "Confluence",     "category": "devops",   "trend": "down" },
-    { "skill": "CI/CD",          "category": "devops",   "trend": "up" },
-    { "skill": "Kanban",         "category": "devops",   "trend": "up" },
-    { "skill": "Scrum",          "category": "devops",   "trend": "down" },
-    { "skill": "REST Api",       "category": "backend",  "trend": "down" }
+    {
+      "skill": "Javascript",
+      "category": "frontend",
+      "trend": "up",
+      "text": "JavaScript ist die universelle Skriptsprache für dynamische Webanwendungen und wird in allen modernen Browsern unterstützt. Mit ihr lassen sich interaktive Benutzeroberflächen und komplexe Logik direkt im Frontend umsetzen."
+    },
+    {
+      "skill": "WebComponents",
+      "category": "frontend",
+      "trend": "up",
+      "text": "WebComponents ermöglichen die Wiederverwendung von UI-Elementen als standardisierte, browser-native Bausteine. Dadurch lassen sich modulare, wartbare Oberflächen bauen, die framework-unabhängig funktionieren."
+    },
+    {
+      "skill": "Scss",
+      "category": "frontend",
+      "trend": "down",
+      "text": "SCSS erweitert CSS um Variablen, verschachtelte Regeln und Mixins, um Stylesheets besser wartbar zu machen. Obwohl die Nachfrage leicht rückläufig ist, bleibt es für komplexe Projekte nach wie vor nützlich."
+    },
+    {
+      "skill": "HTML",
+      "category": "frontend",
+      "trend": "up",
+      "text": "HTML bildet das Grundgerüst jeder Webseite und definiert die semantische Struktur von Inhalten. Es ist unverzichtbar für SEO, Barrierefreiheit und die korrekte Darstellung im Browser."
+    },
+    {
+      "skill": "Git",
+      "category": "devops",
+      "trend": "up",
+      "text": "Git ist das führende verteilte Versionskontrollsystem und zentral für kollaborative Softwareentwicklung. Durch Branches und Merges lassen sich Änderungsabläufe sauber dokumentieren und steuern."
+    },
+    {
+      "skill": "node.js",
+      "category": "backend",
+      "trend": "up",
+      "text": "Node.js ermöglicht das Ausführen von JavaScript auf dem Server und ist besonders für I/O-intensive Anwendungen geeignet. Mit seiner großen Modulbibliothek lassen sich skalierbare Backend-Services schnell entwickeln."
+    },
+    {
+      "skill": "Jira",
+      "category": "workflow",
+      "trend": "down",
+      "text": "Jira ist ein etabliertes Tool für Issue-Tracking und agiles Projektmanagement. Trotz mancher Kritikpunkte bleibt es in vielen Unternehmen weit verbreitet."
+    },
+    {
+      "skill": "Confluence",
+      "category": "workflow",
+      "trend": "down",
+      "text": "Confluence dient als Wissensdatenbank und Kollaborationsplattform für Teams. Es erleichtert das Erstellen und Teilen von Dokumentationen direkt im Unternehmens-Ökosystem."
+    },
+    {
+      "skill": "CI/CD",
+      "category": "devops",
+      "trend": "up",
+      "text": "CI/CD-Pipelines automatisieren Build-, Test- und Deployment-Prozesse, um Software schneller und zuverlässiger auszuliefern. Sie sind ein Kernbestandteil moderner DevOps-Praktiken."
+    },
+    {
+      "skill": "Kanban",
+      "category": "devops",
+      "trend": "up",
+      "text": "Kanban visualisiert Arbeitsabläufe und fokussiert auf kontinuierlichen Fluss statt fester Iterationen. Es hilft Teams, Engpässe zu erkennen und die Durchlaufzeit zu optimieren."
+    },
+    {
+      "skill": "Scrum",
+      "category": "devops",
+      "trend": "down",
+      "text": "Scrum ist ein iteratives Framework für agiles Projektmanagement mit klaren Rollen und Zeremonien. Obwohl weit verbreitet, stößt es in einigen Teams an seine Grenzen."
+    },
+    {
+      "skill": "REST Api",
+      "category": "backend",
+      "trend": "down",
+      "text": "REST-APIs basieren auf HTTP-Standards und ermöglichen eine standardisierte Kommunikation zwischen Client und Server. Sie sind einfach zu implementieren, verlieren aber gegen GraphQL und andere Alternativen etwas an Dynamik."
+    }
   ],
-
   "proficient": [
-    { "skill": "React.js",               "category": "frontend", "trend": "up" },
-    { "skill": "Docker",                 "category": "devops",   "trend": "up" },
-    { "skill": "Typescript",             "category": "frontend", "trend": "up" },
-    { "skill": "Bash Scripting",         "category": "devops",   "trend": "down" },
-    { "skill": "CSR",                    "category": "frontend", "trend": "down" },
-    { "skill": "CORS",                   "category": "frontend", "trend": "up" },
-    { "skill": "Prettier",               "category": "devops",   "trend": "up" },
-    { "skill": "Strapi.js",              "category": "backend",  "trend": "up" },
-    { "skill": "Vite",                   "category": "frontend", "trend": "up" },
-    { "skill": "Rollup",                 "category": "frontend", "trend": "down" },
-    { "skill": "webpack 6",              "category": "frontend", "trend": "down" },
-    { "skill": "Next.js",                "category": "frontend", "trend": "up" },
-    { "skill": "Github Enterprise",      "category": "devops",   "trend": "up" },
-    { "skill": "Github Actions",         "category": "devops",   "trend": "up" },
-    { "skill": "influxDB 2",             "category": "backend",  "trend": "up" },
-    { "skill": "testcafe",               "category": "devops",   "trend": "down" },
-    { "skill": "Cypress",                "category": "devops",   "trend": "up" },
-    { "skill": "Raspberry Pi",           "category": "iot",      "trend": "up" },
-    { "skill": "MQTT",                   "category": "iot",      "trend": "up" },
-    { "skill": "Websockets",             "category": "backend",  "trend": "up" },
-    { "skill": "HTTP2",                  "category": "backend",  "trend": "up" },
-    { "skill": "Figma",                  "category": "frontend", "trend": "up" },
-    { "skill": "Adobe XD",               "category": "frontend", "trend": "down" },
-    { "skill": "Microservices (skalierbar)", "category": "backend", "trend": "up" },
-    { "skill": "MING-Stack",             "category": "backend",  "trend": "down" },
-    { "skill": "Grafana 10",             "category": "devops",   "trend": "up" },
-    { "skill": "Wordpress",              "category": "backend",  "trend": "down" },
-    { "skill": "mysql",                  "category": "backend",  "trend": "down" },
-    { "skill": "Shopware 5",            "category": "backend",  "trend": "down" },
-    { "skill": "Word",                   "category": "devops",   "trend": "down" },
-    { "skill": "Excel",                  "category": "devops",   "trend": "down" },
-    { "skill": "ESLint",                 "category": "devops",   "trend": "up" },
-    { "skill": "StyleLint",              "category": "devops",   "trend": "up" },
-    { "skill": "Mailhog",                "category": "devops",   "trend": "down" },
-    { "skill": "SSH Tunneling",          "category": "devops",   "trend": "down" },
-    { "skill": "Reverse Proxy (jwilder)", "category": "devops",  "trend": "down" },
-    { "skill": "Schema.org Microdata",   "category": "frontend", "trend": "down" },
-    { "skill": "ESP32",                  "category": "iot",      "trend": "up" },
-    { "skill": "nodeMCU",                "category": "iot",      "trend": "down" },
-    { "skill": "arduino",                "category": "iot",      "trend": "down" },
-    { "skill": "Scrum",                  "category": "devops",   "trend": "down" },
-    { "skill": "Smart Home",             "category": "iot",      "trend": "up" },
-    { "skill": "Edge Computing",         "category": "iot",      "trend": "up" },
-    { "skill": "IoT Custom Devices",     "category": "iot",      "trend": "up" },
-    { "skill": "Zigbee",                 "category": "iot",      "trend": "up" },
-    { "skill": "Smart Home Automation",  "category": "iot",      "trend": "up" },
-    { "skill": "NodeRed",                "category": "iot",      "trend": "up" },
-    { "skill": "N8N",                    "category": "devops",   "trend": "up" },
-    { "skill": "Linux",                  "category": "devops",   "trend": "up" },
-    { "skill": "Windows",                "category": "devops",   "trend": "down" },
-    { "skill": "MacOS",                  "category": "devops",   "trend": "up" }
+    {
+      "skill": "React.js",
+      "category": "frontend",
+      "trend": "up",
+      "text": "React.js ist eine Bibliothek für den Aufbau von UI-Komponenten mit deklarativem Ansatz. Sie nutzt Virtual DOM, um Aktualisierungen effizient zu rendern und wurde von Facebook entwickelt."
+    },
+    {
+      "skill": "Docker",
+      "category": "devops",
+      "trend": "up",
+      "text": "Docker containerisiert Anwendungen und ihre Abhängigkeiten, um konsistente Laufzeitumgebungen zu gewährleisten. Das beschleunigt Deployments und vereinfacht Skalierung."
+    },
+    {
+      "skill": "Typescript",
+      "category": "frontend",
+      "trend": "up",
+      "text": "TypeScript erweitert JavaScript um statische Typen, um Fehler frühzeitig im Code zu erkennen. Es verbessert die Codequalität und erleichtert die Wartung großer Codebasen."
+    },
+    {
+      "skill": "Bash Scripting",
+      "category": "devops",
+      "trend": "down",
+      "text": "Bash-Skripte automatisieren Aufgaben unter Unix/Linux und sind für Systemadministration weit verbreitet. Mehr moderne Tools verdrängen jedoch mittlerweile viele klassische Shell-Skripte."
+    },
+    {
+      "skill": "CSR",
+      "category": "frontend",
+      "trend": "down",
+      "text": "Client-Side Rendering lädt und rendert Inhalte komplett im Browser, was interaktive Erlebnisse schafft. Der Trend geht jedoch verstärkt zu hybriden oder SSR-Ansätzen für bessere Performance."
+    },
+    {
+      "skill": "CORS",
+      "category": "frontend",
+      "trend": "up",
+      "text": "CORS regelt browserseitige Sicherheitsbeschränkungen für Cross-Origin-Anfragen. Ein korrekt konfiguriertes CORS-Setup ist essenziell für moderne Microservices-Architekturen."
+    },
+    {
+      "skill": "Prettier",
+      "category": "devops",
+      "trend": "up",
+      "text": "Prettier formatiert Quellcode automatisch nach definierten Regeln und sorgt so für einheitlichen Stil im Team. Es entlastet Entwickler von Stil-Diskussionen."
+    },
+    {
+      "skill": "Strapi.js",
+      "category": "backend",
+      "trend": "up",
+      "text": "Strapi ist ein Headless-CMS auf Node.js-Basis, das APIs ohne viel Boilerplate bereitstellt. Die flexible Plugin-Architektur ermöglicht schnelle Anpassungen."
+    },
+    {
+      "skill": "Vite",
+      "category": "frontend",
+      "trend": "up",
+      "text": "Vite ist ein moderner Build- und Dev-Server, der dank ES-Module-Live-Reload extrem schnell startet. Es hat sich als Alternative zu Webpack etabliert."
+    },
+    {
+      "skill": "Rollup",
+      "category": "frontend",
+      "trend": "down",
+      "text": "Rollup bündelt JavaScript-Module effizient für Bibliotheken und Anwendungen. Es verliert aber gegen Tools wie Vite und esbuild an Bedeutung."
+    },
+    {
+      "skill": "webpack 6",
+      "category": "frontend",
+      "trend": "down",
+      "text": "Webpack ist ein mächtiger Modul-Bundler mit vielen Plugins und Loadern. Version 6 bringt Verbesserungen, bleibt aber komplexer als neuere Alternativen."
+    },
+    {
+      "skill": "Next.js",
+      "category": "frontend",
+      "trend": "up",
+      "text": "Next.js kombiniert React mit Server-Side-Rendering und statischer Vor-Generierung für optimale Performance. Es ist ideal für SEO-kritische und skalierbare Webprojekte."
+    },
+    {
+      "skill": "Github Enterprise",
+      "category": "devops",
+      "trend": "up",
+      "text": "GitHub Enterprise bietet eine selbstgehostete Plattform für Versionskontrolle und CI/CD. Unternehmen nutzen es für erhöhte Sicherheit und Compliance."
+    },
+    {
+      "skill": "Github Actions",
+      "category": "devops",
+      "trend": "up",
+      "text": "GitHub Actions automatisiert Workflows direkt im Repository für Build, Test und Deployment. Durch Marketplace-Integrationen lassen sich Prozesse flexibel erweitern."
+    },
+    {
+      "skill": "influxDB 2",
+      "category": "backend",
+      "trend": "up",
+      "text": "InfluxDB 2 ist eine Zeitreihen-Datenbank, optimiert für Metriken und Events. Mit integrierten Dashboards und Flux-Sprache bietet sie umfassende Analysefunktionen."
+    },
+    {
+      "skill": "testcafe",
+      "category": "devops",
+      "trend": "down",
+      "text": "TestCafe ermöglicht End-to-End-Tests für Webanwendungen ohne Browser-Plugins. Trotz einfacher Einrichtung wird es zunehmend durch Cypress verdrängt."
+    },
+    {
+      "skill": "Cypress",
+      "category": "devops",
+      "trend": "up",
+      "text": "Cypress bietet ein modernes Test-Framework für End-to-End- und Integrationstests im Browser. Die Echtzeit-Debugging-Funktionen machen Testfehler leichter nachvollziehbar."
+    },
+    {
+      "skill": "Raspberry Pi",
+      "category": "iot",
+      "trend": "up",
+      "text": "Der Raspberry Pi ist ein preiswerter Einplatinencomputer für zahlreiche IoT- und DIY-Projekte. Seine Flexibilität und Community-Unterstützung machen ihn besonders beliebt."
+    },
+    {
+      "skill": "MQTT",
+      "category": "iot",
+      "trend": "up",
+      "text": "MQTT ist ein leichtgewichtiges Messaging-Protokoll für IoT-Geräte mit geringem Bandbreitenbedarf. Es eignet sich hervorragend für Netzwerkumgebungen mit eingeschränkten Ressourcen."
+    },
+    {
+      "skill": "Websockets",
+      "category": "backend",
+      "trend": "up",
+      "text": "WebSockets ermöglichen bidirektionale Echtzeit-Kommunikation zwischen Client und Server. Sie sind ideal für Chats, Live-Daten-Streams und interaktive Anwendungen."
+    },
+    {
+      "skill": "HTTP2",
+      "category": "backend",
+      "trend": "up",
+      "text": "HTTP/2 verbessert Performance durch Multiplexing und Header-Kompression im Vergleich zu HTTP/1.1. Viele moderne Server und CDNs unterstützen es bereits standardmäßig."
+    },
+    {
+      "skill": "Figma",
+      "category": "frontend",
+      "trend": "up",
+      "text": "Figma ist ein browserbasiertes Design-Tool für UI/UX mit kollaborativen Funktionen. Teams können gleichzeitig am gleichen Layout arbeiten und Feedback direkt einfügen."
+    },
+    {
+      "skill": "Adobe XD",
+      "category": "media",
+      "trend": "down",
+      "text": "Adobe XD ist ein Tool für das Prototyping und Design von Benutzeroberflächen. Trotz guter Integration in die Adobe-Produktpalette verliert es gegen Figma an Marktanteil."
+    },
+    {
+      "skill": "Microservices (skalierbar)",
+      "category": "backend",
+      "trend": "up",
+      "text": "Skalierbare Microservices zerlegen komplexe Anwendungen in eigenständige, kommunizierende Services. Sie ermöglichen unabhängige Deployments und erleichtern das horizontale Skalieren."
+    },
+    {
+      "skill": "MING-Stack",
+      "category": "backend",
+      "trend": "down",
+      "text": "Der MING-Stack kombiniert MongoDB, InfluxDB, Node.js und GraphQL für Datenanalyse-Anwendungen. Er ist speziell, aber weniger verbreitet als klassische LAMP-Alternativen."
+    },
+    {
+      "skill": "Grafana 10",
+      "category": "devops",
+      "trend": "up",
+      "text": "Grafana 10 bietet erweiterte Dashboard- und Visualisierungsmöglichkeiten für Metriken und Logs. Neue Plugins und Alerting-Funktionen verbessern das Monitoring erheblich."
+    },
+    {
+      "skill": "Wordpress",
+      "category": "backend",
+      "trend": "down",
+      "text": "WordPress ist ein CMS, das vor allem für Blogs und Webseiten ohne viel Entwickleraufwand genutzt wird. Sicherheits- und Performance-Bedenken führen jedoch zu alternativen Lösungen."
+    },
+    {
+      "skill": "mysql",
+      "category": "backend",
+      "trend": "down",
+      "text": "MySQL ist eine relationale Open-Source-Datenbank mit breiter Verbreitung. Moderne NoSQL- und Cloud-Datenbanken verdrängen sie in neuen Projekten zunehmend."
+    },
+    {
+      "skill": "Shopware 5",
+      "category": "backend",
+      "trend": "down",
+      "text": "Shopware 5 ist eine E-Commerce-Plattform mit umfangreichen Funktionen für Online-Shops. Version 6 und andere SaaS-Angebote machen Shopware 5 jedoch weniger attraktiv für Neuentwicklungen."
+    },
+    {
+      "skill": "Word",
+      "category": "devops",
+      "trend": "down",
+      "text": "Microsoft Word ist das weitverbreitete Textverarbeitungsprogramm für Dokumente. Im DevOps-Umfeld wird es meist nur für Protokolle und Berichte genutzt."
+    },
+    {
+      "skill": "Excel",
+      "category": "devops",
+      "trend": "down",
+      "text": "Excel ist ein Tabellenkalkulationsprogramm, das sich besonders für Ad-hoc-Analysen eignet. Für automatisierte Reports greifen Teams jedoch zunehmend auf spezialisierte BI-Tools zurück."
+    },
+    {
+      "skill": "ESLint",
+      "category": "devops",
+      "trend": "up",
+      "text": "ESLint überprüft JavaScript/TypeScript-Code auf Stil- und Qualitätsregeln. Durch Plugins lässt es sich perfekt an Projektrichtlinien anpassen."
+    },
+    {
+      "skill": "StyleLint",
+      "category": "devops",
+      "trend": "up",
+      "text": "StyleLint analysiert CSS/SCSS auf Einhaltung definierter Style-Guides. Es hilft, inkonsistente Stylings zu vermeiden und Codequalität zu sichern."
+    },
+    {
+      "skill": "Mailhog",
+      "category": "devops",
+      "trend": "down",
+      "text": "MailHog simuliert SMTP-Server für Tests von E-Mail-Funktionen ohne externe Abhängigkeiten. Es wird jedoch in Cloud-nativen Umgebungen oft durch komplexere Tools ersetzt."
+    },
+    {
+      "skill": "SSH Tunneling",
+      "category": "devops",
+      "trend": "down",
+      "text": "SSH-Tunneling ermöglicht verschlüsselte Weiterleitungen von Ports über SSH. Für moderne VPN- und Zero-Trust-Lösungen findet man jedoch oft bessere Alternativen."
+    },
+    {
+      "skill": "Reverse Proxy (jwilder)",
+      "category": "devops",
+      "trend": "down",
+      "text": "Jwilder’s Reverse-Proxy-Container (auf Nginx-Basis) automatisiert das Routing zu Docker-Services. Er wird aber zunehmend durch flexiblere Proxy-Lösungen wie Traefik ersetzt."
+    },
+    {
+      "skill": "Schema.org Microdata",
+      "category": "frontend",
+      "trend": "down",
+      "text": "Schema.org Microdata hilft Suchmaschinen, Inhalte semantisch zu verstehen und rich snippets zu generieren. JSON-LD hat es aber als moderneres Format weitgehend verdrängt."
+    },
+    {
+      "skill": "ESP32",
+      "category": "iot",
+      "trend": "up",
+      "text": "Der ESP32 ist ein leistungsfähiges SoC mit integriertem WLAN und Bluetooth für IoT-Anwendungen. Dank Dual-Core-Prozessor lassen sich komplexe Aufgaben direkt am Gerät ausführen."
+    },
+    {
+      "skill": "nodeMCU",
+      "category": "iot",
+      "trend": "down",
+      "text": "NodeMCU bietet eine Lua-basierte Firmware für den ESP8266 und ESP32. Es wird jedoch zunehmend von Arduino- und PlatformIO-Frameworks abgelöst."
+    },
+    {
+      "skill": "arduino",
+      "category": "iot",
+      "trend": "down",
+      "text": "Arduino-Plattformen sind ideal für Einsteiger im IoT-Bereich und zum schnellen Prototyping. Für anspruchsvollere Projekte greift man allerdings oft auf leistungsfähigere Boards zurück."
+    }
   ],
-
   "competence": [
-    { "skill": "SSR",                        "category": "frontend", "trend": "down" },
-    { "skill": "Astro.js",                   "category": "frontend", "trend": "up" },
-    { "skill": "PHP",                        "category": "backend",  "trend": "down" },
-    { "skill": "Zend Framework (PHP)",       "category": "backend",  "trend": "down" },
-    { "skill": "nginx",                      "category": "devops",   "trend": "down" },
-    { "skill": "Apache",                     "category": "devops",   "trend": "down" },
-    { "skill": "Redis",                      "category": "backend",  "trend": "up" },
-    { "skill": "Elasticsearch",              "category": "backend",  "trend": "up" },
-    { "skill": "Swagger",                    "category": "backend",  "trend": "up" },
-    { "skill": "OpenAPI",                    "category": "backend",  "trend": "up" },
-    { "skill": "Vue.js",                     "category": "frontend", "trend": "down" },
-    { "skill": "Grunt",                      "category": "devops",   "trend": "down" },
-    { "skill": "Gulp",                       "category": "devops",   "trend": "down" },
-    { "skill": "Google Closure Templates",   "category": "frontend", "trend": "down" },
-    { "skill": "Selenium Cluster",           "category": "devops",   "trend": "down" },
-    { "skill": "Jenkins",                    "category": "devops",   "trend": "down" },
-    { "skill": "Gitlab",                     "category": "devops",   "trend": "down" },
-    { "skill": "Gitlab CI",                  "category": "devops",   "trend": "down" },
-    { "skill": "Nightwatch.js",              "category": "frontend", "trend": "down" },
-    { "skill": "Adobe Photoshop",            "category": "frontend", "trend": "down" },
-    { "skill": "Adobe Illustrator",          "category": "frontend", "trend": "down" },
-    { "skill": "Adobe Indesign",             "category": "frontend", "trend": "down" },
-    { "skill": "Inkscape",                   "category": "frontend", "trend": "down" },
-    { "skill": "Affiny Designer",            "category": "media",    "trend": "down" },
-    { "skill": "Adobe After Effects",        "category": "media",    "trend": "down" },
-    { "skill": "Lightwave 3D",               "category": "media",    "trend": "down" },
-    { "skill": "Ableton Live",               "category": "media",    "trend": "down" },
-    { "skill": "jQuery",                     "category": "frontend", "trend": "down" },
-    { "skill": "Bootstrap",                  "category": "frontend", "trend": "down" },
-    { "skill": "Smarty",                     "category": "frontend", "trend": "down" },
-    { "skill": "C Arduino",                  "category": "iot",      "trend": "down" },
-    { "skill": "Thymeleaf (Java)",           "category": "backend",  "trend": "down" }
+    {
+      "skill": "SSR",
+      "category": "frontend",
+      "trend": "down",
+      "text": "Server-Side-Rendering rendert HTML bereits auf dem Server und liefert fertige Seiten an den Client. Moderne hybride Frameworks kombinieren SSR oft mit Client-Side-Hydration."
+    },
+    {
+      "skill": "Astro.js",
+      "category": "frontend",
+      "trend": "up",
+      "text": "Astro.js fokussiert auf statische Webseiten und spart JavaScript-Overhead im Browser. Es lädt nur das nötigste Skript, um Performance zu maximieren."
+    },
+    {
+      "skill": "PHP",
+      "category": "backend",
+      "trend": "down",
+      "text": "PHP ist eine serverseitige Skriptsprache, die vor allem in Web-CMS zum Einsatz kommt. Neue Frameworks und Sprachen verdrängen es jedoch zunehmend."
+    },
+    {
+      "skill": "Zend Framework (PHP)",
+      "category": "backend",
+      "trend": "down",
+      "text": "Das Zend Framework ist ein komponentenbasiertes PHP-Framework für komplexe Enterprise-Anwendungen. Es wird aber zunehmend durch modernere PHP-Frameworks abgelöst."
+    },
+    {
+      "skill": "nginx",
+      "category": "devops",
+      "trend": "down",
+      "text": "nginx ist ein performanter Web- und Reverse-Proxy-Server mit geringer Speicherlast. In Cloud-Umgebungen greifen Teams allerdings vermehrt zu spezialisierten Load-Balancern."
+    },
+    {
+      "skill": "Apache",
+      "category": "devops",
+      "trend": "down",
+      "text": "Apache HTTP Server war lange Zeit die Referenz unter Webservern. Neue, leichtere Alternativen verdrängen ihn im modernen Hosting."
+    },
+    {
+      "skill": "Redis",
+      "category": "backend",
+      "trend": "up",
+      "text": "Redis ist ein In-Memory-Datenbank-Server für schnelle Key-Value-Operationen. Er eignet sich hervorragend für Caching, Sessions und temporäre Daten."
+    },
+    {
+      "skill": "Elasticsearch",
+      "category": "backend",
+      "trend": "up",
+      "text": "Elasticsearch ist eine verteilte Such- und Analyse-Engine auf Basis von Lucene. Sie bietet leistungsfähige Volltextsuche und Aggregationen für große Datensätze."
+    },
+    {
+      "skill": "Swagger",
+      "category": "backend",
+      "trend": "up",
+      "text": "Swagger (OpenAPI) dokumentiert REST-APIs maschinen- und menschenlesbar. Interaktive UIs ermöglichen das schnelle Testen von Endpunkten."
+    },
+    {
+      "skill": "OpenAPI",
+      "category": "backend",
+      "trend": "up",
+      "text": "OpenAPI spezifiziert REST- und HTTP-APIs in einem standardisierten Format. Tools nutzen das Schema für Code-Generierung und Validierung."
+    },
+    {
+      "skill": "Vue.js",
+      "category": "frontend",
+      "trend": "down",
+      "text": "Vue.js ist ein progressives Framework für interaktive Web-UIs mit einfacher Lernkurve. Der Hype ist jedoch im Vergleich zu React etwas abgeflaut."
+    },
+    {
+      "skill": "Grunt",
+      "category": "devops",
+      "trend": "down",
+      "text": "Grunt automatisiert Build-Schritte in JavaScript-Projekten mit Tasks und Plugins. Es wurde aber von Gulp und moderneren Bundlern weitgehend ersetzt."
+    },
+    {
+      "skill": "Gulp",
+      "category": "devops",
+      "trend": "down",
+      "text": "Gulp nutzt Streams für schnelle Build-Pipelines in Node.js-Projekten. Moderne Tools wie Vite und esbuild machen jedoch viele Gulp-Tasks überflüssig."
+    },
+    {
+      "skill": "Google Closure Templates",
+      "category": "frontend",
+      "trend": "down",
+      "text": "Closure Templates bieten eine typsichere Vorlage-Engine von Google. Andere Template-Sprachen haben sie allerdings weitgehend überholt."
+    },
+    {
+      "skill": "Selenium Cluster",
+      "category": "devops",
+      "trend": "down",
+      "text": "Selenium-Grid verteilt Browser-Tests auf mehrere Knoten für Skalierung. Neuere Testframeworks verzichten oft auf solche Cluster-Setups."
+    },
+    {
+      "skill": "Jenkins",
+      "category": "devops",
+      "trend": "down",
+      "text": "Jenkins ist ein zeitloses CI-Tool mit unzähligen Plugins. Gerät aber durch Cloud-gehostete CI/CD-Dienste zunehmend ins Hintertreffen."
+    },
+    {
+      "skill": "Gitlab",
+      "category": "devops",
+      "trend": "down",
+      "text": "GitLab vereint Versionskontrolle, CI/CD und DevOps-Tools in einer Plattform. Viele Teams migrieren jedoch zu spezialisierten Lösungen wie GitHub plus Actions."
+    },
+    {
+      "skill": "Gitlab CI",
+      "category": "devops",
+      "trend": "down",
+      "text": "GitLab CI ist das integrierte Pipeline-Tool von GitLab für automatisierte Workflows. In multi-cloud und Mixed-VCS-Szenarien wird es seltener eingesetzt."
+    },
+    {
+      "skill": "Nightwatch.js",
+      "category": "frontend",
+      "trend": "down",
+      "text": "Nightwatch.js bietet End-to-End-Tests in Node.js mit eigenem Test-Runner. Die Nutzerbasis schrumpft jedoch zugunsten moderner Tools wie Cypress."
+    },
+    {
+      "skill": "Adobe Photoshop",
+      "category": "media",
+      "trend": "down",
+      "text": "Photoshop ist das Branchenstandard-Tool für Bildbearbeitung und Grafikdesign. Für einfache UI-Prototypen greifen Designer jedoch oft auf spezialisierte Apps zurück."
+    },
+    {
+      "skill": "Adobe Illustrator",
+      "category": "media",
+      "trend": "down",
+      "text": "Illustrator ist die führende Vektor-Grafiksoftware von Adobe. Im UI-Design wird es jedoch von Sketch und Figma abgelöst."
+    },
+    {
+      "skill": "Adobe Indesign",
+      "category": "media",
+      "trend": "down",
+      "text": "InDesign ist das professionelle Tool für Layouts und Print-Publikationen. Für digitale Prototypen ist es aber weniger geeignet."
+    },
+    {
+      "skill": "Inkscape",
+      "category": "media",
+      "trend": "down",
+      "text": "Inkscape ist ein Open-Source-Vektor-Grafiktool mit umfassenden Funktionen. Der Workflow ist jedoch weniger nahtlos als bei kommerziellen Alternativen."
+    },
+    {
+      "skill": "Affiny Designer",
+      "category": "media",
+      "trend": "down",
+      "text": "Affinity Designer bietet Vektor- und Rasterbearbeitung in einem kompakten Paket. Es ist eine kostengünstige Alternative zu Adobe-Produkten, verliert aber an Popularität."
+    },
+    {
+      "skill": "Adobe After Effects",
+      "category": "media",
+      "trend": "down",
+      "text": "After Effects ist das führende Tool für Motion Graphics und Compositing. Für einfache Animationen greifen viele Nutzer inzwischen zu webbasierten Lösungen."
+    },
+    {
+      "skill": "Lightwave 3D",
+      "category": "media",
+      "trend": "down",
+      "text": "LightWave 3D ist eine etablierte Software für 3D-Modellierung und Animation. Die Community ist zwar treu, doch neue Engines bieten leistungsfähigere Pipelines."
+    },
+    {
+      "skill": "Ableton Live",
+      "category": "media",
+      "trend": "down",
+      "text": "Ableton Live ist eine DAW, die besonders in der elektronischen Musikproduktion beliebt ist. Für klassische Studio-Workflows setzen manche Produzenten jedoch auf andere Plattformen."
+    },
+    {
+      "skill": "jQuery",
+      "category": "frontend",
+      "trend": "down",
+      "text": "jQuery war einst die meistgenutzte JavaScript-Bibliothek für DOM-Manipulation. Moderne Browser-APIs und Frameworks machen es jedoch weitgehend überflüssig."
+    },
+    {
+      "skill": "Bootstrap",
+      "category": "frontend",
+      "trend": "down",
+      "text": "Bootstrap bietet ein CSS-Framework mit vorgefertigten Komponenten und Grid-System. Designer bevorzugen heute oft schlankere, individuellere Lösungen."
+    },
+    {
+      "skill": "Smarty",
+      "category": "frontend",
+      "trend": "down",
+      "text": "Smarty ist eine template-Engine für PHP mit eigener Syntax. Neue Engines und Frontend-Frameworks verdrängen es jedoch zunehmend."
+    },
+    {
+      "skill": "C Arduino",
+      "category": "iot",
+      "trend": "down",
+      "text": "C für Arduino-Plattformen ermöglicht Low-Level-Programmierung von Mikrocontrollern. Höhere Abstraktionsebenen machen den Einstieg heute einfacher."
+    },
+    {
+      "skill": "Thymeleaf (Java)",
+      "category": "backend",
+      "trend": "down",
+      "text": "Thymeleaf ist eine Serverside-Template-Engine für Java-Webanwendungen. Mit modernen SPAs wird serverseitiges Templating jedoch seltener eingesetzt."
+    }
   ],
-
   "noobish": [
-    { "skill": "Java",       "category": "backend", "trend": "down" },
-    { "skill": "C",          "category": "backend", "trend": "down" },
-    { "skill": "lua",        "category": "backend", "trend": "down" },
-    { "skill": "localAI",    "category": "devops",  "trend": "up" },
-    { "skill": "claude",     "category": "devops",  "trend": "up" }
+    {
+      "skill": "Java",
+      "category": "backend",
+      "trend": "down",
+      "text": "Java ist eine weit verbreitete, objektorientierte Sprache mit starkem Ökosystem. Neue JVM-Sprachen und Microservice-Frameworks verdrängen sie jedoch in vielen Startups."
+    },
+    {
+      "skill": "C",
+      "category": "backend",
+      "trend": "down",
+      "text": "C ist die klassische Systemsprache für Performance-kritische Anwendungen. Für Web- und Business-Logik wird heute meist auf höhere Sprachen zurückgegriffen."
+    },
+    {
+      "skill": "lua",
+      "category": "backend",
+      "trend": "down",
+      "text": "Lua ist eine leichte Skriptsprache, die oft in Gaming-Engines und IoT eingesetzt wird. Im Backend-Bereich kommt sie jedoch selten zum Einsatz."
+    },
+    {
+      "skill": "localAI",
+      "category": "devops",
+      "trend": "up",
+      "text": "LocalAI ermöglicht das Ausführen von KI-Modellen lokal ohne Cloud-Abhängigkeit. Es bietet Datenschutzvorteile und reduziert Latenz bei Inferenzaufgaben."
+    },
+    {
+      "skill": "claude",
+      "category": "devops",
+      "trend": "up",
+      "text": "Claude ist ein KI-Sprachmodell für verschiedene Automatisierungs- und Analyseaufgaben. In DevOps-Workflows kann es bei Dokumentation und Skript-Generierung unterstützen."
+    }
   ]
 }

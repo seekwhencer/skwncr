@@ -4,6 +4,7 @@
   "person": "${person.json}",
   "vita": "${vita.json}",
   "skills": "${skills.json}",
+  "skillsConfig": "${skills-config.json}",
   "services": "${services.json}",
   "projects": "${projects.json}",
   "impress": "${pages/impress.json}",

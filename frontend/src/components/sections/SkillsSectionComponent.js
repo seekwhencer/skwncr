@@ -1,4 +1,5 @@
 import SectionComponent from "./SectionComponent.js";
+import SkillTooltipTemplate from "../../templates/Elements/SkillTooltip.html?raw"
 
 export default class SkillsSectionComponent extends SectionComponent {
     constructor(parent, options) {
@@ -14,7 +15,21 @@ export default class SkillsSectionComponent extends SectionComponent {
         this.searchInput = this.element.querySelector('[data-skills-search]');
         this.searchInput.onkeyup = this.searchInput.onblur = () => this.search();
 
+        this.tooltipTimer = false;
         this.skills = this.element.querySelectorAll('.skill');
+        this.skills.forEach(skill => {
+            skill.addEventListener('mouseenter', e => {
+                clearTimeout(this.tooltipTimer);
+                this.tooltipTimer = setTimeout(() => this.showTooltip(skill), 800);
+            });
+
+            skill.addEventListener('mouseleave', e => {
+                clearTimeout(this.tooltipTimer);
+                skill.tooltip ? skill.tooltip.remove() : null;
+            });
+        });
+
+
     }
 
     select(e) {
@@ -24,7 +39,11 @@ export default class SkillsSectionComponent extends SectionComponent {
         }
 
         if (e.target.classList.contains('skill')) {
-            e.target.classList.toggle('like');
+            if (e.target.classList.contains('like')) {
+                e.target.classList.remove('like');
+            } else {
+                e.target.classList.add('like');
+            }
         }
     }
 
@@ -47,6 +66,24 @@ export default class SkillsSectionComponent extends SectionComponent {
                 s.classList.add('hidden');
                 s.classList.remove('match');
             }
+        });
+    }
+
+    showTooltip(skill) {
+        const level = skill.closest('.skill-level').querySelector('.level').innerText;
+        const index = [...skill.closest('.skill-level').querySelectorAll('.skill')].indexOf(skill);
+        this.getData(level, index).then(data => this.showData(skill, data));
+    }
+
+    showData(skill, data) {
+        skill.tooltip = SkillTooltipTemplate.dom(data);
+        skill.append(skill.tooltip);
+        setTimeout(() => skill.tooltip.classList.remove('hidden'), 0);
+    }
+
+    getData(level, index) {
+        return new Promise((resolve, reject) => {
+            return this.fetch(`/data/skills/${level}/${index}`).then(response => resolve(response));
         });
     }
 }
